@@ -352,6 +352,49 @@
     }
   });
 
+  /* ---------------- Hero role cycler ---------------- */
+  function initRoleCycle() {
+    const el = $("#roleCycle");
+    if (!el) return;
+    const span = el.querySelector("span");
+    if (!span || prefersReduced) return; // keep first role static
+    const roles = ["an Engineer", "an Artist", "an Athlete", "a Manager", "a Poet", "a Builder", "a Cat-dad"];
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % roles.length;
+      el.classList.add("swapping");
+      setTimeout(() => { span.textContent = roles[i]; el.classList.remove("swapping"); }, 460);
+    }, 2300);
+  }
+
+  /* ---------------- Poem language toggle ---------------- */
+  function initPoem() {
+    const btns = $$(".poem-toggle__btn");
+    if (!btns.length) return;
+    btns.forEach((b) => b.addEventListener("click", () => {
+      const lang = b.getAttribute("data-lang");
+      btns.forEach((x) => x.classList.toggle("is-active", x === b));
+      $$(".poem").forEach((p) => p.classList.toggle("is-active", p.classList.contains("poem--" + lang)));
+    }));
+  }
+
+  /* ---------------- Gallery lightbox ---------------- */
+  function initLightbox() {
+    const lb = $("#lightbox");
+    if (!lb) return;
+    const img = lb.querySelector("img");
+    const closeBtn = lb.querySelector(".lightbox__close");
+    const open = (src, alt) => { img.src = src; img.alt = alt || ""; lb.classList.add("is-open"); lb.setAttribute("aria-hidden", "false"); if (lenis) lenis.stop(); };
+    const hide = () => { lb.classList.remove("is-open"); lb.setAttribute("aria-hidden", "true"); img.src = ""; if (lenis) lenis.start(); };
+    $$(".art").forEach((a) => a.addEventListener("click", () => {
+      const im = a.querySelector("img");
+      if (im && !im.classList.contains("is-missing") && im.getAttribute("src")) open(im.src, im.alt);
+    }));
+    if (closeBtn) closeBtn.addEventListener("click", hide);
+    lb.addEventListener("click", (e) => { if (e.target === lb) hide(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") hide(); });
+  }
+
   /* ---------------- Preloader → boot ---------------- */
   function boot() {
     initReveal();
@@ -359,6 +402,9 @@
     initActiveNav();
     initAttn();
     initField();
+    initRoleCycle();
+    initPoem();
+    initLightbox();
   }
 
   function runPreloader() {

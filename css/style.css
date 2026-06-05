@@ -423,4 +423,123 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
   [data-reveal], [data-split] .word > span { opacity: 1 !important; transform: none !important; }
   .marquee__track, .skillrow__track { animation: none !important; }
+  .role-cycle > span { transition: none !important; }
+}
+
+/* =====================================================================
+   v2 — Multi-hyphenate sections
+   ===================================================================== */
+
+/* ---- Hero role cycler ---- */
+.role-line { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 0 0 30px; font-family: var(--font-display); }
+.role-line__pre { font-size: clamp(20px, 3vw, 34px); color: var(--text-dim); font-weight: 400; }
+.role-cycle { position: relative; font-size: clamp(28px, 5vw, 58px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+.role-cycle > span { display: inline-block; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; transition: transform .45s var(--ease), opacity .45s var(--ease); }
+.role-cycle.swapping > span { opacity: 0; transform: translateY(-32%); }
+
+/* ---- Worlds (facets index) ---- */
+.facets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.facet { position: relative; padding: clamp(28px, 3vw, 40px); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); overflow: hidden; min-height: 230px; display: flex; flex-direction: column; transition: transform .45s var(--ease), border-color .45s, background .45s; }
+.facet::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 80% 0%, rgba(200,250,60,0.08), transparent 60%); opacity: 0; transition: opacity .45s; }
+.facet:hover { transform: translateY(-6px); border-color: var(--volt); background: var(--surface-2); }
+.facet:hover::before { opacity: 1; }
+.facet__no { font-family: var(--font-display); font-size: 13px; color: var(--text-mute); letter-spacing: .1em; }
+.facet__ico { font-size: 30px; margin: 14px 0 6px; filter: drop-shadow(0 0 12px rgba(200,250,60,.35)); }
+.facet h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 2.6vw, 32px); margin-bottom: 8px; }
+.facet p { color: var(--text-dim); font-size: 15px; max-width: 30ch; }
+.facet__go { margin-top: auto; padding-top: 18px; font-family: var(--font-display); font-size: 14px; color: var(--volt); opacity: 0; transform: translateX(-8px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.facet:hover .facet__go { opacity: 1; transform: translateX(0); }
+
+/* ---- Facet section headers ---- */
+.facet-sec { border-top: 1px solid var(--line); }
+.facet-head { display: flex; align-items: flex-start; gap: clamp(18px, 3vw, 40px); margin-bottom: 36px; }
+.facet-head__no { font-family: var(--font-display); font-weight: 600; font-size: clamp(40px, 7vw, 96px); line-height: 0.9; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; opacity: .85; }
+.hint { display: inline; color: var(--text-mute); font-size: .85em; font-family: var(--font-display); }
+.hint code, code { background: rgba(255,255,255,0.06); border: 1px solid var(--line); border-radius: 6px; padding: 1px 7px; font-size: .9em; color: var(--cyan); font-family: var(--font-display); }
+.stats__grid--inset { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 36px 0; }
+.stats__grid--inset .stat { padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px); border-bottom: none; }
+
+/* ---- Artist gallery ---- */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.art { position: relative; aspect-ratio: 4/5; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; padding: 0; text-align: left; }
+.art img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.art:hover img { transform: scale(1.05); }
+.art__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px; font-family: var(--font-display); font-size: 14px; color: var(--text); background: linear-gradient(transparent, rgba(0,0,0,0.6)); z-index: 2; }
+.art__cap i { color: var(--text-mute); font-style: italic; }
+.art::after { content: ""; position: absolute; inset: 0; opacity: .9; }
+.art--a::after { background: linear-gradient(135deg, #16233f, #0a0b0f), radial-gradient(circle at 28% 26%, rgba(31,227,255,0.45), transparent 55%); }
+.art--b::after { background: linear-gradient(135deg, #2a1b3f, #0a0b0f), radial-gradient(circle at 70% 30%, rgba(200,250,60,0.4), transparent 55%); }
+.art--c::after { background: linear-gradient(135deg, #1b3f2c, #0a0b0f), radial-gradient(circle at 40% 70%, rgba(111,92,255,0.45), transparent 55%); }
+.art--d::after { background: linear-gradient(135deg, #3f2a1b, #0a0b0f), radial-gradient(circle at 60% 40%, rgba(255,160,74,0.4), transparent 55%); }
+.art--e::after { background: linear-gradient(135deg, #1b2b3f, #0a0b0f), radial-gradient(circle at 30% 60%, rgba(200,250,60,0.35), transparent 55%); }
+.art--f::after { background: linear-gradient(135deg, #321b3f, #0a0b0f), radial-gradient(circle at 70% 70%, rgba(31,227,255,0.4), transparent 55%); }
+.art img:not(.is-missing) ~ .art__cap { background: linear-gradient(transparent, rgba(0,0,0,0.7)); }
+.art img:not(.is-missing) + .art__cap, .art:has(img:not(.is-missing))::after { /* hide gradient placeholder when real image exists */ }
+.art:has(img:not(.is-missing))::after { display: none; }
+
+/* ---- Athlete ---- */
+.ath-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.ath-card { padding: clamp(28px, 3vw, 40px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: flex; flex-direction: column; gap: 8px; transition: transform .4s var(--ease), border-color .4s; }
+.ath-card:hover { transform: translateY(-5px); border-color: var(--line-2); }
+.ath-card__k { font-family: var(--font-display); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--volt); }
+.ath-card__v { font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 3vw, 38px); }
+.ath-card__v i { color: var(--text-mute); font-style: italic; font-weight: 400; font-size: .6em; }
+.ath-card__s { color: var(--text-mute); font-size: 14px; }
+.ath-quote { margin-top: 36px; font-family: var(--font-serif); font-style: italic; font-size: clamp(24px, 4vw, 44px); line-height: 1.3; color: var(--text-dim); max-width: 20ch; }
+
+/* ---- Leader / principles ---- */
+.principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.principle { padding: clamp(26px, 3vw, 38px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); transition: transform .4s var(--ease), border-color .4s; }
+.principle:hover { transform: translateY(-4px); border-color: var(--line-2); }
+.principle__no { font-family: var(--font-display); color: var(--volt); font-size: 14px; letter-spacing: .1em; }
+.principle h4 { font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 10px 0 8px; }
+.principle p { color: var(--text-dim); }
+
+/* ---- Poet ---- */
+.poem-toggle { display: inline-flex; gap: 6px; padding: 5px; border: 1px solid var(--line); border-radius: 100px; margin-bottom: 40px; }
+.poem-toggle__btn { font-family: var(--font-display); font-size: 14px; color: var(--text-dim); background: transparent; border: none; border-radius: 100px; padding: 9px 20px; transition: background .3s, color .3s; }
+.poem-toggle__btn.is-active { background: var(--volt); color: #06210a; }
+.poem { display: none; max-width: 760px; }
+.poem.is-active { display: block; }
+.poem blockquote { font-family: var(--font-serif); font-style: italic; font-size: clamp(26px, 4.4vw, 50px); line-height: 1.45; color: var(--text); }
+.poem blockquote p { margin: 0; }
+.poem figcaption { margin-top: 28px; font-family: var(--font-display); font-size: 13px; color: var(--text-mute); }
+.poem--fa { font-family: "Vazirmatn", var(--font-body); }
+.poem--fa blockquote { font-style: normal; font-size: clamp(24px, 4.2vw, 46px); line-height: 1.9; }
+
+/* ---- Personal / cats ---- */
+.personal__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 6vw, 70px); }
+.cats h3, .interests h3 { font-family: var(--font-display); font-weight: 500; font-size: clamp(22px, 2.6vw, 30px); margin-bottom: 14px; }
+.cats__note { color: var(--text-dim); margin-bottom: 26px; }
+.cats__row { display: flex; gap: 18px; flex-wrap: wrap; }
+.cat { flex: 1; min-width: 150px; }
+.cat__pic { position: relative; aspect-ratio: 1; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: linear-gradient(160deg, var(--surface), var(--bg-2)); display: grid; place-items: center; }
+.cat__pic img { width: 100%; height: 100%; object-fit: cover; }
+.cat__pic img.is-missing { display: none; }
+.cat__emoji { font-size: 64px; }
+.cat__pic img:not(.is-missing) ~ .cat__emoji { display: none; }
+.cat__name { display: block; margin-top: 12px; font-family: var(--font-display); font-weight: 500; }
+.cat__name i { color: var(--text-mute); font-style: italic; font-weight: 400; }
+.now { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 26px; }
+.now h4 { font-family: var(--font-display); font-weight: 500; font-size: 16px; color: var(--volt); margin-bottom: 14px; letter-spacing: .05em; }
+
+/* ---- Lightbox ---- */
+.lightbox { position: fixed; inset: 0; z-index: 9200; background: rgba(4,4,6,0.94); display: none; place-items: center; padding: 5vw; backdrop-filter: blur(8px); }
+.lightbox.is-open { display: grid; }
+.lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 12px; border: 1px solid var(--line-2); }
+.lightbox__close { position: absolute; top: 26px; right: 30px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line-2); background: transparent; color: var(--text); font-size: 18px; }
+.lightbox__close:hover { border-color: var(--volt); color: var(--volt); }
+
+/* ---- v2 responsive ---- */
+@media (max-width: 1024px) {
+  .facets, .gallery { grid-template-columns: repeat(2, 1fr); }
+  .ath-cards { grid-template-columns: 1fr; }
+  .principles { grid-template-columns: 1fr; }
+  .personal__grid { grid-template-columns: 1fr; }
+  .stats__grid--inset .stat { border-right: 1px solid var(--line); }
+}
+@media (max-width: 760px) {
+  .facets, .gallery { grid-template-columns: 1fr; }
+  .facet-head { gap: 14px; }
+  .role-line { gap: 8px; }
 }
