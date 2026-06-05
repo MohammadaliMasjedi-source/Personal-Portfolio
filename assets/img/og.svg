@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="g1" cx="80%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#6f5cff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#060608" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="5%" cy="100%" r="70%">
+      <stop offset="0%" stop-color="#1fe3ff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#060608" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c8fa3c"/>
+      <stop offset="100%" stop-color="#1fe3ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#060608"/>
+  <rect width="1200" height="630" fill="url(#g1)"/>
+  <rect width="1200" height="630" fill="url(#g2)"/>
+  <g transform="translate(90,250)">
+    <path d="M52 0 L8 78 H38 L30 132 L84 46 H50 Z" fill="#c8fa3c"/>
+  </g>
+  <text x="92" y="200" font-family="'Space Grotesk',sans-serif" font-size="26" letter-spacing="6" fill="#a7abb6">MO · MASSJEDI</text>
+  <text x="88" y="430" font-family="'Space Grotesk',sans-serif" font-weight="600" font-size="92" fill="#f4f5f7">AI/ML Researcher</text>
+  <text x="92" y="510" font-family="'Instrument Serif',Georgia,serif" font-style="italic" font-size="56" fill="url(#grad)">battery intelligence &amp; data science</text>
+  <text x="92" y="575" font-family="'Space Grotesk',sans-serif" font-size="24" fill="#6a6f7c">TU Clausthal · Germany</text>
+</svg>

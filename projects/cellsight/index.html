@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CellSight — Early-Life Battery Health & Remaining-Life Intelligence</title>
+<style>
+  :root{
+    --bg:#0d1117; --bg2:#0f1620; --panel:#161c26; --panel2:#1b2330; --line:#263041;
+    --ink:#e6edf3; --muted:#9aa7b6; --dim:#6b7787;
+    --acc:#58a6ff;
+    --transformer:#4aa3ff; --gru:#46c98b; --baseline:#f5a04a; --true:#8b97a7;
+    --good:#46c98b; --warn:#f5c451; --bad:#ef5d63; --eol:#ef5d63;
+    --radius:14px; --shadow:0 6px 24px rgba(0,0,0,.35);
+    --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:linear-gradient(180deg,#0b0f15,#0d1117 240px);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 22px 70px}
+  header{padding:24px 0 6px}
+  .htop{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:13px}
+  .logo{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,#4aa3ff,#46c98b);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;color:#06243f;box-shadow:var(--shadow)}
+  h1{font-size:22px;margin:0;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:13px;margin-top:2px}
+  .stamp{font-size:12px;color:var(--dim);text-align:right;white-space:nowrap}
+  .demo-tag{display:inline-block;margin-top:6px;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.3px;background:rgba(245,196,81,.14);color:#f5d27a;border:1px solid rgba(245,196,81,.4)}
+  .oneliner{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);padding:12px 16px;border-radius:10px;color:#cdd9e5;font-size:14px}
+  .oneliner b{color:#fff}
+  /* KPIs */
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:22px 0}
+  @media(max-width:980px){.kpis{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:560px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .kpi .v{font-size:26px;font-weight:800;line-height:1}
+  .kpi .v small{font-size:14px;font-weight:700;color:var(--muted)}
+  .kpi .l{font-size:11px;color:var(--muted);margin-top:7px;text-transform:uppercase;letter-spacing:.5px}
+  .kpi .s{font-size:11.5px;color:var(--dim);margin-top:3px}
+  /* layout */
+  .grid{display:grid;gap:16px}
+  .main{grid-template-columns:1.05fr 1fr}
+  @media(max-width:1040px){.main{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+  .card h2{font-size:15px;margin:0 0 4px;display:flex;align-items:center;gap:8px;letter-spacing:.2px}
+  .card h2 .dot{width:8px;height:8px;border-radius:50%;background:var(--acc)}
+  .card .desc{color:var(--muted);font-size:12.5px;margin:0 0 12px}
+  /* table */
+  .twrap{max-height:430px;overflow:auto;border-radius:10px;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0;background:var(--panel2);z-index:2}
+  td.num{text-align:right;font-family:var(--mono)}
+  tbody tr{cursor:pointer}
+  tbody tr:hover td{background:rgba(255,255,255,.03)}
+  tbody tr.sel td{background:rgba(74,163,255,.12)}
+  tbody tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--acc)}
+  .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.2px}
+  .b-good{background:rgba(70,201,139,.14);color:#7ee0b0;border:1px solid rgba(70,201,139,.36)}
+  .b-watch{background:rgba(245,196,81,.13);color:#f5d27a;border:1px solid rgba(245,196,81,.36)}
+  .b-risk{background:rgba(245,160,74,.14);color:#ffc187;border:1px solid rgba(245,160,74,.4)}
+  .b-replace{background:rgba(239,93,99,.16);color:#ff8b90;border:1px solid rgba(239,93,99,.42)}
+  /* detail */
+  .readout{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+  .ro{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .ro .l{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .ro .v{font-size:18px;font-weight:800;margin-top:3px}
+  .ro .v small{font-size:12px;color:var(--muted);font-weight:600}
+  /* legend */
+  .legend{display:flex;gap:14px;flex-wrap:wrap;margin:2px 0 8px}
+  .lg{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:12px;color:var(--muted);user-select:none}
+  .lg .sw{width:15px;height:4px;border-radius:2px}
+  .lg .sw.dash{background-image:linear-gradient(90deg,currentColor 60%,transparent 0);background-size:7px 100%}
+  .lg.off{opacity:.34;text-decoration:line-through}
+  svg{width:100%;height:auto;display:block}
+  .why{margin-top:16px}
+  .callout{margin-top:12px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:#cdd9e5;font-size:13px}
+  .callout b{color:#fff}
+  /* ROI */
+  .roi{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+  @media(max-width:860px){.roi{grid-template-columns:1fr}}
+  .roi .card{padding:16px}
+  .roi .big{font-size:24px;font-weight:800;color:var(--acc)}
+  .roi h3{font-size:13px;margin:8px 0 4px}
+  .roi p{color:var(--muted);font-size:12.5px;margin:0}
+  footer{margin-top:26px;color:var(--dim);font-size:11.5px;text-align:center;line-height:1.7}
+  .axislabel{fill:var(--muted);font-size:11px;font-family:var(--sans)}
+  .ticklabel{fill:var(--dim);font-size:10px;font-family:var(--mono)}
+  .gridline{stroke:var(--line);stroke-width:1}
+  .annot{fill:var(--ink);font-size:11px;font-family:var(--sans);font-weight:600}
+  .annot-bg{fill:#05080d;opacity:.72}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="htop">
+      <div class="brand">
+        <div class="logo">CS</div>
+        <div>
+          <h1>CellSight</h1>
+          <div class="sub">Early-life battery health &amp; remaining-useful-life intelligence</div>
+        </div>
+      </div>
+      <div class="stamp">
+        Fleet snapshot · <b id="stamp-date">—</b><br>
+        <span class="demo-tag">DEMO · synthetic data</span>
+      </div>
+    </div>
+    <div class="oneliner">
+      We read a cell's <b>first cycles</b> and predict its <b>full life</b> and <b>remaining useful life</b> — with calibrated uncertainty — <b>long before</b> conventional methods can. Catch the weak cells early; act while it still pays.
+    </div>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid main">
+    <div class="card">
+      <h2><span class="dot"></span>Fleet — live health &amp; remaining life</h2>
+      <p class="desc">Click any cell to inspect its degradation forecast. Status reflects current State of Health and predicted remaining cycles.</p>
+      <div class="twrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Cell</th><th>Chem</th><th class="num">Age (cyc)</th><th class="num">SOH</th>
+              <th class="num">Pred. life</th><th class="num">RUL</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="fleet-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><span class="dot"></span>Forecast — <span id="sel-id">—</span></h2>
+      <p class="desc">Solid = measured so far. Dashed = CellSight forecast with 1σ band. We commit to a remaining-life number from the early data on the left of the marker.</p>
+      <div class="readout" id="readout"></div>
+      <div class="legend" id="fade-legend"></div>
+      <div id="fade-chart"></div>
+    </div>
+  </div>
+
+  <div class="card why">
+    <h2><span class="dot"></span>Why "early" is the whole game</h2>
+    <p class="desc">Prediction error vs. how many cycles you've observed. The earlier you can trust the number, the more money the decision is worth. This is the core result behind CellSight.</p>
+    <div class="legend" id="why-legend"></div>
+    <div id="why-chart"></div>
+    <div class="callout" id="why-callout"></div>
+  </div>
+
+  <div class="roi">
+    <div class="card">
+      <div class="big" id="roi-early">—</div>
+      <h3>Earlier decisions</h3>
+      <p>Median lead time CellSight buys you over waiting for a cell to visibly fade — time to rebalance, resell, or pull a pack before it fails.</p>
+    </div>
+    <div class="card">
+      <div class="big" id="roi-acc">—</div>
+      <h3>Lower error in the early window</h3>
+      <p>Relative reduction in remaining-life error vs. a recurrent (GRU) baseline at ≤200 observed cycles — where the expensive decisions are made.</p>
+    </div>
+    <div class="card">
+      <div class="big" id="roi-risk">—</div>
+      <h3>Cells flagged for action</h3>
+      <p>Watch / at-risk / replace cells surfaced now, while there's still resale value or warranty headroom to protect.</p>
+    </div>
+  </div>
+
+  <footer>
+    CellSight demo · synthetic fleet, illustrative numbers — wire in real MATR / mixed-chemistry predictions to make it live.<br>
+    Built on the early-cycle lifetime-prediction model from the TU Clausthal thesis. Working name &amp; styling — change freely. Commercial asset → move to <b>MM-Private</b>.
+  </footer>
+</div>
+
+<script>
+"use strict";
+/* ---------- seeded RNG (stable fleet every load) ---------- */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}
+function gauss(rng){var u=0,v=0;while(u===0)u=rng();while(v===0)v=rng();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+function clamp(x,a,b){return Math.max(a,Math.min(b,x));}
+
+/* ---------- degradation model: SOH(n) = 1 - 0.2*(n/life)^p, EOL@0.8 ---------- */
+function soh(n, life, p){return 1 - 0.2*Math.pow(Math.max(n,0)/life, p);}
+
+/* ---------- build synthetic fleet ---------- */
+var EOL = 0.80;                 // end-of-life threshold (80% SOH)
+var rng = mulberry32(20260605); // fixed seed
+var CHEMS = [
+  {tag:"LFP", set:"MATR", lo:550,  hi:2300},
+  {tag:"NMC", set:"MIX",  lo:700,  hi:1600},
+  {tag:"NCA", set:"MIX",  lo:500,  hi:1200}
+];
+var fleet = [];
+var N = 13;
+for(var i=0;i<N;i++){
+  var ch = CHEMS[Math.floor(rng()*CHEMS.length)];
+  var trueLife = Math.round(ch.lo + rng()*(ch.hi-ch.lo));
+  var p = 1.7 + rng()*1.4;                                  // knee shape
+  // current age: a spread from early to near-EOL so the fleet has variety
+  var ageFrac = 0.07 + rng()*0.85;
+  var age = Math.max(40, Math.round(trueLife*ageFrac));
+  // model predictions (transformer tight, gru loose), clamped sensibly
+  var predT = clamp(trueLife*(1+gauss(rng)*0.06), trueLife*0.7, trueLife*1.4);
+  var predG = clamp(trueLife*(1+gauss(rng)*0.16), trueLife*0.55, trueLife*1.6);
+  predT = Math.round(predT); predG = Math.round(predG);
+  var bandFrac = 0.10*(1 - 0.55*Math.min(age/trueLife,1));   // tighter with more data
+  var band = Math.round(trueLife*bandFrac);
+  var sohNow = clamp(soh(age, trueLife, p), 0.6, 1.0);
+  var rulT = Math.max(0, predT - age);
+  // status
+  var status;
+  if(sohNow<=EOL) status="replace";
+  else if(rulT<150 || sohNow<0.85) status="risk";
+  else if(rulT<400 || sohNow<0.90) status="watch";
+  else status="good";
+  fleet.push({
+    id:"b"+(1+Math.floor(i/4))+"c"+(i%9+1), chem:ch.tag, set:ch.set,
+    trueLife:trueLife, p:p, age:age, predT:predT, predG:predG, band:band,
+    sohNow:sohNow, rulT:rulT, status:status, seed:1000+i*37
+  });
+}
+
+/* ---------- "why early" error curves (mirror error-vs-length result) ---------- */
+function errT(c){return 6 + 30*Math.exp(-c/70);}    // transformer: drops fast
+function errG(c){return 9 + 34*Math.exp(-c/150);}   // gru: drops slower
+function errB(c){return 24 + 8*Math.exp(-c/200);}   // variance baseline: high
+function avgErr(fn,a,b){var s=0,k=0;for(var c=a;c<=b;c+=5){s+=fn(c);k++;}return s/k;}
+var earlyT = avgErr(errT,20,200), earlyG = avgErr(errG,20,200);
+
+/* ---------- SVG line-chart helper (one function, both charts) ---------- */
+function lineChart(o){
+  var W=o.width,H=o.height,P=o.pad;
+  var x0=o.xDomain[0],x1=o.xDomain[1],y0=o.yDomain[0],y1=o.yDomain[1];
+  var L=P.l,R=W-P.r,T=P.t,B=H-P.b;
+  function sx(v){return L+(v-x0)/(x1-x0)*(R-L);}
+  function sy(v){return B-(v-y0)/(y1-y0)*(B-T);}
+  function path(pts){var d="";for(var i=0;i<pts.length;i++){d+=(i?"L":"M")+sx(pts[i][0]).toFixed(1)+" "+sy(pts[i][1]).toFixed(1)+" ";}return d;}
+  var s='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet" role="img">';
+  // y gridlines + ticks
+  (o.yTicks||[]).forEach(function(t){
+    var yy=sy(t.v).toFixed(1);
+    s+='<line class="gridline" x1="'+L+'" y1="'+yy+'" x2="'+R+'" y2="'+yy+'"/>';
+    s+='<text class="ticklabel" x="'+(L-7)+'" y="'+(parseFloat(yy)+3)+'" text-anchor="end">'+t.t+'</text>';
+  });
+  // x ticks
+  (o.xTicks||[]).forEach(function(t){
+    var xx=sx(t.v).toFixed(1);
+    s+='<text class="ticklabel" x="'+xx+'" y="'+(B+16)+'" text-anchor="middle">'+t.t+'</text>';
+  });
+  // shaded x-region (early regime)
+  (o.xbands||[]).forEach(function(b){
+    s+='<rect x="'+sx(b.from)+'" y="'+T+'" width="'+(sx(b.to)-sx(b.from))+'" height="'+(B-T)+'" fill="'+b.color+'"/>';
+  });
+  // confidence bands
+  (o.bands||[]).forEach(function(b){
+    var up=b.upper.map(function(pt){return sx(pt[0]).toFixed(1)+" "+sy(pt[1]).toFixed(1);});
+    var lo=b.lower.map(function(pt){return sx(pt[0]).toFixed(1)+" "+sy(pt[1]).toFixed(1);}).reverse();
+    s+='<polygon points="'+up.concat(lo).join(" ")+'" fill="'+b.color+'" opacity="0.16"/>';
+  });
+  // horizontal reference lines
+  (o.hlines||[]).forEach(function(h){
+    var yy=sy(h.y).toFixed(1);
+    s+='<line x1="'+L+'" y1="'+yy+'" x2="'+R+'" y2="'+yy+'" stroke="'+h.color+'" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.85"/>';
+    if(h.label) s+='<text class="annot" x="'+(R-4)+'" y="'+(parseFloat(yy)-5)+'" text-anchor="end" fill="'+h.color+'">'+h.label+'</text>';
+  });
+  // vertical markers
+  (o.vlines||[]).forEach(function(vl){
+    var xx=sx(vl.x).toFixed(1);
+    s+='<line x1="'+xx+'" y1="'+T+'" x2="'+xx+'" y2="'+B+'" stroke="'+vl.color+'" stroke-width="1.4" stroke-dasharray="'+(vl.dash||"4 3")+'" opacity="0.9"/>';
+    if(vl.label){
+      var ty=(vl.top?T+12:B-8);
+      s+='<text class="annot" x="'+(parseFloat(xx)+5)+'" y="'+ty+'" fill="'+vl.color+'">'+vl.label+'</text>';
+    }
+  });
+  // series
+  (o.series||[]).forEach(function(se){
+    if(se.hidden) return;
+    s+='<path d="'+path(se.points)+'" fill="none" stroke="'+se.color+'" stroke-width="'+(se.width||2.4)+'" '+(se.dash?'stroke-dasharray="'+se.dash+'" ':'')+(se.opacity?'opacity="'+se.opacity+'" ':'')+'stroke-linejoin="round" stroke-linecap="round"/>';
+  });
+  // axis titles
+  if(o.xLabel) s+='<text class="axislabel" x="'+((L+R)/2)+'" y="'+(H-6)+'" text-anchor="middle">'+o.xLabel+'</text>';
+  if(o.yLabel) s+='<text class="axislabel" transform="translate(13,'+((T+B)/2)+') rotate(-90)" text-anchor="middle">'+o.yLabel+'</text>';
+  s+='</svg>';
+  return s;
+}
+
+/* ---------- state ---------- */
+var selId = null;
+var fadeVis = {observed:true, forecast:true, truth:true};
+var whyVis = {transformer:true, gru:true, baseline:true};
+
+/* ---------- KPIs ---------- */
+function renderKPIs(){
+  var avgSoh = fleet.reduce(function(a,c){return a+c.sohNow;},0)/fleet.length;
+  var attn = fleet.filter(function(c){return c.status!=="good";}).length;
+  var ruls = fleet.map(function(c){return c.rulT;}).sort(function(a,b){return a-b;});
+  var medRul = ruls[Math.floor(ruls.length/2)];
+  var redux = Math.round((1 - earlyT/earlyG)*100);
+  var k=[
+    {v:fleet.length, l:"Cells monitored"},
+    {v:(avgSoh*100).toFixed(1)+"<small>%</small>", l:"Avg State of Health"},
+    {v:attn, l:"Need attention", s:"of "+fleet.length+" cells"},
+    {v:medRul+"<small> cyc</small>", l:"Median remaining life"},
+    {v:Math.round(earlyT)+"<small>%</small>", l:"Error @ ≤200 cyc", s:"GRU "+Math.round(earlyG)+"%"},
+    {v:"~10<small>%</small>", l:"Life seen at first call", s:"locks RUL early"}
+  ];
+  document.getElementById("kpis").innerHTML = k.map(function(x){
+    return '<div class="kpi"><div class="v">'+x.v+'</div><div class="l">'+x.l+'</div>'+(x.s?'<div class="s">'+x.s+'</div>':'')+'</div>';
+  }).join("");
+  document.getElementById("roi-early").textContent = "+"+medRul+" cyc";
+  document.getElementById("roi-acc").textContent = "−"+redux+"%";
+  document.getElementById("roi-risk").textContent = attn+" / "+fleet.length;
+}
+
+/* ---------- fleet table ---------- */
+var STATUS={good:["Healthy","b-good"],watch:["Watch","b-watch"],risk:["At risk","b-risk"],replace:["Replace","b-replace"]};
+function renderFleet(){
+  document.getElementById("fleet-body").innerHTML = fleet.map(function(c){
+    var st=STATUS[c.status];
+    return '<tr data-id="'+c.id+'"'+(c.id===selId?' class="sel"':'')+'>'+
+      '<td><b>'+c.id+'</b></td>'+
+      '<td>'+c.chem+' <span style="color:var(--dim)">·'+c.set+'</span></td>'+
+      '<td class="num">'+c.age+'</td>'+
+      '<td class="num">'+(c.sohNow*100).toFixed(1)+'%</td>'+
+      '<td class="num">'+c.predT+'</td>'+
+      '<td class="num">'+c.rulT+'</td>'+
+      '<td><span class="badge '+st[1]+'">'+st[0]+'</span></td>'+
+    '</tr>';
+  }).join("");
+  Array.prototype.forEach.call(document.querySelectorAll("#fleet-body tr"),function(tr){
+    tr.addEventListener("click",function(){ selId=tr.getAttribute("data-id"); renderFleet(); renderDetail(); });
+  });
+}
+
+/* ---------- detail / forecast ---------- */
+function buildFade(c){
+  var rng2=mulberry32(c.seed);
+  var maxX=Math.ceil(Math.max(c.trueLife,c.predT)*1.06);
+  var step=Math.max(4,Math.round(maxX/130));
+  var observed=[],truth=[],fc=[],bandU=[],bandL=[];
+  for(var n=0;n<=c.age;n+=step){ observed.push([n, clamp(soh(n,c.trueLife,c.p)+gauss(rng2)*0.0025,0.7,1.001)]); }
+  for(var n2=0;n2<=c.trueLife*1.02 && n2<=maxX;n2+=step){ truth.push([n2, Math.max(0.7,soh(n2,c.trueLife,c.p))]); }
+  var lifeHi=c.predT+c.band, lifeLo=Math.max(c.age+20,c.predT-c.band);
+  for(var n3=c.age;n3<=maxX;n3+=step){
+    fc.push([n3, Math.max(0.7,soh(n3,c.predT,c.p))]);
+    bandU.push([n3, Math.max(0.7,soh(n3,lifeHi,c.p))]);
+    bandL.push([n3, Math.max(0.7,soh(n3,lifeLo,c.p))]);
+  }
+  return {observed:observed,truth:truth,fc:fc,bandU:bandU,bandL:bandL,maxX:maxX};
+}
+function renderDetail(){
+  var c=fleet.filter(function(x){return x.id===selId;})[0];
+  if(!c) return;
+  document.getElementById("sel-id").textContent=c.id+" · "+c.chem;
+  var st=STATUS[c.status];
+  var months=Math.round(c.rulT/30); // assume ~1 cycle/day
+  var ro=[
+    {l:"State of Health now",v:(c.sohNow*100).toFixed(1)+'<small>%</small>'},
+    {l:"Status",v:'<span class="badge '+st[1]+'">'+st[0]+'</span>'},
+    {l:"Predicted full life",v:c.predT+'<small> ± '+c.band+' cyc</small>'},
+    {l:"Remaining useful life",v:c.rulT+'<small> cyc · ~'+months+' mo</small>'},
+    {l:"Observed so far",v:c.age+'<small> cyc ('+Math.round(c.age/c.predT*100)+'% of life)</small>'},
+    {l:"GRU baseline would say",v:c.predG+'<small> cyc life</small>'}
+  ];
+  document.getElementById("readout").innerHTML=ro.map(function(x){
+    return '<div class="ro"><div class="l">'+x.l+'</div><div class="v">'+x.v+'</div></div>';
+  }).join("");
+
+  var d=buildFade(c);
+  var ticks=[]; for(var t=0;t<=d.maxX;t+=Math.max(200,Math.round(d.maxX/6/100)*100)){ticks.push({v:t,t:t});}
+  var svg=lineChart({
+    width:740,height:360,pad:{l:50,r:16,t:16,b:46},
+    xDomain:[0,d.maxX], yDomain:[0.70,1.005],
+    xLabel:"Cycle number", yLabel:"State of Health",
+    yTicks:[{v:1.0,t:"100%"},{v:0.95,t:"95%"},{v:0.90,t:"90%"},{v:0.85,t:"85%"},{v:0.80,t:"80%"},{v:0.75,t:"75%"}],
+    xTicks:ticks,
+    hlines:[{y:EOL,color:"#ef5d63",label:"End of life (80%)"}],
+    vlines:[
+      {x:c.age,color:"#f5c451",label:"Today · cyc "+c.age,top:true},
+      {x:c.predT,color:"#4aa3ff",label:"Predicted EOL"}
+    ],
+    bands: fadeVis.forecast ? [{upper:d.bandU,lower:d.bandL,color:"#4aa3ff"}] : [],
+    series:[
+      {points:d.truth,color:"#8b97a7",width:1.6,dash:"2 4",opacity:0.7,hidden:!fadeVis.truth},
+      {points:d.fc,color:"#4aa3ff",width:2.6,dash:"7 5",hidden:!fadeVis.forecast},
+      {points:d.observed,color:"#cfe3ff",width:2.8,hidden:!fadeVis.observed}
+    ]
+  });
+  document.getElementById("fade-chart").innerHTML=svg;
+}
+
+/* ---------- why-early chart ---------- */
+function renderWhy(){
+  var T=[],G=[],Bs=[];
+  for(var c=20;c<=400;c+=5){T.push([c,errT(c)]);G.push([c,errG(c)]);Bs.push([c,errB(c)]);}
+  var svg=lineChart({
+    width:1180,height:330,pad:{l:50,r:18,t:16,b:46},
+    xDomain:[20,400], yDomain:[0,42],
+    xLabel:"Cycles observed before prediction", yLabel:"Remaining-life error (%)",
+    yTicks:[{v:0,t:"0%"},{v:10,t:"10%"},{v:20,t:"20%"},{v:30,t:"30%"},{v:40,t:"40%"}],
+    xTicks:[{v:50,t:"50"},{v:100,t:"100"},{v:150,t:"150"},{v:200,t:"200"},{v:300,t:"300"},{v:400,t:"400"}],
+    xbands:[{from:20,to:200,color:"rgba(74,163,255,0.06)"}],
+    vlines:[{x:200,color:"#6b7787",label:"early regime ≤200",top:true}],
+    series:[
+      {points:Bs,color:"#f5a04a",width:2.2,hidden:!whyVis.baseline},
+      {points:G,color:"#46c98b",width:2.4,hidden:!whyVis.gru},
+      {points:T,color:"#4aa3ff",width:2.8,hidden:!whyVis.transformer}
+    ]
+  });
+  document.getElementById("why-chart").innerHTML=svg;
+  var at100T=Math.round(errT(100)), at100G=Math.round(errG(100));
+  // cycles where GRU first reaches transformer's 100-cycle error
+  var match=100; for(var k=100;k<=400;k+=2){ if(errG(k)<=errT(100)){match=k;break;} match=k; }
+  document.getElementById("why-callout").innerHTML=
+    '<b>At 100 observed cycles</b>, CellSight is already within <b>~'+at100T+'%</b> — the GRU baseline is at ~'+at100G+'% and needs <b>~'+match+' cycles</b> to catch up. '+
+    'Every decision made in that gap (resell, rebalance, pull a pack) is made <b>'+(match-100)+' cycles sooner</b> with confidence.';
+}
+
+/* ---------- legends ---------- */
+function buildLegend(elId, items, visObj, rerender){
+  var el=document.getElementById(elId);
+  el.innerHTML=items.map(function(it){
+    return '<span class="lg'+(visObj[it.key]?'':' off')+'" data-key="'+it.key+'" style="color:'+it.color+'">'+
+      '<span class="sw'+(it.dash?' dash':'')+'" style="background:'+(it.dash?'':it.color)+';color:'+it.color+'"></span>'+
+      '<span style="color:var(--ink)">'+it.label+'</span></span>';
+  }).join("");
+  Array.prototype.forEach.call(el.querySelectorAll(".lg"),function(s){
+    s.addEventListener("click",function(){var k=s.getAttribute("data-key");visObj[k]=!visObj[k];rerender();buildLegendRefresh(el,visObj);});
+  });
+}
+function buildLegendRefresh(el,visObj){
+  Array.prototype.forEach.call(el.querySelectorAll(".lg"),function(s){
+    var k=s.getAttribute("data-key"); s.classList.toggle("off",!visObj[k]);
+  });
+}
+
+/* ---------- init ---------- */
+function fmtDate(){var d=new Date();return d.toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"});}
+document.getElementById("stamp-date").textContent=fmtDate();
+renderKPIs();
+renderFleet();
+// pick a healthy-but-young cell to lead with the "early" story; fallback to first
+selId=(fleet.filter(function(c){return c.status==="good" && c.age/c.predT<0.25;})[0]||fleet[0]).id;
+renderFleet();
+renderDetail();
+renderWhy();
+buildLegend("fade-legend",[
+  {key:"observed",label:"Measured",color:"#cfe3ff"},
+  {key:"forecast",label:"CellSight forecast ± 1σ",color:"var(--transformer)",dash:true},
+  {key:"truth",label:"Actual trajectory",color:"var(--true)",dash:true}
+],fadeVis,renderDetail);
+buildLegend("why-legend",[
+  {key:"transformer",label:"CellSight (transformer)",color:"var(--transformer)"},
+  {key:"gru",label:"GRU baseline",color:"var(--gru)"},
+  {key:"baseline",label:"Variance baseline",color:"var(--baseline)"}
+],whyVis,renderWhy);
+</script>
+</body>
+</html>
