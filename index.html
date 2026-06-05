@@ -6,48 +6,41 @@
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#060608" />
 
-  <title>Mo · MassJedi — AI/ML Researcher & Battery Intelligence</title>
-  <meta name="description" content="Mohammadali (Mo) Masjedi — M.Sc. researcher at TU Clausthal. Deep learning for battery lifetime & remaining-useful-life prediction. Engineer, builder, lifelong learner." />
+  <title>Mo · MassJedi — Engineer · Artist · Athlete · Poet</title>
+  <meta name="description" content="The personal site of Mohammadali (Mo) Masjedi — engineer & AI/ML researcher, artist, athlete, manager, poet, and devoted staff to two cats. One mind, many lives." />
   <meta name="author" content="Mohammadali Masjedi" />
-  <meta name="keywords" content="Mo MassJedi, Mohammadali Masjedi, machine learning, deep learning, battery, RUL, remaining useful life, transformers, TU Clausthal, data science, CellSight" />
+  <meta name="keywords" content="Mo MassJedi, Mohammadali Masjedi, engineer, artist, athlete, poet, machine learning, battery, AI, portfolio, personal website" />
 
-  <!-- Open Graph / Twitter (replace URL + add assets/img/og.png after first deploy) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mo · MassJedi — AI/ML Researcher & Battery Intelligence" />
-  <meta property="og:description" content="Teaching machines to see a battery's future — from its very first cycles." />
+  <meta property="og:title" content="Mo · MassJedi — One mind, many lives" />
+  <meta property="og:description" content="Engineer · Artist · Athlete · Manager · Poet — and devoted staff to two cats." />
   <meta property="og:image" content="assets/img/og.svg" />
   <meta property="og:url" content="https://USERNAME.github.io/massjedi-website/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mo · MassJedi" />
-  <meta name="twitter:description" content="Teaching machines to see a battery's future — from its very first cycles." />
+  <meta name="twitter:title" content="Mo · MassJedi — One mind, many lives" />
+  <meta name="twitter:description" content="Engineer · Artist · Athlete · Manager · Poet — and devoted staff to two cats." />
   <meta name="twitter:image" content="assets/img/og.svg" />
 
-  <!-- Favicon: volt bolt -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060608'/%3E%3Cpath d='M36 8 L20 36 H31 L28 56 L46 26 H34 Z' fill='%23c8fa3c'/%3E%3C/svg%3E" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- Cinematic grain + background field -->
   <div class="grain" aria-hidden="true"></div>
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <!-- Custom cursor -->
   <div class="cursor" aria-hidden="true">
     <div class="cursor__dot"></div>
     <div class="cursor__ring"><span class="cursor__label"></span></div>
   </div>
 
-  <!-- Scroll progress -->
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
-  <!-- Preloader -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__inner">
       <div class="preloader__mark">MO<span>·</span>MASSJEDI</div>
@@ -64,32 +57,30 @@
     </a>
 
     <nav class="nav__links" aria-label="Primary">
+      <a href="#worlds" data-cursor="link">Worlds</a>
+      <a href="#engineer" data-cursor="link">Engineer</a>
+      <a href="#artist" data-cursor="link">Artist</a>
+      <a href="#poet" data-cursor="link">Poet</a>
       <a href="#about" data-cursor="link">About</a>
-      <a href="#research" data-cursor="link">Research</a>
-      <a href="#work" data-cursor="link">Work</a>
-      <a href="#channels" data-cursor="link">Channels</a>
-      <a href="#now" data-cursor="link">Now</a>
     </nav>
 
-    <a href="#contact" class="nav__cta btn btn--ghost" data-magnetic data-cursor="link">
-      <span>Get in touch</span>
-    </a>
+    <a href="#contact" class="nav__cta btn btn--ghost" data-magnetic data-cursor="link"><span>Get in touch</span></a>
 
     <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span>
     </button>
   </header>
 
-  <!-- Mobile / full-screen menu -->
   <div class="menu" id="menu" aria-hidden="true">
     <nav class="menu__nav">
-      <a href="#about" data-menu-link><span class="menu__idx">01</span> About</a>
-      <a href="#research" data-menu-link><span class="menu__idx">02</span> Research</a>
-      <a href="#work" data-menu-link><span class="menu__idx">03</span> Work</a>
-      <a href="#skills" data-menu-link><span class="menu__idx">04</span> Toolkit</a>
-      <a href="#channels" data-menu-link><span class="menu__idx">05</span> Channels</a>
-      <a href="#now" data-menu-link><span class="menu__idx">06</span> Now</a>
-      <a href="#contact" data-menu-link><span class="menu__idx">07</span> Contact</a>
+      <a href="#worlds" data-menu-link><span class="menu__idx">01</span> Worlds</a>
+      <a href="#engineer" data-menu-link><span class="menu__idx">02</span> Engineer</a>
+      <a href="#artist" data-menu-link><span class="menu__idx">03</span> Artist</a>
+      <a href="#athlete" data-menu-link><span class="menu__idx">04</span> Athlete</a>
+      <a href="#leader" data-menu-link><span class="menu__idx">05</span> Leader</a>
+      <a href="#poet" data-menu-link><span class="menu__idx">06</span> Poet</a>
+      <a href="#personal" data-menu-link><span class="menu__idx">07</span> Personal</a>
+      <a href="#contact" data-menu-link><span class="menu__idx">08</span> Contact</a>
     </nav>
     <div class="menu__foot">
       <span>Clausthal-Zellerfeld, DE</span>
@@ -103,55 +94,91 @@
     <section class="hero" id="hero">
       <div class="hero__inner">
         <p class="hero__eyebrow reveal" data-reveal>
-          <span class="dot"></span> Mo · MassJedi — AI/ML Researcher · Battery Intelligence
+          <span class="dot"></span> Mo · MassJedi — Clausthal, Germany
         </p>
 
-        <h1 class="hero__title" data-split>
-          I teach machines to <em>see a battery&rsquo;s future</em> &mdash; from its very first cycles.
-        </h1>
+        <h1 class="hero__title" data-split>One mind, <em>many lives.</em></h1>
 
-        <p class="hero__sub reveal" data-reveal data-reveal-delay="0.15">
-          M.Sc. researcher at <strong>TU Clausthal</strong>, working on deep learning for battery
-          lifetime &amp; remaining-useful-life prediction. Engineer by training, builder by instinct,
-          lifelong learner by design.
+        <div class="role-line reveal" data-reveal data-reveal-delay="0.15" aria-label="Engineer, Artist, Athlete, Manager, Poet, Cat-dad">
+          <span class="role-line__pre">I am</span>
+          <span class="role-cycle" id="roleCycle"><span>an Engineer</span></span>
+        </div>
+
+        <p class="hero__sub reveal" data-reveal data-reveal-delay="0.25">
+          Engineer by training, artist by impulse, athlete by discipline, poet at heart —
+          and devoted staff to <strong>two cats</strong>. I refuse to live inside a single box.
         </p>
 
-        <div class="hero__actions reveal" data-reveal data-reveal-delay="0.3">
-          <a href="#work" class="btn btn--solid" data-magnetic data-cursor="explore">
-            <span>Explore my work</span>
+        <div class="hero__actions reveal" data-reveal data-reveal-delay="0.35">
+          <a href="#worlds" class="btn btn--solid" data-magnetic data-cursor="explore">
+            <span>Explore my worlds</span>
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#contact" class="btn btn--ghost" data-magnetic data-cursor="link"><span>Get in touch</span></a>
         </div>
       </div>
 
-      <div class="hero__meta">
-        <div class="hero__meta-item"><span class="k">Based in</span><span class="v">Clausthal, Germany</span></div>
-        <div class="hero__meta-item"><span class="k">Focus</span><span class="v">ML · Batteries · Data</span></div>
-        <div class="hero__meta-item"><span class="k">Status</span><span class="v"><i class="pulse"></i> Open to collaborate</span></div>
-      </div>
-
-      <a href="#about" class="hero__scroll" data-cursor="down" aria-label="Scroll down">
-        <span>Scroll</span>
-        <span class="hero__scroll-line"></span>
+      <a href="#worlds" class="hero__scroll" data-cursor="down" aria-label="Scroll down">
+        <span>Scroll</span><span class="hero__scroll-line"></span>
       </a>
     </section>
 
     <!-- Marquee strip -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Deep Learning</span><i>✺</i><span>Battery Intelligence</span><i>✺</i><span>Transformers</span><i>✺</i><span>Remaining Useful Life</span><i>✺</i><span>Time-Series</span><i>✺</i><span>Data Science</span><i>✺</i>
-        <span>Deep Learning</span><i>✺</i><span>Battery Intelligence</span><i>✺</i><span>Transformers</span><i>✺</i><span>Remaining Useful Life</span><i>✺</i><span>Time-Series</span><i>✺</i><span>Data Science</span><i>✺</i>
+        <span>Engineer</span><i>✺</i><span>Artist</span><i>✺</i><span>Athlete</span><i>✺</i><span>Manager</span><i>✺</i><span>Poet</span><i>✺</i><span>Builder</span><i>✺</i><span>Cat-dad</span><i>✺</i>
+        <span>Engineer</span><i>✺</i><span>Artist</span><i>✺</i><span>Athlete</span><i>✺</i><span>Manager</span><i>✺</i><span>Poet</span><i>✺</i><span>Builder</span><i>✺</i><span>Cat-dad</span><i>✺</i>
       </div>
     </div>
 
-    <!-- ===================== ABOUT ===================== -->
-    <section class="section about" id="about">
+    <!-- ===================== WORLDS (facets index) ===================== -->
+    <section class="section worlds" id="worlds">
       <div class="section__head">
-        <span class="eyebrow" data-reveal>(01) — About</span>
-        <h2 class="section__title" data-reveal>The story so far</h2>
+        <span class="eyebrow" data-reveal>(00) — The worlds of Mo</span>
+        <h2 class="section__title" data-reveal>Many sides, <em>one person.</em></h2>
+        <p class="section__lead" data-reveal>A studio, a lab, a track, a stage, a page — pick a door.</p>
       </div>
 
+      <div class="facets">
+        <a href="#engineer" class="facet" data-reveal data-cursor="view">
+          <span class="facet__no">01</span><span class="facet__ico">⚙</span>
+          <h3>Engineer</h3><p>AI/ML &amp; battery intelligence. Research that ships.</p>
+          <span class="facet__go">Enter →</span>
+        </a>
+        <a href="#artist" class="facet" data-reveal data-reveal-delay="0.06" data-cursor="view">
+          <span class="facet__no">02</span><span class="facet__ico">✦</span>
+          <h3>Artist</h3><p>Where logic loosens its tie. A visual playground.</p>
+          <span class="facet__go">Enter →</span>
+        </a>
+        <a href="#athlete" class="facet" data-reveal data-reveal-delay="0.12" data-cursor="view">
+          <span class="facet__no">03</span><span class="facet__ico">⚡</span>
+          <h3>Athlete</h3><p>Discipline as a daily practice. Body &amp; will.</p>
+          <span class="facet__go">Enter →</span>
+        </a>
+        <a href="#leader" class="facet" data-reveal data-reveal-delay="0.18" data-cursor="view">
+          <span class="facet__no">04</span><span class="facet__ico">◆</span>
+          <h3>Manager</h3><p>Turning scattered effort into shared momentum.</p>
+          <span class="facet__go">Enter →</span>
+        </a>
+        <a href="#poet" class="facet" data-reveal data-reveal-delay="0.24" data-cursor="view">
+          <span class="facet__no">05</span><span class="facet__ico">❝</span>
+          <h3>Poet</h3><p>The quiet room where words come to live.</p>
+          <span class="facet__go">Enter →</span>
+        </a>
+        <a href="#personal" class="facet" data-reveal data-reveal-delay="0.3" data-cursor="view">
+          <span class="facet__no">06</span><span class="facet__ico">🐾</span>
+          <h3>The Human</h3><p>Two cats, big curiosity, and life off the clock.</p>
+          <span class="facet__go">Enter →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT / MANIFESTO ===================== -->
+    <section class="section about" id="about">
+      <div class="section__head">
+        <span class="eyebrow" data-reveal>— About</span>
+        <h2 class="section__title" data-reveal>I refuse to fit <em>in one box.</em></h2>
+      </div>
       <div class="about__grid">
         <div class="about__portrait" data-reveal>
           <div class="portrait">
@@ -161,120 +188,52 @@
           </div>
           <div class="about__signature">— Mo</div>
         </div>
-
         <div class="about__body">
           <p class="about__lead" data-reveal>
-            From Iran to the Harz mountains of Germany, my path has run from
-            <strong>mechanical engineering</strong> and the lab bench toward
-            <strong>data, code, and machine learning</strong>.
+            I'm <strong>Mohammadali “Mo” Masjedi</strong> — from Iran, now in the Harz mountains of Germany.
           </p>
           <p data-reveal>
-            Today I'm completing my M.Sc. at <strong>TU Clausthal</strong>, where my thesis pushes
-            modern <strong>transformer</strong> models into battery science — predicting how long a
-            lithium-ion cell will live from only its earliest cycles. I love the moment where rigorous
-            research becomes something usable, so I also build products like
-            <a href="#work" data-cursor="link"><strong>CellSight</strong></a> that turn models into decisions.
+            By day I build <strong>machine-learning models</strong> that read the future of batteries.
+            But a person is more than a job title. I <strong>paint and create</strong>, I <strong>train and compete</strong>,
+            I <strong>lead and organize</strong>, and I <strong>write poetry</strong> when the equations go quiet.
           </p>
           <p data-reveal>
-            Off the screen you'll find me learning <strong>German</strong>, refining my
-            second-brain in Obsidian, and chasing the next idea worth understanding deeply.
+            The thread through all of it is the same: curiosity, craft, and the stubborn belief that the
+            interesting things happen where disciplines collide. This site is a map of those collisions.
           </p>
-
           <ul class="timeline" data-reveal>
-            <li><span class="t__phase">Foundations</span><span class="t__desc">Mechanical engineering &amp; hands-on testing / instrumentation.</span></li>
-            <li><span class="t__phase">The pivot</span><span class="t__desc">Fell for data science, statistics &amp; deep learning.</span></li>
-            <li><span class="t__phase">2024–2025</span><span class="t__desc">Graduate study &amp; research at TU Clausthal (ISSE).</span></li>
-            <li><span class="t__phase">2026</span><span class="t__desc">M.Sc. thesis: battery lifetime prediction with transformers.</span></li>
-            <li><span class="t__phase">Now</span><span class="t__desc">Building CellSight · learning German · open to what's next.</span></li>
+            <li><span class="t__phase">Roots</span><span class="t__desc">Iran — engineering, art, and a love of words.</span></li>
+            <li><span class="t__phase">2024–2025</span><span class="t__desc">Graduate research at TU Clausthal, Germany.</span></li>
+            <li><span class="t__phase">2026</span><span class="t__desc">M.Sc. thesis · building CellSight · learning German.</span></li>
+            <li><span class="t__phase">Always</span><span class="t__desc">Making art, training, writing, and feeding two cats.</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ===================== STATS ===================== -->
-    <section class="stats" id="stats" aria-label="By the numbers">
-      <div class="stats__grid">
-        <div class="stat" data-reveal>
-          <div class="stat__num"><span data-count="5">0</span></div>
-          <div class="stat__label">model architectures benchmarked</div>
-        </div>
-        <div class="stat" data-reveal data-reveal-delay="0.08">
-          <div class="stat__num"><span data-count="6">0</span></div>
-          <div class="stat__label">public datasets unified</div>
-        </div>
-        <div class="stat" data-reveal data-reveal-delay="0.16">
-          <div class="stat__num"><span data-count="340">0</span><i>+</i></div>
-          <div class="stat__label">lithium-ion cells analyzed</div>
-        </div>
-        <div class="stat" data-reveal data-reveal-delay="0.24">
-          <div class="stat__num"><span data-count="8">0</span></div>
-          <div class="stat__label">random seeds for rigor</div>
+    <!-- ===================== ENGINEER ===================== -->
+    <section class="section facet-sec engineer" id="engineer">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">01</span>
+        <div>
+          <span class="eyebrow">The Engineer</span>
+          <h2 class="section__title">Intelligence, <em>applied.</em></h2>
         </div>
       </div>
-    </section>
-
-    <!-- ===================== RESEARCH ===================== -->
-    <section class="section research" id="research">
-      <div class="section__head">
-        <span class="eyebrow" data-reveal>(02) — Research</span>
-        <h2 class="section__title" data-reveal>Battery lifetime, predicted <em>early</em>.</h2>
-        <p class="section__lead" data-reveal>
-          My thesis asks a deceptively simple question: <strong>how long will this cell live?</strong>
-          — and answers it from only the first handful of charge–discharge cycles, so testing that
-          once took a year can inform a decision in weeks.
-        </p>
-      </div>
-
-      <div class="research__grid">
-        <article class="rcard rcard--wide" data-reveal>
-          <span class="rcard__no">01</span>
-          <h3>The problem</h3>
-          <p>Batteries reveal their lifespan slowly. Waiting for a cell to fully degrade is expensive
-            and slow. The goal: forecast <em>remaining useful life</em> from early-cycle signals.</p>
-        </article>
-
-        <article class="rcard" data-reveal data-reveal-delay="0.08">
-          <span class="rcard__no">02</span>
-          <h3>The method</h3>
-          <p>A <strong>variable-length transformer</strong> encoder, benchmarked head-to-head against
-            LSTM, GRU, CNN and a pooled baseline under one fair, multi-seed protocol.</p>
-        </article>
-
-        <article class="rcard" data-reveal data-reveal-delay="0.16">
-          <span class="rcard__no">03</span>
-          <h3>The insight</h3>
-          <p>Attention shines when there's context to attend to — the more early-cycle data the model
-            sees, the more its advantage grows, and the attention maps reveal <em>which</em> cycles matter.</p>
-        </article>
-
-        <article class="rcard rcard--accent" data-reveal data-reveal-delay="0.24">
-          <span class="rcard__no">04</span>
-          <h3>Across chemistries</h3>
-          <p>Unifying six public sources spanning multiple cell chemistries — studying what transfers
-            between them, and what stubbornly does not.</p>
-        </article>
-      </div>
-
-      <!-- Decorative attention strip -->
-      <div class="attn" data-reveal aria-hidden="true">
-        <div class="attn__grid" id="attnGrid"></div>
-        <span class="attn__cap">attention over early cycles · illustrative</span>
-      </div>
-
-      <p class="research__note" data-reveal>
-        Full thesis, figures &amp; methodology available on request · <strong>TU Clausthal, 2026</strong>.
+      <p class="section__lead" data-reveal>
+        AI/ML researcher at <strong>TU Clausthal</strong>. My thesis teaches transformers to predict a
+        lithium-ion battery's lifetime from only its earliest cycles — turning a year of testing into a
+        decision in weeks. I like research that leaves the lab and becomes a tool.
       </p>
-    </section>
 
-    <!-- ===================== WORK / PROJECTS ===================== -->
-    <section class="section work" id="work">
-      <div class="section__head">
-        <span class="eyebrow" data-reveal>(03) — Selected work</span>
-        <h2 class="section__title" data-reveal>Things I&rsquo;ve built &amp; researched</h2>
+      <div class="stats__grid stats__grid--inset">
+        <div class="stat" data-reveal><div class="stat__num"><span data-count="5">0</span></div><div class="stat__label">model architectures benchmarked</div></div>
+        <div class="stat" data-reveal data-reveal-delay="0.08"><div class="stat__num"><span data-count="6">0</span></div><div class="stat__label">public datasets unified</div></div>
+        <div class="stat" data-reveal data-reveal-delay="0.16"><div class="stat__num"><span data-count="340">0</span><i>+</i></div><div class="stat__label">lithium-ion cells analyzed</div></div>
+        <div class="stat" data-reveal data-reveal-delay="0.24"><div class="stat__num"><span data-count="8">0</span></div><div class="stat__label">random seeds for rigor</div></div>
       </div>
 
       <div class="projects">
-        <!-- CellSight (featured) -->
         <article class="project project--feature" data-reveal data-cursor="open">
           <div class="project__media">
             <div class="cs-demo" aria-hidden="true">
@@ -286,70 +245,32 @@
           <div class="project__body">
             <span class="project__tag">Product · Live demo</span>
             <h3 class="project__title">CellSight</h3>
-            <p class="project__desc">
-              An early-life battery health &amp; remaining-useful-life dashboard. It turns model
-              predictions into fleet decisions — state of health, projected lifetime, and which
-              cells need attention — in a single self-contained page. <em>Demo runs on synthetic data.</em>
-            </p>
+            <p class="project__desc">An early-life battery health &amp; remaining-useful-life dashboard — turning model predictions into fleet decisions in a single self-contained page. <em>Demo runs on synthetic data.</em></p>
             <div class="project__tech"><span>HTML</span><span>JS</span><span>Data Viz</span><span>RUL</span></div>
-            <a href="projects/cellsight/index.html" class="project__link" target="_blank" rel="noopener" data-magnetic data-cursor="open">
-              <span>Open live demo</span>
-              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            <a href="projects/cellsight/index.html" class="project__link" target="_blank" rel="noopener" data-magnetic data-cursor="open"><span>Open live demo</span>
+              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </article>
 
-        <!-- Thesis research -->
         <article class="project" data-reveal data-cursor="view">
           <div class="project__body">
             <span class="project__tag">Research · M.Sc. thesis</span>
             <h3 class="project__title">Battery Lifetime Prediction</h3>
-            <p class="project__desc">
-              Variable-length transformers for early-cycle RUL prediction, benchmarked against
-              recurrent and convolutional baselines across six datasets. Built on PyTorch with a
-              reproducible, multi-seed evaluation pipeline.
-            </p>
+            <p class="project__desc">Variable-length transformers for early-cycle RUL prediction, benchmarked against recurrent &amp; convolutional baselines across six datasets. Built on PyTorch with a reproducible, multi-seed pipeline.</p>
             <div class="project__tech"><span>PyTorch</span><span>Transformers</span><span>Time-Series</span></div>
-            <a href="#research" class="project__link" data-cursor="link"><span>Read the research</span>
-              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <span class="project__link is-static"><span>TU Clausthal · 2026</span></span>
           </div>
         </article>
 
-        <!-- Engineering -->
         <article class="project" data-reveal data-cursor="view">
           <div class="project__body">
             <span class="project__tag">Engineering · Instrumentation</span>
             <h3 class="project__title">Mechanical Testing &amp; DAQ</h3>
-            <p class="project__desc">
-              A hands-on background in mechanical testing, measurement and instrumentation — including
-              friction-torque and burst experiments and LabVIEW / NI data-acquisition automation.
-            </p>
+            <p class="project__desc">A hands-on background in mechanical testing, measurement and instrumentation — friction-torque &amp; burst experiments and LabVIEW / NI data-acquisition automation.</p>
             <div class="project__tech"><span>LabVIEW</span><span>NI</span><span>Measurement</span></div>
             <span class="project__link is-static"><span>Background</span></span>
           </div>
         </article>
-
-        <!-- This website -->
-        <article class="project" data-reveal data-cursor="view">
-          <div class="project__body">
-            <span class="project__tag">Open source · Web</span>
-            <h3 class="project__title">This Website</h3>
-            <p class="project__desc">
-              An award-tier, dependency-light static site — custom cursor, smooth scroll, a live
-              energy field, and motion throughout. No build step; deployed straight to GitHub Pages.
-            </p>
-            <div class="project__tech"><span>HTML</span><span>CSS</span><span>Vanilla JS</span></div>
-            <a href="#" class="project__link is-soon" data-cursor="link"><span>Source on GitHub</span></a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===================== SKILLS / TOOLKIT ===================== -->
-    <section class="section skills" id="skills">
-      <div class="section__head">
-        <span class="eyebrow" data-reveal>(04) — Toolkit</span>
-        <h2 class="section__title" data-reveal>The tools I think with</h2>
       </div>
 
       <div class="skills__rows" data-reveal>
@@ -362,19 +283,170 @@
           <span>scikit-learn</span><span>Statistics</span><span>LaTeX</span><span>Git &amp; GitHub</span><span>Linux / SSH</span><span>Data Viz</span><span>LabVIEW</span><span>HTML · CSS · JS</span>
         </div></div>
       </div>
+    </section>
 
-      <div class="skills__cats">
-        <div class="catcard" data-reveal>
-          <h4>Machine Learning</h4>
-          <p>Transformers, LSTM/GRU, CNNs, fair benchmarking, reproducible training, attention analysis.</p>
+    <!-- ===================== ARTIST ===================== -->
+    <section class="section facet-sec artist" id="artist">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">02</span>
+        <div>
+          <span class="eyebrow">The Artist</span>
+          <h2 class="section__title">Where logic <em>loosens its tie.</em></h2>
         </div>
-        <div class="catcard" data-reveal data-reveal-delay="0.08">
-          <h4>Data &amp; Science</h4>
-          <p>Time-series modeling, statistics, experiment design, evaluation, scientific visualization.</p>
+      </div>
+      <p class="section__lead" data-reveal>
+        Creativity is the other half of engineering. This is my visual playground — paintings, sketches,
+        photographs, experiments. <span class="hint">✎ Drop your images into <code>assets/img/art/</code> and they'll fill these frames.</span>
+      </p>
+
+      <div class="gallery">
+        <button class="art art--a" data-reveal data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
+        <button class="art art--b" data-reveal data-reveal-delay="0.05" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
+        <button class="art art--c" data-reveal data-reveal-delay="0.1" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
+        <button class="art art--d" data-reveal data-reveal-delay="0.15" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
+        <button class="art art--e" data-reveal data-reveal-delay="0.2" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
+        <button class="art art--f" data-reveal data-reveal-delay="0.25" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
+      </div>
+    </section>
+
+    <!-- ===================== ATHLETE ===================== -->
+    <section class="section facet-sec athlete" id="athlete">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">03</span>
+        <div>
+          <span class="eyebrow">The Athlete</span>
+          <h2 class="section__title">Discipline is a <em>daily practice.</em></h2>
         </div>
-        <div class="catcard" data-reveal data-reveal-delay="0.16">
-          <h4>Engineering &amp; Build</h4>
-          <p>Python tooling, LaTeX, Git workflows, remote GPU/Linux, instrumentation &amp; the web.</p>
+      </div>
+      <p class="section__lead" data-reveal>
+        Training is where I sharpen the mind by pushing the body. Consistency over intensity, every week.
+        <span class="hint">✎ Tell me your sport &amp; a proud number and I'll make these real.</span>
+      </p>
+
+      <div class="ath-cards">
+        <div class="ath-card" data-reveal>
+          <span class="ath-card__k">Discipline</span>
+          <span class="ath-card__v">Your sport</span>
+          <span class="ath-card__s">running · gym · climbing — your call</span>
+        </div>
+        <div class="ath-card" data-reveal data-reveal-delay="0.08">
+          <span class="ath-card__k">Personal best</span>
+          <span class="ath-card__v">— <i>add it</i></span>
+          <span class="ath-card__s">a time, a weight, a distance to be proud of</span>
+        </div>
+        <div class="ath-card" data-reveal data-reveal-delay="0.16">
+          <span class="ath-card__k">Next goal</span>
+          <span class="ath-card__v">— <i>add it</i></span>
+          <span class="ath-card__s">what you're chasing this season</span>
+        </div>
+      </div>
+      <blockquote class="ath-quote" data-reveal>“The body achieves what the mind believes.”</blockquote>
+    </section>
+
+    <!-- ===================== MANAGER / LEADER ===================== -->
+    <section class="section facet-sec leader" id="leader">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">04</span>
+        <div>
+          <span class="eyebrow">The Manager</span>
+          <h2 class="section__title">Scattered effort into <em>shared momentum.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal>
+        Leading is a craft of its own — clarity, trust, and turning a group of people into a team with a
+        direction. A few principles I lead by:
+      </p>
+      <div class="principles">
+        <div class="principle" data-reveal><span class="principle__no">01</span><h4>Clarity first</h4><p>People move fast when they know exactly where “done” is.</p></div>
+        <div class="principle" data-reveal data-reveal-delay="0.08"><span class="principle__no">02</span><h4>Trust by default</h4><p>Hire smart people, give them room, remove their blockers.</p></div>
+        <div class="principle" data-reveal data-reveal-delay="0.16"><span class="principle__no">03</span><h4>Decide, then learn</h4><p>A good decision today beats a perfect one too late.</p></div>
+        <div class="principle" data-reveal data-reveal-delay="0.24"><span class="principle__no">04</span><h4>Credit out, blame in</h4><p>Wins belong to the team; the misses are on the lead.</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== POET ===================== -->
+    <section class="section facet-sec poet" id="poet">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">05</span>
+        <div>
+          <span class="eyebrow">The Poet</span>
+          <h2 class="section__title">A quiet room <em>for words.</em></h2>
+        </div>
+      </div>
+
+      <div class="poem-toggle" data-reveal>
+        <button class="poem-toggle__btn is-active" data-lang="en" data-cursor="link">English</button>
+        <button class="poem-toggle__btn" data-lang="fa" data-cursor="link">فارسی</button>
+      </div>
+
+      <figure class="poem poem--en is-active" data-reveal>
+        <blockquote>
+          <p>Between the equation and the ember,</p>
+          <p>I keep a small room for words —</p>
+          <p>where numbers learn to breathe,</p>
+          <p>and silence finally rhymes.</p>
+        </blockquote>
+        <figcaption>✎ placeholder verse — send me your poems and they'll live here.</figcaption>
+      </figure>
+
+      <figure class="poem poem--fa" lang="fa" dir="rtl" data-reveal>
+        <blockquote>
+          <p>میان معادله و آتش،</p>
+          <p>اتاقی کوچک برای واژه‌ها نگه می‌دارم —</p>
+          <p>جایی که اعداد نفس کشیدن می‌آموزند،</p>
+          <p>و سکوت، سرانجام، قافیه می‌شود.</p>
+        </blockquote>
+        <figcaption dir="ltr">✎ متنِ نمونه — شعرهای خودت را برایم بفرست تا اینجا بنشینند.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ===================== PERSONAL / CATS ===================== -->
+    <section class="section facet-sec personal" id="personal">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">06</span>
+        <div>
+          <span class="eyebrow">The Human</span>
+          <h2 class="section__title">Life <em>off the clock.</em></h2>
+        </div>
+      </div>
+
+      <div class="personal__grid">
+        <div class="cats">
+          <h3 data-reveal>My co-workers 🐾</h3>
+          <p class="cats__note" data-reveal>Two cats run quality assurance on everything I do. <span class="hint">✎ Add their names &amp; photos to <code>assets/img/cats/</code>.</span></p>
+          <div class="cats__row">
+            <div class="cat" data-reveal>
+              <div class="cat__pic"><img src="assets/img/cats/cat1.jpg" alt="" onerror="this.classList.add('is-missing')" /><span class="cat__emoji">🐈</span></div>
+              <span class="cat__name">Cat #1 · <i>add name</i></span>
+            </div>
+            <div class="cat" data-reveal data-reveal-delay="0.1">
+              <div class="cat__pic"><img src="assets/img/cats/cat2.jpg" alt="" onerror="this.classList.add('is-missing')" /><span class="cat__emoji">🐈‍⬛</span></div>
+              <span class="cat__name">Cat #2 · <i>add name</i></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="interests">
+          <h3 data-reveal>Curiosities</h3>
+          <div class="chips" data-reveal>
+            <span class="chip">Artificial Intelligence</span>
+            <span class="chip">Energy &amp; Batteries</span>
+            <span class="chip">Painting &amp; Making</span>
+            <span class="chip">Training &amp; Sport</span>
+            <span class="chip">Poetry &amp; Language</span>
+            <span class="chip">German (A1, in progress)</span>
+            <span class="chip">Knowledge Management</span>
+            <span class="chip">Coffee &amp; Conversation</span>
+          </div>
+          <div class="now" id="now">
+            <h4 data-reveal>Now · June 2026</h4>
+            <ul class="now__list" data-reveal>
+              <li><i class="pulse"></i> Finishing my M.Sc. thesis at TU Clausthal.</li>
+              <li><i class="pulse"></i> Building &amp; refining <strong>CellSight</strong>.</li>
+              <li><i class="pulse"></i> Learning <strong>German</strong> — chasing A1 this autumn.</li>
+              <li><i class="pulse"></i> Painting more, writing more, training more.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -382,126 +454,29 @@
     <!-- ===================== CHANNELS ===================== -->
     <section class="section channels" id="channels">
       <div class="section__head">
-        <span class="eyebrow" data-reveal>(05) — Channels</span>
+        <span class="eyebrow" data-reveal>— Channels</span>
         <h2 class="section__title" data-reveal>Where to find me</h2>
-        <p class="section__lead" data-reveal>
-          The home of my writing, code and videos. Links marked <em>soon</em> are reserved —
-          drop me your URLs and they go live instantly.
-        </p>
+        <p class="section__lead" data-reveal>Links marked <em>soon</em> are reserved — send me your URLs and they go live instantly.</p>
       </div>
-
       <div class="channels__grid">
-        <a class="channel is-soon" href="#" data-platform="YouTube" data-cursor="link" data-reveal>
-          <span class="channel__ico">▶</span>
-          <span class="channel__name">YouTube</span>
-          <span class="channel__handle">add link</span>
-        </a>
-        <a class="channel" href="https://github.com/mmasjedi" target="_blank" rel="noopener" data-platform="GitHub" data-cursor="link" data-reveal data-reveal-delay="0.05">
-          <span class="channel__ico">◧</span>
-          <span class="channel__name">GitHub</span>
-          <span class="channel__handle">@mmasjedi</span>
-        </a>
-        <a class="channel is-soon" href="#" data-platform="LinkedIn" data-cursor="link" data-reveal data-reveal-delay="0.1">
-          <span class="channel__ico">in</span>
-          <span class="channel__name">LinkedIn</span>
-          <span class="channel__handle">add link</span>
-        </a>
-        <a class="channel is-soon" href="#" data-platform="Instagram" data-cursor="link" data-reveal data-reveal-delay="0.15">
-          <span class="channel__ico">◉</span>
-          <span class="channel__name">Instagram</span>
-          <span class="channel__handle">add link</span>
-        </a>
-        <a class="channel" href="https://huggingface.co/mmasjedi" target="_blank" rel="noopener" data-platform="Hugging Face" data-cursor="link" data-reveal data-reveal-delay="0.2">
-          <span class="channel__ico">🤗</span>
-          <span class="channel__name">Hugging Face</span>
-          <span class="channel__handle">@mmasjedi</span>
-        </a>
-        <a class="channel" href="https://www.kaggle.com/mmasjedi" target="_blank" rel="noopener" data-platform="Kaggle" data-cursor="link" data-reveal data-reveal-delay="0.25">
-          <span class="channel__ico">◆</span>
-          <span class="channel__name">Kaggle</span>
-          <span class="channel__handle">@mmasjedi</span>
-        </a>
-        <a class="channel is-soon" href="#" data-platform="X" data-cursor="link" data-reveal data-reveal-delay="0.3">
-          <span class="channel__ico">𝕏</span>
-          <span class="channel__name">X / Twitter</span>
-          <span class="channel__handle">add link</span>
-        </a>
-        <a class="channel" href="mailto:mohammadalimasjedi@gmail.com" data-platform="Email" data-cursor="mail" data-reveal data-reveal-delay="0.35">
-          <span class="channel__ico">✉</span>
-          <span class="channel__name">Email</span>
-          <span class="channel__handle">say hello</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===================== NOW + INTERESTS ===================== -->
-    <section class="section now" id="now">
-      <div class="now__grid">
-        <div class="now__col" data-reveal>
-          <span class="eyebrow">(06) — Now</span>
-          <h2 class="section__title">What I&rsquo;m up to</h2>
-          <p class="now__updated">Updated June 2026</p>
-          <ul class="now__list">
-            <li><i class="pulse"></i> Finishing my M.Sc. thesis at TU Clausthal.</li>
-            <li><i class="pulse"></i> Building &amp; refining <strong>CellSight</strong>.</li>
-            <li><i class="pulse"></i> Learning <strong>German</strong> — chasing A1 this autumn.</li>
-            <li><i class="pulse"></i> Designing my Obsidian second-brain.</li>
-          </ul>
-        </div>
-
-        <div class="now__col" data-reveal data-reveal-delay="0.12">
-          <span class="eyebrow">Interests</span>
-          <h2 class="section__title">Things I care about</h2>
-          <div class="chips">
-            <span class="chip">Artificial Intelligence</span>
-            <span class="chip">Energy &amp; Batteries</span>
-            <span class="chip">Deep Learning</span>
-            <span class="chip">Knowledge Management</span>
-            <span class="chip">Languages &amp; Culture</span>
-            <span class="chip">Product &amp; Startups</span>
-            <span class="chip">Scientific Writing</span>
-            <span class="chip">Continuous Learning</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Notes / news -->
-      <div class="notes">
-        <div class="notes__head" data-reveal>
-          <span class="eyebrow">Notes &amp; news</span>
-          <h3>Writing &amp; updates</h3>
-        </div>
-        <div class="notes__grid">
-          <article class="note is-soon" data-reveal>
-            <span class="note__meta">Essay · soon</span>
-            <h4>Why early-cycle prediction is the whole game</h4>
-            <p>The case for forecasting a battery's life before it's halfway through it.</p>
-          </article>
-          <article class="note is-soon" data-reveal data-reveal-delay="0.08">
-            <span class="note__meta">Story · soon</span>
-            <h4>From the test bench to the transformer</h4>
-            <p>How a mechanical engineer fell for machine learning.</p>
-          </article>
-          <article class="note is-soon" data-reveal data-reveal-delay="0.16">
-            <span class="note__meta">Build log · soon</span>
-            <h4>Turning research into CellSight</h4>
-            <p>From a thesis result to a dashboard someone can actually use.</p>
-          </article>
-        </div>
+        <a class="channel is-soon" href="#" data-platform="YouTube" data-cursor="link" data-reveal><span class="channel__ico">▶</span><span class="channel__name">YouTube</span><span class="channel__handle">add link</span></a>
+        <a class="channel is-soon" href="#" data-platform="Instagram" data-cursor="link" data-reveal data-reveal-delay="0.05"><span class="channel__ico">◉</span><span class="channel__name">Instagram</span><span class="channel__handle">add link</span></a>
+        <a class="channel is-soon" href="#" data-platform="LinkedIn" data-cursor="link" data-reveal data-reveal-delay="0.1"><span class="channel__ico">in</span><span class="channel__name">LinkedIn</span><span class="channel__handle">add link</span></a>
+        <a class="channel" href="https://github.com/mmasjedi" target="_blank" rel="noopener" data-platform="GitHub" data-cursor="link" data-reveal data-reveal-delay="0.15"><span class="channel__ico">◧</span><span class="channel__name">GitHub</span><span class="channel__handle">@mmasjedi</span></a>
+        <a class="channel is-soon" href="#" data-platform="X" data-cursor="link" data-reveal data-reveal-delay="0.2"><span class="channel__ico">𝕏</span><span class="channel__name">X / Twitter</span><span class="channel__handle">add link</span></a>
+        <a class="channel" href="https://huggingface.co/mmasjedi" target="_blank" rel="noopener" data-platform="Hugging Face" data-cursor="link" data-reveal data-reveal-delay="0.25"><span class="channel__ico">🤗</span><span class="channel__name">Hugging Face</span><span class="channel__handle">@mmasjedi</span></a>
+        <a class="channel" href="https://www.kaggle.com/mmasjedi" target="_blank" rel="noopener" data-platform="Kaggle" data-cursor="link" data-reveal data-reveal-delay="0.3"><span class="channel__ico">◆</span><span class="channel__name">Kaggle</span><span class="channel__handle">@mmasjedi</span></a>
+        <a class="channel" href="mailto:mohammadalimasjedi@gmail.com" data-platform="Email" data-cursor="mail" data-reveal data-reveal-delay="0.35"><span class="channel__ico">✉</span><span class="channel__name">Email</span><span class="channel__handle">say hello</span></a>
       </div>
     </section>
 
     <!-- ===================== CONTACT ===================== -->
     <section class="section contact" id="contact">
       <div class="contact__inner">
-        <span class="eyebrow" data-reveal>(07) — Contact</span>
-        <h2 class="contact__title" data-split>Let&rsquo;s build something <em>worth understanding.</em></h2>
-        <p class="contact__sub reveal" data-reveal>
-          Research collaborations, battery &amp; ML projects, or just a good conversation — my inbox is open.
-        </p>
-        <a href="mailto:mohammadalimasjedi@gmail.com" class="contact__mail" data-magnetic data-cursor="mail" data-reveal>
-          mohammadalimasjedi@gmail.com
-        </a>
+        <span class="eyebrow" data-reveal>— Contact</span>
+        <h2 class="contact__title" data-split>Let&rsquo;s make something <em>across the lines.</em></h2>
+        <p class="contact__sub reveal" data-reveal>Research, art, a project, or just a good conversation — my inbox is open.</p>
+        <a href="mailto:mohammadalimasjedi@gmail.com" class="contact__mail" data-magnetic data-cursor="mail" data-reveal>mohammadalimasjedi@gmail.com</a>
         <div class="contact__socials" data-reveal>
           <a href="https://github.com/mmasjedi" target="_blank" rel="noopener" data-cursor="link">GitHub</a>
           <a href="#" class="is-soon" data-cursor="link">LinkedIn</a>
@@ -512,7 +487,6 @@
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="footer__row">
       <span class="footer__logo">Mo<i>·</i>MassJedi</span>
@@ -520,11 +494,16 @@
     </div>
     <div class="footer__row footer__row--sub">
       <span>© <span id="year">2026</span> Mohammadali Masjedi — Clausthal, Germany</span>
-      <span>Designed &amp; built with intent · Dark cinematic edition</span>
+      <span>One mind, many lives · built with intent</span>
     </div>
   </footer>
 
-  <!-- Smooth scroll (graceful fallback if CDN unavailable) -->
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close">✕</button>
+    <img src="" alt="" />
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="js/main.js"></script>
 </body>
