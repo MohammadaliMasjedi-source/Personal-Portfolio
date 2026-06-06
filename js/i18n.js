@@ -68,7 +68,7 @@
       "cin.title": "تصویر، راهی برای اندیشیدن.",
       "cin.lead": "در سنتِ سینمای ایران — صبور، انسانی و نگران به زندگیِ روزمره.",
       "cin.p1": "سینما به قلبِ کارِ من نزدیک است. به تصاویری دل‌بسته‌ام که به‌جای پاسخ‌های آسان، پرسش می‌آفرینند؛ تصویرهایی که با توجه و سادگی به انسان می‌نگرند.",
-      "cin.p2": "کارِ سینماییِ من با جایزه‌ای در پیوند با بنیاد کیارستمی شناخته شده است؛ در روحِ سینمای عباس کیارستمی، سینمای توجه و سادگی.",
+      "cin.p2": "در روحِ سینمای عباس کیارستمی کار می‌کنم — فیلم‌هایی صبور که از نزدیک به زندگیِ روزمره می‌نگرند و در کوچک‌ترین لحظه‌های انسانی معنا می‌جویند.",
 
       "mus.kicker": "موسیقی و آواز",
       "mus.title": "از سیم تا کلام.",
@@ -140,7 +140,7 @@
       "cin.title": "Bilder als Denken.",
       "cin.lead": "In der Tradition des iranischen Films — geduldig, menschlich, dem Alltag zugewandt.",
       "cin.p1": "Das Kino liegt im Zentrum meiner Arbeit. Es zieht mich zu Bildern, die Fragen stellen statt einfache Antworten zu geben — Bilder, die den Menschen mit Aufmerksamkeit und Einfachheit ansehen.",
-      "cin.p2": "Meine Filmarbeit wurde mit einer Auszeichnung im Umfeld der Kiarostami-Stiftung gewürdigt, im Geist von Abbas Kiarostamis Kino der Aufmerksamkeit.",
+      "cin.p2": "Ich arbeite im Geist von Abbas Kiarostamis Kino — geduldige Filme, die das Alltägliche aus der Nähe betrachten und im kleinsten menschlichen Moment Bedeutung finden.",
 
       "mus.kicker": "Musik & Stimme",
       "mus.title": "Von der Saite zum Wort.",
