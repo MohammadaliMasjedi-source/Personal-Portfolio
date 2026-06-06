@@ -6,7 +6,7 @@ The personal site & portfolio of **Mohammadali (Mo) Masjedi** — AI/ML research
 battery-intelligence builder, lifelong learner. A dark, cinematic, motion-rich
 single-page site with **no build step** — it deploys straight to GitHub Pages.
 
-**Live:** `https://USERNAME.github.io/massjedi-website/` *(update after you deploy)*
+**Live:** https://mohammadalimasjedi-source.github.io/Personal-Portfolio/
 
 ---
 
