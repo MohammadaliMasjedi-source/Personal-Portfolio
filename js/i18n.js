@@ -57,9 +57,9 @@
       /* === NEW cultural sections === */
       "ah.kicker": "خانهٔ هنر شیراز",
       "ah.title": "خانه‌ای برای هنر.",
-      "ah.lead": "کمک به برپاییِ صحنه‌ای برای هنر و فیلمِ مستقل در شیراز.",
+      "ah.lead": "هم‌بنیان‌گذاری و گردانندگیِ صحنه‌ای برای هنر و فیلمِ مستقل در شیراز.",
       "ah.p1": "خانهٔ هنر شیراز فضایی فرهنگیِ مستقل است — گالری، صحنه‌ای برای موسیقی و تئاتر، کافه و کتاب‌فروشی زیر یک سقف. این مکان پدید آمد تا به هنرمندانِ جوان جایی برای نمایشِ کارشان بدهد و مردم را گردِ فرهنگ کنار هم آورد.",
-      "ah.p2": "در خانهٔ هنر شیراز در شمارِ کسانی بوده‌ام که بسترِ فرهنگی و هنری را برپا کردند — امکانِ ساخت و پخشِ فیلم‌های کوتاه و برنامه‌های مستقلِ هنری را برای هنرمندان فراهم آوردم. برای من این هرگز فقط یک ساختمان نبود؛ صحنه‌ای بود برای هنرمندانِ جوان.",
+      "ah.p2": "به‌عنوان هم‌بنیان‌گذار و مدیرِ خانهٔ هنر شیراز (۱۳۹۰–۱۳۹۷)، در برپاییِ بسترِ فرهنگی و هنری سهیم بودم — امکانِ ساخت و پخشِ فیلم‌های کوتاه و برنامه‌های مستقلِ هنری را برای هنرمندان فراهم آوردم. برای من این هرگز فقط یک ساختمان نبود؛ صحنه‌ای بود برای هنرمندانِ جوان.",
       "ah.c1.h": "گالری", "ah.c1.p": "نمایشگاه برای هنرمندانِ شناخته‌شده و نوظهور.",
       "ah.c2.h": "صحنه", "ah.c2.p": "موسیقیِ زنده، تئاتر و اجرا.",
       "ah.c3.h": "کافه و کتاب", "ah.c3.p": "جایی برای دیدار، خواندن و گفت‌وگو.",
@@ -73,7 +73,7 @@
       "mus.kicker": "موسیقی و آواز",
       "mus.title": "از سیم تا کلام.",
       "mus.lead": "از گیتار کلاسیک تا کلامِ آوازی.",
-      "mus.p1": "نوازنده و آموزگارِ گیتار کلاسیک‌ام. موسیقی برایم هم پیشه‌ای است که به شاگردان می‌آموزم و هم زمینهٔ پژوهش — تا آنجا که نرم‌افزاری ساخته‌ام که ملودیِ خوانده‌شده را به تبلیچرِ گیتار تبدیل می‌کند.",
+      "mus.p1": "نوازنده و آموزگارِ گیتار کلاسیک‌ام با بیش از هجده سال تجربه. نوازندگی‌ام مقامِ نخستِ المپیادِ هنریِ کشور (موسیقی) و مقامِ دومِ جشنوارهٔ ملیِ گیتار را برایم به ارمغان آورد، و کارشناسیِ ارشدِ پژوهشِ هنر دارم. در آموزشگاهِ موسیقیِ فروغ تدریس کرده‌ام و عضوِ شورای سیاست‌گذاریِ موسیقیِ استانِ فارس بوده‌ام.",
       "mus.p2": "همچنین در تلاوتِ قرآن با سبکی آوازی شناخته می‌شوم — به‌کارگیریِ صدا و نفَس برای حملِ متن با احساس. این بخشی از همان عشق به صدا و معناست.",
 
       "col.kicker": "آدم‌ها و هم‌کاران",
@@ -129,9 +129,9 @@
 
       "ah.kicker": "Shiraz Art House",
       "ah.title": "Ein Zuhause für die Kunst.",
-      "ah.lead": "Mithilfe beim Aufbau einer Bühne für unabhängige Kunst und Film in Schiras.",
+      "ah.lead": "Mitbegründung und Leitung einer Bühne für unabhängige Kunst und Film in Schiras.",
       "ah.p1": "Das Shiraz Art House ist ein unabhängiger Kulturraum — Galerie, Bühne für Musik und Theater, Café und Buchladen unter einem Dach. Es entstand, um jungen Künstlern einen Ort zu geben und Menschen rund um die Kultur zusammenzubringen.",
-      "ah.p2": "Im Shiraz Art House gehörte ich zu denen, die die kulturelle und künstlerische Plattform mit aufgebaut haben — ich machte es Künstlern möglich, Kurzfilme zu produzieren und zu zeigen und unabhängige Kunstprogramme zu gestalten. Für mich war es nie nur ein Gebäude, sondern eine Bühne für junge Künstler.",
+      "ah.p2": "Als Mitbegründer und Leiter des Shiraz Art House (2012–2019) half ich, die kulturelle und künstlerische Plattform aufzubauen — ich machte es Künstlern möglich, Kurzfilme zu produzieren und zu zeigen und unabhängige Kunstprogramme zu gestalten. Für mich war es nie nur ein Gebäude, sondern eine Bühne für junge Künstler.",
       "ah.c1.h": "Galerie", "ah.c1.p": "Ausstellungen für etablierte und junge Künstler.",
       "ah.c2.h": "Bühne", "ah.c2.p": "Livemusik, Theater und Performance.",
       "ah.c3.h": "Café & Bücher", "ah.c3.p": "Ein Ort zum Treffen, Lesen und Reden.",
@@ -145,7 +145,7 @@
       "mus.kicker": "Musik & Stimme",
       "mus.title": "Von der Saite zum Wort.",
       "mus.lead": "Von klassischer Gitarre bis zum rezitierten Wort.",
-      "mus.p1": "Ich bin klassischer Gitarrist und Lehrer. Musik ist für mich Handwerk und Forschung zugleich — ich entwickle sogar Software, die eine gesungene Melodie in Gitarren-Tabulatur verwandelt.",
+      "mus.p1": "Ich bin klassischer Gitarrist und Lehrer mit über 18 Jahren Erfahrung. Mein Spiel brachte mir den ersten Platz bei Irans nationaler Kunst-Olympiade (Musik) und den zweiten Platz beim Nationalen Gitarrenfestival ein; ich habe einen Master in Kunstforschung. Ich unterrichtete an der Forough-Musikakademie und war Mitglied im Musikrat der Provinz Fars.",
       "mus.p2": "Bekannt bin ich auch für melodische Koranrezitation — Stimme und Atem tragen einen Text mit Gefühl. Es ist Teil derselben Liebe zu Klang und Bedeutung.",
 
       "col.kicker": "Menschen & Mitwirkende",

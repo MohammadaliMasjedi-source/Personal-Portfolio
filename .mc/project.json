@@ -4,7 +4,7 @@
   "name": "Mo · MassJedi — Portfolio",
   "emoji": "🌐",
   "category": "Web · Personal",
-  "priority": "high",
+  "priority": "med",
   "private": false,
   "status": "active",
   "tagline": "Personal brand site (one mind, many lives).",
@@ -130,14 +130,38 @@
       "progress": 0,
       "status": "active",
       "subphases": [
-        { "title": "FA/EN/DE i18n engine (reload-based switch, RTL-safe, strips per-char split for Persian)", "done": true },
-        { "title": "Art-life sections: Shiraz Art House, Cinema, Music & Quran, Collaborators, Press, Values", "done": true },
-        { "title": "Language switch in nav (EN/FA/DE) + Vazirmatn + right-to-left styles", "done": true },
-        { "title": "Wikipedia drafts EN/FA/DE + honest how-to (private, in _private/, gitignored)", "done": true },
-        { "title": "Verified in preview: English renders, no console errors, Persian flips to RTL + translates", "done": true },
-        { "title": "Add real facts, photos, and press/interview source links (_private/FILL-ME-facts.md)", "done": false },
-        { "title": "Translate remaining deep-tech sections (engineer/athlete/manager/poet/personal) to FA/DE", "done": false },
-        { "title": "Approve + push to GitHub Pages; later submit Wikipedia via AfC once independent sources exist", "done": false }
+        {
+          "title": "FA/EN/DE i18n engine (reload-based switch, RTL-safe, strips per-char split for Persian)",
+          "done": true
+        },
+        {
+          "title": "Art-life sections: Shiraz Art House, Cinema, Music & Quran, Collaborators, Press, Values",
+          "done": true
+        },
+        {
+          "title": "Language switch in nav (EN/FA/DE) + Vazirmatn + right-to-left styles",
+          "done": true
+        },
+        {
+          "title": "Wikipedia drafts EN/FA/DE + honest how-to (private, in _private/, gitignored)",
+          "done": true
+        },
+        {
+          "title": "Verified in preview: English renders, no console errors, Persian flips to RTL + translates",
+          "done": true
+        },
+        {
+          "title": "Add real facts, photos, and press/interview source links (_private/FILL-ME-facts.md)",
+          "done": false
+        },
+        {
+          "title": "Translate remaining deep-tech sections (engineer/athlete/manager/poet/personal) to FA/DE",
+          "done": false
+        },
+        {
+          "title": "Approve + push to GitHub Pages; later submit Wikipedia via AfC once independent sources exist",
+          "done": false
+        }
       ]
     }
   ],
@@ -168,7 +192,12 @@
       "date": "2026-06-06",
       "decision": "Add FA/EN/DE + full art-life identity; keep public tone humane/universal; Wikipedia only via Articles-for-Creation once independent sources exist. Auto-sync pushed it live before review, so the unverified 'Kiarostami award' line was removed as a precaution until the user confirms it.",
       "why": "User wants a Wikipedia presence + clean multilingual site across his many lives (Shiraz Art House, cinema, music/Quran, Neda Aryana). A self-written Wikipedia page gets deleted; an unverified award claim on a live public page could harm him, so under-claiming is safer until facts arrive.",
-      "rejected": ["Create a second separate website", "Publish a self-written Wikipedia page now", "Full open political voice on the public site", "Assert the Kiarostami award without confirmation"]
+      "rejected": [
+        "Create a second separate website",
+        "Publish a self-written Wikipedia page now",
+        "Full open political voice on the public site",
+        "Assert the Kiarostami award without confirmation"
+      ]
     },
     {
       "date": "2026-06-05",
