@@ -6,10 +6,10 @@
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#060608" />
 
-  <title>Mo · MassJedi — Engineer · Artist · Athlete · Poet</title>
-  <meta name="description" content="The personal site of Mohammadali (Mo) Masjedi — engineer & AI/ML researcher, artist, athlete, manager, poet, and devoted staff to two cats. One mind, many lives." />
+  <title>Mo · MassJedi — Guitarist · Developer · Project Manager · Cultural Activist</title>
+  <meta name="description" content="The personal site of Mohammadali (Mo) Masjedi — classical guitarist & teacher, software developer, project manager, cultural activist, and devoted staff to two cats. One mind, many lives." />
   <meta name="author" content="Mohammadali Masjedi" />
-  <meta name="keywords" content="Mo MassJedi, Mohammadali Masjedi, engineer, artist, athlete, poet, machine learning, battery, AI, portfolio, personal website" />
+  <meta name="keywords" content="Mo MassJedi, Mohammadali Masjedi, classical guitarist, guitar teacher, software developer, project manager, cultural activist, Shiraz Art House, portfolio, personal website" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Mo · MassJedi — One mind, many lives" />
@@ -103,14 +103,14 @@
 
         <h1 class="hero__title" data-split data-i18n="hero.title">One mind, <em>many lives.</em></h1>
 
-        <div class="role-line reveal" data-reveal data-reveal-delay="0.15" aria-label="Engineer, Artist, Athlete, Manager, Poet, Cat-dad">
+        <div class="role-line reveal" data-reveal data-reveal-delay="0.15" aria-label="Guitarist and teacher, software developer, project manager, cultural activist, cat-lover">
           <span class="role-line__pre">I am</span>
-          <span class="role-cycle" id="roleCycle"><span>an Engineer</span></span>
+          <span class="role-cycle" id="roleCycle"><span>a Guitarist &amp; Teacher</span></span>
         </div>
 
         <p class="hero__sub reveal" data-reveal data-reveal-delay="0.25" data-i18n="hero.sub">
-          Engineer by training, artist by impulse, athlete by discipline, poet at heart —
-          and devoted staff to <strong>two cats</strong>. I refuse to live inside a single box.
+          A classical guitarist and teacher, a software developer, a project manager, a cultural
+          activist — and devoted staff to <strong>two cats</strong>. One mind, many lives.
         </p>
 
         <div class="hero__actions reveal" data-reveal data-reveal-delay="0.35">
@@ -130,8 +130,8 @@
     <!-- Marquee strip -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Engineer</span><i>✺</i><span>Artist</span><i>✺</i><span>Athlete</span><i>✺</i><span>Manager</span><i>✺</i><span>Poet</span><i>✺</i><span>Builder</span><i>✺</i><span>Cat-dad</span><i>✺</i>
-        <span>Engineer</span><i>✺</i><span>Artist</span><i>✺</i><span>Athlete</span><i>✺</i><span>Manager</span><i>✺</i><span>Poet</span><i>✺</i><span>Builder</span><i>✺</i><span>Cat-dad</span><i>✺</i>
+        <span>Guitarist</span><i>✺</i><span>Teacher</span><i>✺</i><span>Software Developer</span><i>✺</i><span>Project Manager</span><i>✺</i><span>Cultural Activist</span><i>✺</i><span>Cat-lover</span><i>✺</i>
+        <span>Guitarist</span><i>✺</i><span>Teacher</span><i>✺</i><span>Software Developer</span><i>✺</i><span>Project Manager</span><i>✺</i><span>Cultural Activist</span><i>✺</i><span>Cat-lover</span><i>✺</i>
       </div>
     </div>
 
@@ -538,16 +538,18 @@
 
       <div class="personal__grid">
         <div class="cats">
-          <h3 data-reveal>My co-workers 🐾</h3>
-          <p class="cats__note" data-reveal>Two cats run quality assurance on everything I do. <span class="hint">✎ Add their names &amp; photos to <code>assets/img/cats/</code>.</span></p>
+          <h3 data-reveal data-i18n="cats.h">Jupiter &amp; Memo 🐾</h3>
+          <p class="cats__note" data-reveal data-i18n="cats.lead">My two cats — and my most honest quality-assurance team. They approve of naps, sunlit windowsills, and absolutely none of my deadlines.</p>
           <div class="cats__row">
             <div class="cat" data-reveal>
-              <div class="cat__pic"><img src="assets/img/cats/cat1.jpg" alt="" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')" /><span class="cat__emoji">🐈</span></div>
-              <span class="cat__name">Cat #1 · <i>add name</i></span>
+              <div class="cat__pic"><img src="assets/img/cats/jupiter.jpg" alt="Jupiter the cat" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')" /><span class="cat__emoji">🪐</span></div>
+              <span class="cat__name" data-i18n="cats.jupi">Jupiter — “Jupi”</span>
+              <span class="cat__bio" data-i18n="cats.jupi.bio">Gravitational. Rules the warmest lap in the room and supervises the whole apartment from the highest shelf.</span>
             </div>
             <div class="cat" data-reveal data-reveal-delay="0.1">
-              <div class="cat__pic"><img src="assets/img/cats/cat2.jpg" alt="" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')" /><span class="cat__emoji">🐈‍⬛</span></div>
-              <span class="cat__name">Cat #2 · <i>add name</i></span>
+              <div class="cat__pic"><img src="assets/img/cats/memo.jpg" alt="Memo the cat" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')" /><span class="cat__emoji">🐈‍⬛</span></div>
+              <span class="cat__name" data-i18n="cats.memo">Memo</span>
+              <span class="cat__bio" data-i18n="cats.memo.bio">Reviews every line of code by sitting on the keyboard — and signs off on the day only once the lights are low.</span>
             </div>
           </div>
         </div>
@@ -633,7 +635,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <!-- i18n must load BEFORE main.js so text is translated before it gets animated/split -->
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/i18n.js?v=2"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

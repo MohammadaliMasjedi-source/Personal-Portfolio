@@ -520,6 +520,7 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .cat__pic img:not(.is-missing) ~ .cat__emoji { display: none; }
 .cat__name { display: block; margin-top: 12px; font-family: var(--font-display); font-weight: 500; }
 .cat__name i { color: var(--text-mute); font-style: italic; font-weight: 400; }
+.cat__bio { display: block; margin-top: 7px; font-size: 13px; line-height: 1.55; color: var(--text-dim); }
 .now { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 26px; }
 .now h4 { font-family: var(--font-display); font-weight: 500; font-size: 16px; color: var(--volt); margin-bottom: 14px; letter-spacing: .05em; }
 
