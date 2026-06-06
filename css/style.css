@@ -379,7 +379,7 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .footer__logo i { color: var(--volt); font-style: normal; }
 .footer__top { font-family: var(--font-display); color: var(--text-dim); transition: color .3s; }
 .footer__top:hover { color: var(--volt); }
-.footer__row--sub { margin-top: 24px; color: var(--text-mute); font-size: 13px; }
+.footer__row--sub { margin-top: 24px; color: #80858f; font-size: 13px; } /* a11y: 5.5:1 on bg (--text-mute was 4.0:1, below WCAG AA) */
 
 /* ---------- Reveal animations ---------- */
 [data-reveal] { opacity: 0; transform: translateY(38px); transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
@@ -492,7 +492,7 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .principle { padding: clamp(26px, 3vw, 38px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); transition: transform .4s var(--ease), border-color .4s; }
 .principle:hover { transform: translateY(-4px); border-color: var(--line-2); }
 .principle__no { font-family: var(--font-display); color: var(--volt); font-size: 14px; letter-spacing: .1em; }
-.principle h4 { font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 10px 0 8px; }
+.principle h3 { font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 10px 0 8px; }
 .principle p { color: var(--text-dim); }
 
 /* ---- Poet ---- */
