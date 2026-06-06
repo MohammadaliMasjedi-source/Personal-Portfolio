@@ -568,6 +568,17 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .sec-prose p { color: var(--text-dim); margin-bottom: 1.1em; }
 .sec-prose p:last-child { margin-bottom: 0; }
 .sec-link { margin-top: 22px; }
+
+/* Real-photo media block inside a facet section (e.g. the concert in Music) */
+.sec-media { margin-top: 44px; }
+.sec-media__grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 14px; }
+.sec-media__grid img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 10;
+  border-radius: var(--radius); border: 1px solid var(--line); display: block;
+  filter: saturate(1.02) contrast(1.02); transition: transform .5s var(--ease), border-color .4s; }
+.sec-media__grid img:hover { transform: translateY(-3px); border-color: var(--line-2); }
+.sec-media__cap { margin-top: 16px; font-family: var(--font-display); font-size: 13px;
+  letter-spacing: .01em; color: var(--text-mute); max-width: 70ch; }
+@media (max-width: 720px) { .sec-media__grid { grid-template-columns: 1fr; } }
 .sec-link a { color: var(--volt); font-family: var(--font-display); font-size: 14px; letter-spacing: .03em; }
 .sec-link a:hover { color: var(--text); }
 
