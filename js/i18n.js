@@ -33,8 +33,16 @@
       /* hero */
       "hero.eyebrow": "محمدعلی مسجدی — کلاوستال، آلمان",
       "hero.title": "یک ذهن، زندگی‌های بسیار.",
-      "hero.sub": "مهندس به تربیت، هنرمند به انگیزه، ورزشکار به انضباط و شاعر در دل — و خدمتگزارِ دو گربه. حاضر نیستم در یک جعبه زندگی کنم.",
+      "hero.sub": "نوازنده و مدرس گیتار کلاسیک، توسعه‌دهندهٔ نرم‌افزار، مدیر پروژه و کنشگر فرهنگی — و خدمتگزارِ دو گربه. یک ذهن، زندگی‌های بسیار.",
       "hero.cta1": "جهان‌هایم را ببین", "hero.cta2": "تماس", "hero.scroll": "پایین",
+
+      /* cats */
+      "cats.h": "ژوپیتر و ممو 🐾",
+      "cats.lead": "دو گربه‌ام — و صادق‌ترین تیمِ تضمین کیفیتم. چرت‌ها و لبهٔ آفتاب‌گیرِ پنجره را تأیید می‌کنند، و هیچ‌کدام از ضرب‌الاجل‌هایم را.",
+      "cats.jupi": "ژوپیتر — «ژوپی»",
+      "cats.jupi.bio": "جاذبه‌دار. گرم‌ترین آغوشِ اتاق را در اختیار دارد و از بلندترین قفسه بر همه‌جا نظارت می‌کند.",
+      "cats.memo": "ممو",
+      "cats.memo.bio": "هر خط کد را با نشستن روی کیبورد بازبینی می‌کند — و روز را تنها وقتی چراغ‌ها کم‌نور شد، تمام‌شده اعلام می‌کند.",
 
       /* worlds */
       "worlds.kicker": "(۰۰) — جهان‌های محمدعلی",
@@ -108,8 +116,16 @@
 
       "hero.eyebrow": "Mohammad Ali Masjedi — Clausthal, Deutschland",
       "hero.title": "Ein Geist, viele Leben.",
-      "hero.sub": "Ingenieur aus Ausbildung, Künstler aus Impuls, Sportler aus Disziplin, Dichter im Herzen — und treuer Diener zweier Katzen. Ich weigere mich, in einer einzigen Schublade zu leben.",
+      "hero.sub": "Klassischer Gitarrist und Lehrer, Softwareentwickler, Projektmanager und Kulturaktivist — und treuer Diener zweier Katzen. Ein Geist, viele Leben.",
       "hero.cta1": "Meine Welten entdecken", "hero.cta2": "Kontakt", "hero.scroll": "Scrollen",
+
+      /* cats */
+      "cats.h": "Jupiter & Memo 🐾",
+      "cats.lead": "Meine zwei Katzen — und mein ehrlichstes Qualitätssicherungs-Team. Sie billigen Nickerchen und sonnige Fensterbänke, aber keine einzige meiner Deadlines.",
+      "cats.jupi": "Jupiter — „Jupi“",
+      "cats.jupi.bio": "Gravitativ. Beherrscht den wärmsten Schoß im Raum und überwacht die ganze Wohnung vom höchsten Regal.",
+      "cats.memo": "Memo",
+      "cats.memo.bio": "Prüft jede Codezeile, indem er sich auf die Tastatur setzt — und gibt den Tag erst frei, wenn das Licht gedämpft ist.",
 
       "worlds.kicker": "(00) — Die Welten von Mo",
       "worlds.title": "Viele Seiten, ein Mensch.",
