@@ -89,6 +89,18 @@
   .gridline{stroke:var(--line);stroke-width:1}
   .annot{fill:var(--ink);font-size:11px;font-family:var(--sans);font-weight:600}
   .annot-bg{fill:#05080d;opacity:.72}
+
+  /* Professional polish: keyboard focus + themed scrollbar + smooth controls */
+  :where(a,button,select,input,[tabindex]):focus-visible{ outline:2px solid var(--acc); outline-offset:2px; border-radius:6px; }
+  :focus:not(:focus-visible){ outline:none; }
+  *{ scrollbar-width:thin; scrollbar-color:#2a3444 transparent; }
+  ::-webkit-scrollbar{ width:10px; height:10px; }
+  ::-webkit-scrollbar-track{ background:transparent; }
+  ::-webkit-scrollbar-thumb{ background:#2a3444; border-radius:20px; border:2px solid var(--bg); }
+  ::-webkit-scrollbar-thumb:hover{ background:#384559; }
+  button,select,a{ transition:background .2s ease, border-color .2s ease, color .2s ease, transform .1s ease; }
+  button:active{ transform:translateY(1px); }
+  @media (prefers-reduced-motion: reduce){ *{ transition-duration:.001ms !important; animation-duration:.001ms !important; } }
 </style>
 </head>
 <body>
