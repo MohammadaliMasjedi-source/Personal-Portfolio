@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you reference this website or its content, please cite it as below."
+title: "Mo · MassJedi — Personal Website & Portfolio"
+abstract: >-
+  The personal site and portfolio of Mohammadali (Mo) Masjedi — AI/ML researcher and
+  battery-intelligence builder. A dependency-free, single-page site deployed to GitHub Pages.
+type: software
+authors:
+  - family-names: Masjedi
+    given-names: Mohammadali
+    alias: Mo MassJedi
+url: "https://github.com/MohammadaliMasjedi-source/Personal-Portfolio"
+keywords:
+  - portfolio
+  - personal-website
+  - battery-intelligence
+  - machine-learning
+license: MIT
