@@ -14,12 +14,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Mo · MassJedi — One mind, many lives" />
   <meta property="og:description" content="Engineer · Artist · Athlete · Manager · Poet — and devoted staff to two cats." />
-  <meta property="og:image" content="assets/img/og.svg" />
-  <meta property="og:url" content="https://USERNAME.github.io/massjedi-website/" />
+  <meta property="og:image" content="https://mohammadalimasjedi-source.github.io/Personal-Portfolio/assets/img/og.png" />
+  <meta property="og:url" content="https://mohammadalimasjedi-source.github.io/Personal-Portfolio/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mo · MassJedi — One mind, many lives" />
   <meta name="twitter:description" content="Engineer · Artist · Athlete · Manager · Poet — and devoted staff to two cats." />
-  <meta name="twitter:image" content="assets/img/og.svg" />
+  <meta name="twitter:image" content="https://mohammadalimasjedi-source.github.io/Personal-Portfolio/assets/img/og.png" />
+  <link rel="canonical" href="https://mohammadalimasjedi-source.github.io/Personal-Portfolio/" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060608'/%3E%3Cpath d='M36 8 L20 36 H31 L28 56 L46 26 H34 Z' fill='%23c8fa3c'/%3E%3C/svg%3E" />
 
@@ -57,14 +58,16 @@
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a href="#worlds" data-cursor="link">Worlds</a>
-      <a href="#engineer" data-cursor="link">Engineer</a>
-      <a href="#artist" data-cursor="link">Artist</a>
-      <a href="#poet" data-cursor="link">Poet</a>
-      <a href="#about" data-cursor="link">About</a>
+      <a href="#worlds" data-cursor="link" data-i18n="nav.worlds">Worlds</a>
+      <a href="#engineer" data-cursor="link" data-i18n="nav.engineer">Engineer</a>
+      <a href="#artist" data-cursor="link" data-i18n="nav.artist">Artist</a>
+      <a href="#arthouse" data-cursor="link" data-i18n="nav.arthouse">Art House</a>
+      <a href="#about" data-cursor="link" data-i18n="nav.about">About</a>
     </nav>
 
-    <a href="#contact" class="nav__cta btn btn--ghost" data-magnetic data-cursor="link"><span>Get in touch</span></a>
+    <div class="lang-switch" id="langSwitch" role="group" aria-label="Language / زبان / Sprache"></div>
+
+    <a href="#contact" class="nav__cta btn btn--ghost" data-magnetic data-cursor="link"><span data-i18n="nav.cta">Get in touch</span></a>
 
     <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span>
@@ -73,17 +76,18 @@
 
   <div class="menu" id="menu" aria-hidden="true">
     <nav class="menu__nav">
-      <a href="#worlds" data-menu-link><span class="menu__idx">01</span> Worlds</a>
-      <a href="#engineer" data-menu-link><span class="menu__idx">02</span> Engineer</a>
-      <a href="#artist" data-menu-link><span class="menu__idx">03</span> Artist</a>
-      <a href="#athlete" data-menu-link><span class="menu__idx">04</span> Athlete</a>
-      <a href="#leader" data-menu-link><span class="menu__idx">05</span> Leader</a>
-      <a href="#poet" data-menu-link><span class="menu__idx">06</span> Poet</a>
-      <a href="#personal" data-menu-link><span class="menu__idx">07</span> Personal</a>
-      <a href="#contact" data-menu-link><span class="menu__idx">08</span> Contact</a>
+      <a href="#worlds" data-menu-link><span class="menu__idx">01</span> <span data-i18n="menu.worlds">Worlds</span></a>
+      <a href="#engineer" data-menu-link><span class="menu__idx">02</span> <span data-i18n="menu.engineer">Engineer</span></a>
+      <a href="#artist" data-menu-link><span class="menu__idx">03</span> <span data-i18n="menu.artist">Artist</span></a>
+      <a href="#arthouse" data-menu-link><span class="menu__idx">04</span> <span data-i18n="menu.arthouse">Shiraz Art House</span></a>
+      <a href="#cinema" data-menu-link><span class="menu__idx">05</span> <span data-i18n="menu.cinema">Cinema</span></a>
+      <a href="#music" data-menu-link><span class="menu__idx">06</span> <span data-i18n="menu.music">Music</span></a>
+      <a href="#athlete" data-menu-link><span class="menu__idx">07</span> <span data-i18n="menu.athlete">Athlete</span></a>
+      <a href="#poet" data-menu-link><span class="menu__idx">08</span> <span data-i18n="menu.poet">Poet</span></a>
+      <a href="#contact" data-menu-link><span class="menu__idx">09</span> <span data-i18n="menu.contact">Contact</span></a>
     </nav>
     <div class="menu__foot">
-      <span>Clausthal-Zellerfeld, DE</span>
+      <span data-i18n="menu.loc">Clausthal-Zellerfeld, DE</span>
       <span class="menu__clock" id="menuClock">—</span>
     </div>
   </div>
@@ -94,32 +98,32 @@
     <section class="hero" id="hero">
       <div class="hero__inner">
         <p class="hero__eyebrow reveal" data-reveal>
-          <span class="dot"></span> Mo · MassJedi — Clausthal, Germany
+          <span class="dot"></span> <span data-i18n="hero.eyebrow">Mo · MassJedi — Clausthal, Germany</span>
         </p>
 
-        <h1 class="hero__title" data-split>One mind, <em>many lives.</em></h1>
+        <h1 class="hero__title" data-split data-i18n="hero.title">One mind, <em>many lives.</em></h1>
 
         <div class="role-line reveal" data-reveal data-reveal-delay="0.15" aria-label="Engineer, Artist, Athlete, Manager, Poet, Cat-dad">
           <span class="role-line__pre">I am</span>
           <span class="role-cycle" id="roleCycle"><span>an Engineer</span></span>
         </div>
 
-        <p class="hero__sub reveal" data-reveal data-reveal-delay="0.25">
+        <p class="hero__sub reveal" data-reveal data-reveal-delay="0.25" data-i18n="hero.sub">
           Engineer by training, artist by impulse, athlete by discipline, poet at heart —
           and devoted staff to <strong>two cats</strong>. I refuse to live inside a single box.
         </p>
 
         <div class="hero__actions reveal" data-reveal data-reveal-delay="0.35">
           <a href="#worlds" class="btn btn--solid" data-magnetic data-cursor="explore">
-            <span>Explore my worlds</span>
+            <span data-i18n="hero.cta1">Explore my worlds</span>
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="#contact" class="btn btn--ghost" data-magnetic data-cursor="link"><span>Get in touch</span></a>
+          <a href="#contact" class="btn btn--ghost" data-magnetic data-cursor="link"><span data-i18n="hero.cta2">Get in touch</span></a>
         </div>
       </div>
 
       <a href="#worlds" class="hero__scroll" data-cursor="down" aria-label="Scroll down">
-        <span>Scroll</span><span class="hero__scroll-line"></span>
+        <span data-i18n="hero.scroll">Scroll</span><span class="hero__scroll-line"></span>
       </a>
     </section>
 
@@ -134,20 +138,20 @@
     <!-- ===================== WORLDS (facets index) ===================== -->
     <section class="section worlds" id="worlds">
       <div class="section__head">
-        <span class="eyebrow" data-reveal>(00) — The worlds of Mo</span>
-        <h2 class="section__title" data-reveal>Many sides, <em>one person.</em></h2>
-        <p class="section__lead" data-reveal>A studio, a lab, a track, a stage, a page — pick a door.</p>
+        <span class="eyebrow" data-reveal data-i18n="worlds.kicker">(00) — The worlds of Mo</span>
+        <h2 class="section__title" data-reveal data-i18n="worlds.title">Many sides, <em>one person.</em></h2>
+        <p class="section__lead" data-reveal data-i18n="worlds.lead">A studio, a lab, a track, a stage, a page — pick a door.</p>
       </div>
 
       <div class="facets">
         <a href="#engineer" class="facet" data-reveal data-cursor="view">
           <span class="facet__no">01</span><span class="facet__ico">⚙</span>
-          <h3>Engineer</h3><p>AI/ML &amp; battery intelligence. Research that ships.</p>
+          <h3 data-i18n="worlds.engineer.h">Engineer</h3><p data-i18n="worlds.engineer.p">AI/ML &amp; battery intelligence. Research that ships.</p>
           <span class="facet__go">Enter →</span>
         </a>
         <a href="#artist" class="facet" data-reveal data-reveal-delay="0.06" data-cursor="view">
           <span class="facet__no">02</span><span class="facet__ico">✦</span>
-          <h3>Artist</h3><p>Where logic loosens its tie. A visual playground.</p>
+          <h3 data-i18n="worlds.artist.h">Artist</h3><p data-i18n="worlds.artist.p">Where logic loosens its tie. A visual playground.</p>
           <span class="facet__go">Enter →</span>
         </a>
         <a href="#athlete" class="facet" data-reveal data-reveal-delay="0.12" data-cursor="view">
@@ -167,7 +171,22 @@
         </a>
         <a href="#personal" class="facet" data-reveal data-reveal-delay="0.3" data-cursor="view">
           <span class="facet__no">06</span><span class="facet__ico">🐾</span>
-          <h3>The Human</h3><p>Two cats, big curiosity, and life off the clock.</p>
+          <h3 data-i18n="worlds.human.h">The Human</h3><p data-i18n="worlds.human.p">Two cats, big curiosity, and life off the clock.</p>
+          <span class="facet__go">Enter →</span>
+        </a>
+        <a href="#arthouse" class="facet" data-reveal data-reveal-delay="0.36" data-cursor="view">
+          <span class="facet__no">07</span><span class="facet__ico">✶</span>
+          <h3 data-i18n="worlds.arthouse.h">Shiraz Art House</h3><p data-i18n="worlds.arthouse.p">Co-founding a home for art in Shiraz.</p>
+          <span class="facet__go">Enter →</span>
+        </a>
+        <a href="#cinema" class="facet" data-reveal data-reveal-delay="0.42" data-cursor="view">
+          <span class="facet__no">08</span><span class="facet__ico">🎬</span>
+          <h3 data-i18n="worlds.cinema.h">Cinema</h3><p data-i18n="worlds.cinema.p">Images as a way of thinking about people.</p>
+          <span class="facet__go">Enter →</span>
+        </a>
+        <a href="#music" class="facet" data-reveal data-reveal-delay="0.48" data-cursor="view">
+          <span class="facet__no">09</span><span class="facet__ico">🎼</span>
+          <h3 data-i18n="worlds.music.h">Music &amp; Voice</h3><p data-i18n="worlds.music.p">From classical guitar to melodic recitation.</p>
           <span class="facet__go">Enter →</span>
         </a>
       </div>
@@ -176,8 +195,8 @@
     <!-- ===================== ABOUT / MANIFESTO ===================== -->
     <section class="section about" id="about">
       <div class="section__head">
-        <span class="eyebrow" data-reveal>— About</span>
-        <h2 class="section__title" data-reveal>I refuse to fit <em>in one box.</em></h2>
+        <span class="eyebrow" data-reveal data-i18n="about.kicker">— About</span>
+        <h2 class="section__title" data-reveal data-i18n="about.title">I refuse to fit <em>in one box.</em></h2>
       </div>
       <div class="about__grid">
         <div class="about__portrait" data-reveal>
@@ -189,15 +208,15 @@
           <div class="about__signature">— Mo</div>
         </div>
         <div class="about__body">
-          <p class="about__lead" data-reveal>
+          <p class="about__lead" data-reveal data-i18n="about.lead">
             I'm <strong>Mohammadali “Mo” Masjedi</strong> — from Iran, now in the Harz mountains of Germany.
           </p>
-          <p data-reveal>
+          <p data-reveal data-i18n="about.p1">
             By day I build <strong>machine-learning models</strong> that read the future of batteries.
             But a person is more than a job title. I <strong>paint and create</strong>, I <strong>train and compete</strong>,
             I <strong>lead and organize</strong>, and I <strong>write poetry</strong> when the equations go quiet.
           </p>
-          <p data-reveal>
+          <p data-reveal data-i18n="about.p2">
             The thread through all of it is the same: curiosity, craft, and the stubborn belief that the
             interesting things happen where disciplines collide. This site is a map of those collisions.
           </p>
@@ -306,6 +325,105 @@
         <button class="art art--d" data-reveal data-reveal-delay="0.15" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
         <button class="art art--e" data-reveal data-reveal-delay="0.2" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
         <button class="art art--f" data-reveal data-reveal-delay="0.25" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
+      </div>
+    </section>
+
+    <!-- ===================== SHIRAZ ART HOUSE ===================== -->
+    <section class="section facet-sec arthouse" id="arthouse">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">07</span>
+        <div>
+          <span class="eyebrow" data-i18n="ah.kicker">Shiraz Art House</span>
+          <h2 class="section__title" data-i18n="ah.title">A home <em>for art.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="ah.lead">Co-founding a cultural space that gave Shiraz a stage.</p>
+      <div class="sec-prose">
+        <p data-reveal data-i18n="ah.p1">Shiraz Art House (خانهٔ هنر شیراز) is an independent cultural space in Shiraz, Iran — a gallery, a stage for music and theatre, a café and a bookshop under one roof. It was created to give young artists a place to show their work and to bring people together around culture.</p>
+        <p data-reveal data-i18n="ah.p2">As a co-founder, I helped shape its vision: an open, welcoming place where art is taken seriously and everyone is invited. The work was about more than a building — it was about making real difference in the cultural life of the city.</p>
+      </div>
+      <div class="principles">
+        <div class="principle" data-reveal><span class="principle__no">✦</span><h4 data-i18n="ah.c1.h">Gallery</h4><p data-i18n="ah.c1.p">Exhibitions for established and emerging artists.</p></div>
+        <div class="principle" data-reveal data-reveal-delay="0.08"><span class="principle__no">✦</span><h4 data-i18n="ah.c2.h">Stage</h4><p data-i18n="ah.c2.p">Live music, theatre and performance.</p></div>
+        <div class="principle" data-reveal data-reveal-delay="0.16"><span class="principle__no">✦</span><h4 data-i18n="ah.c3.h">Café &amp; Books</h4><p data-i18n="ah.c3.p">A place to meet, read and talk.</p></div>
+      </div>
+      <p class="sec-link" data-reveal><a href="https://www.instagram.com/khanehonarshiraz/" target="_blank" rel="noopener" data-cursor="link">@khanehonarshiraz ↗</a></p>
+    </section>
+
+    <!-- ===================== CINEMA ===================== -->
+    <section class="section facet-sec cinema" id="cinema">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">08</span>
+        <div>
+          <span class="eyebrow" data-i18n="cin.kicker">Cinema &amp; film</span>
+          <h2 class="section__title" data-i18n="cin.title">Images as <em>a way of thinking.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="cin.lead">In the tradition of Iranian film — patient, humane, close to ordinary life.</p>
+      <div class="sec-prose">
+        <p data-reveal data-i18n="cin.p1">Cinema is close to the heart of my work. I am drawn to images that ask questions instead of giving easy answers — images that look at people with attention and simplicity.</p>
+        <p data-reveal data-i18n="cin.p2">My film work has been recognised with an award connected to the Kiarostami Foundation, in the spirit of Abbas Kiarostami's cinema of attention and simplicity.</p>
+      </div>
+    </section>
+
+    <!-- ===================== MUSIC ===================== -->
+    <section class="section facet-sec music" id="music">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">09</span>
+        <div>
+          <span class="eyebrow" data-i18n="mus.kicker">Music &amp; voice</span>
+          <h2 class="section__title" data-i18n="mus.title">From the string <em>to the word.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="mus.lead">From classical guitar to the recited word.</p>
+      <div class="sec-prose">
+        <p data-reveal data-i18n="mus.p1">I'm a classical guitarist and teacher. Music is both a craft I pass on to students and a research interest — I even build software that turns a sung melody into guitar tablature.</p>
+        <p data-reveal data-i18n="mus.p2">I'm also known for Quran recitation in a melodic style — using voice and breath to carry a text with feeling. It is part of the same love of sound and meaning that runs through all my music.</p>
+      </div>
+    </section>
+
+    <!-- ===================== COLLABORATORS ===================== -->
+    <section class="section facet-sec collaborators" id="collaborators">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">10</span>
+        <div>
+          <span class="eyebrow" data-i18n="col.kicker">People &amp; collaborators</span>
+          <h2 class="section__title" data-i18n="col.title">Good work is <em>never made alone.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="col.lead">Much of this work is shared.</p>
+      <div class="sec-prose">
+        <p data-reveal data-i18n="col.p1">Neda Aryana is a close collaborator in the cultural work around Shiraz Art House — together we believe in art that opens minds and brings people together.</p>
+      </div>
+    </section>
+
+    <!-- ===================== INTERVIEWS / PRESS ===================== -->
+    <section class="section facet-sec press" id="press">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">11</span>
+        <div>
+          <span class="eyebrow" data-i18n="press.kicker">Interviews &amp; press</span>
+          <h2 class="section__title" data-i18n="press.title">Conversations <em>&amp; coverage.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="press.lead">Conversations, features and mentions.</p>
+      <div class="sec-prose">
+        <p data-reveal data-i18n="press.p1">A growing record of interviews and coverage — both interviews I have given, and conversations I have led with other artists.</p>
+      </div>
+    </section>
+
+    <!-- ===================== VALUES ===================== -->
+    <section class="section facet-sec values" id="values">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">12</span>
+        <div>
+          <span class="eyebrow" data-i18n="val.kicker">What it stands for</span>
+          <h2 class="section__title" data-i18n="val.title">Humanity, freedom, <em>and peace.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="val.lead">Humanity, freedom of expression, and peace.</p>
+      <div class="sec-prose">
+        <p data-reveal data-i18n="val.p1">Across art and engineering, the same values hold: respect for human dignity, the freedom to create and to speak, and a belief that culture can build bridges where politics builds walls. The work is hopeful by choice.</p>
       </div>
     </section>
 
@@ -473,9 +591,9 @@
     <!-- ===================== CONTACT ===================== -->
     <section class="section contact" id="contact">
       <div class="contact__inner">
-        <span class="eyebrow" data-reveal>— Contact</span>
-        <h2 class="contact__title" data-split>Let&rsquo;s make something <em>across the lines.</em></h2>
-        <p class="contact__sub reveal" data-reveal>Research, art, a project, or just a good conversation — my inbox is open.</p>
+        <span class="eyebrow" data-reveal data-i18n="contact.kicker">— Contact</span>
+        <h2 class="contact__title" data-split data-i18n="contact.title">Let&rsquo;s make something <em>across the lines.</em></h2>
+        <p class="contact__sub reveal" data-reveal data-i18n="contact.sub">Research, art, a project, or just a good conversation — my inbox is open.</p>
         <a href="mailto:mohammadalimasjedi@gmail.com" class="contact__mail" data-magnetic data-cursor="mail" data-reveal>mohammadalimasjedi@gmail.com</a>
         <div class="contact__socials" data-reveal>
           <a href="https://github.com/mmasjedi" target="_blank" rel="noopener" data-cursor="link">GitHub</a>
@@ -494,7 +612,7 @@
     </div>
     <div class="footer__row footer__row--sub">
       <span>© <span id="year">2026</span> Mohammadali Masjedi — Clausthal, Germany</span>
-      <span>One mind, many lives · built with intent</span>
+      <span data-i18n="footer.tagline">One mind, many lives · built with intent</span>
     </div>
   </footer>
 
@@ -505,6 +623,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <!-- i18n must load BEFORE main.js so text is translated before it gets animated/split -->
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

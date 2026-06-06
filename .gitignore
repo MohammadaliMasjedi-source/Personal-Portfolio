@@ -13,3 +13,6 @@ desktop.ini
 *.log
 node_modules/
 .cache/
+
+# Private brand kit (Wikipedia drafts, facts, strategy) — never publish
+_private/

@@ -543,3 +543,53 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
   .facet-head { gap: 14px; }
   .role-line { gap: 8px; }
 }
+
+/* =====================================================================
+   i18n — language switch · Persian font · right-to-left
+   (appended; additive — the default English design is unchanged)
+   ===================================================================== */
+.lang-switch {
+  display: inline-flex; align-items: center;
+  border: 1px solid var(--line-2); border-radius: 100px; overflow: hidden;
+  margin-left: 6px;
+}
+.lang-btn {
+  background: transparent; border: 0; cursor: pointer;
+  font-family: var(--font-display); font-size: 12px; font-weight: 600;
+  letter-spacing: .04em; color: var(--text-mute);
+  padding: 7px 11px; line-height: 1; transition: color .25s, background .25s;
+}
+.lang-btn:hover { color: var(--text); }
+.lang-btn.is-active { background: var(--volt); color: #06210a; }
+@media (hover: hover) and (pointer: fine) { .lang-btn { cursor: none; } }
+
+/* prose blocks in the new art-life sections */
+.sec-prose { max-width: 64ch; }
+.sec-prose p { color: var(--text-dim); margin-bottom: 1.1em; }
+.sec-prose p:last-child { margin-bottom: 0; }
+.sec-link { margin-top: 22px; }
+.sec-link a { color: var(--volt); font-family: var(--font-display); font-size: 14px; letter-spacing: .03em; }
+.sec-link a:hover { color: var(--text); }
+
+/* Persian: Vazirmatn + calmer line-height */
+html[lang="fa"] body { font-family: "Vazirmatn", var(--font-body); }
+html[lang="fa"] .hero__title,
+html[lang="fa"] .section__title,
+html[lang="fa"] .contact__title { font-family: "Vazirmatn", var(--font-display); font-weight: 700; line-height: 1.45; }
+html[lang="fa"] .section__lead,
+html[lang="fa"] .hero__sub,
+html[lang="fa"] .sec-prose p { line-height: 2.05; }
+html[lang="fa"] .eyebrow,
+html[lang="fa"] .menu__idx { font-family: "Vazirmatn", var(--font-display); }
+
+/* right-to-left layout */
+html[dir="rtl"] .lang-switch { margin-left: 0; margin-right: 6px; }
+html[dir="rtl"] .nav__links,
+html[dir="rtl"] .facet-head,
+html[dir="rtl"] .role-line { direction: rtl; }
+html[dir="rtl"] .section__head,
+html[dir="rtl"] .about__body,
+html[dir="rtl"] .sec-prose,
+html[dir="rtl"] .facet,
+html[dir="rtl"] .contact__inner { text-align: right; }
+html[dir="rtl"] .marquee { direction: ltr; }   /* keep decorative marquee LTR */
