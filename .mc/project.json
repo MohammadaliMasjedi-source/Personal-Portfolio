@@ -1,0 +1,76 @@
+{
+  "schema": "mc-project/v1",
+  "id": "massjedi-website",
+  "name": "Mo · MassJedi — Portfolio",
+  "emoji": "🌐",
+  "category": "Web · Personal",
+  "priority": "high",
+  "private": false,
+  "status": "active",
+  "tagline": "Personal brand site (one mind, many lives).",
+
+  "progress": null,
+  "currentPhase": "p2",
+  "nextAction": "Add assets/img/portrait.jpg and set the live og:url + GitHub Pages URL in README/index.html.",
+
+  "links": {
+    "github": "https://github.com/MohammadaliMasjedi-source/Personal-Portfolio",
+    "dashboard": null,
+    "board": null,
+    "obsidian": null,
+    "docs": "PROJECT.md"
+  },
+
+  "phases": [
+    {
+      "id": "p1", "title": "Foundation & content", "progress": 0, "status": "done",
+      "subphases": [
+        { "title": "Single-page site scaffold (HTML/CSS/JS, no build step)", "done": true },
+        { "title": "Core sections written (Hero, About, Research, Work, Toolkit, Channels, Contact)", "done": true },
+        { "title": "Design system in css/style.css (dark cinematic theme)", "done": true },
+        { "title": "Interactions in js/main.js (canvas field, cursor, scroll-reveal)", "done": true },
+        { "title": "README + LICENSE + .gitignore present", "done": true }
+      ]
+    },
+    {
+      "id": "p2", "title": "Personalization & assets", "progress": 0, "status": "active",
+      "subphases": [
+        { "title": "Email wired in Contact + Email channel", "done": true },
+        { "title": "Drop-in folders for art / cats / portrait images", "done": true },
+        { "title": "Add real portrait.jpg (currently monogram fallback)", "done": false },
+        { "title": "Replace is-soon placeholder channels with real links (YouTube, LinkedIn, Instagram, X)", "done": false },
+        { "title": "Export og.svg to 1200×630 PNG for share previews", "done": false }
+      ]
+    },
+    {
+      "id": "p3", "title": "Deploy & live", "progress": 0, "status": "active",
+      "subphases": [
+        { "title": "GitHub Pages workflow (.github/workflows/static.yml) + .nojekyll", "done": true },
+        { "title": "Push to GitHub and enable Pages source", "done": false },
+        { "title": "Set live URL + og:url to deployed address", "done": false },
+        { "title": "Verify live render on desktop + mobile", "done": false }
+      ]
+    },
+    {
+      "id": "p4", "title": "Demos & polish", "progress": 0, "status": "todo",
+      "subphases": [
+        { "title": "CellSight demo bundled under projects/cellsight", "done": true },
+        { "title": "Wire CellSight demo into the Work section", "done": false },
+        { "title": "Accessibility & performance pass (Lighthouse)", "done": false },
+        { "title": "Final copy review across all sections", "done": false }
+      ]
+    }
+  ],
+
+  "swot": {
+    "strengths": ["Zero-build static site, deploys straight to GitHub Pages", "Distinct dark cinematic design with rich motion", "Public-safe by design — no private/sensitive content"],
+    "weaknesses": ["Not yet deployed live; placeholder URLs", "Missing real portrait and several social links", "No tests or automated checks"],
+    "opportunities": ["Strong personal brand for research/career visibility", "Bundled CellSight demo can showcase real work", "Rename to USERNAME.github.io for a clean root URL"],
+    "threats": ["Stale placeholders erode credibility if left public", "Motion-heavy UX may hurt low-end/perf or accessibility", "CDN (Lenis/fonts) dependency for full experience"]
+  },
+
+  "decisions": [
+    { "date": "2026-06-05", "decision": "Rebuild as a multi-hyphenate personal-brand site (v2)", "why": "One mind, many lives — reflect the full range of work, not a single niche", "rejected": ["Keep the single-focus v1 site"] },
+    { "date": "2026-06-05", "decision": "Plain HTML/CSS/vanilla JS with no build step", "why": "Deploy straight to GitHub Pages, zero install/maintenance overhead", "rejected": ["Framework + bundler (React/Vite)"] }
+  ]
+}
