@@ -605,3 +605,50 @@ html[dir="rtl"] .sec-prose,
 html[dir="rtl"] .facet,
 html[dir="rtl"] .contact__inner { text-align: right; }
 html[dir="rtl"] .marquee { direction: ltr; }   /* keep decorative marquee LTR */
+
+
+/* =====================================================================
+   Professional polish — focus states, scrollbar, anchor offset,
+   micro-interactions. Appended last; the prefers-reduced-motion block
+   above already neutralises the transitions for motion-sensitive users.
+   ===================================================================== */
+
+/* Keyboard focus: a clean, branded ring for keyboard users only (mouse clicks
+   don't show it). A real accessibility + professionalism win. */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* Anchor links land below the fixed header instead of under it. */
+section[id], [id].section, .facet-sec[id] { scroll-margin-top: clamp(72px, 11vh, 104px); }
+
+/* Branded, unobtrusive scrollbar that matches the dark theme. */
+* { scrollbar-width: thin; scrollbar-color: #262a33 transparent; }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #262a33; border-radius: 20px; border: 3px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: #343945; }
+
+/* Tactile press feedback. */
+.btn:active, .channel:active, .facet:active, .project__link:active, .lang-btn:active {
+  transform: translateY(1px) scale(0.995);
+}
+
+/* The "Enter ->" arrow glides on hover / keyboard focus. */
+.facet__go { transition: transform .4s var(--ease), color .3s var(--ease); will-change: transform; }
+.facet:hover .facet__go, .facet:focus-visible .facet__go { transform: translateX(7px); color: var(--volt); }
+
+/* Subtle living zoom on the real photos inside clipped frames. */
+.cat__pic img, .sec-media__grid img { transition: transform .6s var(--ease), border-color .4s; }
+.cat__pic:hover img { transform: scale(1.05); }
+
+/* Active section is highlighted in the nav (set by js/polish.js) — reuses the
+   existing underline so it feels native. */
+.nav__links a.is-current { color: var(--text); }
+.nav__links a.is-current::after { width: 100%; }
+
+/* Don't let real photos be dragged out as ghost images. */
+img { -webkit-user-drag: none; user-select: none; }
