@@ -57,9 +57,9 @@
       /* === NEW cultural sections === */
       "ah.kicker": "خانهٔ هنر شیراز",
       "ah.title": "خانه‌ای برای هنر.",
-      "ah.lead": "هم‌بنیان‌گذاریِ فضایی فرهنگی که به شیراز صحنه‌ای تازه داد.",
+      "ah.lead": "کمک به برپاییِ صحنه‌ای برای هنر و فیلمِ مستقل در شیراز.",
       "ah.p1": "خانهٔ هنر شیراز فضایی فرهنگیِ مستقل است — گالری، صحنه‌ای برای موسیقی و تئاتر، کافه و کتاب‌فروشی زیر یک سقف. این مکان پدید آمد تا به هنرمندانِ جوان جایی برای نمایشِ کارشان بدهد و مردم را گردِ فرهنگ کنار هم آورد.",
-      "ah.p2": "بخشی از زندگیِ فرهنگیِ پیرامونِ خانهٔ هنر شیراز بوده‌ام — در گردِهم‌آوردنِ مردم حولِ نمایشگاه‌ها، موسیقی و اندیشه. برای من این هرگز فقط یک ساختمان نبود؛ دربارهٔ ایجادِ تفاوتی واقعی در زندگیِ فرهنگیِ شهر بود.",
+      "ah.p2": "در خانهٔ هنر شیراز در شمارِ کسانی بوده‌ام که بسترِ فرهنگی و هنری را برپا کردند — امکانِ ساخت و پخشِ فیلم‌های کوتاه و برنامه‌های مستقلِ هنری را برای هنرمندان فراهم آوردم. برای من این هرگز فقط یک ساختمان نبود؛ صحنه‌ای بود برای هنرمندانِ جوان.",
       "ah.c1.h": "گالری", "ah.c1.p": "نمایشگاه برای هنرمندانِ شناخته‌شده و نوظهور.",
       "ah.c2.h": "صحنه", "ah.c2.p": "موسیقیِ زنده، تئاتر و اجرا.",
       "ah.c3.h": "کافه و کتاب", "ah.c3.p": "جایی برای دیدار، خواندن و گفت‌وگو.",
@@ -129,9 +129,9 @@
 
       "ah.kicker": "Shiraz Art House",
       "ah.title": "Ein Zuhause für die Kunst.",
-      "ah.lead": "Mitbegründung eines Kulturraums, der Schiras eine Bühne gab.",
+      "ah.lead": "Mithilfe beim Aufbau einer Bühne für unabhängige Kunst und Film in Schiras.",
       "ah.p1": "Das Shiraz Art House ist ein unabhängiger Kulturraum — Galerie, Bühne für Musik und Theater, Café und Buchladen unter einem Dach. Es entstand, um jungen Künstlern einen Ort zu geben und Menschen rund um die Kultur zusammenzubringen.",
-      "ah.p2": "Ich bin Teil des kulturellen Lebens rund um das Shiraz Art House — ich helfe, Menschen rund um Ausstellungen, Musik und Ideen zusammenzubringen. Für mich war es nie nur ein Gebäude, sondern ein echter Beitrag zum kulturellen Leben der Stadt.",
+      "ah.p2": "Im Shiraz Art House gehörte ich zu denen, die die kulturelle und künstlerische Plattform mit aufgebaut haben — ich machte es Künstlern möglich, Kurzfilme zu produzieren und zu zeigen und unabhängige Kunstprogramme zu gestalten. Für mich war es nie nur ein Gebäude, sondern eine Bühne für junge Künstler.",
       "ah.c1.h": "Galerie", "ah.c1.p": "Ausstellungen für etablierte und junge Künstler.",
       "ah.c2.h": "Bühne", "ah.c2.p": "Livemusik, Theater und Performance.",
       "ah.c3.h": "Café & Bücher", "ah.c3.p": "Ein Ort zum Treffen, Lesen und Reden.",
