@@ -83,6 +83,8 @@
       "mus.lead": "از گیتار کلاسیک تا کلامِ آوازی.",
       "mus.p1": "نوازنده و آموزگارِ گیتار کلاسیک‌ام با بیش از هجده سال تجربه. نوازندگی‌ام مقامِ نخستِ المپیادِ هنریِ کشور (موسیقی) و مقامِ دومِ جشنوارهٔ ملیِ گیتار را برایم به ارمغان آورد، و کارشناسیِ ارشدِ پژوهشِ هنر دارم. در آموزشگاهِ موسیقیِ فروغ تدریس کرده‌ام و عضوِ شورای سیاست‌گذاریِ موسیقیِ استانِ فارس بوده‌ام.",
       "mus.p2": "همچنین در تلاوتِ قرآن با سبکی آوازی شناخته می‌شوم — به‌کارگیریِ صدا و نفَس برای حملِ متن با احساس. این بخشی از همان عشق به صدا و معناست.",
+      "mus.watch": "تماشا — گیتار کلاسیک، از کانالِ من <em>MoMas Music</em>:",
+      "mus.allvideos": "همهٔ ویدیوها",
 
       "col.kicker": "آدم‌ها و هم‌کاران",
       "col.title": "کارِ خوب هرگز تنها ساخته نمی‌شود.",
@@ -163,6 +165,8 @@
       "mus.lead": "Von klassischer Gitarre bis zum rezitierten Wort.",
       "mus.p1": "Ich bin klassischer Gitarrist und Lehrer mit über 18 Jahren Erfahrung. Mein Spiel brachte mir den ersten Platz bei Irans nationaler Kunst-Olympiade (Musik) und den zweiten Platz beim Nationalen Gitarrenfestival ein; ich habe einen Master in Kunstforschung. Ich unterrichtete an der Forough-Musikakademie und war Mitglied im Musikrat der Provinz Fars.",
       "mus.p2": "Bekannt bin ich auch für melodische Koranrezitation — Stimme und Atem tragen einen Text mit Gefühl. Es ist Teil derselben Liebe zu Klang und Bedeutung.",
+      "mus.watch": "Ansehen — klassische Gitarre, von meinem Kanal <em>MoMas Music</em>:",
+      "mus.allvideos": "Alle Videos",
 
       "col.kicker": "Menschen & Mitwirkende",
       "col.title": "Gute Arbeit entsteht nie allein.",
