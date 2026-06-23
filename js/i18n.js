@@ -95,6 +95,8 @@
       "press.title": "گفت‌وگوها و حضور در رسانه.",
       "press.lead": "گفت‌وگوها، گزارش‌ها و اشاره‌ها.",
       "press.p1": "سیاهه‌ای روبه‌رشد از گفت‌وگوها و پوشش رسانه‌ای — هم گفت‌وگوهایی که داشته‌ام و هم گفت‌وگوهایی که خود با هنرمندانِ دیگر پیش برده‌ام.",
+      "press.harzer": "هارتسر پانوراما (یکشنبه) — ۱۴ سپتامبر ۲۰۲۵: به‌عنوان نوازندهٔ گیتار با اجرای قطعاتِ خودم در ژرفای معدنِ روزِنهوفر کِررادشتوبه، کلاوستال‑تسلرفلد، معرفی شدم.",
+      "press.mehr": "خبرگزاری مهر — ۲۰۱۰: مقام دومِ بخش کلاسیکِ جشنوارهٔ گروه‌نوازیِ استان فارس با دوئتِ گیتار کلاسیک شیراز.",
 
       "val.kicker": "ارزش‌ها",
       "val.title": "بر چه می‌ایستد.",
@@ -177,6 +179,8 @@
       "press.title": "Gespräche und Medien.",
       "press.lead": "Gespräche, Berichte und Erwähnungen.",
       "press.p1": "Eine wachsende Sammlung von Interviews und Berichten — sowohl Interviews, die ich gegeben habe, als auch Gespräche, die ich mit anderen Künstlern geführt habe.",
+      "press.harzer": "Harzer Panorama am Sonntag — 14. September 2025: als Gitarrist mit eigenen Kompositionen unter Tage in der Rosenhöfer Kehrradstube, Clausthal-Zellerfeld, vorgestellt.",
+      "press.mehr": "Mehr News — 2010: zweiter Platz (Klassik) beim Ensemble-Musikfestival der Provinz Fars mit dem Shiraz Classical Guitar Duet.",
 
       "val.kicker": "Werte",
       "val.title": "Wofür es steht.",
