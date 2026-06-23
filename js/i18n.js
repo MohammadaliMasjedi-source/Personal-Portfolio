@@ -89,7 +89,7 @@
       "col.kicker": "آدم‌ها و هم‌کاران",
       "col.title": "کارِ خوب هرگز تنها ساخته نمی‌شود.",
       "col.lead": "بخشِ بزرگی از این کار مشترک است.",
-      "col.p1": "ندا آریانا هم‌کارِ نزدیک در فعالیت‌های فرهنگیِ پیرامونِ خانهٔ هنر شیراز است — با هم به هنری باور داریم که ذهن‌ها را می‌گشاید و مردم را گرد هم می‌آورد.",
+      "col.p1": "ندا آریانا — معمار، هم‌بنیان‌گذارِ خانهٔ هنر شیراز و عضوِ هیئت‌مدیرهٔ آن — از گردانندگانِ اصلیِ آن بود. ما با هم سکویی برای هنرمندانِ جوان ساختیم؛ به هنری باور داریم که ذهن‌ها را می‌گشاید و مردم را گرد هم می‌آورد.",
 
       "press.kicker": "گفت‌وگوها و رسانه",
       "press.title": "گفت‌وگوها و حضور در رسانه.",
@@ -173,7 +173,7 @@
       "col.kicker": "Menschen & Mitwirkende",
       "col.title": "Gute Arbeit entsteht nie allein.",
       "col.lead": "Vieles davon ist gemeinsam entstanden.",
-      "col.p1": "Neda Aryana ist eine enge Mitstreiterin in der Kulturarbeit rund um das Shiraz Art House — zusammen glauben wir an Kunst, die den Geist öffnet und Menschen verbindet.",
+      "col.p1": "Neda Aryana — Architektin, Mitbegründerin des Shiraz Art House und Mitglied seines Vorstands — war eine seiner treibenden Organisatorinnen. Gemeinsam haben wir eine Plattform für junge Künstler aufgebaut; wir glauben an Kunst, die den Geist öffnet und Menschen verbindet.",
 
       "press.kicker": "Interviews & Presse",
       "press.title": "Gespräche und Medien.",
