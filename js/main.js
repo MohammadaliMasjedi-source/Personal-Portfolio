@@ -386,7 +386,7 @@
     const closeBtn = lb.querySelector(".lightbox__close");
     const open = (src, alt) => { img.src = src; img.alt = alt || ""; lb.classList.add("is-open"); lb.setAttribute("aria-hidden", "false"); if (lenis) lenis.stop(); };
     const hide = () => { lb.classList.remove("is-open"); lb.setAttribute("aria-hidden", "true"); img.src = ""; if (lenis) lenis.start(); };
-    $$(".art").forEach((a) => a.addEventListener("click", () => {
+    $$(".art, .shot").forEach((a) => a.addEventListener("click", () => {
       const im = a.querySelector("img");
       if (im && !im.classList.contains("is-missing") && im.getAttribute("src")) open(im.src, im.alt);
     }));

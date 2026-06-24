@@ -631,6 +631,20 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 
 /* Real-photo media block inside a facet section (e.g. the concert in Music) */
 .sec-media { margin-top: 44px; }
+/* stage photo gallery (lightbox shots) */
+.shot { position: relative; padding: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; cursor: pointer; background: var(--surface-2); display: block; width: 100%; }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.03) contrast(1.02); transition: transform .6s var(--ease); }
+.shot:hover img { transform: scale(1.045); }
+.shot:hover { border-color: var(--volt); }
+.shot__zoom { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; background: rgba(20,16,9,0.72); color: var(--volt); font-size: 15px; opacity: 0; transform: translateY(-4px); transition: opacity .3s, transform .3s; pointer-events: none; }
+.shot:hover .shot__zoom, .shot:focus-visible .shot__zoom { opacity: 1; transform: translateY(0); }
+.shot:focus-visible { outline: 2px solid var(--volt); outline-offset: 2px; }
+.shot--feature { aspect-ratio: 16 / 7; margin-bottom: 14px; }
+.shot--feature img { aspect-ratio: 16 / 7; }
+.stage-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.stage-gallery .shot { aspect-ratio: 4 / 5; }
+.sec-media__hint { color: var(--text-mute); font-weight: 400; opacity: 0.8; }
+@media (max-width: 720px){ .stage-gallery { grid-template-columns: repeat(2, 1fr); } .shot--feature { aspect-ratio: 16 / 9; } .shot--feature img { aspect-ratio: 16 / 9; } }
 .sec-media__grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 14px; }
 .sec-media__grid img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 10;
   border-radius: var(--radius); border: 1px solid var(--line); display: block;
