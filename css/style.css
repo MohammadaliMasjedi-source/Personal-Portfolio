@@ -555,6 +555,12 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .cat__pic img.is-missing { display: none; }
 .cat__emoji { font-size: 64px; }
 .cat__pic img:not(.is-missing) ~ .cat__emoji { display: none; }
+/* Jupiter — in memory */
+.cat--memorial .cat__pic { background: radial-gradient(120% 120% at 50% 30%, rgba(227,162,60,0.10), var(--bg-2) 70%); border-color: var(--line-2); }
+.cat--memorial .cat__emoji { opacity: 0.92; filter: saturate(0.85); animation: catGlow 6s var(--ease, ease) infinite; }
+@keyframes catGlow { 0%,100% { text-shadow: 0 0 0 transparent; transform: translateY(0); } 50% { text-shadow: 0 0 26px rgba(227,162,60,0.55); transform: translateY(-3px); } }
+.cat__memorial { display: block; font-family: var(--font-serif, serif); font-style: italic; font-size: 0.82rem; letter-spacing: 0.04em; color: var(--volt); opacity: 0.85; margin-top: 2px; }
+@media (prefers-reduced-motion: reduce){ .cat--memorial .cat__emoji { animation: none; } }
 .cat__name { display: block; margin-top: 12px; font-family: var(--font-display); font-weight: 500; }
 .cat__name i { color: var(--text-mute); font-style: italic; font-weight: 400; }
 .cat__bio { display: block; margin-top: 7px; font-size: 13px; line-height: 1.55; color: var(--text-dim); }

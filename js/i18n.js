@@ -37,10 +37,11 @@
       "hero.cta1": "جهان‌هایم را ببین", "hero.cta2": "تماس", "hero.scroll": "پایین",
 
       /* cats */
-      "cats.h": "ژوپیتر و ممو 🐾",
-      "cats.lead": "دو گربه‌ام — و صادق‌ترین تیمِ تضمین کیفیتم. چرت‌ها و لبهٔ آفتاب‌گیرِ پنجره را تأیید می‌کنند، و هیچ‌کدام از ضرب‌الاجل‌هایم را.",
+      "cats.h": "ممو و ژوپیتر 🐾",
+      "cats.lead": "ممو تیمِ همیشگیِ تضمینِ کیفیتِ من است — چرت‌ها و لبهٔ آفتاب‌گیرِ پنجره را تأیید می‌کند، و هیچ‌کدام از ضرب‌الاجل‌هایم را. و ژوپیتر — «ژوپی»ِ من — که در ۲۰۲۶ از دستش دادم و هر روز دلم برایش تنگ می‌شود.",
       "cats.jupi": "ژوپیتر — «ژوپی»",
-      "cats.jupi.bio": "جاذبه‌دار. گرم‌ترین آغوشِ اتاق را در اختیار دارد و از بلندترین قفسه بر همه‌جا نظارت می‌کند.",
+      "cats.jupi.mem": "به یادِ همیشگی · ۲۰۲۶",
+      "cats.jupi.bio": "جاذبه‌دار. گرم‌ترین آغوشِ اتاق از آنِ او بود و از بلندترین قفسه بر همه‌جا نظارت می‌کرد. برای همیشه سیّارهٔ کوچکِ من.",
       "cats.memo": "ممو",
       "cats.memo.bio": "هر خط کد را با نشستن روی کیبورد بازبینی می‌کند — و روز را تنها وقتی چراغ‌ها کم‌نور شد، تمام‌شده اعلام می‌کند.",
 
@@ -53,7 +54,7 @@
       "worlds.arthouse.h": "خانهٔ هنر شیراز", "worlds.arthouse.p": "خانه‌ای مستقل برای هنر در شیراز.",
       "worlds.cinema.h": "سینما", "worlds.cinema.p": "تصویر، راهی برای اندیشیدن دربارهٔ انسان.",
       "worlds.music.h": "موسیقی و شعر", "worlds.music.p": "از گیتار کلاسیک تا شعرِ فارسی.",
-      "worlds.human.h": "انسان", "worlds.human.p": "دو گربه، کنجکاویِ بزرگ و زندگی بیرون از ساعت.",
+      "worlds.human.h": "انسان", "worlds.human.p": "گربه‌ها، کنجکاویِ بزرگ و زندگی بیرون از ساعت.",
 
       /* about */
       "about.kicker": "— درباره",
@@ -124,10 +125,11 @@
       "hero.cta1": "Meine Welten entdecken", "hero.cta2": "Kontakt", "hero.scroll": "Scrollen",
 
       /* cats */
-      "cats.h": "Jupiter & Memo 🐾",
-      "cats.lead": "Meine zwei Katzen — und mein ehrlichstes Qualitätssicherungs-Team. Sie billigen Nickerchen und sonnige Fensterbänke, aber keine einzige meiner Deadlines.",
+      "cats.h": "Memo & Jupiter 🐾",
+      "cats.lead": "Memo ist mein treues Qualitätssicherungs-Team — billigt Nickerchen und sonnige Fensterbänke, aber keine einzige meiner Deadlines. Und Jupiter — mein Jupi — den ich 2026 verloren habe und jeden Tag vermisse.",
       "cats.jupi": "Jupiter — „Jupi“",
-      "cats.jupi.bio": "Gravitativ. Beherrscht den wärmsten Schoß im Raum und überwacht die ganze Wohnung vom höchsten Regal.",
+      "cats.jupi.mem": "In liebevoller Erinnerung · 2026",
+      "cats.jupi.bio": "Gravitativ. Er beherrschte den wärmsten Schoß im Raum und wachte vom höchsten Regal über das ganze Zuhause. Für immer mein kleiner Planet.",
       "cats.memo": "Memo",
       "cats.memo.bio": "Prüft jede Codezeile, indem er sich auf die Tastatur setzt — und gibt den Tag erst frei, wenn das Licht gedämpft ist.",
 
@@ -139,7 +141,7 @@
       "worlds.arthouse.h": "Shiraz Art House", "worlds.arthouse.p": "Ein unabhängiges Zuhause für die Kunst in Schiras.",
       "worlds.cinema.h": "Kino", "worlds.cinema.p": "Bilder als eine Art, über Menschen nachzudenken.",
       "worlds.music.h": "Musik & Poesie", "worlds.music.p": "Von klassischer Gitarre bis zur persischen Poesie.",
-      "worlds.human.h": "Der Mensch", "worlds.human.p": "Zwei Katzen, große Neugier und das Leben jenseits der Uhr.",
+      "worlds.human.h": "Der Mensch", "worlds.human.p": "Katzen, große Neugier und das Leben jenseits der Uhr.",
 
       "about.kicker": "— Über mich",
       "about.title": "Ich passe in keine Schublade.",
