@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
 </head>
 
 <body>
@@ -391,14 +391,20 @@
 
       <div class="sec-media" data-reveal style="margin-top:2.4rem">
         <p class="sec-media__cap" style="margin-bottom:1.1rem" data-i18n="mus.watch">Watch — classical guitar, from my channel <em>MoMas Music</em>:</p>
-        <div class="channels__grid">
-          <a class="channel" href="https://www.youtube.com/watch?v=GEKXhkIqvZI" target="_blank" rel="noopener" data-platform="YouTube" data-cursor="link" data-reveal><span class="channel__ico">▶</span><span class="channel__name">Romance</span><span class="channel__handle">Romance Anónimo</span></a>
-          <a class="channel" href="https://www.youtube.com/watch?v=UN2HLqgAzD4" target="_blank" rel="noopener" data-platform="YouTube" data-cursor="link" data-reveal data-reveal-delay="0.05"><span class="channel__ico">▶</span><span class="channel__name">Mey</span><span class="channel__handle">after Omar Khayyám · live</span></a>
-          <a class="channel" href="https://www.youtube.com/watch?v=f6eTEyb7Wfc" target="_blank" rel="noopener" data-platform="YouTube" data-cursor="link" data-reveal data-reveal-delay="0.1"><span class="channel__ico">▶</span><span class="channel__name">Milonga</span><span class="channel__handle">Jorge Cardoso</span></a>
-          <a class="channel" href="https://www.youtube.com/watch?v=ioWmD2cFJC4" target="_blank" rel="noopener" data-platform="YouTube" data-cursor="link" data-reveal data-reveal-delay="0.15"><span class="channel__ico">▶</span><span class="channel__name">Canarios</span><span class="channel__handle">Gaspar Sanz</span></a>
-          <a class="channel" href="https://www.youtube.com/watch?v=ecWfTsg4S6g" target="_blank" rel="noopener" data-platform="YouTube" data-cursor="link" data-reveal data-reveal-delay="0.2"><span class="channel__ico">▶</span><span class="channel__name">Tango</span><span class="channel__handle">Francisco Tárrega</span></a>
-          <a class="channel" href="https://www.youtube.com/watch?v=Lmmp4tyKdIs" target="_blank" rel="noopener" data-platform="YouTube" data-cursor="link" data-reveal data-reveal-delay="0.25"><span class="channel__ico">▶</span><span class="channel__name">El Testament d'Amèlia</span><span class="channel__handle">Catalan folk song</span></a>
-          <a class="channel" href="https://www.youtube.com/@Mohammad_masjedi" target="_blank" rel="noopener" data-platform="YouTube" data-cursor="link" data-reveal data-reveal-delay="0.3"><span class="channel__ico">▶</span><span class="channel__name" data-i18n="mus.allvideos">All videos</span><span class="channel__handle">@Mohammad_masjedi</span></a>
+        <div class="vgallery">
+          <button class="vid vid--hero" type="button" data-yt="UN2HLqgAzD4" data-reveal aria-label="Play: Mey — after Omar Khayyám, live">
+            <img class="vid__thumb" src="https://i.ytimg.com/vi/UN2HLqgAzD4/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/UN2HLqgAzD4/hqdefault.jpg'" alt="Mey — after Omar Khayyám, live classical guitar" loading="lazy" decoding="async" />
+            <span class="vid__play" aria-hidden="true"></span>
+            <span class="vid__meta"><span class="vid__name">Mey</span><span class="vid__handle">after Omar Khayyám · live</span></span>
+          </button>
+          <div class="vgrid">
+            <button class="vid" type="button" data-yt="GEKXhkIqvZI" data-reveal aria-label="Play: Romance — Romance Anónimo"><img class="vid__thumb" src="https://i.ytimg.com/vi/GEKXhkIqvZI/hqdefault.jpg" alt="Romance Anónimo, classical guitar" loading="lazy" decoding="async" /><span class="vid__play" aria-hidden="true"></span><span class="vid__meta"><span class="vid__name">Romance</span><span class="vid__handle">Romance Anónimo</span></span></button>
+            <button class="vid" type="button" data-yt="f6eTEyb7Wfc" data-reveal data-reveal-delay="0.05" aria-label="Play: Milonga — Jorge Cardoso"><img class="vid__thumb" src="https://i.ytimg.com/vi/f6eTEyb7Wfc/hqdefault.jpg" alt="Milonga by Jorge Cardoso, classical guitar" loading="lazy" decoding="async" /><span class="vid__play" aria-hidden="true"></span><span class="vid__meta"><span class="vid__name">Milonga</span><span class="vid__handle">Jorge Cardoso</span></span></button>
+            <button class="vid" type="button" data-yt="ioWmD2cFJC4" data-reveal data-reveal-delay="0.1" aria-label="Play: Canarios — Gaspar Sanz"><img class="vid__thumb" src="https://i.ytimg.com/vi/ioWmD2cFJC4/hqdefault.jpg" alt="Canarios by Gaspar Sanz, classical guitar" loading="lazy" decoding="async" /><span class="vid__play" aria-hidden="true"></span><span class="vid__meta"><span class="vid__name">Canarios</span><span class="vid__handle">Gaspar Sanz</span></span></button>
+            <button class="vid" type="button" data-yt="ecWfTsg4S6g" data-reveal data-reveal-delay="0.15" aria-label="Play: Tango — Francisco Tárrega"><img class="vid__thumb" src="https://i.ytimg.com/vi/ecWfTsg4S6g/hqdefault.jpg" alt="Tango by Francisco Tárrega, classical guitar" loading="lazy" decoding="async" /><span class="vid__play" aria-hidden="true"></span><span class="vid__meta"><span class="vid__name">Tango</span><span class="vid__handle">Francisco Tárrega</span></span></button>
+            <button class="vid" type="button" data-yt="Lmmp4tyKdIs" data-reveal data-reveal-delay="0.2" aria-label="Play: El Testament d'Amèlia — Catalan folk"><img class="vid__thumb" src="https://i.ytimg.com/vi/Lmmp4tyKdIs/hqdefault.jpg" alt="El Testament d'Amèlia, Catalan folk song, classical guitar" loading="lazy" decoding="async" /><span class="vid__play" aria-hidden="true"></span><span class="vid__meta"><span class="vid__name">El Testament d'Amèlia</span><span class="vid__handle">Catalan folk song</span></span></button>
+            <a class="vid vid--all" href="https://www.youtube.com/@Mohammad_masjedi" target="_blank" rel="noopener" data-cursor="link" data-reveal data-reveal-delay="0.25"><span class="vid__allico" aria-hidden="true">▶</span><span class="vid__meta vid__meta--c"><span class="vid__name" data-i18n="mus.allvideos">All videos</span><span class="vid__handle">@Mohammad_masjedi</span></span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -653,7 +659,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <!-- i18n must load BEFORE main.js so text is translated before it gets animated/split -->
   <script src="js/i18n.js?v=2"></script>
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
   <script src="js/polish.js?v=6"></script>
 </body>
 </html>

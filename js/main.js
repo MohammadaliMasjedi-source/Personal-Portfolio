@@ -444,3 +444,28 @@
     runPreloader();
   }
 })();
+
+/* =====================================================================
+   Inline video gallery — click a poster, the recital plays right here.
+   Privacy-friendly: youtube-nocookie, nothing loads until the click.
+   ===================================================================== */
+(function () {
+  "use strict";
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest(".vid[data-yt]") : null;
+    if (!btn || btn.querySelector("iframe")) return;
+    var id = btn.getAttribute("data-yt");
+    if (!id) return;
+    e.preventDefault();
+    var f = document.createElement("iframe");
+    f.className = "vid__frame";
+    f.src = "https://www.youtube-nocookie.com/embed/" + id +
+            "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+    f.title = "Mohammadali Masjedi — classical guitar";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.setAttribute("allowfullscreen", "");
+    f.loading = "lazy";
+    btn.classList.add("vid--playing");
+    btn.appendChild(f);
+  });
+})();
