@@ -498,3 +498,57 @@
   }, { threshold: 0.5 });
   nums.forEach(function (n) { io.observe(n); });
 })();
+
+/* ===== Hero cinematic parallax (subtle, rAF-throttled, reduced-motion safe) ===== */
+(function () {
+  "use strict";
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var layer = document.querySelector(".hero__bg");
+  if (!layer) return;
+  var ticking = false, vh = window.innerHeight;
+  function update() {
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (y < vh * 1.3) layer.style.transform = "translate3d(0," + (y * 0.22).toFixed(1) + "px,0)";
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  window.addEventListener("resize", function () { vh = window.innerHeight; }, { passive: true });
+  update();
+})();
+
+/* ===== Interactive worlds: 3D cursor-tilt + spotlight (fine pointer only) ===== */
+(function () {
+  "use strict";
+  var mq = window.matchMedia;
+  if (!mq || !mq("(hover: hover) and (pointer: fine)").matches) return;
+  if (mq("(prefers-reduced-motion: reduce)").matches) return;
+  var cards = [].slice.call(document.querySelectorAll("#worlds .facet"));
+  if (!cards.length) return;
+  var MAX = 7; // max tilt degrees
+  cards.forEach(function (card) {
+    var raf = 0, lastE = null;
+    function apply() {
+      raf = 0;
+      var r = card.getBoundingClientRect();
+      var px = (lastE.clientX - r.left) / r.width;
+      var py = (lastE.clientY - r.top) / r.height;
+      px = Math.max(0, Math.min(1, px)); py = Math.max(0, Math.min(1, py));
+      card.style.setProperty("--ry", ((px - 0.5) * 2 * MAX).toFixed(2) + "deg");
+      card.style.setProperty("--rx", (-(py - 0.5) * 2 * MAX).toFixed(2) + "deg");
+      card.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+      card.style.setProperty("--my", (py * 100).toFixed(1) + "%");
+    }
+    card.addEventListener("pointerenter", function () { card.classList.add("is-tilting"); });
+    card.addEventListener("pointermove", function (e) {
+      lastE = e; if (!raf) raf = requestAnimationFrame(apply);
+    });
+    card.addEventListener("pointerleave", function () {
+      card.classList.remove("is-tilting");
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      card.style.setProperty("--rx", "0deg");
+      card.style.setProperty("--ry", "0deg");
+    });
+  });
+})();
