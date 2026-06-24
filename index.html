@@ -60,6 +60,7 @@
     <nav class="nav__links" aria-label="Primary">
       <a href="#worlds" data-cursor="link" data-i18n="nav.worlds">Worlds</a>
       <a href="#engineer" data-cursor="link" data-i18n="nav.engineer">Engineer</a>
+      <a href="#research" data-cursor="link" data-i18n="nav.research">Research</a>
       <a href="#artist" data-cursor="link" data-i18n="nav.artist">Artist</a>
       <a href="#arthouse" data-cursor="link" data-i18n="nav.arthouse">Art House</a>
       <a href="#about" data-cursor="link" data-i18n="nav.about">About</a>
@@ -209,22 +210,25 @@
         </div>
         <div class="about__body">
           <p class="about__lead" data-reveal data-i18n="about.lead">
-            I'm <strong>Mohammadali “Mo” Masjedi</strong> — from Iran, now in the Harz mountains of Germany.
+            I'm <strong>Mohammadali “Mo” Masjedi</strong> — from Shiraz, now in the Harz mountains of Germany.
           </p>
           <p data-reveal data-i18n="about.p1">
-            By day I build <strong>machine-learning models</strong> that read the future of batteries.
-            But a person is more than a job title. I <strong>paint and create</strong>, I <strong>train and compete</strong>,
-            I <strong>lead and organize</strong>, and I <strong>write poetry</strong> when the equations go quiet.
+            I work where culture and technology meet, because to me they are two languages for the same
+            questions — about beauty, freedom, and how we live well together. I spent years building an
+            <strong>independent home for artists</strong> in Shiraz and <strong>teaching the classical guitar</strong>,
+            chasing the clarity of a single well-played phrase or a single quatrain of Khayyám.
           </p>
           <p data-reveal data-i18n="about.p2">
-            The thread through all of it is the same: curiosity, craft, and the stubborn belief that the
-            interesting things happen where disciplines collide. This site is a map of those collisions.
+            Now I bring that same patience to <strong>engineering</strong>: the slow, honest work of getting a
+            battery model to tell the truth. The thread through all of it is one — curiosity, craft, and
+            building things that bring people together. <em>Learn to live, live to learn.</em>
           </p>
           <ul class="timeline" data-reveal>
-            <li><span class="t__phase">Roots</span><span class="t__desc">Iran — engineering, art, and a love of words.</span></li>
-            <li><span class="t__phase">2024–2025</span><span class="t__desc">Graduate research at TU Clausthal, Germany.</span></li>
-            <li><span class="t__phase">2026</span><span class="t__desc">M.Sc. thesis · building CellSight · learning German.</span></li>
-            <li><span class="t__phase">Always</span><span class="t__desc">Making art, training, writing, and feeding two cats.</span></li>
+            <li><span class="t__phase">2003 →</span><span class="t__desc">Performing &amp; teaching classical guitar in Shiraz.</span></li>
+            <li><span class="t__phase">~2012 → 2020</span><span class="t__desc">Founded and led Shiraz Art House; later sold to others.</span></li>
+            <li><span class="t__phase">2012 → 2022</span><span class="t__desc">A decade in software — engineer, PM, then solutions architect.</span></li>
+            <li><span class="t__phase">2022 →</span><span class="t__desc">Master's research on battery life at TU Clausthal, Germany.</span></li>
+            <li><span class="t__phase">Always</span><span class="t__desc">Guitar, poetry, training, and feeding two cats.</span></li>
           </ul>
         </div>
       </div>
@@ -239,8 +243,10 @@
           <h2 class="section__title">Intelligence, <em>applied.</em></h2>
         </div>
       </div>
-      <p class="section__lead" data-reveal>
-        AI/ML researcher at <strong>TU Clausthal</strong>. My thesis teaches transformers to predict a
+      <p class="section__lead" data-reveal data-i18n="eng.lead">
+        I came to research the long way. A BSc in software engineering and nearly a decade building
+        accounting software — engineer, project manager, then solutions architect — taught me to ship.
+        Now, as a master's researcher at <strong>TU Clausthal</strong>, I teach transformers to predict a
         lithium-ion battery's lifetime from only its earliest cycles — turning a year of testing into a
         decision in weeks. I like research that leaves the lab and becomes a tool.
       </p>
@@ -304,6 +310,71 @@
       </div>
     </section>
 
+    <!-- ===================== RESEARCH / PAPERS ===================== -->
+    <section class="section facet-sec research" id="research">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">02</span>
+        <div>
+          <span class="eyebrow" data-i18n="res.kicker">Research &amp; papers</span>
+          <h2 class="section__title" data-i18n="res.title">Teaching machines <em>to read time.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="res.lead">
+        A master's thesis and a small portfolio of papers, all circling one question: how early can we
+        tell what a system will become? Most are battery prognostics; a few reach toward how people learn.
+      </p>
+
+      <div class="papers">
+        <span class="papers__group" data-reveal data-i18n="res.g1">Master's thesis · TU Clausthal</span>
+        <article class="paper paper--lead" data-reveal data-cursor="view">
+          <h3 class="paper__title" data-i18n="res.thesis.t">Early-Cycle Battery Lifetime Prediction</h3>
+          <p class="paper__desc" data-i18n="res.thesis.d">Variable-length transformers that estimate a lithium-ion cell's remaining useful life from only its first cycles — benchmarked against recurrent and convolutional baselines with a reproducible, multi-seed pipeline.</p>
+          <span class="paper__meta" data-i18n="res.thesis.m">M.Sc. thesis · battery RUL · time-series ML</span>
+        </article>
+
+        <span class="papers__group" data-reveal data-i18n="res.g2">Battery &amp; time-series prognostics</span>
+        <div class="papers__grid">
+          <article class="paper" data-reveal data-cursor="view">
+            <h3 class="paper__title" data-i18n="res.p1.t">Early Signals, Distant Outcomes</h3>
+            <p class="paper__desc" data-i18n="res.p1.d">One model that predicts remaining life early — and generalises across domains, from batteries to jet-engine turbofans.</p>
+          </article>
+          <article class="paper" data-reveal data-reveal-delay="0.05" data-cursor="view">
+            <h3 class="paper__title" data-i18n="res.p2.t">Foundation Model vs. From-Scratch</h3>
+            <p class="paper__desc" data-i18n="res.p2.d">An honest study: for battery RUL, a big pretrained model does not beat a small purpose-built one — and costs far more to run.</p>
+          </article>
+          <article class="paper" data-reveal data-reveal-delay="0.1" data-cursor="view">
+            <h3 class="paper__title" data-i18n="res.p3.t">Cross-Chemistry Transfer</h3>
+            <p class="paper__desc" data-i18n="res.p3.d">Making a battery model still work on chemistries it never saw in training, with only a few examples to adapt.</p>
+          </article>
+          <article class="paper" data-reveal data-reveal-delay="0.15" data-cursor="view">
+            <h3 class="paper__title" data-i18n="res.p4.t">Counterfactual Cell Post-Mortems</h3>
+            <p class="paper__desc" data-i18n="res.p4.d">“Why did this cell die?” — the smallest early-cycle change that would have flipped its predicted lifetime.</p>
+          </article>
+          <article class="paper" data-reveal data-reveal-delay="0.2" data-cursor="view">
+            <h3 class="paper__title" data-i18n="res.p5.t">Reverse-Time Pretraining</h3>
+            <p class="paper__desc" data-i18n="res.p5.d">Reading a battery's history backwards, as self-supervision, to learn a stronger early-life fingerprint.</p>
+          </article>
+          <article class="paper" data-reveal data-reveal-delay="0.25" data-cursor="view">
+            <h3 class="paper__title" data-i18n="res.p6.t">Optical &amp; Electrical, Together</h3>
+            <p class="paper__desc" data-i18n="res.p6.d">Does adding fibre-optic (FBG) sensor data improve early battery-life prediction beyond electrical signals alone?</p>
+          </article>
+        </div>
+
+        <span class="papers__group" data-reveal data-i18n="res.g3">Learning &amp; understanding</span>
+        <div class="papers__grid">
+          <article class="paper" data-reveal data-cursor="view">
+            <h3 class="paper__title" data-i18n="res.p7.t">Critical Thinking with AI</h3>
+            <p class="paper__desc" data-i18n="res.p7.d">A measurable framework for healthy “epistemic friction” — so people keep thinking for themselves while learning alongside AI.</p>
+          </article>
+          <article class="paper" data-reveal data-reveal-delay="0.05" data-cursor="view">
+            <h3 class="paper__title" data-i18n="res.p8.t">From Technical Docs to Learning</h3>
+            <p class="paper__desc" data-i18n="res.p8.d">Turning dense technical documentation into onboarding that lowers time-to-competence and mental load for newcomers.</p>
+          </article>
+        </div>
+      </div>
+      <p class="sec-media__cap" data-reveal data-i18n="res.note" style="margin-top:1.6rem">A work in progress — most of this research is unpublished. Titles and topics are shared here; results follow when each paper is public.</p>
+    </section>
+
     <!-- ===================== ARTIST ===================== -->
     <section class="section facet-sec artist" id="artist">
       <div class="facet-head" data-reveal>
@@ -337,10 +408,10 @@
           <h2 class="section__title" data-i18n="ah.title">A home <em>for art.</em></h2>
         </div>
       </div>
-      <p class="section__lead" data-reveal data-i18n="ah.lead">Co-founding and running a stage for independent art and film in Shiraz.</p>
+      <p class="section__lead" data-reveal data-i18n="ah.lead">Founder and former CEO of an independent house for art in Shiraz, Iran.</p>
       <div class="sec-prose">
-        <p data-reveal data-i18n="ah.p1">Shiraz Art House (خانهٔ هنر شیراز) is an independent cultural space in Shiraz, Iran — a gallery, a stage for music and theatre, a café and a bookshop under one roof. It was created to give young artists a place to show their work and to bring people together around culture.</p>
-        <p data-reveal data-i18n="ah.p2">As a co-founder of Shiraz Art House — and its CEO for about six years (2012–2020) — I helped build the cultural and artistic platform, making it possible for artists to produce and screen short films and run independent art programs. For me it was never just a building; it was a stage for young artists.</p>
+        <p data-reveal data-i18n="ah.p1">Shiraz Art House (خانهٔ هنر شیراز) was an independent cultural space in Shiraz, Iran — a gallery, a stage for music and theatre, a café and a bookshop under one roof, with room for cinema and visual art. It existed to give independent and emerging artists a place to make and show their work, and to bring people together around culture.</p>
+        <p data-reveal data-i18n="ah.p2">I founded and built the house and led it for roughly five to six years as its managing director and CEO — confirmed in Iran's official state gazette as its CEO from 2017 to 2019, and addressed by the provincial culture authority as its director. We ran a sustained programme across music, theatre, cinema and visual art, with many partners and recurring projects. For me it was never just a building; it was an open house for independent artists. It was later sold and operated by others.</p>
       </div>
       <div class="principles">
         <div class="principle" data-reveal><span class="principle__no">✦</span><h3 data-i18n="ah.c1.h">Gallery</h3><p data-i18n="ah.c1.p">Exhibitions for established and emerging artists.</p></div>
