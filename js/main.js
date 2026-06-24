@@ -91,13 +91,15 @@
   if (finePointer && !prefersReduced) {
     $$("[data-magnetic]").forEach((el) => {
       const strength = 0.4;
+      let r = null, raf = 0, lx = 0, ly = 0;
+      el.addEventListener("mouseenter", () => { r = el.getBoundingClientRect(); });
       el.addEventListener("mousemove", (e) => {
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - (r.left + r.width / 2)) * strength;
-        const y = (e.clientY - (r.top + r.height / 2)) * strength;
-        el.style.transform = `translate(${x}px, ${y}px)`;
+        if (!r) r = el.getBoundingClientRect();
+        lx = (e.clientX - (r.left + r.width / 2)) * strength;
+        ly = (e.clientY - (r.top + r.height / 2)) * strength;
+        if (!raf) raf = requestAnimationFrame(() => { raf = 0; el.style.transform = `translate(${lx}px, ${ly}px)`; });
       });
-      el.addEventListener("mouseleave", () => { el.style.transform = ""; });
+      el.addEventListener("mouseleave", () => { if (raf) { cancelAnimationFrame(raf); raf = 0; } r = null; el.style.transform = ""; });
     });
   }
 
@@ -540,7 +542,10 @@
       card.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
       card.style.setProperty("--my", (py * 100).toFixed(1) + "%");
     }
-    card.addEventListener("pointerenter", function () { card.classList.add("is-tilting"); });
+    card.addEventListener("pointerenter", function () {
+      card.classList.add("is-tilting");
+      card.style.setProperty("--ty", "0px"); // JS owns the transform while inside; avoids stacking with the :hover lift
+    });
     card.addEventListener("pointermove", function (e) {
       lastE = e; if (!raf) raf = requestAnimationFrame(apply);
     });
@@ -549,6 +554,9 @@
       if (raf) { cancelAnimationFrame(raf); raf = 0; }
       card.style.setProperty("--rx", "0deg");
       card.style.setProperty("--ry", "0deg");
+      card.style.removeProperty("--ty");      // restore the CSS :hover lift behaviour
+      card.style.setProperty("--mx", "50%");  // re-enter the spotlight from center, no stale-position flash
+      card.style.setProperty("--my", "50%");
     });
   });
 })();
