@@ -469,3 +469,32 @@
     btn.appendChild(f);
   });
 })();
+
+/* ===== Count-up stats — animate on first scroll into view ===== */
+(function () {
+  "use strict";
+  var nums = [].slice.call(document.querySelectorAll(".fstat__num[data-to]"));
+  if (!nums.length) return;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function run(el) {
+    var target = parseInt(el.getAttribute("data-to"), 10) || 0;
+    var suffix = el.getAttribute("data-suffix") || "";
+    if (reduce) { el.textContent = target + suffix; return; }
+    var dur = 1100, start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if (!("IntersectionObserver" in window)) { nums.forEach(run); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { run(en.target); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.5 });
+  nums.forEach(function (n) { io.observe(n); });
+})();
