@@ -326,6 +326,22 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .catcard p { color: var(--text-dim); }
 
 /* ---------- Channels ---------- */
+/* ===== Follow the journey — subscribe CTA + live stats ===== */
+.follow { display: grid; grid-template-columns: minmax(260px, 0.9fr) 2fr; gap: clamp(18px, 2.4vw, 34px); align-items: stretch; margin: 8px 0 34px; }
+@media (max-width: 860px){ .follow { grid-template-columns: 1fr; } }
+.follow__yt { display: flex; align-items: center; gap: 16px; padding: clamp(20px, 2.4vw, 30px); border-radius: var(--radius-lg, 20px); text-decoration: none; color: #fff;
+  background: linear-gradient(135deg, #c4842a 0%, var(--volt) 55%, #edc06a 100%); box-shadow: 0 14px 40px -16px rgba(227,162,60,0.55); transition: transform .4s var(--ease), box-shadow .4s; }
+.follow__yt:hover { transform: translateY(-3px); box-shadow: 0 22px 54px -16px rgba(227,162,60,0.7); }
+.follow__yt-ico { flex: none; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; background: rgba(20,16,9,0.82); color: #fff; font-size: 18px; padding-left: 3px; }
+.follow__yt-txt { display: flex; flex-direction: column; line-height: 1.25; color: #1a1408; }
+.follow__yt-txt b { font-family: var(--font-display); font-weight: 600; font-size: 1.06rem; }
+.follow__yt-txt i { font-style: normal; opacity: 0.8; font-size: 0.86rem; }
+.fstats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 560px){ .fstats { grid-template-columns: repeat(2, 1fr); } }
+.fstat { padding: clamp(16px, 2vw, 24px) 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); text-align: center; transition: transform .4s var(--ease), border-color .4s; }
+.fstat:hover { transform: translateY(-3px); border-color: var(--line-2); }
+.fstat__num { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.fstat__lbl { display: block; margin-top: 8px; font-size: 0.78rem; letter-spacing: 0.02em; color: var(--text-dim); }
 .channels__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .channel { position: relative; padding: clamp(24px, 3vw, 36px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: flex; flex-direction: column; gap: 10px; min-height: 170px; transition: transform .4s var(--ease), border-color .4s, background .4s; overflow: hidden; }
 .channel::after { content: "↗"; position: absolute; top: 22px; right: 22px; color: var(--text-mute); transition: color .3s, transform .3s var(--ease); }
