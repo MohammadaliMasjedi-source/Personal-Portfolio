@@ -61,7 +61,6 @@
       <a href="#worlds" data-cursor="link" data-i18n="nav.worlds">Worlds</a>
       <a href="#engineer" data-cursor="link" data-i18n="nav.engineer">Engineer</a>
       <a href="#research" data-cursor="link" data-i18n="nav.research">Research</a>
-      <a href="#artist" data-cursor="link" data-i18n="nav.artist">Artist</a>
       <a href="#arthouse" data-cursor="link" data-i18n="nav.arthouse">Art House</a>
       <a href="#about" data-cursor="link" data-i18n="nav.about">About</a>
     </nav>
@@ -79,7 +78,7 @@
     <nav class="menu__nav">
       <a href="#worlds" data-menu-link><span class="menu__idx">01</span> <span data-i18n="menu.worlds">Worlds</span></a>
       <a href="#engineer" data-menu-link><span class="menu__idx">02</span> <span data-i18n="menu.engineer">Engineer</span></a>
-      <a href="#artist" data-menu-link><span class="menu__idx">03</span> <span data-i18n="menu.artist">Artist</span></a>
+      <a href="#research" data-menu-link><span class="menu__idx">03</span> <span data-i18n="menu.research">Research</span></a>
       <a href="#arthouse" data-menu-link><span class="menu__idx">04</span> <span data-i18n="menu.arthouse">Shiraz Art House</span></a>
       <a href="#cinema" data-menu-link><span class="menu__idx">05</span> <span data-i18n="menu.cinema">Cinema</span></a>
       <a href="#music" data-menu-link><span class="menu__idx">06</span> <span data-i18n="menu.music">Music</span></a>
@@ -150,9 +149,9 @@
           <h3 data-i18n="worlds.engineer.h">Engineer</h3><p data-i18n="worlds.engineer.p">AI/ML &amp; battery intelligence. Research that ships.</p>
           <span class="facet__go">Enter →</span>
         </a>
-        <a href="#artist" class="facet" data-reveal data-reveal-delay="0.06" data-cursor="view">
+        <a href="#research" class="facet" data-reveal data-reveal-delay="0.06" data-cursor="view">
           <span class="facet__no">02</span><span class="facet__ico">✦</span>
-          <h3 data-i18n="worlds.artist.h">Artist</h3><p data-i18n="worlds.artist.p">Where logic loosens its tie. A visual playground.</p>
+          <h3 data-i18n="worlds.research.h">Research</h3><p data-i18n="worlds.research.p">Battery intelligence, prognostics &amp; learning science.</p>
           <span class="facet__go">Enter →</span>
         </a>
         <a href="#athlete" class="facet" data-reveal data-reveal-delay="0.12" data-cursor="view">
@@ -376,7 +375,10 @@
     </section>
 
     <!-- ===================== ARTIST ===================== -->
-    <section class="section facet-sec artist" id="artist">
+    <!-- INACTIVE until art images exist. To reactivate: drop files into assets/img/art/,
+         wire them into the .art frames below (replace the empty placeholders with <img>),
+         then remove the `hidden` attribute here AND restore the #artist links in nav + menu. -->
+    <section class="section facet-sec artist" id="artist" hidden>
       <div class="facet-head" data-reveal>
         <span class="facet-head__no">02</span>
         <div>
@@ -385,17 +387,16 @@
         </div>
       </div>
       <p class="section__lead" data-reveal>
-        Creativity is the other half of engineering. This is my visual playground — paintings, sketches,
-        photographs, experiments. <span class="hint">✎ Drop your images into <code>assets/img/art/</code> and they'll fill these frames.</span>
+        Creativity is the other half of engineering — paintings, sketches, photographs, experiments.
       </p>
 
       <div class="gallery">
-        <button class="art art--a" data-reveal data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
-        <button class="art art--b" data-reveal data-reveal-delay="0.05" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
-        <button class="art art--c" data-reveal data-reveal-delay="0.1" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
-        <button class="art art--d" data-reveal data-reveal-delay="0.15" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
-        <button class="art art--e" data-reveal data-reveal-delay="0.2" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
-        <button class="art art--f" data-reveal data-reveal-delay="0.25" data-cursor="open"><span class="art__cap">Untitled · <i>add work</i></span></button>
+        <button class="art art--a" data-reveal data-cursor="open"><span class="art__cap">Untitled</span></button>
+        <button class="art art--b" data-reveal data-reveal-delay="0.05" data-cursor="open"><span class="art__cap">Untitled</span></button>
+        <button class="art art--c" data-reveal data-reveal-delay="0.1" data-cursor="open"><span class="art__cap">Untitled</span></button>
+        <button class="art art--d" data-reveal data-reveal-delay="0.15" data-cursor="open"><span class="art__cap">Untitled</span></button>
+        <button class="art art--e" data-reveal data-reveal-delay="0.2" data-cursor="open"><span class="art__cap">Untitled</span></button>
+        <button class="art art--f" data-reveal data-reveal-delay="0.25" data-cursor="open"><span class="art__cap">Untitled</span></button>
       </div>
     </section>
 
