@@ -52,7 +52,7 @@
       "worlds.artist.h": "هنرمند", "worlds.artist.p": "آنجا که منطق کراواتش را شل می‌کند. میدانِ بازیِ تصویر.",
       "worlds.arthouse.h": "خانهٔ هنر شیراز", "worlds.arthouse.p": "خانه‌ای مستقل برای هنر در شیراز.",
       "worlds.cinema.h": "سینما", "worlds.cinema.p": "تصویر، راهی برای اندیشیدن دربارهٔ انسان.",
-      "worlds.music.h": "موسیقی و آواز", "worlds.music.p": "از گیتار کلاسیک تا تلاوتِ آوازی.",
+      "worlds.music.h": "موسیقی و شعر", "worlds.music.p": "از گیتار کلاسیک تا شعرِ فارسی.",
       "worlds.human.h": "انسان", "worlds.human.p": "دو گربه، کنجکاویِ بزرگ و زندگی بیرون از ساعت.",
 
       /* about */
@@ -82,7 +82,7 @@
       "mus.title": "از سیم تا کلام.",
       "mus.lead": "از گیتار کلاسیک تا کلامِ آوازی.",
       "mus.p1": "نوازنده و آموزگارِ گیتار کلاسیک‌ام با بیش از هجده سال تجربه. نوازندگی‌ام مقامِ نخستِ المپیادِ هنریِ کشور (موسیقی) و مقامِ دومِ جشنوارهٔ ملیِ گیتار را برایم به ارمغان آورد، و کارشناسیِ ارشدِ پژوهشِ هنر دارم. در آموزشگاهِ موسیقیِ فروغ تدریس کرده‌ام و عضوِ شورای سیاست‌گذاریِ موسیقیِ استانِ فارس بوده‌ام.",
-      "mus.p2": "همچنین در تلاوتِ قرآن با سبکی آوازی شناخته می‌شوم — به‌کارگیریِ صدا و نفَس برای حملِ متن با احساس. این بخشی از همان عشق به صدا و معناست.",
+      "mus.p2": "بخشِ زیادی از آنچه می‌نوازم با شعرِ فارسی پیوند دارد — رباعیاتِ خیّام و دیگران — جایی که گیتار و کلام به هم می‌رسند. همان عشق به صدا و معنا در هر چه می‌سازم جاری‌ست.",
       "mus.watch": "تماشا — گیتار کلاسیک، از کانالِ من «MoMas Music»:",
       "mus.allvideos": "همهٔ ویدیوها",
 
@@ -138,7 +138,7 @@
       "worlds.artist.h": "Künstler", "worlds.artist.p": "Wo die Logik die Krawatte lockert. Ein visueller Spielplatz.",
       "worlds.arthouse.h": "Shiraz Art House", "worlds.arthouse.p": "Ein unabhängiges Zuhause für die Kunst in Schiras.",
       "worlds.cinema.h": "Kino", "worlds.cinema.p": "Bilder als eine Art, über Menschen nachzudenken.",
-      "worlds.music.h": "Musik & Stimme", "worlds.music.p": "Von klassischer Gitarre bis melodischer Rezitation.",
+      "worlds.music.h": "Musik & Poesie", "worlds.music.p": "Von klassischer Gitarre bis zur persischen Poesie.",
       "worlds.human.h": "Der Mensch", "worlds.human.p": "Zwei Katzen, große Neugier und das Leben jenseits der Uhr.",
 
       "about.kicker": "— Über mich",
@@ -166,7 +166,7 @@
       "mus.title": "Von der Saite zum Wort.",
       "mus.lead": "Von klassischer Gitarre bis zum rezitierten Wort.",
       "mus.p1": "Ich bin klassischer Gitarrist und Lehrer mit über 18 Jahren Erfahrung. Mein Spiel brachte mir den ersten Platz bei Irans nationaler Kunst-Olympiade (Musik) und den zweiten Platz beim Nationalen Gitarrenfestival ein; ich habe einen Master in Kunstforschung. Ich unterrichtete an der Forough-Musikakademie und war Mitglied im Musikrat der Provinz Fars.",
-      "mus.p2": "Bekannt bin ich auch für melodische Koranrezitation — Stimme und Atem tragen einen Text mit Gefühl. Es ist Teil derselben Liebe zu Klang und Bedeutung.",
+      "mus.p2": "Vieles, was ich spiele, ist mit persischer Poesie verbunden — den Versen von Omar Khayyām und anderen —, wo Gitarre und Wort sich begegnen. Dieselbe Liebe zu Klang und Bedeutung durchzieht alles, was ich mache.",
       "mus.watch": "Ansehen — klassische Gitarre, von meinem Kanal «MoMas Music»:",
       "mus.allvideos": "Alle Videos",
 
