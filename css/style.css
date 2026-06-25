@@ -185,6 +185,9 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .menu.is-open .menu__nav a:nth-child(5){animation-delay:.36s}
 .menu.is-open .menu__nav a:nth-child(6){animation-delay:.42s}
 .menu.is-open .menu__nav a:nth-child(7){animation-delay:.48s}
+.menu.is-open .menu__nav a:nth-child(8){animation-delay:.54s}
+.menu.is-open .menu__nav a:nth-child(9){animation-delay:.60s}
+.menu.is-open .menu__nav a:nth-child(10){animation-delay:.66s}
 @keyframes menuIn { to { opacity: 1; transform: translateY(0); } }
 .menu__nav a:hover { color: var(--volt); }
 .menu__idx { font-family: var(--font-body); font-size: 14px; color: var(--text-mute); }
@@ -683,6 +686,14 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 @media (max-width: 720px) { .sec-media__grid { grid-template-columns: 1fr; } }
 .sec-link a { color: var(--volt); font-family: var(--font-display); font-size: 14px; letter-spacing: .03em; }
 .sec-link a:hover { color: var(--text); }
+
+/* Translations / Daricheh — "coming soon" pill (stub section) */
+.dar-soon { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px;
+  font-family: var(--font-display); font-size: 14px; letter-spacing: .02em; color: var(--text-dim);
+  border: 1px solid var(--line-2); border-radius: 100px; padding: 10px 20px; background: var(--surface); }
+.dar-soon__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--volt);
+  box-shadow: 0 0 12px var(--volt); animation: pulse 2s infinite; flex: none; }
+@media (prefers-reduced-motion: reduce){ .dar-soon__dot { animation: none; } }
 
 /* Persian: Vazirmatn + calmer line-height */
 html[lang="fa"] body { font-family: "Vazirmatn", var(--font-body); }

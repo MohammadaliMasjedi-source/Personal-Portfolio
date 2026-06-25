@@ -28,6 +28,7 @@
       "menu.worlds": "جهان‌ها", "menu.engineer": "مهندس", "menu.artist": "هنرمند",
       "menu.athlete": "ورزشکار", "menu.arthouse": "خانهٔ هنر", "menu.cinema": "سینما",
       "menu.music": "موسیقی", "menu.poet": "شاعر", "menu.contact": "تماس",
+      "menu.daricheh": "ترجمه‌ها · داریچه",
       "menu.loc": "کلاوستال‑سلرفلد، آلمان",
 
       /* hero */
@@ -139,6 +140,13 @@
 
       "mus.cap": "زنده در کنسرت — رومانس، میلونگا و مِی برای گیتار کلاسیک · کلاوستال‑تسلرفلد، نوامبر ۲۰۲۳. هر عکس را برای بزرگ‌نمایی لمس کنید.",
 
+      /* daricheh — translations stub */
+      "dar.kicker": "ترجمه‌ها · داریچه",
+      "dar.title": "داریچه‌ای میانِ زبان‌ها.",
+      "dar.lead": "بردنِ شعر و اندیشه میانِ فارسی، انگلیسی و آلمانی — تمرینی کوچک و باحوصله.",
+      "dar.p1": "داریچه («پنجرهٔ کوچک») کارِ ترجمهٔ من را گرد می‌آورد: بردنِ شعرِ فارسی به‌سویِ انگلیسی و آلمانی، و اندیشه‌ها در جهتِ وارون. هر قطعه سرچشمه و مترجمِ خود را روشن نام می‌برد، و تنها متن‌های اصیل یا آزاد برای هم‌رسانی اینجا جای می‌گیرند.",
+      "dar.soon": "به‌زودی — نخستین داریچه‌ها در حالِ آماده‌شدن‌اند.",
+
       /* contact + footer */
       "contact.kicker": "— تماس",
       "contact.title": "بیا چیزی بسازیم، آن‌سوی مرزها.",
@@ -152,6 +160,7 @@
       "menu.worlds": "Welten", "menu.engineer": "Ingenieur", "menu.artist": "Künstler",
       "menu.athlete": "Sportler", "menu.arthouse": "Art House", "menu.cinema": "Kino",
       "menu.music": "Musik", "menu.poet": "Dichter", "menu.contact": "Kontakt",
+      "menu.daricheh": "Übersetzungen · Daricheh",
       "menu.loc": "Clausthal-Zellerfeld, DE",
 
       "hero.eyebrow": "Mohammad Ali Masjedi — Clausthal, Deutschland",
@@ -259,6 +268,13 @@
 
       "mus.cap": "Live im Konzert — Romance, Milonga & Mey für klassische Gitarre · Clausthal-Zellerfeld, November 2023. Tippe auf ein Foto zum Vergrößern.",
 
+      /* daricheh — translations stub */
+      "dar.kicker": "Übersetzungen · داریچه (Daricheh)",
+      "dar.title": "Ein kleines Fenster zwischen Sprachen.",
+      "dar.lead": "Gedichte und Gedanken zwischen Persisch, Englisch und Deutsch tragen — eine kleine, sorgfältige Praxis.",
+      "dar.p1": "Daricheh (داریچه — „ein kleines Fenster“) versammelt meine eigene Übersetzungsarbeit: persische Poesie hin zum Englischen und Deutschen zu bringen — und Gedanken in die andere Richtung. Jedes Stück nennt Quelle und Übersetzer klar, und nur eigene oder frei teilbare Texte finden hier ihren Platz.",
+      "dar.soon": "Bald — die ersten Fenster werden vorbereitet.",
+
       "contact.kicker": "— Kontakt",
       "contact.title": "Lass uns etwas schaffen, über die Grenzen hinweg.",
       "contact.sub": "Forschung, Kunst, ein Projekt oder einfach ein gutes Gespräch — mein Postfach ist offen.",
@@ -301,6 +317,8 @@
       b.type = "button";
       b.className = "lang-btn" + (L === cur ? " is-active" : "");
       b.setAttribute("lang", L);
+      b.setAttribute("aria-pressed", L === cur ? "true" : "false");
+      b.setAttribute("aria-label", LABEL[L] + (L === cur ? " (current language)" : ""));
       b.textContent = LABEL[L];
       b.addEventListener("click", function () {
         try { localStorage.setItem(STORE, L); } catch (e) {}
