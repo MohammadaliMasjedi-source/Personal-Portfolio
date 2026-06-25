@@ -59,6 +59,9 @@
       "worlds.cinema.h": "سینما", "worlds.cinema.p": "تصویر، راهی برای اندیشیدن دربارهٔ انسان.",
       "worlds.music.h": "موسیقی و شعر", "worlds.music.p": "از گیتار کلاسیک تا شعرِ فارسی.",
       "worlds.human.h": "انسان", "worlds.human.p": "گربه‌ها، کنجکاویِ بزرگ و زندگی بیرون از ساعت.",
+      "worlds.athlete.h": "ورزشکار", "worlds.athlete.p": "نظم همچون تمرینی روزانه. تن و اراده.",
+      "worlds.manager.h": "مدیر", "worlds.manager.p": "بدل‌کردنِ تلاشِ پراکنده به حرکتی مشترک.",
+      "worlds.poet.h": "شاعر", "worlds.poet.p": "اتاقی آرام، آنجا که واژه‌ها زنده می‌شوند.",
 
       /* about */
       "about.kicker": "— درباره",
@@ -140,11 +143,55 @@
 
       "mus.cap": "زنده در کنسرت — رومانس، میلونگا و مِی برای گیتار کلاسیک · کلاوستال‑تسلرفلد، نوامبر ۲۰۲۳. هر عکس را برای بزرگ‌نمایی لمس کنید.",
 
+      /* engineer header */
+      "eng.kicker": "مهندس",
+      "eng.title": "هوش، به کار بسته.",
+
+      /* athlete */
+      "ath.kicker": "ورزشکار",
+      "ath.title": "نظم، تمرینی روزانه است.",
+      "ath.lead": "تمرین جایی‌ست که ذهن را با فشار آوردن بر تن تیز می‌کنم. پیوستگی مهم‌تر از شدت است، هر هفته.",
+      "ath.c1.k": "نظم", "ath.c1.v": "حاضر شدن", "ath.c1.s": "تمرینی که انجام می‌دهی، از تمرینِ بی‌نقصی که از آن می‌گذری بهتر است.",
+      "ath.c2.k": "آهنگ", "ath.c2.v": "هر هفته", "ath.c2.s": "پیوستگی به‌جای شدت — عادتی پایدار و تکرارپذیر.",
+      "ath.c3.k": "توازن", "ath.c3.v": "ذهن و تن", "ath.c3.s": "ذهنِ روشن را به همان شیوهٔ تنِ نیرومند می‌پرورند.",
+      "ath.quote": "«تن به آنچه ذهن باور دارد دست می‌یابد.»",
+
+      /* manager */
+      "mgr.kicker": "مدیر",
+      "mgr.title": "از تلاشِ پراکنده تا حرکتِ مشترک.",
+      "mgr.lead": "رهبری پیشه‌ای از آنِ خود است — شفافیت، اعتماد، و بدل‌کردنِ گروهی از آدم‌ها به تیمی با یک جهت. چند اصلی که با آن‌ها رهبری می‌کنم:",
+      "mgr.c1.h": "نخست شفافیت", "mgr.c1.p": "آدم‌ها وقتی دقیق بدانند «تمام» کجاست، تند پیش می‌روند.",
+      "mgr.c2.h": "اعتماد به‌صورتِ پیش‌فرض", "mgr.c2.p": "آدم‌های باهوش را به کار بگیر، به آن‌ها فضا بده و موانعشان را بردار.",
+      "mgr.c3.h": "تصمیم بگیر، سپس بیاموز", "mgr.c3.p": "یک تصمیمِ خوبِ امروز از تصمیمی بی‌نقص که دیر برسد بهتر است.",
+      "mgr.c4.h": "اعتبار بیرون، سرزنش درون", "mgr.c4.p": "بردها از آنِ تیم‌اند؛ شکست‌ها بر دوشِ رهبر.",
+
+      /* poet */
+      "poet.kicker": "شاعر",
+      "poet.title": "اتاقی آرام برای واژه‌ها.",
+      "poet.lead": "میانِ معادله و آتش، اتاقی کوچک برای واژه‌ها نگه می‌دارم — چند سطر از خودم، به دو زبان.",
+      "poet.cap": "سروده‌ای از خودم — شعرهای دیگرم کم‌کم به آن می‌پیوندند.",
+
+      /* personal / human */
+      "human.kicker": "انسان",
+      "human.title": "زندگی، بیرون از ساعت.",
+      "human.curios": "کنجکاوی‌ها",
+      "chip.ai": "هوش مصنوعی", "chip.energy": "انرژی و باتری", "chip.paint": "نقاشی و ساختن",
+      "chip.sport": "تمرین و ورزش", "chip.poetry": "شعر و زبان", "chip.german": "آلمانی (A1، در حالِ پیشرفت)",
+      "chip.km": "مدیریتِ دانش", "chip.coffee": "قهوه و گفت‌وگو",
+      "now.h": "اکنون · ژوئنِ ۲۰۲۶",
+      "now.l1": "در حالِ پایان‌دادنِ پایان‌نامهٔ ارشدم در دانشگاهِ کلاوستال.",
+      "now.l2": "ساختن و پرداختِ CellSight.",
+      "now.l3": "یادگیریِ آلمانی — در پیِ A1 در این پاییز.",
+      "now.l4": "نقاشیِ بیشتر، نوشتنِ بیشتر، تمرینِ بیشتر.",
+
       /* daricheh — translations stub */
       "dar.kicker": "ترجمه‌ها · داریچه",
       "dar.title": "داریچه‌ای میانِ زبان‌ها.",
       "dar.lead": "بردنِ شعر و اندیشه میانِ فارسی، انگلیسی و آلمانی — تمرینی کوچک و باحوصله.",
       "dar.p1": "داریچه («پنجرهٔ کوچک») کارِ ترجمهٔ من را گرد می‌آورد: بردنِ شعرِ فارسی به‌سویِ انگلیسی و آلمانی، و اندیشه‌ها در جهتِ وارون. هر قطعه سرچشمه و مترجمِ خود را روشن نام می‌برد، و تنها متن‌های اصیل یا آزاد برای هم‌رسانی اینجا جای می‌گیرند.",
+      "dar.w1.h": "فارسی ← انگلیسی", "dar.w1.p": "رباعی‌ها و شعرهای کوتاه، سطر به سطر به انگلیسی برده می‌شوند، با متنِ اصلی در کنارشان.",
+      "dar.w2.h": "فارسی ← آلمانی", "dar.w2.p": "پلی آهسته‌تر به‌سویِ آلمانی — زبانی که هنوز در حالِ آموختنش‌ام، هر بار یک بیتِ باحوصله.",
+      "dar.w3.h": "یادداشت‌هایی بر ترجمه", "dar.w3.p": "یادداشت‌هایی کوتاه دربارهٔ گزینش‌های پشتِ هر قطعه — اینکه یک واژه چه با خود دارد و چه از دست می‌رود.",
       "dar.soon": "به‌زودی — نخستین داریچه‌ها در حالِ آماده‌شدن‌اند.",
 
       /* contact + footer */
@@ -189,6 +236,9 @@
       "worlds.cinema.h": "Kino", "worlds.cinema.p": "Bilder als eine Art, über Menschen nachzudenken.",
       "worlds.music.h": "Musik & Poesie", "worlds.music.p": "Von klassischer Gitarre bis zur persischen Poesie.",
       "worlds.human.h": "Der Mensch", "worlds.human.p": "Katzen, große Neugier und das Leben jenseits der Uhr.",
+      "worlds.athlete.h": "Sportler", "worlds.athlete.p": "Disziplin als tägliche Praxis. Körper & Wille.",
+      "worlds.manager.h": "Manager", "worlds.manager.p": "Verstreute Mühe in gemeinsamen Schwung verwandeln.",
+      "worlds.poet.h": "Dichter", "worlds.poet.p": "Der stille Raum, in dem Worte lebendig werden.",
 
       "about.kicker": "— Über mich",
       "about.title": "Ich passe in keine Schublade.",
@@ -268,11 +318,55 @@
 
       "mus.cap": "Live im Konzert — Romance, Milonga & Mey für klassische Gitarre · Clausthal-Zellerfeld, November 2023. Tippe auf ein Foto zum Vergrößern.",
 
+      /* engineer header */
+      "eng.kicker": "Der Ingenieur",
+      "eng.title": "Intelligenz, angewandt.",
+
+      /* athlete */
+      "ath.kicker": "Der Sportler",
+      "ath.title": "Disziplin ist eine tägliche Praxis.",
+      "ath.lead": "Im Training schärfe ich den Geist, indem ich den Körper fordere. Beständigkeit vor Intensität, jede Woche.",
+      "ath.c1.k": "Disziplin", "ath.c1.v": "Auftauchen", "ath.c1.s": "Die Einheit, die du machst, schlägt die perfekte, die du auslässt.",
+      "ath.c2.k": "Rhythmus", "ath.c2.v": "Jede Woche", "ath.c2.s": "Beständigkeit vor Intensität — eine stetige, wiederholbare Gewohnheit.",
+      "ath.c3.k": "Balance", "ath.c3.v": "Geist & Körper", "ath.c3.s": "Ein klarer Kopf wird wie ein starker Körper trainiert.",
+      "ath.quote": "„Der Körper erreicht, woran der Geist glaubt.“",
+
+      /* manager */
+      "mgr.kicker": "Der Manager",
+      "mgr.title": "Verstreute Mühe in gemeinsamen Schwung.",
+      "mgr.lead": "Führen ist ein eigenes Handwerk — Klarheit, Vertrauen und eine Gruppe von Menschen zu einem Team mit Richtung machen. Ein paar Prinzipien, nach denen ich führe:",
+      "mgr.c1.h": "Klarheit zuerst", "mgr.c1.p": "Menschen kommen schnell voran, wenn sie genau wissen, wo „fertig“ ist.",
+      "mgr.c2.h": "Vertrauen als Standard", "mgr.c2.p": "Stelle kluge Leute ein, gib ihnen Raum und räume ihre Hindernisse aus dem Weg.",
+      "mgr.c3.h": "Entscheiden, dann lernen", "mgr.c3.p": "Eine gute Entscheidung heute schlägt eine perfekte, die zu spät kommt.",
+      "mgr.c4.h": "Lob nach außen, Tadel nach innen", "mgr.c4.p": "Siege gehören dem Team; die Fehlschläge trägt die Führung.",
+
+      /* poet */
+      "poet.kicker": "Der Dichter",
+      "poet.title": "Ein stiller Raum für Worte.",
+      "poet.lead": "Zwischen der Gleichung und der Glut halte ich einen kleinen Raum für Worte — ein paar eigene Zeilen, in zwei Sprachen.",
+      "poet.cap": "Ein eigener Vers — weitere meiner Gedichte gesellen sich nach und nach dazu.",
+
+      /* personal / human */
+      "human.kicker": "Der Mensch",
+      "human.title": "Leben jenseits der Uhr.",
+      "human.curios": "Neugierden",
+      "chip.ai": "Künstliche Intelligenz", "chip.energy": "Energie & Batterien", "chip.paint": "Malen & Gestalten",
+      "chip.sport": "Training & Sport", "chip.poetry": "Poesie & Sprache", "chip.german": "Deutsch (A1, in Arbeit)",
+      "chip.km": "Wissensmanagement", "chip.coffee": "Kaffee & Gespräch",
+      "now.h": "Jetzt · Juni 2026",
+      "now.l1": "Ich schließe meine M.Sc.-Arbeit an der TU Clausthal ab.",
+      "now.l2": "Bauen & Verfeinern von CellSight.",
+      "now.l3": "Deutsch lernen — auf dem Weg zu A1 in diesem Herbst.",
+      "now.l4": "Mehr malen, mehr schreiben, mehr trainieren.",
+
       /* daricheh — translations stub */
       "dar.kicker": "Übersetzungen · داریچه (Daricheh)",
       "dar.title": "Ein kleines Fenster zwischen Sprachen.",
       "dar.lead": "Gedichte und Gedanken zwischen Persisch, Englisch und Deutsch tragen — eine kleine, sorgfältige Praxis.",
       "dar.p1": "Daricheh (داریچه — „ein kleines Fenster“) versammelt meine eigene Übersetzungsarbeit: persische Poesie hin zum Englischen und Deutschen zu bringen — und Gedanken in die andere Richtung. Jedes Stück nennt Quelle und Übersetzer klar, und nur eigene oder frei teilbare Texte finden hier ihren Platz.",
+      "dar.w1.h": "Persisch → Englisch", "dar.w1.p": "Vierzeiler und kurze Gedichte, Zeile für Zeile ins Englische getragen, mit dem Original daneben.",
+      "dar.w2.h": "Persisch → Deutsch", "dar.w2.p": "Eine langsamere Brücke ins Deutsche — eine Sprache, die ich noch lerne, Vers für Vers, sorgfältig.",
+      "dar.w3.h": "Notizen zur Übersetzung", "dar.w3.p": "Kurze Notizen zu den Entscheidungen hinter jedem Stück — was ein Wort trägt und was verloren geht.",
       "dar.soon": "Bald — die ersten Fenster werden vorbereitet.",
 
       "contact.kicker": "— Kontakt",
