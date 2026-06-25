@@ -10,7 +10,7 @@
   "tagline": "Personal brand site (one mind, many lives).",
   "progress": null,
   "currentPhase": "p5",
-  "nextAction": "i18n now complete (Research/Engineer/Music caption translated to FA+DE; 0 missing keys) and a Translations/Daricheh stub section is live in all 3 languages. Next: translate the remaining hardcoded-English narrative sections (Athlete/Manager/Poet/Personal), then add real facts/photos/press links via _private/FILL-ME-facts.md.",
+  "nextAction": "Full-site i18n now complete: every section (incl. Athlete/Manager/Poet/Personal/Engineer + worlds facets) has data-i18n keys with FA+DE translations — 190 keys, 0 missing in FA/DE, verified live in EN/FA/DE with no console errors. Daricheh stub fleshed out with 3 descriptive 'window' cards (still coming-soon — no real translated pieces yet). Leaked editor-note placeholders ('Tell me your sport', 'add it', 'placeholder verse') removed from public copy. Next: (a) fill Daricheh with real original/freely-shareable translation pieces; (b) add real facts/photos/press links via _private/FILL-ME-facts.md; (c) add a real portrait.jpg and finish deploy.",
   "links": {
     "github": "https://github.com/MohammadaliMasjedi-source/Personal-Portfolio",
     "live": "https://mohammadalimasjedi-source.github.io/Personal-Portfolio/",
@@ -163,8 +163,8 @@
           "done": false
         },
         {
-          "title": "Translate remaining narrative sections (athlete/manager/poet/personal headings still hardcoded English with no data-i18n keys)",
-          "done": false
+          "title": "Translate remaining narrative sections (athlete/manager/poet/personal + engineer header + worlds facets) — data-i18n keys added & FA/DE strings written; verified rendering in all 3 languages with 0 missing keys and no console errors; leaked editor-note placeholders removed from public copy",
+          "done": true
         },
         {
           "title": "Fill Daricheh with real original/freely-shareable translation pieces (currently coming-soon stub only)",
