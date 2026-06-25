@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=9" />
+  <link rel="stylesheet" href="css/style.css?v=10" />
 </head>
 
 <body>
@@ -84,7 +84,8 @@
       <a href="#music" data-menu-link><span class="menu__idx">06</span> <span data-i18n="menu.music">Music</span></a>
       <a href="#athlete" data-menu-link><span class="menu__idx">07</span> <span data-i18n="menu.athlete">Athlete</span></a>
       <a href="#poet" data-menu-link><span class="menu__idx">08</span> <span data-i18n="menu.poet">Poet</span></a>
-      <a href="#contact" data-menu-link><span class="menu__idx">09</span> <span data-i18n="menu.contact">Contact</span></a>
+      <a href="#daricheh" data-menu-link><span class="menu__idx">09</span> <span data-i18n="menu.daricheh">Translations · Daricheh</span></a>
+      <a href="#contact" data-menu-link><span class="menu__idx">10</span> <span data-i18n="menu.contact">Contact</span></a>
     </nav>
     <div class="menu__foot">
       <span data-i18n="menu.loc">Clausthal-Zellerfeld, DE</span>
@@ -689,6 +690,33 @@
       </div>
     </section>
 
+    <!-- ===================== TRANSLATIONS / DARICHEH (stub) ===================== -->
+    <!-- A small "coming soon" home for original translation work (Daricheh / داریچه).
+         No copyrighted source/target text is published here — only the section frame. -->
+    <section class="section facet-sec daricheh" id="daricheh">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">13</span>
+        <div>
+          <span class="eyebrow" data-i18n="dar.kicker">Translations · داریچه (Daricheh)</span>
+          <h2 class="section__title" data-i18n="dar.title">A little window <em>between languages.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="dar.lead">
+        Carrying poems and ideas across Persian, English and German — a small, careful practice.
+      </p>
+      <div class="sec-prose">
+        <p data-reveal data-i18n="dar.p1">
+          Daricheh (داریچه — “a little window”) will gather my own translation work: bringing
+          Persian poetry toward English and German, and ideas the other way. Each piece will name
+          its source and translator clearly, and only original or freely shareable texts will live here.
+        </p>
+      </div>
+      <p class="dar-soon" data-reveal>
+        <span class="dar-soon__dot" aria-hidden="true"></span>
+        <span data-i18n="dar.soon">Coming soon — the first windows are being prepared.</span>
+      </p>
+    </section>
+
     <!-- ===================== CHANNELS ===================== -->
     <section class="section channels" id="channels">
       <div class="section__head">
@@ -759,8 +787,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <!-- i18n must load BEFORE main.js so text is translated before it gets animated/split -->
-  <script src="js/i18n.js?v=9"></script>
-  <script src="js/main.js?v=9"></script>
+  <script src="js/i18n.js?v=10"></script>
+  <script src="js/main.js?v=10"></script>
   <script src="js/polish.js?v=6"></script>
 </body>
 </html>
