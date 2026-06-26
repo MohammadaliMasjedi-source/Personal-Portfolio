@@ -695,6 +695,16 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
   box-shadow: 0 0 12px var(--volt); animation: pulse 2s infinite; flex: none; }
 @media (prefers-reduced-motion: reduce){ .dar-soon__dot { animation: none; } }
 
+/* Shiraz House — Archive: placeholder "coming soon" gallery (no copyrighted images) */
+.arc-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.arc-shot { position: relative; aspect-ratio: 4 / 5; border: 1px solid var(--line);
+  border-radius: var(--radius); background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.018) 0 14px, transparent 14px 28px),
+    var(--surface-2);
+  display: grid; place-items: center; overflow: hidden; }
+.arc-shot__mark { font-family: var(--font-display); color: var(--volt); opacity: .5; font-size: 22px; }
+@media (max-width: 720px){ .arc-gallery { grid-template-columns: repeat(2, 1fr); } }
+
 /* Persian: Vazirmatn + calmer line-height */
 html[lang="fa"] body { font-family: "Vazirmatn", var(--font-body); }
 html[lang="fa"] .hero__title,

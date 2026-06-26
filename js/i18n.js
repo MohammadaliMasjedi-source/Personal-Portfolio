@@ -194,6 +194,19 @@
       "dar.w3.h": "یادداشت‌هایی بر ترجمه", "dar.w3.p": "یادداشت‌هایی کوتاه دربارهٔ گزینش‌های پشتِ هر قطعه — اینکه یک واژه چه با خود دارد و چه از دست می‌رود.",
       "dar.soon": "به‌زودی — نخستین داریچه‌ها در حالِ آماده‌شدن‌اند.",
 
+      /* shiraz house — archive (cultural history, coming soon) */
+      "menu.arthive": "خانهٔ هنر — بایگانی",
+      "arc.kicker": "خانهٔ هنر شیراز — بایگانی",
+      "arc.title": "تاریخی فرهنگی، با حوصله نگه‌داشته.",
+      "arc.lead": "بایگانی‌ای محترمانه از زندگیِ فرهنگیِ پیرامونِ خانهٔ هنر — شب‌های سینما، هنر و موسیقی — همچون خاطره‌ای از گذشته.",
+      "arc.p1": "این بایگانی، تاریخِ فرهنگیِ مستندِ مرکزِ هنریِ خانهٔ هنر در شیراز را گرد می‌آورد: جایی که سال‌ها مردم برای شب‌های سینما، نمایشگاه‌ها و موسیقیِ زنده گرد هم می‌آمدند. اینجا همچون حافظه‌ای فرهنگی پیش‌کش می‌شود — سیاهه‌ای از برنامه‌ها و شب‌هایی که جامعه‌ای را گردِ هنر کنار هم آورد.",
+      "arc.p2": "هدف ساده و آرام است: یادآوریِ خودِ رویدادها — فیلم‌هایی که نمایش داده شد، آثاری که به نمایش درآمد، موسیقی‌ای که نواخته شد — و روحِ یک فضای مستقل برای هنر. هیچ‌چیز اینجا ادعایی دربارهٔ مالکیت یا هر موضوعِ مورد مناقشه نیست؛ تنها سیاهه‌ای از کنشِ فرهنگی است، با حوصله نگه‌داشته.",
+      "arc.c1.h": "شب‌های سینما", "arc.c1.p": "شب‌هایی از فیلم و گفت‌وگو — نمایش‌هایی که مردم را گردِ تصویرِ متحرک می‌آورد.",
+      "arc.c2.h": "هنر و نمایشگاه", "arc.c2.p": "نمایش‌هایی از نقاشی و هنرهای تجسمی — دیوار و اتاقی برای هنرمندانِ نوظهور و شناخته‌شده.",
+      "arc.c3.h": "شب‌های موسیقی", "arc.c3.p": "موسیقیِ زنده زیرِ یک سقف — کنسرت‌های آرام و اجراهای مشترک میانِ دوست‌دارانِ هنر.",
+      "arc.gallery": "گالری به‌زودی — عکس‌ها تنها زمانی افزوده می‌شوند که اصیل یا برای هم‌رسانی آزاد باشند.",
+      "arc.soon": "به‌زودی — این بایگانی با حوصله در حالِ آماده‌شدن است.",
+
       /* contact + footer */
       "contact.kicker": "— تماس",
       "contact.title": "بیا چیزی بسازیم، آن‌سوی مرزها.",
@@ -368,6 +381,19 @@
       "dar.w2.h": "Persisch → Deutsch", "dar.w2.p": "Eine langsamere Brücke ins Deutsche — eine Sprache, die ich noch lerne, Vers für Vers, sorgfältig.",
       "dar.w3.h": "Notizen zur Übersetzung", "dar.w3.p": "Kurze Notizen zu den Entscheidungen hinter jedem Stück — was ein Wort trägt und was verloren geht.",
       "dar.soon": "Bald — die ersten Fenster werden vorbereitet.",
+
+      /* shiraz house — archive (cultural history, coming soon) */
+      "menu.arthive": "Shiraz House — Archiv",
+      "arc.kicker": "Shiraz House · خانهٔ هنر — Archiv",
+      "arc.title": "Eine Kulturgeschichte, sorgsam bewahrt.",
+      "arc.lead": "Ein respektvolles Archiv des kulturellen Lebens rund um das Khaneh Honar — seine Kinoabende, Kunst und Musik — als bewahrte Erinnerung.",
+      "arc.p1": "Dieses Archiv sammelt die dokumentierte Kulturgeschichte des Kunstzentrums Khaneh Honar in Schiras: ein Ort, an dem über viele Jahre Menschen zu Kinoabenden, Ausstellungen und Livemusik zusammenkamen. Es wird hier als kulturelle Erinnerung angeboten — eine Aufzeichnung von Programmen und Abenden, die eine Gemeinschaft rund um die Kunst versammelten.",
+      "arc.p2": "Das Ziel ist schlicht und behutsam: an die Ereignisse selbst zu erinnern — die gezeigten Filme, die ausgestellten Werke, die gespielte Musik — und an den Geist eines unabhängigen Raums für die Kunst. Nichts hier ist eine Behauptung über Eigentum oder eine strittige Frage; es ist allein eine Aufzeichnung kultureller Aktivität, sorgsam bewahrt.",
+      "arc.c1.h": "Kinoabende", "arc.c1.p": "Abende voller Film und Gespräch — Vorführungen, die Menschen rund um das bewegte Bild versammelten.",
+      "arc.c2.h": "Kunst & Ausstellungen", "arc.c2.p": "Schauen für Malerei und bildende Kunst — eine Wand und ein Raum für junge wie etablierte Künstler.",
+      "arc.c3.h": "Musikabende", "arc.c3.p": "Livemusik unter einem Dach — stille Konzerte und gemeinsame Auftritte unter Freunden der Kunst.",
+      "arc.gallery": "Galerie folgt bald — Bilder werden nur hinzugefügt, wenn sie eigen oder frei teilbar sind.",
+      "arc.soon": "Bald — dieses Archiv wird mit Sorgfalt vorbereitet.",
 
       "contact.kicker": "— Kontakt",
       "contact.title": "Lass uns etwas schaffen, über die Grenzen hinweg.",
