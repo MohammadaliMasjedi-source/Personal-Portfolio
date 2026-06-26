@@ -10,7 +10,7 @@
   "tagline": "Personal brand site (one mind, many lives).",
   "progress": null,
   "currentPhase": "p5",
-  "nextAction": "Full-site i18n now complete: every section (incl. Athlete/Manager/Poet/Personal/Engineer + worlds facets) has data-i18n keys with FA+DE translations — 190 keys, 0 missing in FA/DE, verified live in EN/FA/DE with no console errors. Daricheh stub fleshed out with 3 descriptive 'window' cards (still coming-soon — no real translated pieces yet). Leaked editor-note placeholders ('Tell me your sport', 'add it', 'placeholder verse') removed from public copy. Next: (a) fill Daricheh with real original/freely-shareable translation pieces; (b) add real facts/photos/press links via _private/FILL-ME-facts.md; (c) add a real portrait.jpg and finish deploy.",
+  "nextAction": "Added a public-safe 'Shiraz House · خانهٔ هنر — Archive' coming-soon SECTION (#arthive): a respectful intro to the documented cultural history (cinema nights, art & exhibitions, music evenings) framed strictly as CULTURAL MEMORY — no ownership claims, no contested facts, no copyrighted images (placeholder/coming-soon gallery only). 14 new data-i18n keys (arc.* + menu.arthive) with full FA+DE translations; menu link added; CSS for striped placeholder gallery; bumped style.css?v=11 + i18n.js?v=12. VERIFIED live in EN/FA/DE — every arc.* key resolves (0 untranslated), RTL flips in FA, 0 console errors. Next: (a) fill the archive + Daricheh with real original/freely-shareable pieces and cleared images; (b) add real facts/photos/press links via _private/FILL-ME-facts.md; (c) add a real portrait.jpg and finish deploy.",
   "links": {
     "github": "https://github.com/MohammadaliMasjedi-source/Personal-Portfolio",
     "live": "https://mohammadalimasjedi-source.github.io/Personal-Portfolio/",
@@ -156,6 +156,10 @@
         },
         {
           "title": "Translations / Daricheh (داریچه) section stub added — FA/EN/DE strings, no copyrighted text, menu link + pill styling; verified rendering in all 3 languages",
+          "done": true
+        },
+        {
+          "title": "Shiraz House · خانهٔ هنر — Archive (coming-soon) section added (#arthive) — cultural-history intro (cinema nights, art & music) as CULTURAL MEMORY only, no ownership claims / no contested facts / no copyrighted images (striped placeholder gallery); 14 arc.* + menu.arthive keys in FA/EN/DE, menu link, CSS; verified live in EN/FA/DE with 0 untranslated keys, RTL-safe, 0 console errors; ?v= bumped (style.css 11, i18n.js 12)",
           "done": true
         },
         {
