@@ -1,20 +1,23 @@
 # LAUNCH CHECKLIST — Mo · MassJedi portfolio
 
-Last checked: 2026-06-27. Public repo: `MohammadaliMasjedi-source/Personal-Portfolio`.
-Live URL: https://mohammadalimasjedi-source.github.io/Personal-Portfolio/
+Last checked: 2026-06-30. Repo: `MohammadaliMasjedi-source/Personal-Portfolio` — **currently PRIVATE**.
+Intended live URL (once published): https://mohammadalimasjedi-source.github.io/Personal-Portfolio/
 
-> Short version: **the site is already live and the deploy works.** The old note
-> "Pages NOT live / deploy fails" is **out of date.** What's left is mostly content
-> Mo must approve (photos, biographical claims), not engineering.
+> Short version: **the site is build-ready and the deploy workflow is correct — but the
+> repo is private and GitHub Pages is not yet enabled, so the site is NOT live right now.**
+> Going live is a deliberate one-time action only Mo takes (make repo public → enable Pages).
+> Everything else left is content Mo must approve (photos, biographical claims), not engineering.
+>
+> ⚠️ *Note: an earlier version of this file claimed the site was "already live." That was
+> stale — the repo is private and `GET /pages` returns 404. Corrected 2026-06-30.*
 
 ---
 
-## ✅ READY (verified working)
+## ✅ READY (build-ready; not yet published)
 
-- **Deploy works.** The last 5 GitHub Actions runs all finished **success**.
-  Build type is `workflow`, repo is **public**, HTTPS is enforced.
-- **Live site responds.** The home page returns **HTTP 200**; so do the CellSight
-  sub-page (`/projects/cellsight/`) and the share image (`/assets/img/og.png`).
+- **Repo is PRIVATE; Pages is OFF.** As of 2026-06-30 the repo is private and
+  `GET /repos/.../pages` returns 404 — so there is **no live site yet**. This is
+  expected: publishing is Mo's one-time call. Nothing here is broken.
 - **Deploy config is correct.** `.github/workflows/static.yml` is valid: it builds
   on every push to `main`, uploads the whole folder, and deploys to Pages.
   `.nojekyll` is present so folders serve as-is. **Nothing here needs fixing.**
