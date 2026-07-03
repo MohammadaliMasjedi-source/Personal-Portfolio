@@ -14,8 +14,9 @@ desktop.ini
 node_modules/
 .cache/
 
-# Private brand kit (Wikipedia drafts, facts, strategy) — never publish
+# Private working notes and draft content — never publish
 _private/
-
-# research/working content (holds 'do-not-publish' flags + unverified claims) — never publish
 content/
+
+# Machine-local launcher (not part of the public site)
+MC-Dashboard.bat
