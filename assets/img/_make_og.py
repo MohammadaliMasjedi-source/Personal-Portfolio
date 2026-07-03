@@ -62,5 +62,6 @@ for x in range(W):
         gpx[x, y] = col
 img.paste(grad, (0, 0), mask)
 
-img.save(FONTS and "internal-path", "PNG")
+import os
+img.save(os.path.join(os.path.dirname(os.path.abspath(__file__)), "og.png"), "PNG")
 print("wrote og.png", img.size)

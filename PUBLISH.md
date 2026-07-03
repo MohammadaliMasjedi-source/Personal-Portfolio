@@ -8,7 +8,7 @@ Your site is **already live** here:
 ## How an update goes live (automatic)
 
 1. Change any file (text, a photo, anything).
-2. Save it. The auto-sync commits and pushes to GitHub for you (or double-click `Sync.bat`).
+2. Commit and push it to `main` (`git add -A && git commit -m "…" && git push`).
 3. GitHub deploys it on its own. About **1 minute** later, the live site shows the change.
 
 You never run a build. Edit → save → wait one minute → done.

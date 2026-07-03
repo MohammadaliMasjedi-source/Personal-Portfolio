@@ -5,15 +5,19 @@ A dependency-free, single-page site that deploys straight to GitHub Pages (no bu
 ## Layout
 
 ```
-massjedi-website/
+Personal-Portfolio/
 ├─ index.html        # the entire single-page site
-├─ css/              # styles
-├─ js/               # interactions / motion
+├─ css/              # styles (design system + RTL)
+├─ js/               # i18n engine, interactions / motion, nav highlight
 ├─ assets/           # images, icons, OG image
 │  └─ img/
+│     ├─ gallery/    # stage-performance photos
+│     ├─ worlds/     # world-section thumbnails
 │     ├─ art/        # drop-in folder (self-documenting README.txt)
 │     └─ cats/       # drop-in folder (self-documenting README.txt)
 ├─ projects/         # standalone project sub-pages (e.g. CellSight)
+├─ learning/         # plain-language project explainer
+├─ handbook/         # maintenance manual + architecture diagrams
 ├─ .nojekyll         # tells GitHub Pages to serve files as-is
 └─ .github/          # Pages deploy workflow
 ```
