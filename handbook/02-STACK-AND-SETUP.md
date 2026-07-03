@@ -38,7 +38,7 @@ open index.html   # or just double-click it in the file explorer
 
 **C. Python static server (no extension):**
 ```bash
-cd "internal-path Mo/Personal-Portfolio"
+cd path/to/Personal-Portfolio
 python -m http.server 8080
 # then open http://localhost:8080
 ```
@@ -57,7 +57,7 @@ git commit -m "…"
 git push          # push to main → GitHub Actions redeploys to Pages automatically
 ```
 Live URL: `https://mohammadalimasjedi-source.github.io/Personal-Portfolio/`.
-First-time Pages setup: **Settings → Pages → Source: GitHub Actions** (already configured). See [`PUBLISH.md`](../PUBLISH.md) and [`LAUNCH-CHECKLIST.md`](../LAUNCH-CHECKLIST.md).
+First-time Pages setup: **Settings → Pages → Source: GitHub Actions** (already configured). See [`PUBLISH.md`](../PUBLISH.md).
 
 ## L4 · Architect — common errors + fixes
 | Symptom | Likely cause | Fix |

@@ -46,7 +46,7 @@ Edit the plain files, preview locally with Live Server, then commit and push. Pu
 1. In `index.html` find the item with class `is-soon` (Channels / Contact / Work).
 2. Remove `is-soon` and set the real `href`.
 3. Test the link opens; re-check console.
-(Tracked in `LAUNCH-CHECKLIST.md` / `.mc/project.json` p2.)
+(Tracked in `.mc/project.json` p2.)
 
 ### F · Add the real portrait
 1. Save the photo as `assets/img/portrait.jpg`.
@@ -57,7 +57,7 @@ Edit the plain files, preview locally with Live Server, then commit and push. Pu
 2. Confirm `og:image` / `twitter:image` in `index.html <head>` point at `assets/img/og.png`.
 
 ### H · Cut a "release" (publish)
-1. Run through `LAUNCH-CHECKLIST.md` (Mo-only content approvals).
+1. Run through the private launch checklist (content approvals are Mo-only).
 2. `git add -A && git commit -m "…" && git push`.
 3. Watch the repo **Actions** tab; when green, verify the live URL in EN/FA/DE on desktop + mobile.
 

@@ -1,8 +1,8 @@
 # TASK-GUIDES — do each open task yourself
 
 > One guide per real, still-open task from [`.mc/project.json`](../.mc/project.json).
-> Done phases (p1, p4-demo-bundle) aren't repeated here. These bridge "LooLoo built it" →
-> "Mo can do it himself." Keep in sync with `project.json` + `LAUNCH-CHECKLIST.md`.
+> Done phases (p1, p4-demo-bundle) aren't repeated here. These guides make every open task
+> doable by hand, step by step. Keep in sync with `project.json`.
 > Setup basics live in [`02-STACK-AND-SETUP.md`](./02-STACK-AND-SETUP.md); protocols in
 > [`04-MAINTENANCE-GUIDE.md`](./04-MAINTENANCE-GUIDE.md).
 
@@ -85,14 +85,14 @@
 
 ## TASK 7 · Add real facts + press/interview source links  (p5)
 **Goal:** ground the public copy in verifiable sources before final publish.
-**Before you start:** dated registry entries, press/interview links. Draft/private notes go in `_private/FILL-ME-facts.md` (gitignored — never publish).
+**Before you start:** dated registry entries, press/interview links. Draft/private notes go in `_private/` (gitignored — never publish).
 **Steps:**
 1. Collect sources privately in `_private/`.
 2. Only add a claim to the public `index.html` once it has a real source.
 3. Keep the under-claim rule: if unsure, leave it out.
 **How to test:** every public claim traces to a source you can show a reviewer.
-**Debug top-3:** (a) a claim can't be sourced → remove it (the "Kiarostami award" precedent). (b) a private note leaked → it must live under `_private/`, which is gitignored. (c) tone drifts promotional → keep it humane/universal.
-**Modify later:** as sources appear, upgrade under-claimed lines; pursue Wikipedia only via Articles-for-Creation once independent sources exist.
+**Debug top-3:** (a) a claim can't be sourced → remove it (the standing under-claim precedent). (b) a private note leaked → it must live under `_private/`, which is gitignored. (c) tone drifts promotional → keep it humane/universal.
+**Modify later:** as sources appear, upgrade under-claimed lines.
 
 ---
 

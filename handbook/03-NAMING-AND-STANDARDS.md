@@ -37,10 +37,9 @@ Personal-Portfolio/
 ├─ handbook/               # THIS folder — maintenance manual
 ├─ .github/workflows/static.yml   # Pages deploy
 ├─ .nojekyll               # serve folders as-is on Pages
-├─ .mc/project.json        # internal record (source of truth)
+├─ .mc/project.json        # machine-readable project record (source of truth)
 ├─ PROJECT.md              # human companion to project.json
-├─ README.md · tooling · LICENSE · CITATION.cff · CONTRIBUTING.md
-├─ LAUNCH-CHECKLIST.md · PUBLISH.md · MC-Dashboard.bat
+├─ README.md · tooling · LICENSE · CITATION.cff · CONTRIBUTING.md · PUBLISH.md
 └─ _private/ · content/    # GITIGNORED — never ship
 ```
 
@@ -56,7 +55,7 @@ Personal-Portfolio/
 Conventional-commit-ish prefixes: `docs:`, `chore:`, `i18n:`, `polish:`, `feat`-style descriptions ("cinematic hero + interactive worlds"). Short, present-tense subject. Examples in `git log --oneline`.
 
 ## L4 · Architect — the honesty & safety bar
-- **Truth only.** No invented facts, awards, or claims on a public page. Under-claim until independent sources exist (the "Kiarostami award" line was removed for exactly this reason).
+- **Truth only.** No invented facts, awards, or claims on a public page. Under-claim until independent sources exist (an unverified award line was removed for exactly this reason).
 - **Public-safe boundary.** Nothing about private employment, clients, finances, health, or documents. Thesis stays high-level. `_private/` and `content/` are gitignored and must never be committed/published.
 - **Trilingual parity is the quality gate.** A change isn't "done" until every new `data-i18n` key resolves in EN + FA + DE (0 untranslated), RTL still flips in FA, and the console shows 0 errors.
 - **No automated tests.** Verification is manual/preview-based (render check, i18n key resolution, console-error check, RTL check) — state this honestly; don't imply CI coverage that doesn't exist.
