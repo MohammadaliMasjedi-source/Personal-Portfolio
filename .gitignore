@@ -21,3 +21,6 @@ content/
 # Machine-local launcher / local tooling (not part of the public site)
 MC-Dashboard.bat
 .tooling/
+
+# local Claude tooling — never in the public-standard repo
+.claude/
