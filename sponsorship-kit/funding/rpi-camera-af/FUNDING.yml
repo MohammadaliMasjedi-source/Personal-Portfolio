@@ -1,0 +1,19 @@
+# FUNDING.yml for MohammadaliMasjedi-source/rpi-camera-af (currently PUBLIC on GitHub)
+#
+# STATUS: staged here, NOT yet copied into the real repo. The handles below
+# are placeholders — copy this file in only after the matching account
+# exists (see sponsorship-kit/SETUP-GUIDE.md), or GitHub will show a
+# "Sponsor" button that leads nowhere.
+#
+# ---- COPY INSTRUCTIONS (do this yourself, ~2 minutes, once accounts exist) ----
+# 1. Replace every REPLACE_WITH_* placeholder below with your real handle/link.
+# 2. In your local clone of rpi-camera-af, create the folder .github/ if it
+#    doesn't exist yet, and save this file as: rpi-camera-af/.github/FUNDING.yml
+# 3. git add .github/FUNDING.yml && git commit -m "add sponsor links" && git push
+# 4. Open https://github.com/MohammadaliMasjedi-source/rpi-camera-af — a small
+#    "Sponsor" heart button appears near the top-right within a few minutes.
+
+github: [REPLACE_WITH_YOUR_GITHUB_SPONSORS_HANDLE]
+ko_fi: REPLACE_WITH_YOUR_KOFI_HANDLE
+buy_me_a_coffee: REPLACE_WITH_YOUR_BMC_HANDLE
+custom: ["https://paypal.me/REPLACE_WITH_YOUR_PAYPAL_HANDLE"]

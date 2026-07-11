@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sponsorship & Support — Setup Guide</title>
+<style>
+  :root {
+    --bg:        #141009;
+    --bg-2:      #1b150d;
+    --surface:   #221b11;
+    --surface-2: #2b2316;
+    --line:      rgba(243,236,221,0.12);
+    --text:      #f3ecdd;
+    --text-dim:  #c2b59b;
+    --text-mute: #9a8c72;
+    --volt:      #e3a23c;
+    --volt-deep: #c4842a;
+    --cyan:      #3f9a8c;
+    --radius:    14px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 48px 24px 90px; }
+  h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px; letter-spacing: -0.01em; }
+  .sub { color: var(--text-dim); font-size: 16px; margin-bottom: 36px; max-width: 680px; }
+  h2 { font-size: 22px; margin: 46px 0 6px; color: var(--volt); display: flex; align-items: center; gap: 10px; }
+  h2 .num { font-size: 13px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 100px; padding: 3px 10px; color: var(--text-dim); }
+  .time { display: inline-block; font-size: 12px; color: var(--bg); background: var(--volt); border-radius: 100px; padding: 3px 11px; font-weight: 600; margin-left: 4px; }
+  .time.heavy { background: var(--cyan); color: #06231f; }
+  ol, ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--volt); }
+  code { background: var(--surface-2); padding: 2px 6px; border-radius: 6px; font-size: 0.92em; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; margin: 14px 0; }
+  .quote { border-left: 3px solid var(--volt); padding: 10px 18px; margin: 14px 0; color: var(--text-dim); background: var(--surface); border-radius: 0 10px 10px 0; font-style: italic; }
+  .legal { border: 1.5px solid var(--volt-deep); background: linear-gradient(160deg, rgba(227,162,60,0.09), var(--surface)); border-radius: var(--radius); padding: 22px 26px; margin: 20px 0; }
+  .legal h2 { margin-top: 0; }
+  .fee { font-size: 13px; color: var(--text-mute); margin-top: 8px; }
+  .handle-opts { display: flex; gap: 14px; flex-wrap: wrap; margin: 14px 0 8px; }
+  .handle-opts .card { flex: 1; min-width: 220px; margin: 0; }
+  .handle-opts b { color: var(--text); }
+  .rails { display: flex; gap: 10px; align-items: flex-start; background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius); padding: 16px 20px; margin: 30px 0; color: var(--text-dim); font-size: 14.5px; }
+  .rails .ico { font-size: 20px; }
+  hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
+  .foot-note { font-size: 13.5px; color: var(--text-mute); margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Sponsorship &amp; Support — Setup Guide</h1>
+  <p class="sub">Everything code-side is already built. What's left below is a short list of clicks that only Mo can do — account creation, payment details, and accepting each service's terms. Nobody else may do these on your behalf, so here's exactly what to click, in order, with time estimates.</p>
+
+  <div class="rails"><span class="ico">🔒</span><div>Built by the agent: the website section, the one-place config, the staged FUNDING.yml files. <strong>Not done by the agent, ever:</strong> creating accounts, entering payment/bank details, accepting terms, or posting anything publicly. That part is this guide.</div></div>
+
+  <h2>Pick one handle, use it everywhere</h2>
+  <div class="handle-opts">
+    <div class="card"><b>Option A</b> — <code>mmasjedi</code><div class="foot-note">Your existing GitHub handle. Simple, personal, already recognizable.</div></div>
+    <div class="card"><b>Option B</b> — <code>roshanalabs</code><div class="foot-note">Project-style handle. Keeps "supports Mo's work incl. Sahar" framed as a project.</div></div>
+  </div>
+  <p class="foot-note">Either works technically. Use the <em>same</em> one on Ko-fi, Buy Me a Coffee, PayPal.me and GitHub Sponsors — your call which.</p>
+
+  <hr/>
+
+  <h2><span class="num">already built</span> nothing left to code</h2>
+  <ul>
+    <li><b>Website:</b> a "Support the work" section on the live design (<code>index.html#support</code>), styled to match the rest of the page. Every button starts as a harmless "set up soon" badge.</li>
+    <li><b>One-place config:</b> <code>js/support.js</code> — fill in one handle there, that button goes live automatically. Leave it blank, it stays a harmless soon-badge.</li>
+    <li><b>FUNDING.yml, staged (not committed):</b> ready-to-copy files for every currently-public repo in <code>sponsorship-kit/funding/&lt;repo&gt;/FUNDING.yml</code>, each with copy-paste instructions in its header comment.</li>
+  </ul>
+
+  <h2><span class="num">a</span> Ko-fi <span class="time">~10 min</span> <span style="font-size:13px;color:var(--text-mute)">— recommended first</span></h2>
+  <p>Why first: free 0%-platform-fee tier, PayPal-linked, instant, no approval wait.</p>
+  <ol>
+    <li>Go to <a href="https://ko-fi.com/" target="_blank" rel="noopener">ko-fi.com</a> and click <b>Sign Up</b>.</li>
+    <li>Sign up with email (fewer permissions than "Continue with Google/GitHub").</li>
+    <li>Choose your page handle (see above).</li>
+    <li><b>Settings → Payments</b> — connect your PayPal (or Stripe). You enter your own details directly with Ko-fi.</li>
+    <li>Confirm you're on the free <b>0%-fee</b> plan (default — the paid "Gold" tier is optional).</li>
+    <li>Copy your handle into <code>js/support.js</code> → <code>SUPPORT.kofi = "your-handle"</code>, commit + push. Live in about a minute.</li>
+  </ol>
+  <div class="fee">Fee: 0% Ko-fi fee. Your processor still takes its normal cut (~2–3%).</div>
+
+  <h2><span class="num">b</span> Buy Me a Coffee <span class="time">~10 min</span></h2>
+  <ol>
+    <li>Go to <a href="https://www.buymeacoffee.com/" target="_blank" rel="noopener">buymeacoffee.com</a>, click <b>Start my page</b>.</li>
+    <li>Sign up, pick your page handle.</li>
+    <li><b>Settings → Payments</b> — connect Stripe or PayPal.</li>
+    <li>Copy your handle into <code>js/support.js</code> → <code>SUPPORT.buyMeACoffee</code>, commit + push.</li>
+  </ol>
+  <div class="fee">Fee: 5% platform fee + processor's normal cut.</div>
+
+  <h2><span class="num">c</span> PayPal.me <span class="time">~5 min</span> <span style="font-size:13px;color:var(--text-mute)">— if you already have PayPal</span></h2>
+  <ol>
+    <li>Go to <a href="https://www.paypal.me/" target="_blank" rel="noopener">paypal.me</a> and claim your link (uses your <em>existing</em> PayPal login — does not create a new account).</li>
+    <li>Pick your PayPal.me handle.</li>
+    <li>Copy it into <code>js/support.js</code> → <code>SUPPORT.paypalMe</code>, commit + push.</li>
+  </ol>
+  <p class="foot-note">No existing PayPal account? Skip this one — opening a brand-new account is a bigger step (bank linking, ID verification), outside this guide's scope.</p>
+  <div class="fee">Fee: standard PayPal receiving fee (varies by country/currency).</div>
+
+  <h2><span class="num">d</span> GitHub Sponsors <span class="time heavy">~20–30 min + review wait</span></h2>
+  <ol>
+    <li>Go to <a href="https://github.com/sponsors" target="_blank" rel="noopener">github.com/sponsors</a>, click <b>Set up GitHub Sponsors</b> (also under your profile → Sponsor area, or <b>Settings → Sponsors</b>).</li>
+    <li>Fill in your sponsors profile: short bio, what support funds (you can honestly mention Sahar here — GitHub's profile explicitly supports "what this funds" text).</li>
+    <li>Connect payouts via <b>Stripe Connect</b>: bank account + tax residency. Germany is a supported payout country — this is exactly where the tax-classification question shows up (see the legal box below).</li>
+    <li>Submit. GitHub reviews new sponsored accounts before the button goes live — can take a few days, out of your control once submitted.</li>
+    <li>Once approved, the button appears wherever <code>FUNDING.yml</code> references <code>github: [your-handle]</code>, and on your profile.</li>
+  </ol>
+  <div class="fee">Fee: 0% GitHub platform fee for individual sponsors (Stripe's normal processing fee still applies).</div>
+
+  <h2><span class="num">e</span> YouTube <span style="font-size:13px;color:var(--text-mute)">— the honest reality</span></h2>
+  <p>Channel confirmed from the site: <b>@Mohammad_masjedi</b>.</p>
+  <p><b>Needs YouTube Partner Program (YPP) — not available today unless already met:</b> channel memberships and Super Thanks both require <b>1,000 subscribers + 4,000 public watch hours</b> in the last 12 months (or <b>10M Shorts views in 90 days</b>), plus AdSense + policy compliance. No shortcut — be upfront about this gate.</p>
+  <p><b>What you CAN do today, no gate:</b></p>
+  <ol>
+    <li><b>Video descriptions</b> — add your support link (once live) to any video's description.</li>
+    <li><b>Channel banner / About links</b> — YouTube Studio → Customization → Basic info → Links (up to 5 links show under your banner).</li>
+    <li><b>Pinned comment</b> — pin a short template comment (below) on a video.</li>
+  </ol>
+  <div class="quote">"If you enjoyed this and would like to support more of it, there's a small tip jar here: [your Ko-fi/BMC link] — completely optional, just here if you'd like to. Thanks for watching!"</div>
+  <p class="foot-note">Translate for your fa/de audience if it fits the video.</p>
+
+  <h2><span class="num">f</span> Patreon <span class="time heavy">~30 min</span> <span style="font-size:13px;color:var(--text-mute)">— optional, heavier, consider later</span></h2>
+  <ol>
+    <li>Go to <a href="https://www.patreon.com/signup" target="_blank" rel="noopener">patreon.com/signup</a>, create a creator account.</li>
+    <li>Set up at least one membership tier — needs more thought (a recurring content promise); worth waiting for a steady cadence.</li>
+    <li>Connect Stripe/PayPal for payout.</li>
+  </ol>
+  <div class="fee">Fee: ~8–12% platform fee + processor fee. Recommendation: skip for now, revisit once (a)–(d) are running.</div>
+
+  <div class="legal">
+    <h2>⚖ Legal honesty box — read before turning anything on</h2>
+    <p>In Germany, income from sponsorships/donations — even small recurring ones — is taxable, and if it becomes systematic it can be classified as self-employment. That's the <b>same Blue Card Zusatzblatt gate</b> already flagged in the finance plan: a side activity (Nebentätigkeit) needs approval <i>before</i> it starts. One-off small gifts are lower-risk but still technically declarable.</p>
+    <p><b>Recommendation:</b> set the accounts up now — free, zero income flowing, zero classification risk — then flip "receiving" on (put your handle into <code>support.js</code>/<code>FUNDING.yml</code>) only once the Zusatzblatt gate clears. Rails ready the day it's legal, not before.</p>
+    <p>Once past that gate: <b>Kleinunternehmerregelung (§19 UStG)</b> — under the annual revenue threshold, no VAT charge/report needed (simpler bookkeeping); income tax still applies regardless. Not tax advice — confirm your case with a Steuerberater before real money moves.</p>
+  </div>
+
+  <h2>What was NOT done — hard rails</h2>
+  <ul>
+    <li>No account created, no payment/bank detail entered, no ToS accepted, nothing posted publicly.</li>
+    <li>No <code>FUNDING.yml</code> committed into any real public repo — handles don't exist yet; staged in <code>sponsorship-kit/funding/&lt;repo&gt;/</code> instead.</li>
+    <li>GitHub Pages for Personal-Portfolio untouched — still off, a separate Mo-only settings click already tracked in your decision queue.</li>
+  </ul>
+
+  <h2>One thing found during this build</h2>
+  <p><code>Personal-Portfolio</code>'s local checkout and <code>origin/main</code> have diverged with <b>unrelated histories</b> (<code>git merge-base</code> finds no common ancestor) — likely an earlier history-rewrite/scrub pass. Rather than force-merge or rewrite history as part of this task, this kit's commits live on a new branch, <code>sponsorship-rails</code>, pushed to origin — nothing destructive, ready to merge once <code>main</code> is reconciled separately.</p>
+</div>
+</body>
+</html>

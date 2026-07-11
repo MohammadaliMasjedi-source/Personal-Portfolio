@@ -1,0 +1,23 @@
+# FUNDING.yml for MohammadaliMasjedi-source/Personal-Portfolio
+#
+# NOTE (found during this build, 2026-07-11): this repo is ALREADY public on
+# GitHub right now — its visibility was not flipped back to private as
+# expected. Its GitHub Pages site is still off though (gh api .../pages
+# returns 404), so nothing about this is live to the public yet. This
+# FUNDING.yml is staged here (not copied to .github/) for the same reason
+# as the others: the handles don't exist yet.
+#
+# ---- COPY INSTRUCTIONS (do this yourself, ~2 minutes, once accounts exist) ----
+# 1. Replace every REPLACE_WITH_* placeholder below with your real handle/link.
+# 2. In your local Personal-Portfolio clone, save this file as:
+#    Personal-Portfolio/.github/FUNDING.yml  (folder already exists here)
+# 3. git add .github/FUNDING.yml && git commit -m "add sponsor links" && git push
+# 4. Because the repo is already public, the "Sponsor" heart button will
+#    appear on the GitHub repo page within a few minutes of the push —
+#    same as the in-page "Support the work" section, this is separate
+#    from (and does not by itself turn on) GitHub Pages.
+
+github: [REPLACE_WITH_YOUR_GITHUB_SPONSORS_HANDLE]
+ko_fi: REPLACE_WITH_YOUR_KOFI_HANDLE
+buy_me_a_coffee: REPLACE_WITH_YOUR_BMC_HANDLE
+custom: ["https://paypal.me/REPLACE_WITH_YOUR_PAYPAL_HANDLE"]
