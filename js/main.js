@@ -45,6 +45,9 @@
   $$('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const id = a.getAttribute("href");
+      /* href can be removed after this binds (e.g. support.js clears it on
+         "soon" cards) — treat that as a no-op click, not a scroll-to-top. */
+      if (id === null) { e.preventDefault(); return; }
       if (id.length < 2) { e.preventDefault(); scrollToTarget("#top"); closeMenu(); return; }
       const el = $(id);
       if (el) { e.preventDefault(); scrollToTarget(el); closeMenu(); }

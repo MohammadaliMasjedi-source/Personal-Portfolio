@@ -36,11 +36,17 @@
         el.target = "_blank";
         el.classList.remove("is-soon");
         el.removeAttribute("aria-disabled");
+        el.removeAttribute("tabindex"); // <a href> is natively focusable
       } else {
-        el.href = "#support";
+        /* No handle yet: drop href so there's no fake same-page "click" to
+           follow (was href="#support" — a no-op jump that contradicted
+           aria-disabled). tabindex keeps it keyboard-reachable so people
+           tabbing through still discover the "soon" card. */
+        el.removeAttribute("href");
         el.removeAttribute("target");
         el.classList.add("is-soon");
         el.setAttribute("aria-disabled", "true");
+        el.setAttribute("tabindex", "0");
       }
     }
   }
