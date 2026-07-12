@@ -366,7 +366,7 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .fstat__lbl { display: block; margin-top: 8px; font-size: 0.78rem; letter-spacing: 0.02em; color: var(--text-dim); }
 .channels__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .channel { position: relative; padding: clamp(24px, 3vw, 36px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: flex; flex-direction: column; gap: 10px; min-height: 170px; transition: transform .4s var(--ease), border-color .4s, background .4s; overflow: hidden; }
-.channel::after { content: "↗"; position: absolute; top: 22px; right: 22px; color: var(--text-mute); transition: color .3s, transform .3s var(--ease); }
+.channel::after { content: "↗"; position: absolute; top: 22px; inset-inline-end: 22px; color: var(--text-mute); transition: color .3s, transform .3s var(--ease); }
 .channel:hover { transform: translateY(-5px); border-color: var(--volt); background: var(--surface-2); }
 .channel:hover::after { color: var(--volt); transform: translate(3px, -3px); }
 .channel__ico { font-size: 26px; }
@@ -375,11 +375,15 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .channel.is-soon { opacity: .62; }
 .channel.is-soon::after { content: "soon"; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: #06210a; background: var(--text-mute); border-radius: 100px; padding: 2px 8px; top: 18px; }
 .channel.is-soon:hover { border-color: var(--line-2); transform: translateY(-2px); }
+html[lang="de"] .channel.is-soon::after { content: "bald"; }
+html[lang="fa"] .channel.is-soon::after { content: "به‌زودی"; letter-spacing: 0; text-transform: none; }
 
 /* ---------- Support ---------- */
 .support__sahar { max-width: 720px; margin: 4px 0 30px; padding: 16px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--text-dim); font-size: 0.92rem; line-height: 1.55; }
 .support__sahar strong { color: var(--volt); font-weight: 600; }
 .support-btn.is-soon:hover { cursor: default; }
+.channels__grid.support__grid { grid-template-columns: repeat(3, 1fr); }
+.support-btn .channel__ico svg { display: block; width: 24px; height: 24px; }
 
 /* ── inline video gallery (click a poster → the recital plays right here) ──────── */
 .vgallery { display: flex; flex-direction: column; gap: 18px; }
