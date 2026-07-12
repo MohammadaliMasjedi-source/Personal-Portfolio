@@ -154,7 +154,7 @@
 
   <div class="card why">
     <h2><span class="dot"></span>Why "early" is the whole game</h2>
-    <p class="desc">Prediction error vs. how many cycles you've observed. The earlier you can trust the number, the more money the decision is worth. This is the core result behind CellSight.</p>
+    <p class="desc">Prediction error vs. how many cycles you've observed. The earlier you can trust the number, the more money the decision is worth. This chart uses synthetic numbers shaped to illustrate that idea — not the real thesis results, which are unpublished pre-defense.</p>
     <div class="legend" id="why-legend"></div>
     <div id="why-chart"></div>
     <div class="callout" id="why-callout"></div>
@@ -168,8 +168,8 @@
     </div>
     <div class="card">
       <div class="big" id="roi-acc">—</div>
-      <h3>Lower error in the early window</h3>
-      <p>Relative reduction in remaining-life error vs. a recurrent (GRU) baseline at ≤200 observed cycles — where the expensive decisions are made.</p>
+      <h3>Lower error in the early window (illustrative)</h3>
+      <p>A synthetic, illustrative comparison vs. a recurrent (GRU)-style baseline at ≤200 observed cycles — where the expensive decisions get made. Not the measured thesis result.</p>
     </div>
     <div class="card">
       <div class="big" id="roi-risk">—</div>
@@ -313,7 +313,7 @@ function renderKPIs(){
     {v:(avgSoh*100).toFixed(1)+"<small>%</small>", l:"Avg State of Health"},
     {v:attn, l:"Need attention", s:"of "+fleet.length+" cells"},
     {v:medRul+"<small> cyc</small>", l:"Median remaining life"},
-    {v:Math.round(earlyT)+"<small>%</small>", l:"Error @ ≤200 cyc", s:"GRU "+Math.round(earlyG)+"%"},
+    {v:Math.round(earlyT)+"<small>%</small>", l:"Error @ ≤200 cyc (illustrative)", s:"GRU-style "+Math.round(earlyG)+"% · synthetic"},
     {v:"~10<small>%</small>", l:"Life seen at first call", s:"locks RUL early"}
   ];
   document.getElementById("kpis").innerHTML = k.map(function(x){
@@ -424,8 +424,8 @@ function renderWhy(){
   // cycles where GRU first reaches transformer's 100-cycle error
   var match=100; for(var k=100;k<=400;k+=2){ if(errG(k)<=errT(100)){match=k;break;} match=k; }
   document.getElementById("why-callout").innerHTML=
-    '<b>At 100 observed cycles</b>, CellSight is already within <b>~'+at100T+'%</b> — the GRU baseline is at ~'+at100G+'% and needs <b>~'+match+' cycles</b> to catch up. '+
-    'Every decision made in that gap (resell, rebalance, pull a pack) is made <b>'+(match-100)+' cycles sooner</b> with confidence.';
+    'In this synthetic illustration, <b>at 100 observed cycles</b> the transformer-style model is already close to its floor error, while the GRU-style baseline is still catching up. '+
+    'The idea: a decision made early in that gap (resell, rebalance, pull a pack) can be made with confidence sooner — the real margin, on real data, is in the (unpublished, pre-defense) thesis.';
 }
 
 /* ---------- legends ---------- */

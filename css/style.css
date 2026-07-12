@@ -313,9 +313,14 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .project__media { flex: 1; min-height: 280px; position: relative; background: radial-gradient(120% 120% at 20% 0%, rgba(31,227,255,0.12), transparent 50%), linear-gradient(160deg, #0c1015, #07080b); display: grid; place-items: center; overflow: hidden; }
 .project__body { flex: 1; padding: clamp(28px, 3.4vw, 48px); display: flex; flex-direction: column; align-items: flex-start; }
 .project__tag { font-family: var(--font-display); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--volt); }
+.project__statusrow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.project__status { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--bg); background: var(--volt); border-radius: 100px; padding: 3px 11px; }
 .project__title { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 3vw, 40px); margin: 14px 0 14px; letter-spacing: -0.01em; }
 .project__desc { color: var(--text-dim); margin-bottom: 22px; max-width: 46ch; }
 .project__desc em { color: var(--text-mute); font-family: var(--font-serif); font-style: italic; }
+.project__explain { margin: 0 0 20px; display: grid; gap: 4px; max-width: 46ch; }
+.project__explain dt { font-family: var(--font-display); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-mute); margin-top: 8px; }
+.project__explain dd { margin: 2px 0 0; color: var(--text-dim); }
 .project__tech { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
 .project__tech span { font-size: 12px; font-family: var(--font-display); color: var(--text-dim); border: 1px solid var(--line); border-radius: 100px; padding: 5px 13px; }
 .project__link { margin-top: auto; display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 500; color: var(--text); border-bottom: 1px solid var(--line-2); padding-bottom: 4px; transition: gap .3s var(--ease), color .3s, border-color .3s; }
