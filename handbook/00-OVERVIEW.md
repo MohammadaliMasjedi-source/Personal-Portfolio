@@ -9,7 +9,7 @@
 ---
 
 ## L1 · ELI5 (a child)
-This is Mo's own website — one page that tells the world who he is: his science, his music, his films, his cats. You can read it in **English, Persian, or German**.
+This is Mo's own website — one page that tells the world who he is: his science, his music (including his music for theater productions), his cats. You can read it in **English, Persian, or German**.
 
 ## L2 · ELI15 (a smart teenager)
 A personal homepage for **Mohammadali "Mo" Masjedi**. The idea is **"one mind, many lives"**: instead of pretending he is only one thing, the site shows all his sides — AI/ML researcher & battery-intelligence builder, classical guitarist/teacher, project manager, cultural activist, cat person. It is **one web page** with smooth animations and a dark "cinematic" look, and you can flip the whole thing between three languages. Everything is just plain files (no app to install), so it hosts for free on GitHub Pages. It is deliberately **public-safe**: anything private (job, clients, money, health) is kept out on purpose.
@@ -17,7 +17,7 @@ A personal homepage for **Mohammadali "Mo" Masjedi**. The idea is **"one mind, m
 ## L3 · Practitioner (technical)
 A **static, zero-build single-page site**. No Node, no bundler, no framework, no server.
 
-- **One page:** [`index.html`](../index.html) (~65 KB) holds *all* content and ~20 sections (Hero, Worlds, About, Engineer, Research, Artist, Shiraz Art House + Archive, Cinema, Music, Collaborators, Press, Values, Athlete, Leader, Poet, Personal, Daricheh translations, Channels, Contact).
+- **One page:** [`index.html`](../index.html) (~65 KB) holds *all* content and ~20 sections (Hero, Worlds, About, Engineer, Research, Artist, Shiraz Art House + Archive, Music, Collaborators, Press, Values, Athlete, Leader, Poet, Personal, Daricheh translations, Channels, Contact).
 - **Design system:** [`css/style.css`](../css/style.css) (~58 KB) — dark cinematic theme, warm espresso/cream/saffron palette, RTL styles, custom cursor, striped placeholder gallery.
 - **Behaviour:** [`js/main.js`](../js/main.js) (~560 lines) — energy-field canvas, custom cursor, magnetic buttons, scroll-reveal, split-text, count-up stats, preloader, mobile menu, scroll progress, lightbox, YouTube-nocookie video, hero parallax, 3D tilt cards.
 - **Trilingual engine:** [`js/i18n.js`](../js/i18n.js) (~46 KB) — EN is the source in the HTML; FA + DE live here keyed by `data-i18n`. Reload-based switch, RTL-safe.

@@ -360,7 +360,9 @@
     if (!el) return;
     const span = el.querySelector("span");
     if (!span || prefersReduced) return; // keep first role static
-    const roles = ["a Guitarist & Teacher", "a Software Developer", "a Project Manager", "a Cultural Activist", "a Cat-lover"];
+    // i18n.js (loaded first) provides the roles in the active language.
+    const roles = (window.MAM_I18N && window.MAM_I18N.roles) ||
+      ["a Guitarist & Teacher", "a Software Developer", "a Project Manager", "a Cultural Activist", "a Cat-lover"];
     let i = 0;
     setInterval(() => {
       i = (i + 1) % roles.length;

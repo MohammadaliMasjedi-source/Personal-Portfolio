@@ -19,6 +19,13 @@
   var LABEL = { en: "EN", fa: "فا", de: "DE" };
   var ORDER = ["en", "fa", "de"];
 
+  /* hero role cycler lines, per language (read by main.js) */
+  var ROLES = {
+    en: ["a Guitarist & Teacher", "a Software Developer", "a Project Manager", "a Cultural Activist", "a Cat-lover"],
+    fa: ["نوازنده و مدرسِ گیتار کلاسیکم", "توسعه‌دهندهٔ نرم‌افزارم", "مدیرِ پروژه‌ام", "کنشگرِ فرهنگی‌ام", "عاشقِ گربه‌هام"],
+    de: ["Gitarrist & Lehrer", "Softwareentwickler", "Projektmanager", "Kulturaktivist", "Katzenliebhaber"]
+  };
+
   /* ---- translations (en is the HTML source, so only fa + de here) ---- */
   var DICT = {
     fa: {
@@ -26,7 +33,7 @@
       "nav.worlds": "جهان‌ها", "nav.engineer": "مهندس", "nav.artist": "هنرمند",
       "nav.poet": "شاعر", "nav.about": "درباره", "nav.arthouse": "خانهٔ هنر", "nav.cta": "تماس",
       "menu.worlds": "جهان‌ها", "menu.engineer": "مهندس", "menu.artist": "هنرمند",
-      "menu.athlete": "ورزشکار", "menu.arthouse": "خانهٔ هنر", "menu.cinema": "سینما",
+      "menu.athlete": "ورزشکار", "menu.arthouse": "خانهٔ هنر",
       "menu.music": "موسیقی", "menu.poet": "شاعر", "menu.contact": "تماس",
       "menu.daricheh": "ترجمه‌ها · داریچه",
       "menu.loc": "کلاوستال‑سلرفلد، آلمان",
@@ -36,6 +43,8 @@
       "hero.title": "یک ذهن، زندگی‌های بسیار.",
       "hero.sub": "نوازنده و مدرس گیتار کلاسیک، توسعه‌دهندهٔ نرم‌افزار، مدیر پروژه و کنشگر فرهنگی — و خدمتگزارِ دو گربه. یک ذهن، زندگی‌های بسیار.",
       "hero.cta1": "جهان‌هایم را ببین", "hero.cta2": "تماس", "hero.scroll": "پایین",
+      "hero.iam": "من",
+      "hero.role1": "نوازنده و مدرسِ گیتار کلاسیکم",
 
       /* cats */
       "cats.h": "ممو و ژوپیتر 🐾",
@@ -53,23 +62,28 @@
       "worlds.engineer.h": "مهندس", "worlds.engineer.p": "هوش مصنوعی و هوشمندیِ باتری. پژوهشی که به کار می‌آید.",
       "nav.research": "پژوهش", "menu.research": "پژوهش", "worlds.research.h": "پژوهش", "worlds.research.p": "هوشمندیِ باتری، پیش‌آگاهی و علمِ یادگیری.",
       "follow.kicker": "— همراهِ مسیر", "follow.title": "با من همراه شو", "follow.lead": "موسیقی، پژوهش و ساختن را همان‌طور که رخ می‌دهد به اشتراک می‌گذارم — بیشترش در یوتیوب. سابسکرایب کن و مسیر را دنبال کن.", "follow.sub": "سابسکرایب در یوتیوب",
-      "support.kicker": "— حمایت از کار", "support.title": "اگر دوست داشتی، کمک کن", "support.lead": "موسیقی، پژوهش و ساختن بیشتر در وقت شخصی‌ام اتفاق می‌افتد. اگر برایت ارزشی دارد، یک کمک کوچک به ادامه‌اش کمک می‌کند — بدون هیچ فشاری.", "support.sahar": "بخشی از این حمایت صرف کار من روی سحر (Sahar) می‌شود — آموزش رایگان برای کودکان بازمانده از تحصیل. من یک نهاد خیریهٔ ثبت‌شده نیستم، پس این کمک، معافیت مالیاتی ندارد — فقط حمایت از وقتی است که برای ساختنش می‌گذارم.", "support.setup": "به‌زودی راه‌اندازی می‌شود",
-      "stat.lang": "زبان · فا · EN · DE", "stat.lives": "زندگی، یک ذهن", "stat.arthouse": "سالِ ساختنِ خانهٔ هنر", "stat.papers": "مقالهٔ پژوهشی",
+      "support.kicker": "— حمایت از کار", "support.title": "اگر دوست داشتی، کمک کن", "support.lead": "موسیقی، پژوهش و ساختن بیشتر در وقت شخصی‌ام اتفاق می‌افتد. اگر برایت ارزشی دارد، یک کمک کوچک به ادامه‌اش کمک می‌کند — بدون هیچ فشاری.", "support.sahar": "بخشی از این حمایت صرف کارِ من روی <strong>سحر</strong> (<bdi>Sahar</bdi>) می‌شود — آموزش رایگان برای کودکان بازمانده از تحصیل. من یک نهاد خیریهٔ ثبت‌شده نیستم، پس این کمک، معافیت مالیاتی ندارد — فقط حمایت از وقتی است که برای ساختنش می‌گذارم.", "support.setup": "به‌زودی راه‌اندازی می‌شود",
+      "stat.lang": "زبان · فارسی · انگلیسی · آلمانی", "stat.lives": "زندگی، یک ذهن", "stat.arthouse": "ساختنِ خانهٔ هنر", "stat.arthouse.sfx": "+ سال", "stat.papers": "مقالهٔ پژوهشی",
       "worlds.artist.h": "هنرمند", "worlds.artist.p": "آنجا که منطق کراواتش را شل می‌کند. میدانِ بازیِ تصویر.",
       "worlds.arthouse.h": "خانهٔ هنر شیراز", "worlds.arthouse.p": "خانه‌ای مستقل برای هنر در شیراز.",
-      "worlds.cinema.h": "سینما", "worlds.cinema.p": "تصویر، راهی برای اندیشیدن دربارهٔ انسان.",
       "worlds.music.h": "موسیقی و شعر", "worlds.music.p": "از گیتار کلاسیک تا شعرِ فارسی.",
       "worlds.human.h": "انسان", "worlds.human.p": "گربه‌ها، کنجکاویِ بزرگ و زندگی بیرون از ساعت.",
       "worlds.athlete.h": "ورزشکار", "worlds.athlete.p": "نظم همچون تمرینی روزانه. تن و اراده.",
       "worlds.manager.h": "مدیر", "worlds.manager.p": "بدل‌کردنِ تلاشِ پراکنده به حرکتی مشترک.",
       "worlds.poet.h": "شاعر", "worlds.poet.p": "اتاقی آرام، آنجا که واژه‌ها زنده می‌شوند.",
+      "worlds.enter": "ورود ←",
 
       /* about */
       "about.kicker": "— درباره",
       "about.title": "حاضر نیستم در یک جعبه بگنجم.",
-      "about.lead": "من محمدعلی «مو» مسجدی‌ام — از ایران، اکنون در کوهستانِ هارتسِ آلمان.",
-      "about.p1": "روزها مدل‌های یادگیری ماشین می‌سازم که آیندهٔ باتری‌ها را می‌خوانند. اما انسان بیش از یک عنوانِ شغلی است. نقاشی و آفرینش می‌کنم، تمرین و رقابت می‌کنم، رهبری و سازمان‌دهی می‌کنم، و وقتی معادله‌ها خاموش می‌شوند، شعر می‌نویسم.",
-      "about.p2": "رشتهٔ پیونددهندهٔ همه‌چیز یکی است: کنجکاوی، پیشه‌وری و این باورِ سرسخت که چیزهای جالب آنجا رخ می‌دهند که رشته‌ها به هم می‌رسند.",
+      "about.lead": "من <strong>محمدعلی «مو» مسجدی‌</strong>ام — از شیراز، اکنون در کوهستانِ هارتسِ آلمان.",
+      "about.p1": "جایی کار می‌کنم که فرهنگ و فناوری به هم می‌رسند، چون برای من دو زبان‌اند برای پرسش‌هایی یکسان — دربارهٔ زیبایی، آزادی و خوب زیستن در کنار هم. سال‌ها در شیراز <strong>خانه‌ای مستقل برای هنرمندان</strong> ساختم و <strong>گیتار کلاسیک درس دادم</strong> — در پیِ روشنیِ یک جملهٔ خوب‌نواخته یا یک رباعیِ خیام.",
+      "about.p2": "حالا همان حوصله را به <strong>مهندسی</strong> آورده‌ام: کارِ آرام و صادقانهٔ واداشتنِ یک مدلِ باتری به راست‌گفتن. رشتهٔ پیونددهندهٔ همه‌چیز یکی است — کنجکاوی، پیشه‌وری و ساختنِ چیزهایی که مردم را کنار هم می‌آورند. <em>بیاموز تا زندگی کنی، زندگی کن تا بیاموزی.</em>",
+      "about.t1.k": "از ۲۰۰۳", "about.t1.d": "اجرا و تدریسِ گیتار کلاسیک در شیراز.",
+      "about.t2.k": "حدود ۲۰۱۲ تا ۲۰۲۰", "about.t2.d": "بنیان‌گذاری و رهبریِ خانهٔ هنر شیراز؛ بعدها به دیگران واگذار شد.",
+      "about.t3.k": "۲۰۱۲ تا ۲۰۲۲", "about.t3.d": "یک دهه در نرم‌افزار — مهندس، مدیرِ پروژه، سپس معمارِ راهکار.",
+      "about.t4.k": "از ۲۰۲۲", "about.t4.d": "پژوهشِ کارشناسیِ ارشد دربارهٔ عمرِ باتری در دانشگاه فنی کلاوستالِ آلمان.",
+      "about.t5.k": "همیشه", "about.t5.d": "گیتار، شعر، تمرین و گربه‌ها.",
 
       /* === NEW cultural sections === */
       "ah.kicker": "خانهٔ هنر شیراز",
@@ -81,18 +95,12 @@
       "ah.c2.h": "صحنه", "ah.c2.p": "موسیقیِ زنده، تئاتر و اجرا.",
       "ah.c3.h": "کافه و کتاب", "ah.c3.p": "جایی برای دیدار، خواندن و گفت‌وگو.",
 
-      "cin.kicker": "سینما و فیلم",
-      "cin.title": "تصویر، راهی برای اندیشیدن.",
-      "cin.lead": "در سنتِ سینمای ایران — صبور، انسانی و نگران به زندگیِ روزمره.",
-      "cin.p1": "سینما به قلبِ کارِ من نزدیک است. به تصاویری دل‌بسته‌ام که به‌جای پاسخ‌های آسان، پرسش می‌آفرینند؛ تصویرهایی که با توجه و سادگی به انسان می‌نگرند.",
-      "cin.p2": "در روحِ سینمای عباس کیارستمی کار می‌کنم — فیلم‌هایی صبور که از نزدیک به زندگیِ روزمره می‌نگرند و در کوچک‌ترین لحظه‌های انسانی معنا می‌جویند.",
-
       "mus.kicker": "موسیقی و آواز",
       "mus.title": "از سیم تا کلام.",
       "mus.lead": "از گیتار کلاسیک تا کلامِ آوازی.",
       "mus.p1": "نوازنده و آموزگارِ گیتار کلاسیک‌ام با بیش از هجده سال تجربه. نوازندگی‌ام مقامِ نخستِ المپیادِ هنریِ کشور (موسیقی) و مقامِ دومِ جشنوارهٔ ملیِ گیتار را برایم به ارمغان آورد، و کارشناسیِ ارشدِ پژوهشِ هنر دارم. در آموزشگاهِ موسیقیِ فروغ تدریس کرده‌ام و عضوِ شورای سیاست‌گذاریِ موسیقیِ استانِ فارس بوده‌ام.",
       "mus.p2": "بخشِ زیادی از آنچه می‌نوازم با شعرِ فارسی پیوند دارد — رباعیاتِ خیّام و دیگران — جایی که گیتار و کلام به هم می‌رسند. همان عشق به صدا و معنا در هر چه می‌سازم جاری‌ست.",
-      "mus.watch": "تماشا — گیتار کلاسیک، از کانالِ من «MoMas Music»:",
+      "mus.watch": "تماشا — گیتار کلاسیک، از کانالِ من <bdi>«MoMas Music»</bdi>:",
       "mus.allvideos": "همهٔ ویدیوها",
 
       "col.kicker": "آدم‌ها و هم‌کاران",
@@ -134,7 +142,7 @@
       "res.p5.t": "پیش‌آموزشِ زمان‑وارون",
       "res.p5.d": "خواندنِ تاریخِ یک باتری به‌صورتِ وارونه، همچون خود-نظارتی، برای آموختنِ اثرِ انگشتِ نیرومندترِ عمرِ نخستین.",
       "res.p6.t": "نوری و الکتریکی، با هم",
-      "res.p6.d": "آیا افزودنِ دادهٔ حسگرِ فیبرِ نوری (FBG) پیش‌بینیِ زودهنگامِ عمرِ باتری را فراتر از سیگنال‌های الکتریکیِ تنها بهبود می‌بخشد؟",
+      "res.p6.d": "آیا افزودنِ دادهٔ حسگرِ فیبرِ نوری (<bdi>FBG</bdi>) پیش‌بینیِ زودهنگامِ عمرِ باتری را فراتر از سیگنال‌های الکتریکیِ تنها بهبود می‌بخشد؟",
       "res.g3": "یادگیری و فهم",
       "res.p7.t": "تفکرِ نقّادانه با هوشِ مصنوعی",
       "res.p7.d": "چارچوبی سنجش‌پذیر برای «اصطکاکِ شناختیِ» سالم — تا مردم در کنارِ هوشِ مصنوعی همچنان خودشان بیندیشند.",
@@ -147,6 +155,23 @@
       /* engineer header */
       "eng.kicker": "مهندس",
       "eng.title": "هوش، به کار بسته.",
+
+      /* engineer stats + project cards */
+      "eng.s1": "معماریِ مدلِ محک‌خورده",
+      "eng.s2": "مجموعه‌دادهٔ عمومیِ یکپارچه‌شده",
+      "eng.s3": "سلولِ لیتیوم‑یونیِ تحلیل‌شده",
+      "eng.s4": "بذرِ تصادفی برای استواریِ علمی",
+      "eng.cs.tag": "محصول · دموی زنده",
+      "eng.cs.d": "داشبوردِ سلامتِ باتری و عمرِ باقی‌مانده در آغازِ عمر — پیش‌بینی‌های مدل را در یک صفحهٔ خودکفا به تصمیم‌های ناوگانی بدل می‌کند. <em>دمو با دادهٔ مصنوعی اجرا می‌شود.</em>",
+      "eng.cs.link": "بازکردنِ دموی زنده",
+      "eng.p2.tag": "پژوهش · پایان‌نامهٔ ارشد",
+      "eng.p2.t": "پیش‌بینیِ عمرِ باتری",
+      "eng.p2.d": "ترنسفورمرهای طول‑متغیر برای پیش‌بینیِ عمرِ باقی‌مانده از چرخه‌های نخستین، سنجیده در برابرِ مدل‌های بازگشتی و کانولوشنی روی شش مجموعه‌داده. ساخته‌شده با <bdi>PyTorch</bdi> و خط‌لوله‌ای بازتولیدپذیر و چندبذری.",
+      "eng.p2.m": "دانشگاه فنی کلاوستال · ۲۰۲۶",
+      "eng.p3.tag": "مهندسی · ابزارِ دقیق",
+      "eng.p3.t": "آزمونِ مکانیکی و داده‌برداری",
+      "eng.p3.d": "پیشینه‌ای عملی در آزمونِ مکانیکی، اندازه‌گیری و ابزارِ دقیق — آزمایش‌های گشتاورِ اصطکاک و ترکیدگی، و خودکارسازیِ داده‌برداری با <bdi>LabVIEW / NI</bdi>.",
+      "eng.p3.m": "پیشینه",
 
       /* athlete */
       "ath.kicker": "ورزشکار",
@@ -177,12 +202,12 @@
       "human.title": "زندگی، بیرون از ساعت.",
       "human.curios": "کنجکاوی‌ها",
       "chip.ai": "هوش مصنوعی", "chip.energy": "انرژی و باتری", "chip.paint": "نقاشی و ساختن",
-      "chip.sport": "تمرین و ورزش", "chip.poetry": "شعر و زبان", "chip.german": "آلمانی (A1، در حالِ پیشرفت)",
+      "chip.sport": "تمرین و ورزش", "chip.poetry": "شعر و زبان", "chip.german": "آلمانی (<bdi>A1</bdi>، در حالِ پیشرفت)",
       "chip.km": "مدیریتِ دانش", "chip.coffee": "قهوه و گفت‌وگو",
       "now.h": "اکنون · ژوئنِ ۲۰۲۶",
       "now.l1": "در حالِ پایان‌دادنِ پایان‌نامهٔ ارشدم در دانشگاهِ کلاوستال.",
-      "now.l2": "ساختن و پرداختِ CellSight.",
-      "now.l3": "یادگیریِ آلمانی — در پیِ A1 در این پاییز.",
+      "now.l2": "ساختن و پرداختِ <bdi>CellSight</bdi>.",
+      "now.l3": "یادگیریِ آلمانی — در پیِ <bdi>A1</bdi> در این پاییز.",
       "now.l4": "نقاشیِ بیشتر، نوشتنِ بیشتر، تمرینِ بیشتر.",
 
       /* daricheh — translations stub */
@@ -208,10 +233,20 @@
       "arc.gallery": "گالری به‌زودی — عکس‌ها تنها زمانی افزوده می‌شوند که اصیل یا برای هم‌رسانی آزاد باشند.",
       "arc.soon": "به‌زودی — این بایگانی با حوصله در حالِ آماده‌شدن است.",
 
+      /* videos + channels */
+      "vid.mey": "بر پایهٔ رباعیاتِ خیام · اجرای زنده",
+      "vid.amelia": "ترانهٔ محلیِ کاتالان",
+      "chan.connect": "در ارتباط باشیم",
+      "chan.profile": "نمایه",
+      "chan.email": "ایمیل",
+      "chan.hello": "سلامی بده",
+
       /* contact + footer */
       "contact.kicker": "— تماس",
       "contact.title": "بیا چیزی بسازیم، آن‌سوی مرزها.",
       "contact.sub": "پژوهش، هنر، یک پروژه، یا فقط یک گفت‌وگوی خوب — صندوقِ پیامم باز است.",
+      "footer.top": "بازگشت به بالا ↑",
+      "footer.copy": "<bdi>© <span id=\"year\">2026</span></bdi> محمدعلی مسجدی — کلاوستال، آلمان",
       "footer.tagline": "یک ذهن، زندگی‌های بسیار · ساخته‌شده با قصد"
     },
 
@@ -219,7 +254,7 @@
       "nav.worlds": "Welten", "nav.engineer": "Ingenieur", "nav.artist": "Künstler",
       "nav.poet": "Dichter", "nav.about": "Über mich", "nav.arthouse": "Art House", "nav.cta": "Kontakt",
       "menu.worlds": "Welten", "menu.engineer": "Ingenieur", "menu.artist": "Künstler",
-      "menu.athlete": "Sportler", "menu.arthouse": "Art House", "menu.cinema": "Kino",
+      "menu.athlete": "Sportler", "menu.arthouse": "Art House",
       "menu.music": "Musik", "menu.poet": "Dichter", "menu.contact": "Kontakt",
       "menu.daricheh": "Übersetzungen · Daricheh",
       "menu.loc": "Clausthal-Zellerfeld, DE",
@@ -228,6 +263,8 @@
       "hero.title": "Ein Geist, viele Leben.",
       "hero.sub": "Klassischer Gitarrist und Lehrer, Softwareentwickler, Projektmanager und Kulturaktivist — und treuer Diener zweier Katzen. Ein Geist, viele Leben.",
       "hero.cta1": "Meine Welten entdecken", "hero.cta2": "Kontakt", "hero.scroll": "Scrollen",
+      "hero.iam": "Ich bin",
+      "hero.role1": "Gitarrist & Lehrer",
 
       /* cats */
       "cats.h": "Memo & Jupiter 🐾",
@@ -245,21 +282,26 @@
       "nav.research": "Forschung", "menu.research": "Forschung", "worlds.research.h": "Forschung", "worlds.research.p": "Batterie-Intelligenz, Prognostik & Lernwissenschaft.",
       "follow.kicker": "— Die Reise verfolgen", "follow.title": "Komm mit auf die Reise", "follow.lead": "Ich teile Musik, Forschung und das Machen, während es entsteht — das meiste auf YouTube. Abonniere und folge der Reise.", "follow.sub": "Auf YouTube abonnieren",
       "support.kicker": "— Die Arbeit unterstützen", "support.title": "Ein kleiner Beitrag, wenn du magst", "support.lead": "Musik, Forschung und Projekte entstehen meist in meiner Freizeit. Wenn dir das etwas bedeutet, hilft ein kleiner Beitrag, es am Laufen zu halten — ganz ohne Druck.", "support.sahar": "Ein Teil davon unterstützt meine Arbeit an Sahar — kostenlose Bildung für Kinder ohne Schulzugang. Ich bin keine eingetragene gemeinnützige Organisation, daher ist dies keine steuerlich absetzbare Spende — es unterstützt einfach die Zeit, die ich in den Aufbau stecke.", "support.setup": "bald verfügbar",
-      "stat.lang": "Sprachen · FA · EN · DE", "stat.lives": "Leben, ein Geist", "stat.arthouse": "Jahre Kunsthaus aufgebaut", "stat.papers": "Forschungsarbeiten",
+      "stat.lang": "Sprachen · FA · EN · DE", "stat.lives": "Leben, ein Geist", "stat.arthouse": "Kunsthaus aufgebaut", "stat.arthouse.sfx": "+ Jahre", "stat.papers": "Forschungsarbeiten",
       "worlds.artist.h": "Künstler", "worlds.artist.p": "Wo die Logik die Krawatte lockert. Ein visueller Spielplatz.",
       "worlds.arthouse.h": "Shiraz Art House", "worlds.arthouse.p": "Ein unabhängiges Zuhause für die Kunst in Schiras.",
-      "worlds.cinema.h": "Kino", "worlds.cinema.p": "Bilder als eine Art, über Menschen nachzudenken.",
       "worlds.music.h": "Musik & Poesie", "worlds.music.p": "Von klassischer Gitarre bis zur persischen Poesie.",
       "worlds.human.h": "Der Mensch", "worlds.human.p": "Katzen, große Neugier und das Leben jenseits der Uhr.",
       "worlds.athlete.h": "Sportler", "worlds.athlete.p": "Disziplin als tägliche Praxis. Körper & Wille.",
       "worlds.manager.h": "Manager", "worlds.manager.p": "Verstreute Mühe in gemeinsamen Schwung verwandeln.",
       "worlds.poet.h": "Dichter", "worlds.poet.p": "Der stille Raum, in dem Worte lebendig werden.",
+      "worlds.enter": "Eintreten →",
 
       "about.kicker": "— Über mich",
       "about.title": "Ich passe in keine Schublade.",
-      "about.lead": "Ich bin Mohammad Ali „Mo“ Masjedi — aus dem Iran, jetzt im Harz in Deutschland.",
-      "about.p1": "Tagsüber baue ich Machine-Learning-Modelle, die die Zukunft von Batterien lesen. Aber ein Mensch ist mehr als ein Titel. Ich male und gestalte, ich trainiere und trete an, ich führe und organisiere, und ich schreibe Gedichte, wenn die Gleichungen verstummen.",
-      "about.p2": "Der rote Faden ist überall derselbe: Neugier, Handwerk und der hartnäckige Glaube, dass das Interessante dort geschieht, wo Disziplinen aufeinandertreffen.",
+      "about.lead": "Ich bin <strong>Mohammad Ali „Mo“ Masjedi</strong> — aus Schiras, jetzt im Harz in Deutschland.",
+      "about.p1": "Ich arbeite dort, wo Kultur und Technik sich begegnen — für mich sind es zwei Sprachen für dieselben Fragen: nach Schönheit, Freiheit und einem guten Miteinander. Jahrelang habe ich in Schiras ein <strong>unabhängiges Zuhause für Künstler</strong> aufgebaut und <strong>klassische Gitarre unterrichtet</strong> — auf der Suche nach der Klarheit einer einzigen gut gespielten Phrase oder eines Vierzeilers von Khayyām.",
+      "about.p2": "Heute bringe ich dieselbe Geduld ins <strong>Ingenieurwesen</strong>: die langsame, ehrliche Arbeit, ein Batteriemodell zur Wahrheit zu bringen. Der rote Faden ist überall derselbe — Neugier, Handwerk und Dinge bauen, die Menschen zusammenbringen. <em>Lerne zu leben, lebe um zu lernen.</em>",
+      "about.t1.k": "2003 →", "about.t1.d": "Klassische Gitarre in Schiras — Auftritte und Unterricht.",
+      "about.t2.k": "~2012 → 2020", "about.t2.d": "Gründung und Leitung des Shiraz Art House; später an andere verkauft.",
+      "about.t3.k": "2012 → 2022", "about.t3.d": "Ein Jahrzehnt Software — Ingenieur, Projektmanager, dann Solutions Architect.",
+      "about.t4.k": "2022 →", "about.t4.d": "Masterforschung zur Batterielebensdauer an der TU Clausthal.",
+      "about.t5.k": "Immer", "about.t5.d": "Gitarre, Poesie, Training und die Katzen.",
 
       "ah.kicker": "Shiraz Art House",
       "ah.title": "Ein Zuhause für die Kunst.",
@@ -269,12 +311,6 @@
       "ah.c1.h": "Galerie", "ah.c1.p": "Ausstellungen für etablierte und junge Künstler.",
       "ah.c2.h": "Bühne", "ah.c2.p": "Livemusik, Theater und Performance.",
       "ah.c3.h": "Café & Bücher", "ah.c3.p": "Ein Ort zum Treffen, Lesen und Reden.",
-
-      "cin.kicker": "Kino & Film",
-      "cin.title": "Bilder als Denken.",
-      "cin.lead": "In der Tradition des iranischen Films — geduldig, menschlich, dem Alltag zugewandt.",
-      "cin.p1": "Das Kino liegt im Zentrum meiner Arbeit. Es zieht mich zu Bildern, die Fragen stellen statt einfache Antworten zu geben — Bilder, die den Menschen mit Aufmerksamkeit und Einfachheit ansehen.",
-      "cin.p2": "Ich arbeite im Geist von Abbas Kiarostamis Kino — geduldige Filme, die das Alltägliche aus der Nähe betrachten und im kleinsten menschlichen Moment Bedeutung finden.",
 
       "mus.kicker": "Musik & Stimme",
       "mus.title": "Von der Saite zum Wort.",
@@ -337,6 +373,23 @@
       "eng.kicker": "Der Ingenieur",
       "eng.title": "Intelligenz, angewandt.",
 
+      /* engineer stats + project cards */
+      "eng.s1": "Modellarchitekturen im Benchmark",
+      "eng.s2": "öffentliche Datensätze vereinheitlicht",
+      "eng.s3": "Lithium-Ionen-Zellen analysiert",
+      "eng.s4": "Zufalls-Seeds für Verlässlichkeit",
+      "eng.cs.tag": "Produkt · Live-Demo",
+      "eng.cs.d": "Ein Dashboard für frühen Batteriezustand und Restlebensdauer — es macht Modellvorhersagen auf einer einzigen, in sich geschlossenen Seite zu Flottenentscheidungen. <em>Die Demo läuft mit synthetischen Daten.</em>",
+      "eng.cs.link": "Live-Demo öffnen",
+      "eng.p2.tag": "Forschung · Masterarbeit",
+      "eng.p2.t": "Batterielebensdauer-Vorhersage",
+      "eng.p2.d": "Transformer variabler Länge für frühe Restlebensdauer-Vorhersage, verglichen mit rekurrenten und Faltungs-Baselines über sechs Datensätze. Gebaut auf PyTorch, mit reproduzierbarer Mehr-Seed-Pipeline.",
+      "eng.p2.m": "TU Clausthal · 2026",
+      "eng.p3.tag": "Engineering · Messtechnik",
+      "eng.p3.t": "Mechanische Prüfung & Messdatenerfassung",
+      "eng.p3.d": "Praktischer Hintergrund in mechanischer Prüfung, Messung und Instrumentierung — Reibmoment- und Berstversuche sowie LabVIEW-/NI-Messdaten-Automatisierung.",
+      "eng.p3.m": "Hintergrund",
+
       /* athlete */
       "ath.kicker": "Der Sportler",
       "ath.title": "Disziplin ist eine tägliche Praxis.",
@@ -397,9 +450,19 @@
       "arc.gallery": "Galerie folgt bald — Bilder werden nur hinzugefügt, wenn sie eigen oder frei teilbar sind.",
       "arc.soon": "Bald — dieses Archiv wird mit Sorgfalt vorbereitet.",
 
+      /* videos + channels */
+      "vid.mey": "nach Omar Khayyām · live",
+      "vid.amelia": "katalanisches Volkslied",
+      "chan.connect": "vernetzen",
+      "chan.profile": "Profil",
+      "chan.email": "E-Mail",
+      "chan.hello": "sag Hallo",
+
       "contact.kicker": "— Kontakt",
       "contact.title": "Lass uns etwas schaffen, über die Grenzen hinweg.",
       "contact.sub": "Forschung, Kunst, ein Projekt oder einfach ein gutes Gespräch — mein Postfach ist offen.",
+      "footer.top": "Nach oben ↑",
+      "footer.copy": "© <span id=\"year\">2026</span> Mohammadali Masjedi — Clausthal, Deutschland",
       "footer.tagline": "Ein Geist, viele Leben · mit Absicht gebaut"
     }
   };
@@ -411,9 +474,10 @@
   }
   function apply(lang) {
     var html = document.documentElement;
+    var isRTL = !!RTL[lang];
     html.setAttribute("lang", lang);
-    html.setAttribute("dir", RTL[lang] ? "rtl" : "ltr");
-    if (RTL[lang]) {
+    html.setAttribute("dir", isRTL ? "rtl" : "ltr");
+    if (isRTL) {
       /* Persian letters must stay joined — remove per-character splitting
          so main.js doesn't shatter the script into disconnected glyphs. */
       var sp = document.querySelectorAll("[data-split]");
@@ -424,7 +488,35 @@
       var nodes = document.querySelectorAll("[data-i18n]");
       for (var i = 0; i < nodes.length; i++) {
         var k = nodes[i].getAttribute("data-i18n");
-        if (d[k] != null) nodes[i].textContent = d[k];
+        if (d[k] != null) {
+          /* values are authored in THIS file only (never user input), so
+             innerHTML is safe — it lets translations carry <bdi>/<em>. */
+          nodes[i].innerHTML = d[k];
+        } else if (isRTL) {
+          /* fallback rule: an untranslated string renders as English inside
+             <bdi>, so a stray LTR run can never scramble the RTL flow. */
+          nodes[i].innerHTML = "<bdi>" + nodes[i].innerHTML + "</bdi>";
+        }
+      }
+      /* attribute-based strings (e.g. the count-up "+ yrs" suffix):
+         data-i18n-suffix="key" localizes the data-suffix attribute that
+         main.js appends verbatim. Bidi safety in FA comes from the CSS rule
+         html[dir="rtl"] .fstat__num { direction:ltr; unicode-bidi:isolate }. */
+      var sfx = document.querySelectorAll("[data-i18n-suffix]");
+      for (var a = 0; a < sfx.length; a++) {
+        var sk = sfx[a].getAttribute("data-i18n-suffix");
+        if (d[sk] != null) sfx[a].setAttribute("data-suffix", d[sk]);
+      }
+    }
+    /* expose lang + hero roles for main.js's role cycler */
+    window.MAM_I18N = { lang: lang, rtl: isRTL, roles: ROLES[lang] || ROLES.en };
+    /* in Persian mode the poem section opens on the Persian poem */
+    if (isRTL) {
+      var pe = document.querySelector(".poem--en"), pf = document.querySelector(".poem--fa");
+      if (pe && pf) { pe.classList.remove("is-active"); pf.classList.add("is-active"); }
+      var pb = document.querySelectorAll(".poem-toggle__btn");
+      for (var b = 0; b < pb.length; b++) {
+        pb[b].classList.toggle("is-active", pb[b].getAttribute("data-lang") === "fa");
       }
     }
   }
