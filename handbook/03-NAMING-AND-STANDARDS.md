@@ -45,8 +45,8 @@ Personal-Portfolio/
 
 ### Naming conventions (observed in the real code)
 - **CSS classes:** BEM-ish. Block `.nav`, element `.nav__logo`, modifier/state `.is-open`, `.is-scrolled`, `.is-soon`, `.is-in`, `.is-active`. Data hooks: `data-magnetic`, `data-cursor`, `data-split`, `data-reveal`, `data-count`, `data-to`, `data-yt`.
-- **Section ids:** short, lowercase, one word — `#hero`, `#worlds`, `#about`, `#engineer`, `#research`, `#artist`, `#arthouse`, `#arthive`, `#cinema`, `#music`, `#collaborators`, `#press`, `#values`, `#athlete`, `#leader`, `#poet`, `#personal`, `#daricheh`, `#channels`, `#contact`.
-- **i18n keys:** `area.key`, e.g. `hero.title`, `worlds.engineer.h`, `ah.p1`, `arc.*`, `menu.arthive`, `cats.jupi.mem`. Group prefixes: `nav.` `menu.` `hero.` `worlds.` `about.` `ah.` (art house) `cin.` (cinema) `mus.` (music) `arc.` (archive) `cats.` `follow.` `stat.`.
+- **Section ids:** short, lowercase, one word — `#hero`, `#worlds`, `#about`, `#engineer`, `#research`, `#artist`, `#arthouse`, `#arthive`, `#music`, `#collaborators`, `#press`, `#values`, `#athlete`, `#leader`, `#poet`, `#personal`, `#daricheh`, `#channels`, `#contact`.
+- **i18n keys:** `area.key`, e.g. `hero.title`, `worlds.engineer.h`, `ah.p1`, `arc.*`, `menu.arthive`, `cats.jupi.mem`. Group prefixes: `nav.` `menu.` `hero.` `worlds.` `about.` `ah.` (art house) `mus.` (music) `arc.` (archive) `cats.` `follow.` `stat.`.
 - **Image files:** descriptive, hyphenated — `perform-milonga-guitar-01.jpg`, `music-hall.jpg`.
 - **Asset versioning:** manual `?v=N` query string on `style.css` / `i18n.js` / `main.js` / `polish.js` in `index.html`.
 - **Placeholder links:** class `is-soon` marks a not-yet-real link; `main.js` prevents dead navigation on `a[href="#"]`.

@@ -22,7 +22,7 @@ it deploys straight to GitHub Pages.
 - **Scroll-reveal** animations, **split-text** headlines, animated **count-up** stats.
 - **Preloader** with a live counter, full-screen **mobile menu**, scroll progress bar.
 - ~20 sections: Hero · Worlds · About · Engineer · Research · Artist · Shiraz Art House ·
-  Cinema · Music · Press · Values · Poet · Personal · Channels · Contact — and more.
+  Music · Press · Values · Poet · Personal · Channels · Contact — and more.
 - **Fully responsive** and respects `prefers-reduced-motion` (accessibility-friendly).
 - **Zero dependencies to install** — just static files. One optional CDN script (Lenis).
 
