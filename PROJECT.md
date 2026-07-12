@@ -42,7 +42,7 @@ work while deliberately excluding anything private (employment, clients, finance
 
 ### Phase 5 — Trilingual + public-figure identity  🔵 active  ← current
 - [x] FA/EN/DE i18n engine (reload-based switch, RTL-safe)
-- [x] Art-life sections (Shiraz Art House, Cinema, Music, Collaborators, Press, Values)
+- [x] Art-life sections (Shiraz Art House, Music, Collaborators, Press, Values)
 - [x] Full FA/DE parity — 0 untranslated keys, verified in all three languages
 - [x] Daricheh (داریچه) translations stub + Shiraz House Archive coming-soon section
 - [ ] Fill Daricheh + Archive with real, freely-shareable pieces and cleared images
