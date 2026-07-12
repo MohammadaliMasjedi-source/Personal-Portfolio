@@ -16,14 +16,12 @@
   var SUPPORT = {
     githubSponsors: "",   // e.g. "mmasjedi"  -> github.com/sponsors/<handle>
     kofi:           "",   // e.g. "mmasjedi"  -> ko-fi.com/<handle>
-    buyMeACoffee:   "",   // e.g. "mmasjedi"  -> buymeacoffee.com/<handle>
     paypalMe:       ""    // e.g. "mmasjedi"  -> paypal.me/<handle>
   };
 
   var BUILD = {
     githubSponsors: function (h) { return "https://github.com/sponsors/" + h; },
     kofi:           function (h) { return "https://ko-fi.com/" + h; },
-    buyMeACoffee:   function (h) { return "https://www.buymeacoffee.com/" + h; },
     paypalMe:       function (h) { return "https://paypal.me/" + h; }
   };
 
