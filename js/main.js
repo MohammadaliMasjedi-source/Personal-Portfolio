@@ -530,6 +530,10 @@
   if (mq("(prefers-reduced-motion: reduce)").matches) return;
   var cards = [].slice.call(document.querySelectorAll("#worlds .facet"));
   if (!cards.length) return;
+  /* matte-ink "theme-B": the Worlds cards now use a pure-CSS lift + faint warm
+     edge-glow. The former glossy 3D cursor-tilt + spotlight is disabled here so
+     it can't override the CSS :hover lift (it used to pin --ty to 0). */
+  return;
   var MAX = 7; // max tilt degrees
   cards.forEach(function (card) {
     var raf = 0, lastE = null;
