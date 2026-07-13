@@ -3,6 +3,42 @@
    Hand-built design system. No frameworks.
    ===================================================================== */
 
+/* ---------- Vazirmatn (Persian UI) — vendored OFL, self-hosted -----------
+   SIL Open Font License 1.1 · see vendor/fonts/LICENSE-OFL.txt. Shipped locally
+   (no Google Fonts dependency) so Persian renders with real weight files —
+   400 for body, 700 for headings — instead of a browser-synthesised faux-bold.
+   Subsetted by script (arabic / latin / latin-ext) via unicode-range. */
+@font-face {
+  font-family: "Vazirmatn"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../vendor/fonts/vazirmatn-arabic-400-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFC, U+200C-200E;
+}
+@font-face {
+  font-family: "Vazirmatn"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("../vendor/fonts/vazirmatn-arabic-700-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFC, U+200C-200E;
+}
+@font-face {
+  font-family: "Vazirmatn"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../vendor/fonts/vazirmatn-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+20AC;
+}
+@font-face {
+  font-family: "Vazirmatn"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("../vendor/fonts/vazirmatn-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+20AC;
+}
+@font-face {
+  font-family: "Vazirmatn"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../vendor/fonts/vazirmatn-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+0304, U+0308;
+}
+@font-face {
+  font-family: "Vazirmatn"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("../vendor/fonts/vazirmatn-latin-ext-700-normal.woff2") format("woff2");
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+0304, U+0308;
+}
+
 /* ---------- Design tokens ---------- */
 :root {
   --bg:        #141009;   /* warm espresso ink — not cold black */
@@ -725,16 +761,35 @@ html[lang="fa"] .channel.is-soon::after { content: "به‌زودی"; letter-spa
 .arc-shot__mark { font-family: var(--font-display); color: var(--volt); opacity: .5; font-size: 22px; }
 @media (max-width: 720px){ .arc-gallery { grid-template-columns: repeat(2, 1fr); } }
 
-/* Persian: Vazirmatn + calmer line-height */
-html[lang="fa"] body { font-family: "Vazirmatn", var(--font-body); }
+/* Persian: Vazirmatn (self-hosted) — real weight/size hierarchy + calm rhythm.
+   Body is a light 400; headings step up to a true 700 (a vendored file, not a
+   synthesised faux-bold). Persian never wants the tight Latin tracking, so the
+   negative letter-spacing from the display styles is reset to normal here. */
+html[lang="fa"] body { font-family: "Vazirmatn", var(--font-body); font-weight: 400; }
 html[lang="fa"] .hero__title,
 html[lang="fa"] .section__title,
-html[lang="fa"] .contact__title { font-family: "Vazirmatn", var(--font-display); font-weight: 700; line-height: 1.45; }
+html[lang="fa"] .contact__title,
+html[lang="fa"] .facet h3,
+html[lang="fa"] .project__title,
+html[lang="fa"] .paper__title,
+html[lang="fa"] .role-cycle { font-family: "Vazirmatn", var(--font-display); font-weight: 700; letter-spacing: normal; }
+html[lang="fa"] .hero__title,
+html[lang="fa"] .section__title,
+html[lang="fa"] .contact__title { line-height: 1.5; }
+/* calm, roomy body measure for Persian running text */
 html[lang="fa"] .section__lead,
 html[lang="fa"] .hero__sub,
-html[lang="fa"] .sec-prose p { line-height: 2.05; }
+html[lang="fa"] .about__lead,
+html[lang="fa"] .sec-prose p,
+html[lang="fa"] .facet p,
+html[lang="fa"] .paper__desc { line-height: 2.05; font-weight: 400; }
+/* a touch more air between stacked Persian items (letters need breathing room) */
+html[lang="fa"] .timeline li { padding: 24px 0; }
+html[lang="fa"] .chips { gap: 12px; }
+html[lang="fa"] .facet h3 { font-size: clamp(23px, 2.5vw, 30px); }
 html[lang="fa"] .eyebrow,
-html[lang="fa"] .menu__idx { font-family: "Vazirmatn", var(--font-display); }
+html[lang="fa"] .facet__no,
+html[lang="fa"] .menu__idx { font-family: "Vazirmatn", var(--font-display); letter-spacing: normal; }
 
 /* right-to-left layout */
 html[dir="rtl"] .lang-switch { margin-left: 0; margin-right: 6px; }
