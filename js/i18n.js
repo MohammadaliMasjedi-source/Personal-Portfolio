@@ -59,8 +59,8 @@
       "worlds.kicker": "(۰۰) — جهان‌های محمدعلی",
       "worlds.title": "چند رو، یک انسان.",
       "worlds.lead": "یک کارگاه، یک آزمایشگاه، یک پیست، یک صحنه، یک صفحه — دری را برگزین.",
-      "worlds.engineer.h": "مهندس", "worlds.engineer.p": "مهندسِ نرم‌افزار و تحلیل‌گرِ داده، اکنون پژوهشگرِ هوشمندیِ باتری.",
-      "nav.research": "پژوهش", "menu.research": "پژوهش", "worlds.research.h": "پژوهش", "worlds.research.p": "هوشمندیِ باتری، پیش‌آگاهی و علمِ یادگیری.",
+      "worlds.engineer.h": "مهندس", "worlds.engineer.p": "مهندسِ نرم‌افزار — تحلیلِ داده و اینترنتِ اشیا برای سامانه‌های آزمونِ صنعتی.",
+      "nav.research": "پژوهش", "menu.research": "پژوهش", "worlds.research.h": "پژوهش", "worlds.research.p": "پژوهشِ کارشناسیِ ارشدم در کلاوستال — عمرِ باتری، پیش‌آگاهی و یادگیری.",
       "follow.kicker": "— همراهِ مسیر", "follow.title": "با من همراه شو", "follow.lead": "موسیقی، پژوهش و ساختن را همان‌طور که رخ می‌دهد به اشتراک می‌گذارم — بیشترش در یوتیوب. سابسکرایب کن و مسیر را دنبال کن.", "follow.sub": "سابسکرایب در یوتیوب",
       "support.kicker": "— حمایت از کار", "support.title": "اگر دوست داشتی، کمک کن", "support.lead": "موسیقی، پژوهش و ساختن بیشتر در وقت شخصی‌ام اتفاق می‌افتد. اگر برایت ارزشی دارد، یک کمک کوچک به ادامه‌اش کمک می‌کند — بدون هیچ فشاری.", "support.sahar": "بخشی از این حمایت صرف کارِ من روی <strong>سحر</strong> (<bdi>Sahar</bdi>) می‌شود — آموزش رایگان برای کودکان بازمانده از تحصیل. من یک نهاد خیریهٔ ثبت‌شده نیستم، پس این کمک، معافیت مالیاتی ندارد — فقط حمایت از وقتی است که برای ساختنش می‌گذارم.", "support.setup": "به‌زودی راه‌اندازی می‌شود",
       "stat.lang": "زبان · فارسی · انگلیسی · آلمانی", "stat.lives": "زندگی، یک ذهن", "stat.arthouse": "ساختنِ خانهٔ هنر", "stat.arthouse.sfx": "+ سال", "stat.papers": "مقالهٔ پژوهشی",
@@ -77,8 +77,8 @@
       "about.kicker": "— درباره",
       "about.title": "حاضر نیستم در یک جعبه بگنجم.",
       "about.lead": "من <strong>محمدعلی «مو» مسجدی‌</strong>ام — از شیراز، اکنون در کوهستانِ هارتسِ آلمان.",
-      "about.p1": "در کار، <strong>مهندسِ نرم‌افزارم که در تحلیلِ داده فعالیت می‌کنم</strong>؛ در رسالت، <strong>مدیرِ فرهنگ و هنر</strong>م. <strong>خانهٔ هنر شیراز</strong> را — خانه‌ای مستقل برای هنرمندان در شیراز — بنیان گذاشتم و رهبری کردم، و سال‌ها <strong>گیتار کلاسیک درس دادم</strong>؛ در پیِ روشنیِ یک جملهٔ خوب‌نواخته یا یک رباعیِ خیام. اتاق‌های متفاوت، یک ذهن.",
-      "about.p2": "امروز همان حوصله را صرفِ <strong>مهندسی</strong> می‌کنم: کارِ آرام و صادقانهٔ واداشتنِ یک مدلِ باتری به راست‌گفتن. <strong>مدیرِ پروژه</strong> نیز هستم، و — پیش از هر چیز و همیشه — نوازنده، مدرس و آهنگسازِ گیتار. رشتهٔ پیونددهندهٔ همه‌چیز یکی است: کنجکاوی، پیشه‌وری و ساختنِ چیزهایی که مردم را کنار هم می‌آورند. <em>بیاموز تا زندگی کنی، زندگی کن تا بیاموزی.</em>",
+      "about.p1": "در کار، <strong>مهندسِ نرم‌افزارم</strong> — ابزارهای تحلیلِ داده و اینترنتِ اشیا برای سامانه‌های آزمونِ صنعتی می‌سازم؛ در رسالت، <strong>مدیرِ فرهنگ و هنر</strong>م. <strong>خانهٔ هنر شیراز</strong> را — خانه‌ای مستقل برای هنرمندان در شیراز — بنیان گذاشتم و رهبری کردم، و سال‌ها <strong>گیتار کلاسیک درس دادم</strong>؛ در پیِ روشنیِ یک جملهٔ خوب‌نواخته یا یک رباعیِ خیام. اتاق‌های متفاوت، یک ذهن.",
+      "about.p2": "همان حوصله در دو مسیرِ جدا جاری‌ست: کارِ روزانه‌ام به‌عنوان مهندسِ نرم‌افزار، و — جدا از شغل — <strong>پژوهشِ کارشناسیِ ارشدم در دانشگاهِ فنیِ کلاوستال</strong>؛ کارِ آرام و صادقانهٔ واداشتنِ یک مدلِ باتری به راست‌گفتن. <strong>مدیرِ پروژه</strong> نیز هستم، و — پیش از هر چیز و همیشه — نوازنده، مدرس و آهنگسازِ گیتار. رشتهٔ پیونددهندهٔ همه‌چیز یکی است: کنجکاوی، پیشه‌وری و ساختنِ چیزهایی که مردم را کنار هم می‌آورند. <em>بیاموز تا زندگی کنی، زندگی کن تا بیاموزی.</em>",
       "about.p3": "آرمان‌هایی که وقتم را به آن‌ها می‌دهم ساده‌اند: <strong>آموزش، کودکان، هنر و فرهنگ، و حیوانات</strong> — همان چهار رشته‌ای که در کارم روی سحر (آموزشِ رایگان برای کودکانِ بازمانده از تحصیل) و در وجودِ دو گربه که خانه‌ام را می‌گردانند جاری‌ست.",
       "about.t1.k": "از ۲۰۰۳", "about.t1.d": "اجرا و تدریسِ گیتار کلاسیک در شیراز.",
       "about.t2.k": "حدود از ۲۰۱۲", "about.t2.d": "بنیان‌گذاری و رهبریِ خانهٔ هنر شیراز برای حدودِ پنج تا شش سال؛ بعدها به دیگران واگذار شد.",
@@ -123,7 +123,7 @@
       "val.p1": "در سراسرِ هنر و مهندسی، همان ارزش‌ها برقرارند: احترام به کرامتِ انسان، آزادیِ آفریدن و گفتن، و این باور که فرهنگ می‌تواند آنجا که سیاست دیوار می‌سازد، پل بسازد.",
 
       /* engineer + research + music caption */
-      "eng.lead": "از راهِ دور به پژوهش رسیدم — یک دهه کارِ نرم‌افزاری در نقشِ مهندس، تحلیل‌گرِ داده و مدیرِ پروژه به من آموخت که چگونه محصول را به سرانجام برسانم. اکنون به‌عنوان پژوهشگرِ کارشناسیِ ارشد در دانشگاهِ کلاوستال، به ترنسفورمرها می‌آموزم که عمرِ یک باتریِ لیتیوم‑یونی را تنها از نخستین چرخه‌هایش پیش‌بینی کنند — و یک سالِ آزمایش را به تصمیمی در چند هفته بدل کنند. پژوهشی را دوست دارم که از آزمایشگاه بیرون بیاید و به ابزار بدل شود.",
+      "eng.lead": "در کار، <strong>مهندسِ نرم‌افزارم</strong> — ابزارهای تحلیلِ داده و اینترنتِ اشیا برای سامانه‌های آزمونِ صنعتی می‌سازم؛ انضباطِ روزانهٔ ساختنِ نرم‌افزاری که باید کار کند. <strong>پژوهشِ کارشناسیِ ارشدم در دانشگاهِ فنیِ کلاوستال</strong> مسیری جداست: به ترنسفورمرها می‌آموزم که عمرِ یک باتریِ لیتیوم‑یونی را تنها از نخستین چرخه‌هایش پیش‌بینی کنند و یک سالِ آزمایش را به تصمیمی در چند هفته بدل کنند. پژوهشی را دوست دارم که از آزمایشگاه بیرون بیاید و به ابزار بدل شود.",
 
       "res.kicker": "پژوهش و مقالات",
       "res.title": "آموختنِ خواندنِ زمان به ماشین‌ها.",
@@ -285,8 +285,8 @@
       "worlds.kicker": "(00) — Die Welten von Mo",
       "worlds.title": "Viele Seiten, ein Mensch.",
       "worlds.lead": "Ein Atelier, ein Labor, eine Bahn, eine Bühne, eine Seite — wähle eine Tür.",
-      "worlds.engineer.h": "Ingenieur", "worlds.engineer.p": "Softwareentwickler &amp; Datenanalyst, jetzt Forscher für Batterie-Intelligenz.",
-      "nav.research": "Forschung", "menu.research": "Forschung", "worlds.research.h": "Forschung", "worlds.research.p": "Batterie-Intelligenz, Prognostik & Lernwissenschaft.",
+      "worlds.engineer.h": "Ingenieur", "worlds.engineer.p": "Softwareentwickler — Datenanalyse &amp; IoT für industrielle Prüfsysteme.",
+      "nav.research": "Forschung", "menu.research": "Forschung", "worlds.research.h": "Forschung", "worlds.research.p": "Meine Masterforschung an der TU Clausthal — Batterielebensdauer, Prognostik & Lernen.",
       "follow.kicker": "— Die Reise verfolgen", "follow.title": "Komm mit auf die Reise", "follow.lead": "Ich teile Musik, Forschung und das Machen, während es entsteht — das meiste auf YouTube. Abonniere und folge der Reise.", "follow.sub": "Auf YouTube abonnieren",
       "support.kicker": "— Die Arbeit unterstützen", "support.title": "Ein kleiner Beitrag, wenn du magst", "support.lead": "Musik, Forschung und Projekte entstehen meist in meiner Freizeit. Wenn dir das etwas bedeutet, hilft ein kleiner Beitrag, es am Laufen zu halten — ganz ohne Druck.", "support.sahar": "Ein Teil davon unterstützt meine Arbeit an Sahar — kostenlose Bildung für Kinder ohne Schulzugang. Ich bin keine eingetragene gemeinnützige Organisation, daher ist dies keine steuerlich absetzbare Spende — es unterstützt einfach die Zeit, die ich in den Aufbau stecke.", "support.setup": "bald verfügbar",
       "stat.lang": "Sprachen · FA · EN · DE", "stat.lives": "Leben, ein Geist", "stat.arthouse": "Kunsthaus aufgebaut", "stat.arthouse.sfx": "+ Jahre", "stat.papers": "Forschungsarbeiten",
@@ -302,8 +302,8 @@
       "about.kicker": "— Über mich",
       "about.title": "Ich passe in keine Schublade.",
       "about.lead": "Ich bin <strong>Mohammad Ali „Mo“ Masjedi</strong> — aus Schiras, jetzt im Harz in Deutschland.",
-      "about.p1": "Von Beruf bin ich <strong>Softwareentwickler mit Schwerpunkt Datenanalyse</strong>; von Berufung ein <strong>Kunst- und Kulturmanager</strong>. Ich habe das <strong>Shiraz Art House</strong> gegründet und geleitet, ein unabhängiges Zuhause für Künstler in Schiras, und jahrelang <strong>klassische Gitarre unterrichtet</strong> — auf der Suche nach der Klarheit einer einzigen gut gespielten Phrase oder eines Vierzeilers von Khayyām. Verschiedene Räume, ein Geist.",
-      "about.p2": "Heute fließt dieselbe Geduld in die <strong>Ingenieurarbeit</strong>: die langsame, ehrliche Arbeit, ein Batteriemodell zur Wahrheit zu bringen. Ich bin außerdem <strong>Projektmanager</strong> von Ausbildung her, und — zuerst und immer — Gitarrist, Lehrer und Komponist. Der rote Faden ist überall derselbe: Neugier, Handwerk und Dinge bauen, die Menschen zusammenbringen. <em>Lerne zu leben, lebe um zu lernen.</em>",
+      "about.p1": "Von Beruf bin ich <strong>Softwareentwickler</strong> — ich baue Datenanalyse- und IoT-Werkzeuge für industrielle Prüfsysteme; von Berufung ein <strong>Kunst- und Kulturmanager</strong>. Ich habe das <strong>Shiraz Art House</strong> gegründet und geleitet, ein unabhängiges Zuhause für Künstler in Schiras, und jahrelang <strong>klassische Gitarre unterrichtet</strong> — auf der Suche nach der Klarheit einer einzigen gut gespielten Phrase oder eines Vierzeilers von Khayyām. Verschiedene Räume, ein Geist.",
+      "about.p2": "Dieselbe Geduld fließt in zwei getrennte Bahnen: meine tägliche Arbeit als <strong>Softwareentwickler</strong> und — getrennt vom Job — meine <strong>Masterforschung an der TU Clausthal</strong>, die langsame, ehrliche Arbeit, ein Batteriemodell zur Wahrheit zu bringen. Ich bin außerdem <strong>Projektmanager</strong> von Ausbildung her, und — zuerst und immer — Gitarrist, Lehrer und Komponist. Der rote Faden ist überall derselbe: Neugier, Handwerk und Dinge bauen, die Menschen zusammenbringen. <em>Lerne zu leben, lebe um zu lernen.</em>",
       "about.p3": "Die Anliegen, denen ich meine Zeit widme, sind einfach: <strong>Bildung, Kinder, Kunst &amp; Kultur und Tiere</strong> — dieselben vier Fäden, die sich durch meine Arbeit an Sahar (kostenlose Bildung für Kinder ohne Schulzugang) und durch zwei Katzen ziehen, die meinen Haushalt führen.",
       "about.t1.k": "2003 →", "about.t1.d": "Klassische Gitarre in Schiras — Auftritte und Unterricht.",
       "about.t2.k": "~2012 →", "about.t2.d": "Gründung und Leitung des Shiraz Art House für etwa fünf bis sechs Jahre; später an andere verkauft.",
@@ -347,7 +347,7 @@
       "val.p1": "In Kunst wie Technik gelten dieselben Werte: Achtung der Menschenwürde, die Freiheit zu schaffen und zu sprechen, und der Glaube, dass Kultur Brücken baut, wo Politik Mauern errichtet.",
 
       /* engineer + research + music caption */
-      "eng.lead": "Ich kam auf Umwegen zur Forschung — ein Jahrzehnt Softwarearbeit als Ingenieur, Datenanalyst und Projektmanager lehrte mich, Dinge fertigzustellen. Heute bringe ich als Masterforscher an der TU Clausthal Transformern bei, die Lebensdauer einer Lithium-Ionen-Batterie allein aus ihren ersten Zyklen vorherzusagen — und so ein Jahr Tests in wenigen Wochen zur Entscheidung zu machen. Ich mag Forschung, die das Labor verlässt und zum Werkzeug wird.",
+      "eng.lead": "Von Beruf bin ich <strong>Softwareentwickler</strong> — ich baue Datenanalyse- und IoT-Werkzeuge für industrielle Prüfsysteme; die tägliche Disziplin, Software zu liefern, die funktionieren muss. Meine <strong>Masterforschung an der TU Clausthal</strong> ist eine eigene Bahn: Ich bringe Transformern bei, die Lebensdauer einer Lithium-Ionen-Batterie allein aus ihren ersten Zyklen vorherzusagen — und so ein Jahr Tests in wenigen Wochen zur Entscheidung zu machen. Ich mag Forschung, die das Labor verlässt und zum Werkzeug wird.",
 
       "res.kicker": "Forschung & Arbeiten",
       "res.title": "Maschinen lehren, die Zeit zu lesen.",
