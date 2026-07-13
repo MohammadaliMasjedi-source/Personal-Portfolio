@@ -576,7 +576,7 @@ html[lang="fa"] .channel.is-soon::after { content: "به‌زودی"; letter-spa
 .facets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .facet { position: relative; padding: clamp(26px, 2.7vw, 36px); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); overflow: hidden; min-height: 250px; display: flex; flex-direction: column;
   transform: translateY(var(--ty, 0px)); will-change: transform;
-  transition: transform .5s var(--ease), border-color .45s, background .45s, box-shadow .45s; }
+  transition: transform .22s var(--ease), border-color .25s, background .25s, box-shadow .25s; }
 /* hairline Farr accent seam — the stage-light edge */
 .facet::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; z-index: 2; pointer-events: none;
   background: linear-gradient(90deg, transparent, var(--volt) 24%, #edc06a 56%, transparent); opacity: .26; transition: opacity .45s; }
@@ -790,7 +790,16 @@ html[lang="fa"] .paper__desc { line-height: 1.95; }
 /* Persian: Vazirmatn (self-hosted) — real weight/size hierarchy + calm rhythm.
    Body is a light 400; headings step up to a true 700 (a vendored file, not a
    synthesised faux-bold). Persian never wants the tight Latin tracking, so the
-   negative letter-spacing from the display styles is reset to normal here. */
+   negative letter-spacing from the display styles is reset to normal here.
+   Root-cause fix: nearly every component sets its own font-family from these
+   three tokens, so re-pointing the tokens themselves (fa scope only, en/de
+   untouched) is what actually gets every Persian span off the Segoe fallback —
+   the per-selector overrides below stay as an explicit, redundant safety net. */
+html[lang="fa"] {
+  --font-display: "Vazirmatn", "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Vazirmatn", "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Vazirmatn", "Instrument Serif", Georgia, serif;
+}
 html[lang="fa"] body { font-family: "Vazirmatn", var(--font-body); font-weight: 400; }
 html[lang="fa"] .hero__title,
 html[lang="fa"] .section__title,
@@ -815,7 +824,19 @@ html[lang="fa"] .chips { gap: 12px; }
 html[lang="fa"] .facet h3 { font-size: clamp(23px, 2.5vw, 30px); }
 html[lang="fa"] .eyebrow,
 html[lang="fa"] .facet__no,
-html[lang="fa"] .menu__idx { font-family: "Vazirmatn", var(--font-display); letter-spacing: normal; }
+html[lang="fa"] .menu__idx,
+html[lang="fa"] .menu a,
+html[lang="fa"] .nav__links a,
+html[lang="fa"] .btn,
+html[lang="fa"] .lang-btn,
+html[lang="fa"] .facet__go,
+html[lang="fa"] .chip,
+html[lang="fa"] .channel,
+html[lang="fa"] .channel__name,
+html[lang="fa"] .channel__handle,
+html[lang="fa"] .contact__socials a,
+html[lang="fa"] .footer__top,
+html[lang="fa"] .footer__row--sub span { font-family: "Vazirmatn", var(--font-display); letter-spacing: normal; }
 
 /* right-to-left layout */
 html[dir="rtl"] .lang-switch { margin-left: 0; margin-right: 6px; }
