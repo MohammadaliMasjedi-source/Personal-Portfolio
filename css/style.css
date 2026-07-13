@@ -111,8 +111,8 @@ em { font-style: normal; }
 body::before {
   content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none;
   background:
-    radial-gradient(60vw 60vw at 78% -10%, rgba(111,92,255,0.16), transparent 60%),
-    radial-gradient(50vw 50vw at 8% 18%, rgba(31,227,255,0.10), transparent 60%),
+    radial-gradient(60vw 60vw at 78% -10%, rgba(122,74,44,0.14), transparent 60%),
+    radial-gradient(50vw 50vw at 8% 18%, rgba(63,154,140,0.08), transparent 60%),
     radial-gradient(45vw 45vw at 50% 115%, rgba(227,162,60,0.10), transparent 60%);
 }
 main, .nav, .footer, .marquee { position: relative; z-index: 3; }
@@ -579,20 +579,31 @@ html[lang="fa"] .channel.is-soon::after { content: "به‌زودی"; letter-spa
   transition: transform .22s var(--ease), border-color .25s, background .25s, box-shadow .25s; }
 /* hairline Farr accent seam — the stage-light edge */
 .facet::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; z-index: 2; pointer-events: none;
-  background: linear-gradient(90deg, transparent, var(--volt) 24%, #edc06a 56%, transparent); opacity: .26; transition: opacity .45s; }
+  background: linear-gradient(90deg, transparent, var(--volt) 24%, #edc06a 56%, transparent); opacity: .26; transition: opacity .25s; }
 .facet > * { position: relative; z-index: 1; }
 .facet:hover, .facet:focus-visible { --ty: -6px; border-color: rgba(227,162,60,0.5); background: var(--surface-2);
   box-shadow: 0 20px 46px -30px rgba(227,162,60,0.5); }   /* matte warm glow, not a bloom */
 .facet:hover::before, .facet:focus-visible::before { opacity: .9; }
-@media (prefers-reduced-motion: reduce){ .facet { transition: border-color .45s, background .45s, box-shadow .45s; } }
+@media (prefers-reduced-motion: reduce){
+  .facet { transition: border-color .25s, background .25s, box-shadow .25s; }
+  .facet:hover, .facet:focus-visible { --ty: 0px; }   /* no jump-cut lift when motion is reduced */
+}
 .facet__no { font-family: var(--font-display); font-size: 12px; color: var(--text-mute); letter-spacing: .18em; }
-.facet__ico { display: block; margin: 16px 0 14px; color: var(--volt); opacity: .74; transition: opacity .45s, transform .5s var(--ease); }
+.facet__ico { display: block; margin: 16px 0 14px; color: var(--volt); opacity: .74; transition: opacity .25s, transform .25s var(--ease); }
 .facet__motif { display: block; width: 44px; height: 44px; }
 .facet:hover .facet__ico, .facet:focus-visible .facet__ico { opacity: 1; transform: translateY(-2px); }
 .facet h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(23px, 2.4vw, 30px); letter-spacing: -0.01em; margin-bottom: 8px; color: var(--text); }
 .facet p { color: var(--text-dim); font-size: 14.5px; line-height: 1.5; max-width: 32ch; }
-.facet__go { margin-top: auto; padding-top: 20px; font-family: var(--font-display); font-size: 13.5px; letter-spacing: .02em; color: var(--volt); opacity: 0; transform: translateX(-8px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
-.facet:hover .facet__go { opacity: 1; transform: translateX(0); }
+.facet__go { margin-top: auto; padding-top: 20px; font-family: var(--font-display); font-size: 13.5px; letter-spacing: .02em; color: var(--volt); opacity: 0; transform: translateX(-8px); transition: opacity .22s var(--ease), transform .22s var(--ease); }
+.facet:hover .facet__go, .facet:focus-visible .facet__go { opacity: 1; transform: translateX(0); }
+@media (hover: none){ .facet__go { opacity: .85; transform: none; } }   /* touch: the affordance is always visible */
+
+/* Music & Voice — a deliberate full-width closing card (was an orphan 7th tile in the 3-col grid). */
+.facets .facet--wide { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: clamp(22px, 3.4vw, 52px); min-height: 0; }
+.facet--wide .facet__ico { margin: 0; flex: 0 0 auto; }
+.facet--wide .facet__text { flex: 1 1 auto; display: flex; flex-direction: column; }
+.facet--wide .facet__text p { max-width: 66ch; }
+.facet--wide .facet__go { margin: 0; padding: 0; flex: 0 0 auto; align-self: center; }
 
 /* ---- Facet section headers ---- */
 .facet-sec { border-top: 1px solid var(--line); }
@@ -715,6 +726,10 @@ html[lang="fa"] .paper__desc { line-height: 1.95; }
   .facets, .gallery { grid-template-columns: 1fr; }
   .facet-head { gap: 14px; }
   .role-line { gap: 8px; }
+  /* the wide closing card reverts to the normal vertical card on phones */
+  .facets .facet--wide { flex-direction: column; align-items: flex-start; gap: 0; }
+  .facet--wide .facet__ico { margin: 16px 0 14px; }
+  .facet--wide .facet__go { margin-top: auto; padding-top: 20px; align-self: flex-start; }
 }
 
 /* =====================================================================
@@ -863,7 +878,7 @@ html[dir="rtl"] .contact__mail { unicode-bidi: plaintext; }
 /* the facet arrow glides toward the reading direction */
 html[dir="rtl"] .facet__go { transform: translateX(8px); }
 html[dir="rtl"] .facet:hover .facet__go,
-html[dir="rtl"] .facet:focus-visible .facet__go { transform: translateX(-7px); }
+html[dir="rtl"] .facet:focus-visible .facet__go { transform: translateX(0); }
 
 
 /* =====================================================================
@@ -896,9 +911,8 @@ section[id], [id].section, .facet-sec[id] { scroll-margin-top: clamp(72px, 11vh,
   transform: translateY(1px) scale(0.995);
 }
 
-/* The "Enter ->" arrow glides on hover / keyboard focus. */
-.facet__go { transition: transform .4s var(--ease), color .3s var(--ease); }
-.facet:hover .facet__go, .facet:focus-visible .facet__go { transform: translateX(7px); color: var(--volt); }
+/* NB: the "Enter ->" arrow reveal (opacity + slide, LTR/RTL, focus-visible) is defined
+   with the .facet block above — a single .22s transition, no competing override here. */
 
 /* Subtle living zoom on the real photos inside clipped frames. */
 .cat__pic img, .sec-media__grid img { transition: transform .6s var(--ease), border-color .4s; }
