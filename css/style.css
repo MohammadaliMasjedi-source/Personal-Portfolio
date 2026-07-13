@@ -603,6 +603,28 @@ html[lang="fa"] .channel.is-soon::after { content: "به‌زودی"; letter-spa
 .stats__grid--inset { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 36px 0; }
 .stats__grid--inset .stat { padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px); border-bottom: none; }
 
+/* ---- Research papers (de-inflated: status-badged cards, real hierarchy) ---- */
+.papers { margin-top: 6px; }
+.papers__group { display: block; margin: 34px 0 14px; font-family: var(--font-display); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-mute); }
+.papers__group:first-child { margin-top: 0; }
+.papers__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.paper { position: relative; padding: clamp(22px, 2.4vw, 30px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: flex; flex-direction: column; gap: 10px;
+  transition: transform .4s var(--ease), border-color .4s, box-shadow .4s; }
+.paper:hover { transform: translateY(-4px); border-color: rgba(227,162,60,0.4); box-shadow: 0 16px 40px -30px rgba(227,162,60,0.5); }
+.paper--lead { border-color: var(--line-2); background: var(--surface-2); margin-bottom: 4px; }
+.paper__statusrow { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.paper__status { display: inline-flex; align-items: center; font-family: var(--font-display); font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-dim); border: 1px solid var(--line-2); border-radius: 100px; padding: 3px 11px; white-space: nowrap; }
+.paper__status--on { color: var(--bg); background: var(--volt); border-color: var(--volt); }
+.paper__title { font-family: var(--font-display); font-weight: 600; font-size: clamp(19px, 2vw, 24px); letter-spacing: -0.01em; }
+.paper--lead .paper__title { font-size: clamp(24px, 3vw, 34px); }
+.paper__desc { color: var(--text-dim); font-size: 14.5px; line-height: 1.55; }
+.paper__meta { font-family: var(--font-display); font-size: 12px; letter-spacing: .04em; color: var(--text-mute); }
+.papers__explore { margin-top: 22px; padding: 18px 22px; border: 1px dashed var(--line-2); border-radius: var(--radius); color: var(--text-mute); font-size: 14px; line-height: 1.65; }
+.papers__explore-k { font-family: var(--font-display); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--volt); margin-right: 8px; }
+html[dir="rtl"] .papers__explore-k { margin-right: 0; margin-left: 8px; }
+html[lang="fa"] .paper__desc { line-height: 1.95; }
+@media (max-width: 720px){ .papers__grid { grid-template-columns: 1fr; } }
+
 /* ---- Artist gallery ---- */
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .art { position: relative; aspect-ratio: 4/5; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; padding: 0; text-align: left; }

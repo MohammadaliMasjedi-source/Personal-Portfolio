@@ -29,7 +29,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <!-- Vazirmatn (Persian) is self-hosted — see css/style.css @font-face + vendor/fonts/ -->
 
-  <link rel="stylesheet" href="css/style.css?v=16" />
+  <link rel="stylesheet" href="css/style.css?v=17" />
 </head>
 
 <body>
@@ -345,52 +345,44 @@
       <div class="papers">
         <span class="papers__group" data-reveal data-i18n="res.g1">Master's thesis · TU Clausthal</span>
         <article class="paper paper--lead" data-reveal data-cursor="view">
+          <div class="paper__statusrow">
+            <span class="paper__status paper__status--on" data-i18n="res.st.active">Active</span>
+            <span class="paper__meta" data-i18n="res.thesis.m">M.Sc. thesis · TU Clausthal · in write-up</span>
+          </div>
           <h3 class="paper__title" data-i18n="res.thesis.t">Early-Cycle Battery Lifetime Prediction</h3>
           <p class="paper__desc" data-i18n="res.thesis.d">Variable-length transformers that estimate a lithium-ion cell's remaining useful life from only its first cycles — benchmarked against recurrent and convolutional baselines with a reproducible, multi-seed pipeline.</p>
-          <span class="paper__meta" data-i18n="res.thesis.m">M.Sc. thesis · battery RUL · time-series ML</span>
         </article>
 
-        <span class="papers__group" data-reveal data-i18n="res.g2">Battery &amp; time-series prognostics</span>
+        <span class="papers__group" data-reveal data-i18n="res.g2">Papers &amp; experiments</span>
         <div class="papers__grid">
           <article class="paper" data-reveal data-cursor="view">
+            <div class="paper__statusrow"><span class="paper__status" data-i18n="res.st.draft">Draft</span></div>
             <h3 class="paper__title" data-i18n="res.p1.t">Early Signals, Distant Outcomes</h3>
-            <p class="paper__desc" data-i18n="res.p1.d">One model that predicts remaining life early — and generalises across domains, from batteries to jet-engine turbofans.</p>
+            <p class="paper__desc" data-i18n="res.p1.d">One model that predicts remaining life early — and reaches across domains, from batteries to jet-engine turbofans. A draft, with its first result figure taking shape.</p>
           </article>
           <article class="paper" data-reveal data-reveal-delay="0.05" data-cursor="view">
-            <h3 class="paper__title" data-i18n="res.p2.t">Foundation Model vs. From-Scratch</h3>
-            <p class="paper__desc" data-i18n="res.p2.d">An honest study: for battery RUL, a big pretrained model does not beat a small purpose-built one — and costs far more to run.</p>
+            <div class="paper__statusrow"><span class="paper__status" data-i18n="res.st.progress">In progress</span></div>
+            <h3 class="paper__title" data-i18n="res.h2h.t">Head-to-Head with the Baselines</h3>
+            <p class="paper__desc" data-i18n="res.h2h.d">An honest comparison against the established battery models — where a single variable-length transformer wins in the early regime, and where the specialists still lead.</p>
           </article>
           <article class="paper" data-reveal data-reveal-delay="0.1" data-cursor="view">
-            <h3 class="paper__title" data-i18n="res.p3.t">Cross-Chemistry Transfer</h3>
-            <p class="paper__desc" data-i18n="res.p3.d">Making a battery model still work on chemistries it never saw in training, with only a few examples to adapt.</p>
+            <div class="paper__statusrow"><span class="paper__status" data-i18n="res.st.submission">In submission</span></div>
+            <h3 class="paper__title" data-i18n="res.p2.t">Foundation Model vs. From-Scratch</h3>
+            <p class="paper__desc" data-i18n="res.p2.d">An honest study: for battery RUL, a big pretrained model does not beat a small purpose-built one — and costs far more to run. A note heading to a preprint.</p>
           </article>
           <article class="paper" data-reveal data-reveal-delay="0.15" data-cursor="view">
-            <h3 class="paper__title" data-i18n="res.p4.t">Counterfactual Cell Post-Mortems</h3>
-            <p class="paper__desc" data-i18n="res.p4.d">“Why did this cell die?” — the smallest early-cycle change that would have flipped its predicted lifetime.</p>
-          </article>
-          <article class="paper" data-reveal data-reveal-delay="0.2" data-cursor="view">
-            <h3 class="paper__title" data-i18n="res.p5.t">Reverse-Time Pretraining</h3>
-            <p class="paper__desc" data-i18n="res.p5.d">Reading a battery's history backwards, as self-supervision, to learn a stronger early-life fingerprint.</p>
-          </article>
-          <article class="paper" data-reveal data-reveal-delay="0.25" data-cursor="view">
-            <h3 class="paper__title" data-i18n="res.p6.t">Optical &amp; Electrical, Together</h3>
-            <p class="paper__desc" data-i18n="res.p6.d">Does adding fibre-optic (FBG) sensor data improve early battery-life prediction beyond electrical signals alone?</p>
+            <div class="paper__statusrow"><span class="paper__status" data-i18n="res.st.null">Null result</span></div>
+            <h3 class="paper__title" data-i18n="res.diff.t"><bdi>DiffBatt+</bdi> · A Baseline, Pushed</h3>
+            <p class="paper__desc" data-i18n="res.diff.d">Reproduced a strong diffusion baseline and tested one idea to improve it — the improvement didn't hold up. A null result, reported plainly.</p>
           </article>
         </div>
 
-        <span class="papers__group" data-reveal data-i18n="res.g3">Learning &amp; understanding</span>
-        <div class="papers__grid">
-          <article class="paper" data-reveal data-cursor="view">
-            <h3 class="paper__title" data-i18n="res.p7.t">Critical Thinking with AI</h3>
-            <p class="paper__desc" data-i18n="res.p7.d">A measurable framework for healthy “epistemic friction” — so people keep thinking for themselves while learning alongside AI.</p>
-          </article>
-          <article class="paper" data-reveal data-reveal-delay="0.05" data-cursor="view">
-            <h3 class="paper__title" data-i18n="res.p8.t">From Technical Docs to Learning</h3>
-            <p class="paper__desc" data-i18n="res.p8.d">Turning dense technical documentation into onboarding that lowers time-to-competence and mental load for newcomers.</p>
-          </article>
-        </div>
+        <p class="papers__explore" data-reveal>
+          <span class="papers__explore-k" data-i18n="res.explore.k">Exploring next</span>
+          <span data-i18n="res.explore.v">cross-chemistry transfer, cell counterfactuals, reverse-time pre-training, fusing optical &amp; electrical sensing, and the learning-science of thinking well with AI — early ideas, not results yet.</span>
+        </p>
       </div>
-      <p class="sec-media__cap" data-reveal data-i18n="res.note" style="margin-top:1.6rem">A work in progress — most of this research is unpublished. Titles and topics are shared here; results follow when each paper is public.</p>
+      <p class="sec-media__cap" data-reveal data-i18n="res.note" style="margin-top:1.6rem">A living portfolio, honestly staged — the thesis is in write-up and one note is heading to a preprint; each item is labelled by its real stage. Numbers and papers appear only once they are public.</p>
     </section>
 
     <!-- ===================== ARTIST ===================== -->
@@ -845,7 +837,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <!-- i18n must load BEFORE main.js so text is translated before it gets animated/split -->
-  <script src="js/i18n.js?v=18"></script>
+  <script src="js/i18n.js?v=19"></script>
   <script src="js/main.js?v=12"></script>
   <script src="js/polish.js?v=6"></script>
   <script src="js/support.js?v=1"></script>
