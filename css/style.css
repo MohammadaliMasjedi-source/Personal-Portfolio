@@ -728,6 +728,10 @@ html[lang="fa"] .paper__desc { line-height: 1.95; }
   .role-line { gap: 8px; }
   /* the wide closing card reverts to the normal vertical card on phones */
   .facets .facet--wide { flex-direction: column; align-items: flex-start; gap: 0; }
+  /* unwrap the text block so number/icon/title share one flex column, then lift
+     the number above the icon — matches the number→icon→title rhythm of cards 1–6 */
+  .facet--wide .facet__text { display: contents; }
+  .facet--wide .facet__no { order: -1; }
   .facet--wide .facet__ico { margin: 16px 0 14px; }
   .facet--wide .facet__go { margin-top: auto; padding-top: 20px; align-self: flex-start; }
 }
@@ -879,6 +883,9 @@ html[dir="rtl"] .contact__mail { unicode-bidi: plaintext; }
 html[dir="rtl"] .facet__go { transform: translateX(8px); }
 html[dir="rtl"] .facet:hover .facet__go,
 html[dir="rtl"] .facet:focus-visible .facet__go { transform: translateX(0); }
+/* touch: neutralise the RTL glide so the label isn't held 8px off. Same specificity
+   as the rule above, placed later so it wins on touch; harmless on hover devices. */
+@media (hover: none){ html[dir="rtl"] .facet__go { transform: none; } }
 
 
 /* =====================================================================
@@ -899,12 +906,13 @@ html[dir="rtl"] .facet:focus-visible .facet__go { transform: translateX(0); }
 /* Anchor links land below the fixed header instead of under it. */
 section[id], [id].section, .facet-sec[id] { scroll-margin-top: clamp(72px, 11vh, 104px); }
 
-/* Branded, unobtrusive scrollbar that matches the dark theme. */
-* { scrollbar-width: thin; scrollbar-color: #262a33 transparent; }
+/* Branded, unobtrusive scrollbar — a warm neutral brown drawn from the Farr palette
+   (kin to --surface-2 #2b2316), not the old cool blue-gray. */
+* { scrollbar-width: thin; scrollbar-color: #3d3421 transparent; }
 ::-webkit-scrollbar { width: 11px; height: 11px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #262a33; border-radius: 20px; border: 3px solid var(--bg); }
-::-webkit-scrollbar-thumb:hover { background: #343945; }
+::-webkit-scrollbar-thumb { background: #3d3421; border-radius: 20px; border: 3px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: #544730; }
 
 /* Tactile press feedback. */
 .btn:active, .channel:active, .facet:active, .project__link:active, .lang-btn:active {
