@@ -123,7 +123,7 @@
       "val.p1": "در سراسرِ هنر و مهندسی، همان ارزش‌ها برقرارند: احترام به کرامتِ انسان، آزادیِ آفریدن و گفتن، و این باور که فرهنگ می‌تواند آنجا که سیاست دیوار می‌سازد، پل بسازد.",
 
       /* engineer + research + music caption */
-      "eng.lead": "از راهِ دور به پژوهش رسیدم. کارشناسیِ مهندسیِ نرم‌افزار و نزدیک به یک دهه ساختِ نرم‌افزارِ حسابداری — مهندس، مدیر پروژه و سپس معمارِ راهکار — به من آموخت که چگونه محصول را به سرانجام برسانم. اکنون به‌عنوان پژوهشگرِ کارشناسیِ ارشد در دانشگاهِ کلاوستال، به ترنسفورمرها می‌آموزم که عمرِ یک باتریِ لیتیوم‑یونی را تنها از نخستین چرخه‌هایش پیش‌بینی کنند — و یک سالِ آزمایش را به تصمیمی در چند هفته بدل کنند. پژوهشی را دوست دارم که از آزمایشگاه بیرون بیاید و به ابزار بدل شود.",
+      "eng.lead": "از راهِ دور به پژوهش رسیدم — یک دهه کارِ نرم‌افزاری در نقشِ مهندس، تحلیل‌گرِ داده و مدیرِ پروژه به من آموخت که چگونه محصول را به سرانجام برسانم. اکنون به‌عنوان پژوهشگرِ کارشناسیِ ارشد در دانشگاهِ کلاوستال، به ترنسفورمرها می‌آموزم که عمرِ یک باتریِ لیتیوم‑یونی را تنها از نخستین چرخه‌هایش پیش‌بینی کنند — و یک سالِ آزمایش را به تصمیمی در چند هفته بدل کنند. پژوهشی را دوست دارم که از آزمایشگاه بیرون بیاید و به ابزار بدل شود.",
 
       "res.kicker": "پژوهش و مقالات",
       "res.title": "آموختنِ خواندنِ زمان به ماشین‌ها.",
@@ -347,7 +347,7 @@
       "val.p1": "In Kunst wie Technik gelten dieselben Werte: Achtung der Menschenwürde, die Freiheit zu schaffen und zu sprechen, und der Glaube, dass Kultur Brücken baut, wo Politik Mauern errichtet.",
 
       /* engineer + research + music caption */
-      "eng.lead": "Ich kam auf Umwegen zur Forschung. Ein BSc in Softwaretechnik und fast ein Jahrzehnt im Bau von Buchhaltungssoftware — Ingenieur, Projektmanager, dann Solutions Architect — lehrten mich, Dinge fertigzustellen. Heute bringe ich als Masterforscher an der TU Clausthal Transformern bei, die Lebensdauer einer Lithium-Ionen-Batterie allein aus ihren ersten Zyklen vorherzusagen — und so ein Jahr Tests in wenigen Wochen zur Entscheidung zu machen. Ich mag Forschung, die das Labor verlässt und zum Werkzeug wird.",
+      "eng.lead": "Ich kam auf Umwegen zur Forschung — ein Jahrzehnt Softwarearbeit als Ingenieur, Datenanalyst und Projektmanager lehrte mich, Dinge fertigzustellen. Heute bringe ich als Masterforscher an der TU Clausthal Transformern bei, die Lebensdauer einer Lithium-Ionen-Batterie allein aus ihren ersten Zyklen vorherzusagen — und so ein Jahr Tests in wenigen Wochen zur Entscheidung zu machen. Ich mag Forschung, die das Labor verlässt und zum Werkzeug wird.",
 
       "res.kicker": "Forschung & Arbeiten",
       "res.title": "Maschinen lehren, die Zeit zu lesen.",
