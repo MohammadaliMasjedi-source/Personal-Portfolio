@@ -31,10 +31,10 @@
     fa: {
       /* nav + menu */
       "nav.worlds": "جهان‌ها", "nav.engineer": "مهندس", "nav.artist": "هنرمند",
-      "nav.poet": "شاعر", "nav.about": "درباره", "nav.arthouse": "خانهٔ هنر", "nav.cta": "تماس",
+      "nav.about": "درباره", "nav.arthouse": "خانهٔ هنر", "nav.cta": "تماس",
       "menu.worlds": "جهان‌ها", "menu.engineer": "مهندس", "menu.artist": "هنرمند",
       "menu.athlete": "ورزشکار", "menu.arthouse": "خانهٔ هنر",
-      "menu.music": "موسیقی", "menu.poet": "شاعر", "menu.contact": "تماس",
+      "menu.music": "موسیقی", "menu.contact": "تماس",
       "menu.daricheh": "ترجمه‌ها · داریچه",
       "menu.loc": "کلاوستال‑سلرفلد، آلمان",
 
@@ -66,11 +66,10 @@
       "stat.lang": "زبان · فارسی · انگلیسی · آلمانی", "stat.lives": "زندگی، یک ذهن", "stat.arthouse": "ساختنِ خانهٔ هنر", "stat.arthouse.sfx": "+ سال", "stat.papers": "مقالهٔ پژوهشی",
       "worlds.artist.h": "هنرمند", "worlds.artist.p": "آنجا که منطق کراواتش را شل می‌کند. میدانِ بازیِ تصویر.",
       "worlds.arthouse.h": "خانهٔ هنر شیراز", "worlds.arthouse.p": "خانه‌ای مستقل برای هنر در شیراز.",
-      "worlds.music.h": "موسیقی و شعر", "worlds.music.p": "از گیتار کلاسیک تا شعرِ فارسی.",
+      "worlds.music.h": "موسیقی و شعر", "worlds.music.p": "از گیتار کلاسیک تا شعرِ فارسی — و چند سطر از خودم.",
       "worlds.human.h": "انسان", "worlds.human.p": "گربه‌ها، کنجکاویِ بزرگ و زندگی بیرون از ساعت.",
       "worlds.athlete.h": "ورزشکار", "worlds.athlete.p": "نظم همچون تمرینی روزانه. تن و اراده.",
       "worlds.manager.h": "مدیر", "worlds.manager.p": "مدیریتِ پروژه — بدل‌کردنِ تلاشِ پراکنده به حرکتی مشترک.",
-      "worlds.poet.h": "شاعر", "worlds.poet.p": "شعرِ فارسی، ترجمه، و چند سطر از خودم.",
       "worlds.enter": "ورود ←",
 
       /* about */
@@ -198,12 +197,6 @@
       "mgr.c3.h": "تصمیم بگیر، سپس بیاموز", "mgr.c3.p": "یک تصمیمِ خوبِ امروز از تصمیمی بی‌نقص که دیر برسد بهتر است.",
       "mgr.c4.h": "اعتبار بیرون، سرزنش درون", "mgr.c4.p": "بردها از آنِ تیم‌اند؛ شکست‌ها بر دوشِ رهبر.",
 
-      /* poet */
-      "poet.kicker": "شاعر",
-      "poet.title": "اتاقی آرام برای واژه‌ها.",
-      "poet.lead": "میانِ معادله و آتش، اتاقی کوچک برای واژه‌ها نگه می‌دارم — چند سطر از خودم، به دو زبان.",
-      "poet.cap": "سروده‌ای از خودم — شعرهای دیگرم کم‌کم به آن می‌پیوندند.",
-
       /* personal / human */
       "human.kicker": "انسان",
       "human.title": "زندگی، بیرون از ساعت.",
@@ -259,10 +252,10 @@
 
     de: {
       "nav.worlds": "Welten", "nav.engineer": "Ingenieur", "nav.artist": "Künstler",
-      "nav.poet": "Dichter", "nav.about": "Über mich", "nav.arthouse": "Art House", "nav.cta": "Kontakt",
+      "nav.about": "Über mich", "nav.arthouse": "Art House", "nav.cta": "Kontakt",
       "menu.worlds": "Welten", "menu.engineer": "Ingenieur", "menu.artist": "Künstler",
       "menu.athlete": "Sportler", "menu.arthouse": "Art House",
-      "menu.music": "Musik", "menu.poet": "Dichter", "menu.contact": "Kontakt",
+      "menu.music": "Musik", "menu.contact": "Kontakt",
       "menu.daricheh": "Übersetzungen · Daricheh",
       "menu.loc": "Clausthal-Zellerfeld, DE",
 
@@ -292,11 +285,10 @@
       "stat.lang": "Sprachen · FA · EN · DE", "stat.lives": "Leben, ein Geist", "stat.arthouse": "Kunsthaus aufgebaut", "stat.arthouse.sfx": "+ Jahre", "stat.papers": "Forschungsarbeiten",
       "worlds.artist.h": "Künstler", "worlds.artist.p": "Wo die Logik die Krawatte lockert. Ein visueller Spielplatz.",
       "worlds.arthouse.h": "Shiraz Art House", "worlds.arthouse.p": "Ein unabhängiges Zuhause für die Kunst in Schiras.",
-      "worlds.music.h": "Musik & Poesie", "worlds.music.p": "Von klassischer Gitarre bis zur persischen Poesie.",
+      "worlds.music.h": "Musik & Poesie", "worlds.music.p": "Von klassischer Gitarre bis zur persischen Poesie — und ein paar eigene Zeilen.",
       "worlds.human.h": "Der Mensch", "worlds.human.p": "Katzen, große Neugier und das Leben jenseits der Uhr.",
       "worlds.athlete.h": "Sportler", "worlds.athlete.p": "Disziplin als tägliche Praxis. Körper & Wille.",
       "worlds.manager.h": "Manager", "worlds.manager.p": "Projektmanagement — verstreute Mühe in gemeinsamen Schwung verwandeln.",
-      "worlds.poet.h": "Dichter", "worlds.poet.p": "Persische Poesie, Übersetzung und ein paar eigene Zeilen.",
       "worlds.enter": "Eintreten →",
 
       "about.kicker": "— Über mich",
@@ -421,12 +413,6 @@
       "mgr.c2.h": "Vertrauen als Standard", "mgr.c2.p": "Stelle kluge Leute ein, gib ihnen Raum und räume ihre Hindernisse aus dem Weg.",
       "mgr.c3.h": "Entscheiden, dann lernen", "mgr.c3.p": "Eine gute Entscheidung heute schlägt eine perfekte, die zu spät kommt.",
       "mgr.c4.h": "Lob nach außen, Tadel nach innen", "mgr.c4.p": "Siege gehören dem Team; die Fehlschläge trägt die Führung.",
-
-      /* poet */
-      "poet.kicker": "Der Dichter",
-      "poet.title": "Ein stiller Raum für Worte.",
-      "poet.lead": "Zwischen der Gleichung und der Glut halte ich einen kleinen Raum für Worte — ein paar eigene Zeilen, in zwei Sprachen.",
-      "poet.cap": "Ein eigener Vers — weitere meiner Gedichte gesellen sich nach und nach dazu.",
 
       /* personal / human */
       "human.kicker": "Der Mensch",

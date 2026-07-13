@@ -568,26 +568,30 @@ html[lang="fa"] .channel.is-soon::after { content: "به‌زودی"; letter-spa
 .role-cycle > span { display: inline-block; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; transition: transform .45s var(--ease), opacity .45s var(--ease); }
 .role-cycle.swapping > span { opacity: 0; transform: translateY(-32%); }
 
-/* ---- Worlds (facets index) ---- */
-.facets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.facet { position: relative; padding: clamp(28px, 3vw, 40px); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); overflow: hidden; min-height: 230px; display: flex; flex-direction: column;
-  transform: perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px)); will-change: transform;
-  transition: transform .5s var(--ease), border-color .45s, background .45s; }
-.facet.is-tilting { transition: border-color .45s, background .45s; }  /* instant tilt-follow while pointer is inside */
-.facet::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 80% 0%, rgba(227,162,60,0.08), transparent 60%); opacity: 0; transition: opacity .45s; z-index: 0; }
-/* spotlight that tracks the cursor */
-.facet::after { content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: 0; pointer-events: none; opacity: 0; transition: opacity .4s;
-  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(227,162,60,0.20), transparent 46%); }
+/* ---- Worlds (facets index) — matte-ink "theme-B" ----
+   Bespoke ink-sketch motif per world, a hairline Farr accent seam along the
+   top, a real type hierarchy (number small/muted · title strong · subtitle
+   calm) and a restrained hover: a gentle lift plus a faint warm edge-glow —
+   no cursor-tracking bloom, no glossy 3D tilt. */
+.facets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.facet { position: relative; padding: clamp(26px, 2.7vw, 36px); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); overflow: hidden; min-height: 250px; display: flex; flex-direction: column;
+  transform: translateY(var(--ty, 0px)); will-change: transform;
+  transition: transform .5s var(--ease), border-color .45s, background .45s, box-shadow .45s; }
+/* hairline Farr accent seam — the stage-light edge */
+.facet::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; z-index: 2; pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--volt) 24%, #edc06a 56%, transparent); opacity: .26; transition: opacity .45s; }
 .facet > * { position: relative; z-index: 1; }
-.facet:hover, .facet:focus-visible { --ty: -6px; border-color: var(--volt); background: var(--surface-2); }
-.facet:hover::before { opacity: 1; }
-.facet:hover::after { opacity: 1; }
-@media (prefers-reduced-motion: reduce){ .facet { transform: translateY(var(--ty,0px)); } }
-.facet__no { font-family: var(--font-display); font-size: 13px; color: var(--text-mute); letter-spacing: .1em; }
-.facet__ico { font-size: 30px; margin: 14px 0 6px; filter: drop-shadow(0 0 12px rgba(227,162,60,.35)); }
-.facet h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 2.6vw, 32px); margin-bottom: 8px; }
-.facet p { color: var(--text-dim); font-size: 15px; max-width: 30ch; }
-.facet__go { margin-top: auto; padding-top: 18px; font-family: var(--font-display); font-size: 14px; color: var(--volt); opacity: 0; transform: translateX(-8px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.facet:hover, .facet:focus-visible { --ty: -6px; border-color: rgba(227,162,60,0.5); background: var(--surface-2);
+  box-shadow: 0 20px 46px -30px rgba(227,162,60,0.5); }   /* matte warm glow, not a bloom */
+.facet:hover::before, .facet:focus-visible::before { opacity: .9; }
+@media (prefers-reduced-motion: reduce){ .facet { transition: border-color .45s, background .45s, box-shadow .45s; } }
+.facet__no { font-family: var(--font-display); font-size: 12px; color: var(--text-mute); letter-spacing: .18em; }
+.facet__ico { display: block; margin: 16px 0 14px; color: var(--volt); opacity: .74; transition: opacity .45s, transform .5s var(--ease); }
+.facet__motif { display: block; width: 44px; height: 44px; }
+.facet:hover .facet__ico, .facet:focus-visible .facet__ico { opacity: 1; transform: translateY(-2px); }
+.facet h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(23px, 2.4vw, 30px); letter-spacing: -0.01em; margin-bottom: 8px; color: var(--text); }
+.facet p { color: var(--text-dim); font-size: 14.5px; line-height: 1.5; max-width: 32ch; }
+.facet__go { margin-top: auto; padding-top: 20px; font-family: var(--font-display); font-size: 13.5px; letter-spacing: .02em; color: var(--volt); opacity: 0; transform: translateX(-8px); transition: opacity .4s var(--ease), transform .4s var(--ease); }
 .facet:hover .facet__go { opacity: 1; transform: translateX(0); }
 
 /* ---- Facet section headers ---- */
