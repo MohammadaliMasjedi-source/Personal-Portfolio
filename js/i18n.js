@@ -159,6 +159,11 @@
       "res.note": "پرتفویی زنده و صادقانه مرحله‌بندی‌شده — پایان‌نامه در حالِ نگارش است و یک یادداشت به‌سویِ پیش‌چاپ می‌رود؛ هر مورد با مرحلهٔ واقعی‌اش برچسب خورده. اعداد و مقالات تنها زمانی می‌آیند که عمومی شوند.",
 
       "mus.cap": "زنده در کنسرت — رومانس، میلونگا و مِی برای گیتار کلاسیک · کلاوستال‑تسلرفلد، نوامبر ۲۰۲۳. هر عکس را برای بزرگ‌نمایی لمس کنید.",
+      "mus.shot.hall": "روی صحنه — سالنی پر",
+      "mus.shot.seated": "نشسته، حین اجرا",
+      "mus.shot.profile": "نیم‌رخ",
+      "mus.shot.hands": "هر دو دست، میانِ یک عبارت",
+      "mus.shot.fretboard": "دست چپ روی دستهٔ گیتار",
 
       /* engineer header */
       "eng.kicker": "مهندس",
@@ -405,6 +410,11 @@
       "res.note": "Ein lebendiges, ehrlich nach Reifegrad geordnetes Portfolio — die Arbeit ist in der Niederschrift, eine Notiz geht Richtung Preprint; jeder Eintrag ist nach seinem wahren Stand beschriftet. Zahlen und Arbeiten erscheinen erst, wenn sie öffentlich sind.",
 
       "mus.cap": "Live im Konzert — Romance, Milonga & Mey für klassische Gitarre · Clausthal-Zellerfeld, November 2023. Tippe auf ein Foto zum Vergrößern.",
+      "mus.shot.hall": "Auf der Bühne — volles Haus",
+      "mus.shot.seated": "Sitzend, mitten im Auftritt",
+      "mus.shot.profile": "Im Profil",
+      "mus.shot.hands": "Beide Hände, mitten in der Phrase",
+      "mus.shot.fretboard": "Linke Hand am Griffbrett",
 
       /* engineer header */
       "eng.kicker": "Der Ingenieur",

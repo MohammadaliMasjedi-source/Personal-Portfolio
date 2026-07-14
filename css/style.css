@@ -775,6 +775,13 @@ html[lang="fa"] .paper__desc { line-height: 1.95; }
 .shot--feature img { aspect-ratio: 16 / 7; }
 .stage-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .stage-gallery .shot { aspect-ratio: 4 / 5; }
+/* per-shot caption — quiet museum-label treatment, always on (not hover-gated) so it
+   reads on touch devices too; same bottom-scrim idiom as .art__cap / .vid__meta. */
+.shot__cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 10px 12px 9px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.66)); font-family: var(--font-display);
+  font-size: 0.75rem; letter-spacing: 0.01em; color: var(--text-mute); pointer-events: none; }
+.shot--feature .shot__cap { padding: 16px 18px 14px; font-size: 0.92rem; color: var(--text-dim);
+  background: linear-gradient(transparent, rgba(0,0,0,0.58)); }
 .sec-media__hint { color: var(--text-mute); font-weight: 400; opacity: 0.8; }
 @media (max-width: 720px){ .stage-gallery { grid-template-columns: repeat(2, 1fr); } .shot--feature { aspect-ratio: 16 / 9; } .shot--feature img { aspect-ratio: 16 / 9; } }
 .sec-media__grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 14px; }
