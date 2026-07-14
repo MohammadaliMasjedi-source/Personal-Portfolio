@@ -84,6 +84,19 @@
   .roi h3{font-size:13px;margin:8px 0 4px}
   .roi p{color:var(--muted);font-size:12.5px;margin:0}
   footer{margin-top:26px;color:var(--dim);font-size:11.5px;text-align:center;line-height:1.7}
+  /* Explainer-standard header — plain-language, for non-engineers */
+  .explain{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:18px 0 4px;box-shadow:var(--shadow)}
+  .explain__badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}
+  .explain__badge{display:inline-flex;align-items:center;gap:6px;padding:3px 11px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.3px}
+  .explain__badge--demo{background:rgba(245,196,81,.14);color:#f5d27a;border:1px solid rgba(245,196,81,.4)}
+  .explain__badge--synth{background:rgba(74,163,255,.13);color:#9ecbff;border:1px solid rgba(74,163,255,.36)}
+  .explain__badge--proto{background:rgba(70,201,139,.13);color:#7ee0b0;border:1px solid rgba(70,201,139,.36)}
+  .explain__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:860px){.explain__grid{grid-template-columns:1fr;gap:14px}}
+  .explain__b h3{margin:0 0 5px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--acc)}
+  .explain__b p{margin:0;font-size:13px;color:#cdd9e5;line-height:1.55}
+  .explain__who{margin:15px 0 0;padding-top:13px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);line-height:1.55}
+  .explain__who b{color:var(--ink)}
   .axislabel{fill:var(--muted);font-size:11px;font-family:var(--sans)}
   .ticklabel{fill:var(--dim);font-size:10px;font-family:var(--mono)}
   .gridline{stroke:var(--line);stroke-width:1}
@@ -123,6 +136,29 @@
       We read a cell's <b>first cycles</b> and predict its <b>full life</b> and <b>remaining useful life</b> — with calibrated uncertainty — <b>long before</b> conventional methods can. Catch the weak cells early; act while it still pays.
     </div>
   </header>
+
+  <section class="explain" aria-label="What is CellSight — in plain language">
+    <div class="explain__badges">
+      <span class="explain__badge explain__badge--demo">● Demo</span>
+      <span class="explain__badge explain__badge--synth">Synthetic data</span>
+      <span class="explain__badge explain__badge--proto">Research prototype</span>
+    </div>
+    <div class="explain__grid">
+      <div class="explain__b">
+        <h3>What is this</h3>
+        <p>CellSight is a demo dashboard for battery health. It reads a battery cell's earliest charge–discharge cycles and shows a forecast of how long that cell will last. It is a mock-up, built to show how such a tool would look and feel — not a live product.</p>
+      </div>
+      <div class="explain__b">
+        <h3>Why it matters</h3>
+        <p>Batteries are costly and hard to judge while they are still young. Catching a weak cell early — while there is still time to resell, rebalance or pull a pack — saves money and avoids surprise failures later on.</p>
+      </div>
+      <div class="explain__b">
+        <h3>What am I looking at</h3>
+        <p>A table of battery cells on the left (click any row), a health-forecast chart on the right, and a panel below on why acting early is worth more. Every number on this page is generated for illustration, not measured.</p>
+      </div>
+    </div>
+    <p class="explain__who">Built by <b>Mohammadali (Mo) Masjedi</b>, from his M.Sc. research at TU Clausthal. This is a working demo — the underlying research is unpublished (pre-defense), so the figures shown here are illustrative rather than real results.</p>
+  </section>
 
   <div class="kpis" id="kpis"></div>
 
@@ -168,8 +204,8 @@
     </div>
     <div class="card">
       <div class="big" id="roi-acc">—</div>
-      <h3>Lower error in the early window (illustrative)</h3>
-      <p>A synthetic, illustrative comparison vs. a recurrent (GRU)-style baseline at ≤200 observed cycles — where the expensive decisions get made. Not the measured thesis result.</p>
+      <h3>Calibrated uncertainty</h3>
+      <p>Every forecast comes with an honest confidence band, not just a single number — so you see how sure the model is before you act. Exact accuracy figures stay with the unpublished (pre-defense) research.</p>
     </div>
     <div class="card">
       <div class="big" id="roi-risk">—</div>
@@ -179,8 +215,8 @@
   </div>
 
   <footer>
-    CellSight demo · synthetic fleet, illustrative numbers — wire in real MATR / mixed-chemistry predictions to make it live.<br>
-    Built on the early-cycle lifetime-prediction model from the TU Clausthal thesis. Working name &amp; styling — change freely. Commercial asset → move to <b>MM-Private</b>.
+    CellSight demo · synthetic fleet, illustrative numbers — a self-contained mock-up of an early-cycle battery-health tool.<br>
+    Inspired by early-cycle lifetime-prediction research at TU Clausthal. Figures are illustrative; real results follow once the research is public. Built by Mohammadali (Mo) Masjedi.
   </footer>
 </div>
 
@@ -236,8 +272,8 @@ for(var i=0;i<N;i++){
 function errT(c){return 6 + 30*Math.exp(-c/70);}    // transformer: drops fast
 function errG(c){return 9 + 34*Math.exp(-c/150);}   // gru: drops slower
 function errB(c){return 24 + 8*Math.exp(-c/200);}   // variance baseline: high
-function avgErr(fn,a,b){var s=0,k=0;for(var c=a;c<=b;c+=5){s+=fn(c);k++;}return s/k;}
-var earlyT = avgErr(errT,20,200), earlyG = avgErr(errG,20,200);
+/* Curves below are a SCHEMATIC illustration only — no axis reads out a real
+   error value. Exact margins live in the unpublished (pre-defense) research. */
 
 /* ---------- SVG line-chart helper (one function, both charts) ---------- */
 function lineChart(o){
@@ -307,20 +343,19 @@ function renderKPIs(){
   var attn = fleet.filter(function(c){return c.status!=="good";}).length;
   var ruls = fleet.map(function(c){return c.rulT;}).sort(function(a,b){return a-b;});
   var medRul = ruls[Math.floor(ruls.length/2)];
-  var redux = Math.round((1 - earlyT/earlyG)*100);
   var k=[
     {v:fleet.length, l:"Cells monitored"},
     {v:(avgSoh*100).toFixed(1)+"<small>%</small>", l:"Avg State of Health"},
     {v:attn, l:"Need attention", s:"of "+fleet.length+" cells"},
     {v:medRul+"<small> cyc</small>", l:"Median remaining life"},
-    {v:Math.round(earlyT)+"<small>%</small>", l:"Error @ ≤200 cyc (illustrative)", s:"GRU-style "+Math.round(earlyG)+"% · synthetic"},
+    {v:"≤200<small> cyc</small>", l:"Early-decision window", s:"where the value is created"},
     {v:"~10<small>%</small>", l:"Life seen at first call", s:"locks RUL early"}
   ];
   document.getElementById("kpis").innerHTML = k.map(function(x){
     return '<div class="kpi"><div class="v">'+x.v+'</div><div class="l">'+x.l+'</div>'+(x.s?'<div class="s">'+x.s+'</div>':'')+'</div>';
   }).join("");
   document.getElementById("roi-early").textContent = "+"+medRul+" cyc";
-  document.getElementById("roi-acc").textContent = "−"+redux+"%";
+  document.getElementById("roi-acc").textContent = "±1σ";
   document.getElementById("roi-risk").textContent = attn+" / "+fleet.length;
 }
 
@@ -406,10 +441,10 @@ function renderWhy(){
   var T=[],G=[],Bs=[];
   for(var c=20;c<=400;c+=5){T.push([c,errT(c)]);G.push([c,errG(c)]);Bs.push([c,errB(c)]);}
   var svg=lineChart({
-    width:1180,height:330,pad:{l:50,r:18,t:16,b:46},
+    width:1180,height:330,pad:{l:64,r:18,t:16,b:46},
     xDomain:[20,400], yDomain:[0,42],
-    xLabel:"Cycles observed before prediction", yLabel:"Remaining-life error (%)",
-    yTicks:[{v:0,t:"0%"},{v:10,t:"10%"},{v:20,t:"20%"},{v:30,t:"30%"},{v:40,t:"40%"}],
+    xLabel:"Cycles observed before prediction", yLabel:"Prediction error (lower is better)",
+    yTicks:[{v:6,t:"lower"},{v:38,t:"higher"}],
     xTicks:[{v:50,t:"50"},{v:100,t:"100"},{v:150,t:"150"},{v:200,t:"200"},{v:300,t:"300"},{v:400,t:"400"}],
     xbands:[{from:20,to:200,color:"rgba(74,163,255,0.06)"}],
     vlines:[{x:200,color:"#6b7787",label:"early regime ≤200",top:true}],

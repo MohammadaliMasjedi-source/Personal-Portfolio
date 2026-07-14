@@ -80,9 +80,11 @@
       <a href="#worlds" data-menu-link><span class="menu__idx">01</span> <span data-i18n="menu.worlds">Worlds</span></a>
       <a href="#engineer" data-menu-link><span class="menu__idx">02</span> <span data-i18n="menu.engineer">Engineer</span></a>
       <a href="#research" data-menu-link><span class="menu__idx">03</span> <span data-i18n="menu.research">Research</span></a>
+      <a href="#opensource" data-menu-link><span class="menu__idx">03·</span> <span data-i18n="menu.opensource">Open Source</span></a>
       <a href="#arthouse" data-menu-link><span class="menu__idx">04</span> <span data-i18n="menu.arthouse">Shiraz Art House</span></a>
       <a href="#arthive" data-menu-link><span class="menu__idx">04·</span> <span data-i18n="menu.arthive">Shiraz House — Archive</span></a>
       <a href="#music" data-menu-link><span class="menu__idx">05</span> <span data-i18n="menu.music">Music</span></a>
+      <a href="#bigband" data-menu-link><span class="menu__idx">05·</span> <span data-i18n="menu.bigband">Bigband</span></a>
       <a href="#athlete" data-menu-link><span class="menu__idx">06</span> <span data-i18n="menu.athlete">Athlete</span></a>
       <a href="#daricheh" data-menu-link><span class="menu__idx">07</span> <span data-i18n="menu.daricheh">Translations · Daricheh</span></a>
       <a href="#contact" data-menu-link><span class="menu__idx">08</span> <span data-i18n="menu.contact">Contact</span></a>
@@ -357,6 +359,15 @@
 
         <span class="papers__group" data-reveal data-i18n="res.g2">Papers &amp; experiments</span>
         <div class="papers__grid">
+          <!-- ENCODER PAPER — the thesis's core method as a standalone paper, heading to arXiv.
+               [MO-FACT-NEEDED]: real paper title, full author list, target venue, and submission
+               date. The arXiv filing is Mo-gated and NOT yet posted, so no arXiv ID / DOI / link
+               is claimed here, and no headline result numbers appear (academic priority). -->
+          <article class="paper" data-reveal data-cursor="view">
+            <div class="paper__statusrow"><span class="paper__status" data-i18n="res.st.submission">In submission</span></div>
+            <h3 class="paper__title" data-i18n="res.enc.t">The Early-Cycle Encoder</h3>
+            <p class="paper__desc" data-i18n="res.enc.d">The core of the thesis, written up as a standalone paper: a variable-length transformer encoder that reads a cell's earliest cycles to estimate its remaining life. Being prepared for an arXiv preprint — the headline results stay private until it is public.</p>
+          </article>
           <article class="paper" data-reveal data-cursor="view">
             <div class="paper__statusrow"><span class="paper__status" data-i18n="res.st.draft">Draft</span></div>
             <h3 class="paper__title" data-i18n="res.p1.t">Early Signals, Distant Outcomes</h3>
@@ -385,6 +396,51 @@
         </p>
       </div>
       <p class="sec-media__cap" data-reveal data-i18n="res.note" style="margin-top:1.6rem">A living portfolio, honestly staged — the thesis is in write-up and one note is heading to a preprint; each item is labelled by its real stage. Numbers and papers appear only once they are public.</p>
+    </section>
+
+    <!-- ===================== OPEN SOURCE ===================== -->
+    <!-- Cards mirror each repo's own public GitHub README. Repos live-verified public
+         on github.com/MohammadaliMasjedi-source (2026-07). External pull-request
+         contributions are [MO-FACT-NEEDED] — none asserted until confirmed. -->
+    <section class="section facet-sec opensource" id="opensource">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">02·</span>
+        <div>
+          <span class="eyebrow" data-i18n="os.kicker">Open source</span>
+          <h2 class="section__title" data-i18n="os.title">Built in <em>the open.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="os.lead">A few things I build in public — small, self-contained kits anyone can read, run and reuse.</p>
+      <div class="papers">
+        <div class="papers__grid">
+          <article class="paper" data-reveal data-cursor="view">
+            <div class="paper__statusrow"><span class="paper__status paper__status--on" data-i18n="os.st.public">Public</span></div>
+            <h3 class="paper__title"><bdi>rpi-camera-af</bdi></h3>
+            <p class="paper__desc" data-i18n="os.rpi.d">Camera autofocus on a Raspberry Pi 4 driving an FS90R servo — focus algorithms, 3D-printed mounts and a step-by-step build guide. A TU Clausthal ETCE seminar project, shared as an open kit.</p>
+            <div class="project__tech"><span>Python</span><span>Raspberry Pi</span><span>Hardware</span></div>
+            <a href="https://github.com/MohammadaliMasjedi-source/rpi-camera-af" target="_blank" rel="noopener" class="project__link" data-magnetic data-cursor="link"><span data-i18n="os.view">View on GitHub</span>
+              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </article>
+          <article class="paper" data-reveal data-reveal-delay="0.05" data-cursor="view">
+            <div class="paper__statusrow"><span class="paper__status paper__status--on" data-i18n="os.st.public">Public</span></div>
+            <h3 class="paper__title"><bdi>Sahar</bdi></h3>
+            <p class="paper__desc" data-i18n="os.sahar.d">Offline-first learning packs for children — literacy, numeracy and thinking, in Persian, English and German. The open home of the Sahar education work.</p>
+            <div class="project__tech"><span>JavaScript</span><span>Offline-first</span><span>Education</span></div>
+            <a href="https://github.com/MohammadaliMasjedi-source/Sahar" target="_blank" rel="noopener" class="project__link" data-magnetic data-cursor="link"><span data-i18n="os.view">View on GitHub</span>
+              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </article>
+          <article class="paper" data-reveal data-reveal-delay="0.1" data-cursor="view">
+            <div class="paper__statusrow"><span class="paper__status paper__status--on" data-i18n="os.st.public">Public</span></div>
+            <h3 class="paper__title"><bdi>Personal-Portfolio</bdi></h3>
+            <p class="paper__desc" data-i18n="os.site.d">This very site — a trilingual, no-build static portfolio (EN / FA / DE), open so anyone can read the source and see how it is put together.</p>
+            <div class="project__tech"><span>HTML</span><span>CSS</span><span>Vanilla JS</span></div>
+            <a href="https://github.com/MohammadaliMasjedi-source/Personal-Portfolio" target="_blank" rel="noopener" class="project__link" data-magnetic data-cursor="link"><span data-i18n="os.view">View on GitHub</span>
+              <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </article>
+        </div>
+        <p class="sec-media__cap" data-reveal data-i18n="os.note" style="margin-top:1.6rem">These repositories are public on GitHub; each description mirrors the project's own README. Contributions and pull requests to other projects will be listed here as they are confirmed.</p>
+      </div>
+      <p class="sec-link" data-reveal><a href="https://github.com/MohammadaliMasjedi-source" target="_blank" rel="noopener" data-cursor="link"><bdi>@MohammadaliMasjedi-source</bdi> ↗</a></p>
     </section>
 
     <!-- ===================== ARTIST ===================== -->
@@ -538,6 +594,32 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ===================== TU CLAUSTHAL BIGBAND ===================== -->
+    <!-- NEW FACT (from the conductor): Mo makes music with the TU Clausthal Big Band.
+         The ensemble itself is real and public — "groovING TUC · Big Band an der TU
+         Clausthal e.V.", bigband.tu-clausthal.de (founded WS 2017/18, ~20 players).
+         [MO-FACT-NEEDED]: Mo's exact role (member vs guest), instrument, years with the
+         band, and any specific concerts to name. Visible copy is kept conservative and the
+         section is flagged "details being confirmed" until Mo verifies. -->
+    <section class="section facet-sec bigband" id="bigband">
+      <div class="facet-head" data-reveal>
+        <span class="facet-head__no">08·</span>
+        <div>
+          <span class="eyebrow" data-i18n="bb.kicker">TU Clausthal Bigband</span>
+          <h2 class="section__title" data-i18n="bb.title">Playing in <em>a bigger band.</em></h2>
+        </div>
+      </div>
+      <p class="section__lead" data-reveal data-i18n="bb.lead">The collective side of music — a whole room of players, one groove.</p>
+      <div class="sec-prose">
+        <p data-reveal data-i18n="bb.p1">groovING TUC — the Big Band an der TU Clausthal e.V. — is the university's big band: around twenty students, staff and musicians from the region, with a fresh programme each semester. Alongside my solo classical guitar, I make music with this ensemble — the big-room, shared-pulse side of playing.</p>
+      </div>
+      <p class="sec-link" data-reveal><a href="https://www.bigband.tu-clausthal.de/" target="_blank" rel="noopener" data-cursor="link"><bdi>bigband.tu-clausthal.de</bdi> ↗</a></p>
+      <p class="dar-soon" data-reveal>
+        <span class="dar-soon__dot" aria-hidden="true"></span>
+        <span data-i18n="bb.soon">Details being confirmed — my exact role, instrument and dates with the band will be added once verified.</span>
+      </p>
     </section>
 
     <!-- ===================== COLLABORATORS ===================== -->
@@ -839,7 +921,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <!-- i18n must load BEFORE main.js so text is translated before it gets animated/split -->
-  <script src="js/i18n.js?v=19"></script>
+  <script src="js/i18n.js?v=20"></script>
   <script src="js/main.js?v=12"></script>
   <script src="js/polish.js?v=6"></script>
   <script src="js/support.js?v=1"></script>

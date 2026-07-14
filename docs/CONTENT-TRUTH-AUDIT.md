@@ -85,3 +85,63 @@ concern named in the mission. **Verdict: 🛠 fix** — softened this session (s
 Note: counts don't force-fit a single clean partition because a few rows are *both*
 "fix now" and "flag for Mo" (e.g. row 4/15 — the internal date contradiction is fixed by
 harmonizing language this session, while the exact year range still needs Mo's confirmation).
+
+## ADDENDUM 2026-07-14 — website-truth-package (branch `truth-audit`, adds to the Worlds redesign)
+
+Standing truth-package items completed this session. All copy added in fa/en/de; under-claim
+rule applied; no result numbers published. Sources: `specs/MO-LINKEDIN-FACTS-2026-07-12.md`,
+this audit, and live-verified GitHub / TU-Clausthal public pages.
+
+**1. EXPLAINER-STANDARD header — CellSight project page** (`projects/cellsight/index.html`).
+Added a plain-language block at the top of the page: three status badges (Demo ·
+Synthetic data · Research prototype) + "What is this" (3 sentences, non-engineer) / "Why it
+matters" / "What am I looking at" + a "who made it" line (Mo, M.Sc. research at TU Clausthal,
+figures illustrative / pre-defense). The index-page CellSight *card* already carried a
+What/Why explainer (row 9); this brings the standalone page up to the same standard.
+
+**2. CellSight IP-hygiene** (`projects/cellsight/index.html`). Academic priority — the encoder
+arXiv paper is Mo-gated and not yet filed. Softened/removed on the public demo:
+- KPI "Error @ ≤200 cyc (illustrative) · GRU-style X%" → replaced with a non-result KPI
+  ("Early-decision window · ≤200 cyc"). The specific error percentages are gone.
+- ROI tile "Lower error in the early window · −X%" (fabricated ~40% error-reduction-vs-GRU
+  margin) → re-framed to "Calibrated uncertainty · ±1σ" — an honest feature of the demo, no
+  comparison magnitude.
+- "Why early" chart y-axis "Remaining-life error (%)" with 0–40% ticks → qualitative
+  "Prediction error (lower is better)" with only lower/higher anchors; curves are now an
+  explicitly labelled schematic. Dead `earlyT/earlyG/redux` averages removed.
+- Footer: removed the internal dev note ("Working name & styling — change freely. Commercial
+  asset → move to MM-Private.") that was leaking on a public page; replaced with an honest,
+  non-disclosing line.
+The interactive synthetic fleet + per-cell forecast stay (clearly labelled synthetic).
+
+**3a. Papers — encoder paper** (`index.html` research section). Added one card as the lead of
+the papers grid, status **"In submission"** (existing badge, no inflation), working title
+"The Early-Cycle Encoder", describing the thesis's core variable-length transformer encoder.
+No results, no arXiv ID/DOI/link (filing is Mo-gated, not yet posted).
+
+**3b. Open-Source contribution track** (`index.html`, new `#opensource` section + menu entry).
+Three cards, each linking a **live-verified public repo** on
+`github.com/MohammadaliMasjedi-source` (checked 2026-07): `rpi-camera-af` (Python, TU
+Clausthal ETCE seminar project), `Sahar` (offline-first learning packs), `Personal-Portfolio`
+(this site). Descriptions mirror each repo's own README. `@mmasjedi` has 0 public repos → not
+linked as an OSS source.
+
+**3c. Translations placeholder.** Already present as the Daricheh (`#daricheh`) coming-soon
+section from the Worlds redesign — verified intact, **not regressed**, no change needed.
+
+**3d. TU Clausthal Bigband** (`index.html`, new `#bigband` section + menu entry). Honest stub
+in the site's established coming-soon voice. The ensemble is a live-verified public fact
+("groovING TUC · Big Band an der TU Clausthal e.V.", bigband.tu-clausthal.de, founded WS
+2017/18, ~20 players) and is described factually with a link; Mo's involvement is stated
+conservatively and flagged "details being confirmed".
+
+### [MO-FACT-NEEDED] tags added this session (all in HTML comments at the point of use)
+1. **Encoder paper** — real paper title, full author list, target venue, and submission date;
+   arXiv filing is Mo-gated and not yet posted (`index.html`, research section).
+2. **Open-Source track** — external pull-request / contributions to *other* projects (none
+   asserted; only Mo's own public repos are linked) (`index.html`, `#opensource`).
+3. **TU Clausthal Bigband** — Mo's exact role (member vs guest), instrument, years with the
+   band, and any specific concerts to name (`index.html`, `#bigband`).
+
+Not built this session (per mission): the socials "Watch & Listen" video block — needs Mo's
+real IG handle + view-count verification; left for Mo.
