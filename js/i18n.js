@@ -21,9 +21,9 @@
 
   /* hero role cycler lines, per language (read by main.js) */
   var ROLES = {
-    en: ["a Guitarist & Teacher", "a Software Developer", "a Project Manager", "an Art & Culture Manager", "a Cat-lover"],
-    fa: ["نوازنده و مدرسِ گیتار کلاسیکم", "توسعه‌دهندهٔ نرم‌افزارم", "مدیرِ پروژه‌ام", "مدیرِ فرهنگ و هنرم", "عاشقِ گربه‌هام"],
-    de: ["Gitarrist & Lehrer", "Softwareentwickler", "Projektmanager", "Kunst- und Kulturmanager", "Katzenliebhaber"]
+    en: ["a Classical Guitarist, Teacher & Composer", "a Software Developer", "a Project Manager", "an Art & Culture Manager", "curious about Science"],
+    fa: ["نوازنده، مدرس و آهنگسازِ گیتار کلاسیکم", "توسعه‌دهندهٔ نرم‌افزارم", "مدیرِ پروژه‌ام", "مدیرِ فرهنگ و هنرم", "کنجکاوِ علم‌ام"],
+    de: ["Klassischer Gitarrist, Lehrer & Komponist", "Softwareentwickler", "Projektmanager", "Kunst- und Kulturmanager", "neugierig auf Wissenschaft"]
   };
 
   /* ---- translations (en is the HTML source, so only fa + de here) ---- */
@@ -41,10 +41,10 @@
       /* hero */
       "hero.eyebrow": "محمدعلی مسجدی — کلاوستال، آلمان",
       "hero.title": "یک ذهن، زندگی‌های بسیار.",
-      "hero.sub": "نوازنده و مدرس گیتار کلاسیک، توسعه‌دهندهٔ نرم‌افزار، مدیرِ پروژه و مدیرِ فرهنگ و هنر — و خدمتگزارِ دو گربه. یک ذهن، زندگی‌های بسیار.",
+      "hero.sub": "نوازنده، مدرس و آهنگسازِ گیتار کلاسیک، توسعه‌دهندهٔ نرم‌افزار، مدیرِ پروژه و مدیرِ فرهنگ و هنر — و خدمتگزارِ دو گربه. یک ذهن، زندگی‌های بسیار.",
       "hero.cta1": "جهان‌هایم را ببین", "hero.cta2": "تماس", "hero.scroll": "پایین",
       "hero.iam": "من",
-      "hero.role1": "نوازنده و مدرسِ گیتار کلاسیکم",
+      "hero.role1": "نوازنده، مدرس و آهنگسازِ گیتار کلاسیکم",
 
       /* cats */
       "cats.h": "ممو و ژوپیتر 🐾",
@@ -66,7 +66,7 @@
       "stat.lang": "زبان · فارسی · انگلیسی · آلمانی", "stat.lives": "زندگی، یک ذهن", "stat.arthouse": "ساختنِ خانهٔ هنر", "stat.arthouse.sfx": "+ سال", "stat.papers": "مقالهٔ پژوهشی",
       "worlds.artist.h": "هنرمند", "worlds.artist.p": "آنجا که منطق کراواتش را شل می‌کند. میدانِ بازیِ تصویر.",
       "worlds.arthouse.h": "خانهٔ هنر شیراز", "worlds.arthouse.p": "خانه‌ای مستقل برای هنر در شیراز.",
-      "worlds.music.h": "موسیقی و شعر", "worlds.music.p": "از گیتار کلاسیک تا شعرِ فارسی.",
+      "worlds.music.h": "موسیقی و شعر", "worlds.music.p": "گیتار کلاسیک، آهنگسازی و شعرِ فارسی.",
       "worlds.human.h": "انسان", "worlds.human.p": "گربه‌ها، کنجکاویِ بزرگ و زندگی بیرون از ساعت.",
       "worlds.athlete.h": "ورزشکار", "worlds.athlete.p": "نظم همچون تمرینی روزانه. تن و اراده.",
       "worlds.manager.h": "مدیر", "worlds.manager.p": "مدیریتِ پروژه — بدل‌کردنِ تلاشِ پراکنده به حرکتی مشترک.",
@@ -100,9 +100,10 @@
       "mus.kicker": "موسیقی و آواز",
       "mus.title": "از سیم تا کلام.",
       "mus.lead": "از گیتار کلاسیک تا کلامِ آوازی.",
-      "mus.p1": "نوازنده و آموزگارِ گیتار کلاسیک‌ام با بیش از هجده سال تجربه. نوازندگی‌ام مقامِ نخستِ المپیادِ هنریِ کشور (موسیقی) و مقامِ دومِ جشنوارهٔ ملیِ گیتار را برایم به ارمغان آورد، و کارشناسیِ ارشدِ پژوهشِ هنر دارم. در آموزشگاهِ موسیقیِ فروغ تدریس کرده‌ام و عضوِ شورای سیاست‌گذاریِ موسیقیِ استانِ فارس بوده‌ام.",
-      "mus.p2": "بخشِ زیادی از آنچه می‌نوازم با شعرِ فارسی پیوند دارد — رباعیاتِ خیّام و دیگران — جایی که گیتار و کلام به هم می‌رسند. همان عشق به صدا و معنا در هر چه می‌سازم جاری‌ست.",
-      "mus.watch": "تماشا — گیتار کلاسیک، از کانالِ من <bdi>«MoMas Music»</bdi>:",
+      "mus.p1": "نوازنده، مدرس و آهنگسازِ گیتار کلاسیک‌ام و از سالِ ۲۰۰۳ می‌نوازم. نوازندگی‌ام مقامِ نخستِ المپیادِ هنریِ کشور در موسیقی (۲۰۱۲) و مقامِ دومِ جشنوارهٔ ملیِ گیتار (۲۰۱۰) را برایم به ارمغان آورد، و در آموزشگاهِ موسیقیِ فروغِ شیراز تدریس کرده‌ام.",
+      "mus.p2": "به‌عنوان آهنگساز، قطعاتِ خودم را نیز اجرا می‌کنم — از جمله کنسرتی زیرزمینی در ژرفای معدنِ روزِنهوفر در کوهستانِ هارتس، که <em>هارتسر پانوراما</em> در ۲۰۲۵ آن را معرفی کرد. سال‌ها پیش‌تر، در خانهٔ هنر شیراز، در رسیتالی از آثارِ یوهان کاسپار مِرتز به اجرا پرداختم.",
+      "mus.p3": "بخشِ زیادی از آنچه می‌نوازم با شعرِ فارسی پیوند دارد — رباعیاتِ خیّام و دیگران — جایی که گیتار و کلام به هم می‌رسند. همان عشق به صدا و معنا در هر چه می‌سازم جاری‌ست.",
+      "mus.watch": "تماشا — گیتار کلاسیک، از کانالِ من <bdi>@Mohammad_masjedi</bdi>:",
       "mus.allvideos": "همهٔ ویدیوها",
 
       "col.kicker": "آدم‌ها و هم‌کاران",
@@ -268,10 +269,10 @@
 
       "hero.eyebrow": "Mohammad Ali Masjedi — Clausthal, Deutschland",
       "hero.title": "Ein Geist, viele Leben.",
-      "hero.sub": "Klassischer Gitarrist und Lehrer, Softwareentwickler, Projektmanager und Kunst- und Kulturmanager — und treuer Diener zweier Katzen. Ein Geist, viele Leben.",
+      "hero.sub": "Klassischer Gitarrist, Lehrer und Komponist, Softwareentwickler, Projektmanager und Kunst- und Kulturmanager — und treuer Diener zweier Katzen. Ein Geist, viele Leben.",
       "hero.cta1": "Meine Welten entdecken", "hero.cta2": "Kontakt", "hero.scroll": "Scrollen",
       "hero.iam": "Ich bin",
-      "hero.role1": "Gitarrist & Lehrer",
+      "hero.role1": "Klassischer Gitarrist, Lehrer & Komponist",
 
       /* cats */
       "cats.h": "Memo & Jupiter 🐾",
@@ -292,7 +293,7 @@
       "stat.lang": "Sprachen · FA · EN · DE", "stat.lives": "Leben, ein Geist", "stat.arthouse": "Kunsthaus aufgebaut", "stat.arthouse.sfx": "+ Jahre", "stat.papers": "Forschungsarbeiten",
       "worlds.artist.h": "Künstler", "worlds.artist.p": "Wo die Logik die Krawatte lockert. Ein visueller Spielplatz.",
       "worlds.arthouse.h": "Shiraz Art House", "worlds.arthouse.p": "Ein unabhängiges Zuhause für die Kunst in Schiras.",
-      "worlds.music.h": "Musik & Poesie", "worlds.music.p": "Von klassischer Gitarre bis zur persischen Poesie.",
+      "worlds.music.h": "Musik & Poesie", "worlds.music.p": "Klassische Gitarre, Komposition und persische Poesie.",
       "worlds.human.h": "Der Mensch", "worlds.human.p": "Katzen, große Neugier und das Leben jenseits der Uhr.",
       "worlds.athlete.h": "Sportler", "worlds.athlete.p": "Disziplin als tägliche Praxis. Körper & Wille.",
       "worlds.manager.h": "Manager", "worlds.manager.p": "Projektmanagement — verstreute Mühe in gemeinsamen Schwung verwandeln.",
@@ -324,9 +325,10 @@
       "mus.kicker": "Musik & Stimme",
       "mus.title": "Von der Saite zum Wort.",
       "mus.lead": "Von klassischer Gitarre bis zum rezitierten Wort.",
-      "mus.p1": "Ich bin klassischer Gitarrist und Lehrer mit über 18 Jahren Erfahrung. Mein Spiel brachte mir den ersten Platz bei Irans nationaler Kunst-Olympiade (Musik) und den zweiten Platz beim Nationalen Gitarrenfestival ein; ich habe einen Master in Kunstforschung. Ich unterrichtete an der Forough-Musikakademie und war Mitglied im Musikrat der Provinz Fars.",
-      "mus.p2": "Vieles, was ich spiele, ist mit persischer Poesie verbunden — den Versen von Omar Khayyām und anderen —, wo Gitarre und Wort sich begegnen. Dieselbe Liebe zu Klang und Bedeutung durchzieht alles, was ich mache.",
-      "mus.watch": "Ansehen — klassische Gitarre, von meinem Kanal «MoMas Music»:",
+      "mus.p1": "Ich bin klassischer Gitarrist, Lehrer und Komponist und spiele seit 2003. Mein Spiel brachte mir den ersten Platz bei Irans nationaler Kunst-Olympiade in Musik (2012) und den zweiten Platz beim Nationalen Gitarrenfestival (2010) ein; ich unterrichtete an der Forough-Musikakademie in Schiras.",
+      "mus.p2": "Als Komponist spiele ich auch eigene Stücke — darunter ein Untertage-Konzert tief in den Rosenhöfer Grubenbauen im Harz, das <em>Harzer Panorama am Sonntag</em> 2025 vorstellte. Jahre zuvor wirkte ich im Shiraz Art House an einem Recital mit Werken von Johann Kaspar Mertz mit.",
+      "mus.p3": "Vieles, was ich spiele, ist mit persischer Poesie verbunden — den Versen von Omar Khayyām und anderen —, wo Gitarre und Wort sich begegnen. Dieselbe Liebe zu Klang und Bedeutung durchzieht alles, was ich mache.",
+      "mus.watch": "Ansehen — klassische Gitarre, von meinem Kanal @Mohammad_masjedi:",
       "mus.allvideos": "Alle Videos",
 
       "col.kicker": "Menschen & Mitwirkende",
