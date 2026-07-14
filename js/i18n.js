@@ -248,6 +248,28 @@
       "chan.email": "ایمیل",
       "chan.hello": "سلامی بده",
 
+      /* === truth-package additions: encoder paper · open source · bigband === */
+      "res.enc.t": "رمزگذارِ چرخه‌های نخستین",
+      "res.enc.d": "هستهٔ پایان‌نامه، به‌صورتِ مقاله‌ای مستقل: یک رمزگذارِ ترنسفورمرِ طول‑متغیر که نخستین چرخه‌های یک سلول را می‌خواند تا عمرِ باقی‌مانده‌اش را تخمین بزند. در حالِ آماده‌سازی برای پیش‌چاپِ <bdi>arXiv</bdi> — نتایجِ اصلی تا زمانِ عمومی‌شدن نگه داشته می‌شوند.",
+
+      "menu.opensource": "متن‌باز",
+      "os.kicker": "متن‌باز",
+      "os.title": "ساخته‌شده در <em>فضای باز.</em>",
+      "os.lead": "چند چیزی که در ملأِ عام می‌سازم — کیت‌های کوچک و خودکفا که هرکس می‌تواند بخواند، اجرا کند و دوباره به‌کار ببرد.",
+      "os.st.public": "عمومی",
+      "os.rpi.d": "فوکوسِ خودکارِ دوربین روی رزبری‌پای ۴ با راه‌اندازیِ سروموتورِ <bdi>FS90R</bdi> — الگوریتم‌های فوکوس، پایه‌های چاپِ سه‌بعدی و راهنمای گام‌به‌گامِ ساخت. پروژه‌ای از سمینارِ <bdi>ETCE</bdi> دانشگاهِ کلاوستال، هم‌رسانی‌شده به‌شکلِ یک کیتِ باز.",
+      "os.sahar.d": "بسته‌های یادگیریِ آفلاین‌محور برای کودکان — سوادآموزی، حساب و اندیشیدن، به فارسی، انگلیسی و آلمانی. خانهٔ بازِ کارِ آموزشیِ سحر.",
+      "os.site.d": "همین سایت — یک پرتفویِ ایستا و سه‌زبانه (فارسی/انگلیسی/آلمانی) بدونِ مرحلهٔ ساخت، باز برای اینکه هرکس کدش را بخواند و ببیند چگونه ساخته شده است.",
+      "os.note": "این مخزن‌ها روی گیت‌هاب عمومی‌اند؛ هر توضیح، بازتابِ فایلِ <bdi>README</bdi>ِ خودِ پروژه است. مشارکت‌ها و درخواست‌های ادغام (<bdi>PR</bdi>) در پروژه‌های دیگر، به‌محضِ تأیید اینجا فهرست خواهند شد.",
+      "os.view": "دیدن در گیت‌هاب",
+
+      "menu.bigband": "بیگ‌بند",
+      "bb.kicker": "بیگ‌بندِ دانشگاهِ کلاوستال",
+      "bb.title": "نواختن در <em>بندی بزرگ‌تر.</em>",
+      "bb.lead": "روی جمعیِ موسیقی — اتاقی پر از نوازنده، یک ریتمِ مشترک.",
+      "bb.p1": "<bdi>groovING TUC</bdi> — بیگ‌بندِ دانشگاهِ فنیِ کلاوستال (<bdi>Big Band an der TU Clausthal e.V.</bdi>) — بیگ‌بندِ دانشگاه است: حدودِ بیست دانشجو، کارمند و نوازنده از منطقه، با برنامه‌ای تازه در هر ترم. در کنارِ گیتار کلاسیکِ تک‌نوازم، با این گروه موسیقی می‌سازم — روی بزرگ و هم‌نَفَسِ نواختن.",
+      "bb.soon": "جزئیات در حالِ تأیید است — نقش، ساز و سال‌های همکاری‌ام با گروه پس از راستی‌آزمایی افزوده خواهد شد.",
+
       /* contact + footer */
       "contact.kicker": "— تماس",
       "contact.title": "بیا چیزی بسازیم، آن‌سوی مرزها.",
@@ -471,6 +493,28 @@
       "chan.profile": "Profil",
       "chan.email": "E-Mail",
       "chan.hello": "sag Hallo",
+
+      /* === truth-package additions: encoder paper · open source · bigband === */
+      "res.enc.t": "Der Frühzyklus-Encoder",
+      "res.enc.d": "Der Kern der Arbeit, als eigenständiges Paper: ein Transformer-Encoder variabler Länge, der die ersten Zyklen einer Zelle liest, um ihre Restlebensdauer zu schätzen. In Vorbereitung für einen arXiv-Preprint — die zentralen Ergebnisse bleiben unter Verschluss, bis er öffentlich ist.",
+
+      "menu.opensource": "Open Source",
+      "os.kicker": "Open Source",
+      "os.title": "Gebaut in <em>der Öffentlichkeit.</em>",
+      "os.lead": "Ein paar Dinge, die ich öffentlich baue — kleine, in sich geschlossene Kits, die jeder lesen, ausführen und weiterverwenden kann.",
+      "os.st.public": "Öffentlich",
+      "os.rpi.d": "Kamera-Autofokus auf einem Raspberry Pi 4, der einen FS90R-Servo ansteuert — Fokus-Algorithmen, 3D-gedruckte Halterungen und eine Schritt-für-Schritt-Bauanleitung. Ein ETCE-Seminarprojekt der TU Clausthal, als offenes Kit geteilt.",
+      "os.sahar.d": "Offline-first-Lernpakete für Kinder — Lesen, Rechnen und Denken, auf Persisch, Englisch und Deutsch. Das offene Zuhause der Sahar-Bildungsarbeit.",
+      "os.site.d": "Genau diese Seite — ein dreisprachiges, buildfreies statisches Portfolio (EN / FA / DE), offen, damit jeder den Quellcode lesen und sehen kann, wie es aufgebaut ist.",
+      "os.note": "Diese Repositories sind auf GitHub öffentlich; jede Beschreibung spiegelt die eigene README des Projekts. Beiträge und Pull Requests zu anderen Projekten werden hier gelistet, sobald sie bestätigt sind.",
+      "os.view": "Auf GitHub ansehen",
+
+      "menu.bigband": "Bigband",
+      "bb.kicker": "TU Clausthal Bigband",
+      "bb.title": "Spielen in <em>einer größeren Band.</em>",
+      "bb.lead": "Die kollektive Seite der Musik — ein ganzer Raum voller Spieler, ein Groove.",
+      "bb.p1": "groovING TUC — die Big Band an der TU Clausthal e.V. — ist die Big Band der Universität: rund zwanzig Studierende, Mitarbeitende und Musiker aus der Region, mit einem neuen Programm in jedem Semester. Neben meiner klassischen Solo-Gitarre mache ich mit diesem Ensemble Musik — die große, gemeinsam atmende Seite des Spielens.",
+      "bb.soon": "Details werden noch bestätigt — meine genaue Rolle, mein Instrument und die Jahre bei der Band werden nach Prüfung ergänzt.",
 
       "contact.kicker": "— Kontakt",
       "contact.title": "Lass uns etwas schaffen, über die Grenzen hinweg.",
