@@ -8,7 +8,9 @@ you can do each step yourself in a few minutes, in order.
 
 **Pick one handle and use it everywhere** (recommended, for a consistent
 look across all your support links):
-- **Option A:** your existing handle, `mmasjedi` (matches your GitHub/YouTube-adjacent identity)
+- **Option A:** a personal handle, `mo-masjedi` (still free everywhere; note that
+  `mmasjedi` is **not** available on GitHub — that handle belongs to someone else.
+  Your GitHub account is `MohammadaliMasjedi-source`.)
 - **Option B:** a project-style handle, `roshanalabs` (keeps "supporting Mo's work incl. Sahar" framed as a project, not a personal tip jar)
 
 Either works technically — it's entirely your call. Whichever you pick, use
