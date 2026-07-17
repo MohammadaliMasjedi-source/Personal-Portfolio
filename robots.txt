@@ -1,0 +1,10 @@
+# Mo · MassJedi — mohammadalimasjedi-source.github.io/Personal-Portfolio/
+# Everything here is meant to be found.
+
+User-agent: *
+Allow: /
+
+# Working notes, not public-facing pages.
+Disallow: /_private/
+
+Sitemap: https://mohammadalimasjedi-source.github.io/Personal-Portfolio/sitemap.xml
