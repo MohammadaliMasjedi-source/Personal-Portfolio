@@ -24,3 +24,6 @@ MC-Dashboard.bat
 
 # local Claude tooling — never in the public-standard repo
 .claude/
+
+# SEO staging drafts — review-only, never deployed until Mo flips them live
+_staging-seo/
