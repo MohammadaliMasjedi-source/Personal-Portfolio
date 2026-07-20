@@ -22,6 +22,11 @@ content/
 MC-Dashboard.bat
 .tooling/
 
+# Mission-Control project record — machine-local phase notes with internal wording.
+# Was tracked here once (removed in the 2026-07 history rewrite); guarded so a fresh
+# clone or sweep can't re-add it. Never commit this folder to the public repo.
+.mc/
+
 # local Claude tooling — never in the public-standard repo
 .claude/
 
