@@ -27,3 +27,9 @@ MC-Dashboard.bat
 
 # SEO staging drafts — review-only, never deployed until Mo flips them live
 _staging-seo/
+
+# findability/name pack — DRAFT + supervisor-GATED (unpublished paper titles, internal paths).
+# Canonical home is the PRIVATE repo open-source-contributions/drafts/name-pack/.
+# Leaked to this public repo once (commit 2ace8b3, 2026-07-19) then removed; guarded here so a
+# future sweep can't re-add it. Never commit this folder to the public repo.
+findability/
