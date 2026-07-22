@@ -103,7 +103,7 @@
       "mus.p1": "نوازنده، مدرس و آهنگسازِ گیتار کلاسیک‌ام و از سالِ ۲۰۰۳ می‌نوازم. نوازندگی‌ام مقامِ نخستِ المپیادِ هنریِ کشور در موسیقی (۲۰۱۲) و مقامِ دومِ جشنوارهٔ ملیِ گیتار (۲۰۱۰) را برایم به ارمغان آورد، و در آموزشگاهِ موسیقیِ فروغِ شیراز تدریس کرده‌ام.",
       "mus.p2": "به‌عنوان آهنگساز، قطعاتِ خودم را نیز اجرا می‌کنم — از جمله کنسرتی زیرزمینی در ژرفای معدنِ روزِنهوفر در کوهستانِ هارتس، که <em>هارتسر پانوراما</em> در ۲۰۲۵ آن را معرفی کرد. سال‌ها پیش‌تر، در خانهٔ هنر شیراز، در رسیتالی از آثارِ یوهان کاسپار مِرتز به اجرا پرداختم.",
       "mus.p3": "بخشِ زیادی از آنچه می‌نوازم با شعرِ فارسی پیوند دارد — رباعیاتِ خیّام و دیگران — جایی که گیتار و کلام به هم می‌رسند. همان عشق به صدا و معنا در هر چه می‌سازم جاری‌ست.",
-      "mus.watch": "تماشا — گیتار کلاسیک، از کانالِ من <bdi>@Mohammad_masjedi</bdi>:",
+      "mus.watch": "تماشا — گیتار کلاسیک، از کانالِ من <bdi>@MohammadaliMasjediGuitar</bdi>:",
       "mus.allvideos": "همهٔ ویدیوها",
 
       "col.kicker": "آدم‌ها و هم‌کاران",
@@ -314,7 +314,7 @@
       "mus.p1": "Ich bin klassischer Gitarrist, Lehrer und Komponist und spiele seit 2003. Mein Spiel brachte mir den ersten Platz bei Irans nationaler Kunst-Olympiade in Musik (2012) und den zweiten Platz beim Nationalen Gitarrenfestival (2010) ein; ich unterrichtete an der Forough-Musikakademie in Schiras.",
       "mus.p2": "Als Komponist spiele ich auch eigene Stücke — darunter ein Untertage-Konzert tief in den Rosenhöfer Grubenbauen im Harz, das <em>Harzer Panorama am Sonntag</em> 2025 vorstellte. Jahre zuvor wirkte ich im Shiraz Art House an einem Recital mit Werken von Johann Kaspar Mertz mit.",
       "mus.p3": "Vieles, was ich spiele, ist mit persischer Poesie verbunden — den Versen von Omar Khayyām und anderen —, wo Gitarre und Wort sich begegnen. Dieselbe Liebe zu Klang und Bedeutung durchzieht alles, was ich mache.",
-      "mus.watch": "Ansehen — klassische Gitarre, von meinem Kanal @Mohammad_masjedi:",
+      "mus.watch": "Ansehen — klassische Gitarre, von meinem Kanal @MohammadaliMasjediGuitar:",
       "mus.allvideos": "Alle Videos",
 
       "col.kicker": "Menschen & Mitwirkende",
