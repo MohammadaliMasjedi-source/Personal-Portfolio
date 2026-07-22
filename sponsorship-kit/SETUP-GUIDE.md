@@ -111,7 +111,7 @@ normal processing fee still applies).
 
 ## (e) YouTube — the honest reality
 
-Channel confirmed from the site: **@Mohammad_masjedi**.
+Channel confirmed from the site: **@MohammadaliMasjediGuitar**.
 
 **What needs the YouTube Partner Program (YPP) — not available today unless
 you already meet the bar:** channel memberships and Super Thanks both require
