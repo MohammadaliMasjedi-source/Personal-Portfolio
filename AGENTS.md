@@ -1,8 +1,13 @@
 # AGENTS.md — Personal-Portfolio
 
 Read this first if you are an AI coding agent (Claude Code, OpenAI Codex, or any other) or a
-human landing on this repo. Fleet-wide protocol + classification rules:
-`Pantheon/docs/AGENTS-FLEET-PROTOCOL.md`, `Pantheon/docs/ROUTING-POLICY.md`.
+human landing on this repo. (Fleet-internal note: the cross-repo protocol docs live in the
+Pantheon repo — not visible from this repo, and not needed to work here.)
+
+**External contributors (cloud Codex / ChatGPT / GitHub-only humans): your ONLY task source is
+`TASKS.md`.** Claim a task by opening a draft PR titled `T-PP-xx: <title>`; one task per PR;
+never push to `main` (every push to `main` auto-deploys the LIVE public site); never self-merge
+— the owner merges personally.
 
 ## What this project is
 Mo's personal brand site — a dark, cinematic, motion-rich single-page site in three languages
@@ -17,11 +22,11 @@ excludes private employment/client, finance, health, and personal-document conte
 results stay high-level pre-defense (see README.md "Privacy note").
 
 ## Where the real state lives
-1. `.mc/project.json` — canon: phase (currently p5), priority, `nextAction`.
-2. `.mc/INBOX.md` — task queue; an unchecked item is an order for this session.
-3. `handbook/04-MAINTENANCE-GUIDE.md` — the full step-by-step editing protocol; read this before
+1. `TASKS.md` — the task backlog for anyone GitHub-only (the `.mc/` folder is deliberately NOT
+   on GitHub in this repo — it's the owner's local project-state; never look for it here).
+2. `handbook/04-MAINTENANCE-GUIDE.md` — the full step-by-step editing protocol; read this before
    touching `index.html`, `css/style.css`, or `js/i18n.js`.
-4. `README.md` — structure, how to run locally, how to deploy.
+3. `README.md` — structure, how to run locally, how to deploy.
 
 ## Definition of Done
 - [ ] Every new/changed visible string gets a `data-i18n` key in `index.html` **and** its Persian +
@@ -35,10 +40,11 @@ results stay high-level pre-defense (see README.md "Privacy note").
   decisions).
 - [ ] No secrets committed; long-form drafts / unconfirmed source notes stay in the private,
   gitignored folder, never in tracked files.
-- [ ] `.mc/project.json`'s `nextAction` updated; tick the `.mc/INBOX.md` item; real commit message;
-  `git pull --rebase --autostash` before push; no `--no-verify`; no force-push to `main`. Pushing
-  to `main` auto-deploys via GitHub Actions — treat every push as a live-site change.
+- [ ] Real commit message; `git pull --rebase --autostash` before push; no `--no-verify`; no
+  force-push to `main`. Pushing to `main` auto-deploys via GitHub Actions — treat every push as
+  a live-site change (externals never push `main` at all — PR only).
 
 ## If blocked
-Leave a note under `## Blocked` in `.mc/INBOX.md` instead of guessing — especially anything that
-would add an unverified biographical claim or a real, uncleared image to the public site.
+Say so in your PR description (or update your task's card in `TASKS.md` inside the same PR)
+instead of guessing — especially anything that would add an unverified biographical claim or a
+real, uncleared image to the public site.
