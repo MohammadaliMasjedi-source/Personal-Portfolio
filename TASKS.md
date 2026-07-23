@@ -40,3 +40,15 @@ internal links/hreflang targets (typo-level, smallest diff). Report everything e
 **DoD:** PR body contains the full result table (file · link · status), the list of fixes made,
 and an explicit count of remaining issues that need an owner decision (0 is a valid count).
 **Don't:** add redirects, restructure pages, rename files, or touch external links.
+
+### T-PP-03 · Unify the two competing nav-highlight trackers [phase: seo · size: S · status: OPEN]
+**Context:** audit W-A1 (2026-07-23): `js/main.js` maintains `is-active` via IntersectionObserver
+while `js/polish.js` independently maintains `is-current` with a different rule — two sections
+can be highlighted at once. Verify the overlap first; if reality differs from the audit claim,
+say so in the PR and fix what's actually there.
+**Do:** pick ONE tracker (prefer the more accurate on long/short sections), make it the single
+source of truth, and have the other class either removed from CSS+JS or aliased to the same
+state. Smallest diff that ends the split-brain.
+**DoD:** manual scroll test over every section (top, middle, bottom of page): exactly one nav
+item highlighted at all times, in all 3 languages, no console errors. Test log in the PR body.
+**Don't:** restyle the nav, rename sections, or touch content. Bump the changed js file's `?v=N`.
