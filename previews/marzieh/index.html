@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inner Transformation with Marzieh Shams</title>
+<meta name="description" content="Integrating Psychology, Drama Therapy and Mindfulness — psychotherapy practice of Marzieh Shams. Prototype site, not yet published.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23362B4A'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23D3A15E' stroke-width='2.5'/%3E%3Ccircle cx='32' cy='32' r='11' fill='none' stroke='%23C57C82' stroke-width='2.5'/%3E%3Ccircle cx='32' cy='32' r='3.5' fill='%23EFE7DE'/%3E%3C/svg%3E">
+
+<!--
+  ============================================================
+  PROTOTYPE — private draft for Mo to show Marzieh / decide.
+  Not published. Self-contained single file: inline CSS + JS,
+  no external requests (fonts/images/CDN). Works light + dark.
+  ============================================================
+
+  NAMED PALETTE (6):
+    Twilight Plum  #362B4A  — brand / depth / trust
+    Dusk Rose      #C57C82  — compassion accent
+    Sage Whisper   #8FA88A  — growth / mindfulness accent
+    Warm Stone     #EFE7DE  — light neutral background
+    Amber Glow     #D3A15E  — transformation accent / primary CTA
+    Ink            #2A2433  — body text
+
+  TYPE PAIRING:
+    English display: Georgia / Iowan Old Style / Palatino — warm serif for headings
+    English body:     -apple-system / Segoe UI / Calibri — nods to her requested "Cabiri"(Calibri)
+    Persian (both):   Vazirmatn (if present) → Tahoma → Segoe UI — system-safe Farsi stack
+
+  LAYOUT IDEA: three modalities (psychotherapy / drama therapy / mindfulness)
+  converge visually into one "Inner Transformation" centre — used in the
+  Approach section, echoed as a soft concentric-ripple motif behind the hero.
+
+  ASSUMPTIONS / OPEN ITEMS are marked inline with HTML comments
+  [assumption: ...] / [NEEDS from Marzieh: ...] and collected in full in
+  ../NEXT-2026-07-21.md — nothing here should be read as confirmed fact
+  about Marzieh's credentials, fees, or policies.
+-->
+
+<style>
+  /* ---------- 1. PALETTE + THEME TOKENS ---------- */
+  :root{
+    --c-bg:            #EFE7DE; /* Warm Stone */
+    --c-surface:       #FBF7F2;
+    --c-surface-alt:   #E7DCCF;
+    --c-text:          #2A2433; /* Ink */
+    --c-text-muted:    #5B5468;
+    --c-heading:       #362B4A; /* Twilight Plum */
+    --c-primary:       #362B4A; /* Twilight Plum */
+    --c-primary-ink:   #FBF7F2;
+    --c-cta-bg:        #D3A15E; /* Amber Glow */
+    --c-cta-ink:       #2A2433;
+    --c-rose:          #B96773; /* Dusk Rose, darkened for AA text use */
+    --c-sage:          #5F7D63; /* Sage Whisper, darkened for AA text use */
+    --c-rose-soft:     #C57C82;
+    --c-sage-soft:     #8FA88A;
+    --c-border:        #D9CCBC;
+    --c-footer-bg:     #241C33;
+    --c-footer-ink:    #EFE7DE;
+    --c-footer-muted:  #B8A9CC;
+    --shadow-sm:       0 1px 2px rgba(42,36,51,.08), 0 1px 1px rgba(42,36,51,.05);
+    --shadow-md:       0 8px 24px rgba(42,36,51,.10), 0 2px 6px rgba(42,36,51,.06);
+
+    --font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Noto Serif', serif;
+    --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', Calibri, Roboto, Helvetica, Arial, sans-serif;
+    --font-fa:      'Vazirmatn', Tahoma, 'Segoe UI', Arial, sans-serif;
+
+    --container: 1180px;
+    --radius-sm: 10px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --c-bg:            #1E1927;
+      --c-surface:       #2A2338;
+      --c-surface-alt:   #251E32;
+      --c-text:          #F1E9DF;
+      --c-text-muted:    #C6BAD6;
+      --c-heading:       #E9E0F5;
+      --c-primary:       #C9BEE0;
+      --c-primary-ink:   #241C33;
+      --c-cta-bg:        #E2B876;
+      --c-cta-ink:       #241C33;
+      --c-rose:          #EAB0B6;
+      --c-sage:          #ABC7A6;
+      --c-rose-soft:     #D89AA0;
+      --c-sage-soft:     #A3C29C;
+      --c-border:        #3A3348;
+      --shadow-sm:       0 1px 2px rgba(0,0,0,.35);
+      --shadow-md:       0 10px 28px rgba(0,0,0,.45);
+    }
+  }
+  /* explicit overrides both ways, for an artifact-style theme toggle */
+  :root[data-theme="dark"]{
+    --c-bg: #1E1927; --c-surface:#2A2338; --c-surface-alt:#251E32;
+    --c-text:#F1E9DF; --c-text-muted:#C6BAD6; --c-heading:#E9E0F5;
+    --c-primary:#C9BEE0; --c-primary-ink:#241C33; --c-cta-bg:#E2B876; --c-cta-ink:#241C33;
+    --c-rose:#EAB0B6; --c-sage:#ABC7A6; --c-rose-soft:#D89AA0; --c-sage-soft:#A3C29C;
+    --c-border:#3A3348; --shadow-sm:0 1px 2px rgba(0,0,0,.35); --shadow-md:0 10px 28px rgba(0,0,0,.45);
+  }
+  :root[data-theme="light"]{
+    --c-bg:#EFE7DE; --c-surface:#FBF7F2; --c-surface-alt:#E7DCCF;
+    --c-text:#2A2433; --c-text-muted:#5B5468; --c-heading:#362B4A;
+    --c-primary:#362B4A; --c-primary-ink:#FBF7F2; --c-cta-bg:#D3A165; --c-cta-ink:#2A2433;
+    --c-rose:#B96773; --c-sage:#5F7D63; --c-rose-soft:#C57C82; --c-sage-soft:#8FA88A;
+    --c-border:#D9CCBC; --shadow-sm:0 1px 2px rgba(42,36,51,.08); --shadow-md:0 8px 24px rgba(42,36,51,.10);
+  }
+
+  /* ---------- 2. RESET ---------- */
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-padding-top:84px; }
+  @media (prefers-reduced-motion: no-preference){ html{ scroll-behavior:smooth; } }
+  body{
+    margin:0; background:var(--c-bg); color:var(--c-text);
+    font-family:var(--font-body); line-height:1.68; -webkit-font-smoothing:antialiased;
+    position:relative;
+  }
+  body[data-lang="fa"]{ font-family:var(--font-fa); }
+  /* very soft paper-grain texture — calm, not decorative; a data: SVG, no network request */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity:.025; mix-blend-mode:multiply;
+  }
+  @media (prefers-color-scheme: dark){ body::before{ mix-blend-mode:overlay; opacity:.05; } }
+  :root[data-theme="dark"] body::before{ mix-blend-mode:overlay; opacity:.05; }
+  :root[data-theme="light"] body::before{ mix-blend-mode:multiply; opacity:.025; }
+  header.site-header, main, footer.site-footer{ position:relative; z-index:1; }
+  img,svg{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  ul{ margin:0; padding:0; list-style:none; }
+  h1,h2,h3,h4{ font-family:var(--font-display); color:var(--c-heading); margin:0 0 .5em; font-weight:700; line-height:1.2; }
+  body[data-lang="fa"] h1, body[data-lang="fa"] h2, body[data-lang="fa"] h3, body[data-lang="fa"] h4{
+    font-family:var(--font-fa); font-weight:700;
+  }
+  p{ margin:0 0 1em; color:var(--c-text); }
+  .container{ max-width:var(--container); margin-inline:auto; padding-inline:clamp(1.25rem,4vw,2.5rem); }
+  section{ padding-block:clamp(3.5rem,7vw,6.5rem); }
+  .eyebrow{
+    display:inline-block; font-family:var(--font-body); font-size:.78rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--c-rose); margin-bottom:.9rem;
+  }
+  body[data-lang="fa"] .eyebrow{ font-family:var(--font-fa); letter-spacing:0; }
+  .section-head{ max-width:640px; margin-bottom:2.75rem; }
+  .section-head.center{ margin-inline:auto; text-align:center; }
+  .lead{ font-size:1.08rem; color:var(--c-text-muted); }
+
+  /* ---------- 3. BUTTONS ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+    padding:.85em 1.6em; border-radius:999px; font-weight:700; font-size:.98rem;
+    text-decoration:none; cursor:pointer; border:2px solid transparent; transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    font-family:var(--font-body);
+  }
+  body[data-lang="fa"] .btn{ font-family:var(--font-fa); }
+  .btn:active{ transform:translateY(1px); }
+  .btn--cta{ background:var(--c-cta-bg); color:var(--c-cta-ink); box-shadow:var(--shadow-sm); }
+  .btn--cta:hover{ box-shadow:var(--shadow-md); }
+  .btn--outline{ background:transparent; border-color:var(--c-primary); color:var(--c-heading); }
+  .btn--outline:hover{ background:var(--c-primary); color:var(--c-primary-ink); }
+  .btn--block{ width:100%; }
+
+  /* ---------- 4. SKIP LINK ---------- */
+  .skip-link{
+    position:absolute; inset-inline-start:1rem; top:-4rem; background:var(--c-primary); color:var(--c-primary-ink);
+    padding:.7rem 1.2rem; border-radius:var(--radius-sm); z-index:200; transition:top .2s ease;
+  }
+  .skip-link:focus{ top:1rem; }
+
+  /* ---------- 5. TOP NOTICE BAR ---------- */
+  .notice-bar{
+    background:var(--c-primary); color:var(--c-primary-ink); font-size:.82rem; text-align:center;
+    padding:.5rem 1rem;
+  }
+
+  /* ---------- 6. HEADER / NAV ---------- */
+  header.site-header{
+    position:sticky; top:0; z-index:100; background:color-mix(in srgb, var(--c-bg) 88%, transparent);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--c-border);
+  }
+  .nav-row{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:.85rem; }
+  .brand{ display:flex; align-items:center; gap:.6rem; text-decoration:none; }
+  .brand-mark{ width:34px; height:34px; flex:none; }
+  .brand-text{ display:flex; flex-direction:column; line-height:1.1; }
+  .brand-text b{ font-family:var(--font-display); color:var(--c-heading); font-size:1.05rem; }
+  body[data-lang="fa"] .brand-text b{ font-family:var(--font-fa); }
+  .brand-text span{ font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--c-text-muted); }
+  body[data-lang="fa"] .brand-text span{ letter-spacing:0; text-transform:none; }
+
+  nav.primary-nav{ display:flex; align-items:center; gap:1.6rem; }
+  nav.primary-nav a{ text-decoration:none; font-size:.95rem; font-weight:600; color:var(--c-text); opacity:.85; white-space:nowrap; }
+  nav.primary-nav a:hover{ opacity:1; color:var(--c-heading); }
+  /* French labels ("À propos", "Mon approche") and the header CTA pill ("Réserver une
+     séance") are longer than EN/FA — keep them on one line and give the nav a touch
+     less breathing room so the row stays tidy at desktop widths. */
+  body[data-lang="fr"] nav.primary-nav{ gap:1.1rem; }
+  .header-cta{ white-space:nowrap; }
+
+  .nav-right{ display:flex; align-items:center; gap:.75rem; }
+  .lang-switch{ display:flex; border:1px solid var(--c-border); border-radius:999px; overflow:hidden; }
+  .lang-btn{
+    border:none; background:transparent; color:var(--c-text-muted); font-weight:700; font-size:.78rem;
+    padding:.4rem .75rem; cursor:pointer; font-family:var(--font-body);
+  }
+  .lang-btn.is-active{ background:var(--c-primary); color:var(--c-primary-ink); }
+
+  .sound-toggle{
+    display:inline-flex; align-items:center; justify-content:center; flex:none;
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--c-border);
+    background:var(--c-surface); color:var(--c-text-muted); cursor:pointer; padding:0;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .sound-toggle:hover{ color:var(--c-heading); border-color:var(--c-primary); }
+  .sound-toggle svg{ width:17px; height:17px; }
+  /* aria-pressed="true" = the mute action is engaged (sound is OFF) — matches the
+     corrected JS semantics below (pressed means muted, not "sound is playing"). */
+  .sound-toggle .icon-off{ display:none; }
+  .sound-toggle[aria-pressed="true"] .icon-on{ display:none; }
+  .sound-toggle[aria-pressed="true"] .icon-off{ display:block; }
+
+  .nav-toggle{
+    display:none; border:1px solid var(--c-border); background:var(--c-surface); border-radius:var(--radius-sm);
+    width:42px; height:38px; cursor:pointer; position:relative;
+  }
+  .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+    content:""; position:absolute; inset-inline-start:10px; width:22px; height:2px; background:var(--c-heading);
+  }
+  .nav-toggle span{ top:18px; }
+  .nav-toggle span::before{ top:-7px; }
+  .nav-toggle span::after{ top:7px; }
+
+  @media (max-width: 880px){
+    nav.primary-nav{
+      position:absolute; inset-inline:0; top:100%; background:var(--c-bg); border-bottom:1px solid var(--c-border);
+      flex-direction:column; align-items:stretch; gap:0; padding:.5rem 1.25rem 1rem; box-shadow:var(--shadow-md);
+      display:none;
+    }
+    nav.primary-nav.is-open{ display:flex; }
+    nav.primary-nav a{ padding:.7rem 0; border-bottom:1px solid var(--c-border); }
+    nav.primary-nav a:last-child{ border-bottom:none; }
+    .nav-toggle{ display:block; }
+  }
+  @media (max-width: 720px){
+    /* header CTA would collide with brand + lang switch + hamburger on narrow screens;
+       the hero and footer already offer "Book a Session" / "Contact" calls to action.
+       The FA/EN language switch always stays — it must remain reachable at every width. */
+    .header-cta{ display:none; }
+    .brand-text span{ display:none; }
+    .nav-row{ gap:.5rem; }
+    .brand{ gap:.4rem; }
+    .brand-mark{ width:28px; height:28px; }
+    .brand-text b{ font-size:.92rem; }
+  }
+  @media (max-width: 520px){
+    /* Long FA/FR wordmarks ("Transformation intérieure") don't wrap here and were
+       forcing the whole page to scroll horizontally on phones — drop the wordmark
+       text at this width and keep only the mark; also tighten the lang switch and
+       nav-right gap so nav-toggle + lang-switch + sound-toggle always fit 320–430px. */
+    .brand-text{ display:none; }
+    .lang-btn{ padding:.3rem .5rem; font-size:.72rem; }
+    .nav-right{ gap:.35rem; }
+  }
+  @media (max-width: 360px){
+    .nav-right{ gap:.4rem; }
+    .lang-btn{ padding:.35rem .55rem; font-size:.72rem; }
+  }
+
+  /* ---------- 7. HERO ---------- */
+  .hero{
+    position:relative; overflow:hidden; padding-block:clamp(3.5rem,9vw,7rem);
+    background:
+      radial-gradient(600px 420px at 85% -10%, color-mix(in srgb, var(--c-cta-bg) 28%, transparent), transparent 70%),
+      radial-gradient(500px 500px at 10% 110%, color-mix(in srgb, var(--c-rose-soft) 24%, transparent), transparent 70%),
+      var(--c-bg);
+  }
+  .hero::before{
+    content:""; position:absolute; inset-inline-start:50%; top:50%; width:900px; height:900px;
+    transform:translate(-50%,-50%); border-radius:50%;
+    background:
+      radial-gradient(circle, transparent 32%, color-mix(in srgb, var(--c-primary) 6%, transparent) 33%, transparent 34%),
+      radial-gradient(circle, transparent 45%, color-mix(in srgb, var(--c-primary) 5%, transparent) 46%, transparent 47%),
+      radial-gradient(circle, transparent 58%, color-mix(in srgb, var(--c-primary) 4%, transparent) 59%, transparent 60%);
+    pointer-events:none;
+  }
+  .hero-inner{ position:relative; display:grid; gap:2.5rem; align-items:center; }
+  .hero h1{ font-size:clamp(2.1rem,3.4vw + 1rem,3.5rem); max-width:16ch; }
+  .hero .lead{ max-width:56ch; font-size:1.12rem; }
+  .hero-ctas{ display:flex; flex-wrap:wrap; gap:1rem; margin-block:1.75rem; }
+  .hero-note{ display:flex; gap:.6rem; align-items:flex-start; font-size:.92rem; color:var(--c-text-muted); max-width:48ch; }
+  .hero-note .dot{ flex:none; width:8px; height:8px; border-radius:50%; margin-top:.45rem; background:var(--c-sage-soft); }
+
+  /* ---------- 8. WAVE DIVIDER ---------- */
+  .wave{ display:block; width:100%; height:56px; }
+  .wave path{ }
+
+  /* ---------- 9. CONTENT SLOT (placeholder for missing real content) ---------- */
+  .content-slot{
+    border:1.5px dashed var(--c-border); border-radius:var(--radius-md); padding:1.4rem 1.5rem;
+    background:color-mix(in srgb, var(--c-surface) 70%, transparent);
+  }
+  .content-slot .tag{
+    display:inline-block; font-size:.68rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--c-rose); background:color-mix(in srgb, var(--c-rose-soft) 18%, transparent);
+    padding:.25rem .6rem; border-radius:999px; margin-bottom:.6rem;
+  }
+  body[data-lang="fa"] .content-slot .tag{ letter-spacing:0; }
+  .content-slot p{ color:var(--c-text-muted); font-style:italic; margin:0; font-size:.95rem; }
+
+  /* ---------- 10. ABOUT ---------- */
+  .about-grid{ display:grid; gap:2.5rem; align-items:start; }
+  .about-photo-slot{
+    aspect-ratio:4/5; border-radius:var(--radius-lg); border:1.5px dashed var(--c-border);
+    display:flex; align-items:center; justify-content:center; text-align:center; padding:1.5rem;
+    background:linear-gradient(160deg, color-mix(in srgb, var(--c-primary) 10%, transparent), color-mix(in srgb, var(--c-rose-soft) 14%, transparent));
+  }
+  @media (min-width:820px){ .about-grid{ grid-template-columns:.85fr 1.15fr; } }
+
+  /* ---------- 11. APPROACH ---------- */
+  .approach-pillars{ display:grid; gap:1.5rem; }
+  @media (min-width:820px){ .approach-pillars{ grid-template-columns:repeat(3,1fr); } }
+  .pillar{
+    background:var(--c-surface); border-radius:var(--radius-md); padding:1.9rem 1.6rem; box-shadow:var(--shadow-sm);
+    border-top:4px solid var(--bar,var(--c-primary)); height:100%;
+  }
+  .pillar--psych{ --bar:var(--c-primary); }
+  .pillar--drama{ --bar:var(--c-rose-soft); }
+  .pillar--mind{ --bar:var(--c-sage-soft); }
+  .pillar h3{ font-size:1.2rem; }
+  .pillar p{ color:var(--c-text-muted); margin:0; font-size:.96rem; }
+
+  .approach-converge{ display:flex; justify-content:center; margin-block:1.25rem -1rem; }
+  .approach-converge svg{ width:min(420px,80%); height:64px; }
+  .approach-center{ display:flex; flex-direction:column; align-items:center; gap:.6rem; text-align:center; }
+  .approach-center__dot{
+    width:16px; height:16px; border-radius:50%; background:var(--c-cta-bg); box-shadow:0 0 0 8px color-mix(in srgb, var(--c-cta-bg) 20%, transparent);
+  }
+  .approach-center__label{ font-family:var(--font-display); font-weight:700; color:var(--c-heading); font-size:1.05rem; }
+  body[data-lang="fa"] .approach-center__label{ font-family:var(--font-fa); }
+  @media (max-width:819px){
+    .approach-converge{ display:none; }
+    .approach-center{ position:relative; padding-top:1.5rem; margin-top:.5rem; }
+    .approach-center::before{ content:""; position:absolute; top:0; inset-inline-start:50%; transform:translateX(-50%); width:2px; height:1.5rem; background:var(--c-border); }
+  }
+
+  /* ---------- 12. SERVICES ---------- */
+  .services-grid{ display:grid; gap:1.5rem; grid-template-columns:1fr; }
+  @media (min-width:640px){ .services-grid{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1020px){ .services-grid{ grid-template-columns:repeat(4,1fr); } }
+  .svc-card{
+    background:var(--c-surface); border:1px solid var(--c-border); border-radius:var(--radius-md);
+    padding:1.7rem 1.5rem; display:flex; flex-direction:column; gap:.6rem;
+  }
+  .svc-card .num{ font-family:var(--font-display); font-size:1.6rem; color:var(--c-cta-bg); }
+  .svc-card h3{ font-size:1.08rem; margin-bottom:.15rem; }
+  .svc-card p{ color:var(--c-text-muted); font-size:.93rem; margin:0; }
+  .services-note{ margin-top:2rem; }
+
+  /* ---------- 13. HOW IT WORKS ---------- */
+  .steps{ display:grid; gap:1.75rem; counter-reset:step; }
+  @media (min-width:760px){ .steps{ grid-template-columns:repeat(4,1fr); } }
+  .step{ position:relative; padding-inline-start:3rem; }
+  .step::before{
+    counter-increment:step; content:counter(step); position:absolute; inset-inline-start:0; top:0;
+    width:2.2rem; height:2.2rem; border-radius:50%; background:var(--c-primary); color:var(--c-primary-ink);
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-family:var(--font-display);
+  }
+  .step h3{ font-size:1.05rem; }
+  .step p{ color:var(--c-text-muted); font-size:.93rem; margin:0; }
+
+  /* ---------- 14. FAQ ---------- */
+  .faq-list{ max-width:820px; }
+  details.faq-item{
+    background:var(--c-surface); border:1px solid var(--c-border); border-radius:var(--radius-sm);
+    padding:.25rem 1.25rem; margin-bottom:.9rem;
+  }
+  details.faq-item summary{
+    cursor:pointer; list-style:none; padding-block:1rem; font-weight:700; color:var(--c-heading);
+    display:flex; justify-content:space-between; align-items:center; gap:1rem; font-size:1rem;
+  }
+  details.faq-item summary::-webkit-details-marker{ display:none; }
+  details.faq-item summary::after{
+    content:"+"; font-size:1.3rem; color:var(--c-cta-bg); flex:none; font-family:var(--font-display); transition:transform .2s ease;
+  }
+  details.faq-item[open] summary::after{ transform:rotate(45deg); }
+  details.faq-item p{ color:var(--c-text-muted); padding-bottom:1.1rem; margin:0; font-size:.95rem; }
+
+  /* ---------- 15. CONTACT ---------- */
+  .contact-wrap{ display:grid; gap:2.5rem; }
+  @media (min-width:900px){ .contact-wrap{ grid-template-columns:1.15fr .85fr; } }
+  form.booking-form{
+    background:var(--c-surface); border:1px solid var(--c-border); border-radius:var(--radius-lg);
+    padding:clamp(1.5rem,3vw,2.25rem); box-shadow:var(--shadow-sm);
+  }
+  .form-row{ display:grid; gap:1.1rem; margin-bottom:1.1rem; }
+  @media (min-width:560px){ .form-row.two{ grid-template-columns:1fr 1fr; } }
+  label{ display:block; font-size:.85rem; font-weight:700; color:var(--c-heading); margin-bottom:.4rem; }
+  input, select, textarea{
+    width:100%; border:1.5px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-bg);
+    color:var(--c-text); padding:.7rem .85rem; font-family:inherit; font-size:.95rem;
+  }
+  body[data-lang="fa"] input, body[data-lang="fa"] select, body[data-lang="fa"] textarea{ font-family:var(--font-fa); }
+  input:focus, select:focus, textarea:focus{ outline:2px solid var(--c-cta-bg); outline-offset:1px; }
+  textarea{ min-height:120px; resize:vertical; }
+  .form-note{ font-size:.8rem; color:var(--c-text-muted); margin-top:.9rem; }
+  .form-badge{
+    display:inline-flex; align-items:center; gap:.5rem; background:color-mix(in srgb, var(--c-cta-bg) 20%, transparent);
+    color:var(--c-heading); font-size:.78rem; font-weight:700; padding:.35rem .75rem; border-radius:999px; margin-bottom:1.25rem;
+  }
+  .form-success{
+    display:none; margin-top:1rem; padding:1rem 1.1rem; border-radius:var(--radius-sm);
+    background:color-mix(in srgb, var(--c-sage-soft) 22%, transparent); color:var(--c-heading); font-size:.9rem;
+  }
+  .form-success.show{ display:block; }
+
+  .contact-side{ display:flex; flex-direction:column; gap:1.5rem; }
+  .contact-card{ background:var(--c-surface-alt); border-radius:var(--radius-md); padding:1.5rem; }
+  .contact-card a{ color:var(--c-heading); font-weight:700; text-decoration:none; }
+  .contact-card a:hover{ text-decoration:underline; }
+
+  /* ---------- 16. FOOTER ---------- */
+  footer.site-footer{ background:var(--c-footer-bg); color:var(--c-footer-ink); padding-block:3rem 1.75rem; }
+  .footer-grid{ display:grid; gap:2rem; margin-bottom:2rem; }
+  @media (min-width:720px){ .footer-grid{ grid-template-columns:1.3fr 1fr 1fr; } }
+  footer.site-footer h4{ color:var(--c-footer-ink); font-size:.95rem; }
+  footer.site-footer .brand-text b{ color:var(--c-footer-ink); }
+  footer.site-footer .brand-text span{ color:var(--c-footer-muted); }
+  footer.site-footer p, footer.site-footer a{ color:var(--c-footer-muted); font-size:.92rem; text-decoration:none; }
+  footer.site-footer a:hover{ color:var(--c-footer-ink); }
+  footer.site-footer .foot-links li{ margin-bottom:.55rem; }
+  .footer-bottom{
+    border-top:1px solid rgba(239,231,222,.15); padding-top:1.25rem; display:flex; flex-wrap:wrap;
+    gap:.75rem 1.5rem; justify-content:space-between; font-size:.8rem; color:var(--c-footer-muted);
+  }
+  .proto-flag{
+    display:inline-flex; align-items:center; gap:.4rem; background:rgba(239,231,222,.08); padding:.3rem .7rem; border-radius:999px;
+  }
+
+  /* ---------- 17. MISC ---------- */
+  .visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  [data-i18n], [data-i18n-html]{ }
+</style>
+</head>
+<body data-lang="en">
+
+<a class="skip-link" href="#main" data-i18n="misc.skip">Skip to content</a>
+
+<div class="notice-bar" data-i18n="banner.text">Draft preview for review — not the published website yet.</div>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a class="brand" href="#home">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="var(--c-primary)"/>
+        <circle cx="32" cy="32" r="20" fill="none" stroke="var(--c-cta-bg)" stroke-width="2.5"/>
+        <circle cx="32" cy="32" r="11" fill="none" stroke="var(--c-rose-soft)" stroke-width="2.5"/>
+        <circle cx="32" cy="32" r="3.5" fill="var(--c-bg)"/>
+      </svg>
+      <span class="brand-text">
+        <b data-i18n="nav.brand">Inner Transformation</b>
+        <span data-i18n="nav.brand.sub">Marzieh Shams</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#approach" data-i18n="nav.approach">Approach</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#how-it-works" data-i18n="nav.how">How It Works</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language / زبان / Langue">
+        <button class="lang-btn is-active" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="fa" type="button">فا</button>
+        <button class="lang-btn" data-lang="fr" type="button">FR</button>
+      </div>
+      <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" aria-label="Mute chime" title="Mute chime">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-on">
+          <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
+          <path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <path d="M18.7 6.3a8 8 0 0 1 0 11.4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".7"/>
+        </svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-off">
+          <path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/>
+          <path d="M15.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <a class="btn btn--cta header-cta" href="#contact" style="padding:.6em 1.2em;font-size:.88rem;" data-i18n="nav.cta">Book a Session</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div>
+        <span class="eyebrow" data-i18n="hero.eyebrow">Psychotherapy · Drama Therapy · Mindfulness</span>
+        <h1 data-i18n="hero.title">Inner Transformation with Marzieh Shams</h1>
+        <p class="lead" data-i18n="hero.subtitle">An integrative approach to personal growth and healing — combining mindfulness, meditation, transformative psychotherapy, and drama therapy to support self-awareness, emotional well-being, and a deeper connection to your authentic self.</p>
+        <div class="hero-ctas">
+          <a class="btn btn--cta" href="#contact" data-i18n="hero.cta.primary">Book a Session</a>
+          <a class="btn btn--outline" href="#contact" data-i18n="hero.cta.secondary">Free Consultation</a>
+        </div>
+        <div class="hero-note">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-i18n="hero.note">Serving teens (13+), adults, and anyone navigating stress, transition, or the experience of immigration.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,20 C240,60 480,0 720,20 C960,40 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--c-surface-alt)"></path>
+  </svg>
+
+  <!-- ============ ABOUT ============ -->
+  <!-- [NEEDS from Marzieh: professional bio/CV text + headshot photo — she is still writing content per her questionnaire] -->
+  <section id="about" style="background:var(--c-surface-alt);">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo-slot">
+          <div>
+            <span class="eyebrow" style="margin-bottom:.5rem;" data-i18n="about.photo.tag">Photo needed</span>
+            <p style="margin:0;color:var(--c-text-muted);font-size:.92rem;" data-i18n="about.photo.body">Marzieh's photo for the Home and About sections.</p>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow" data-i18n="about.eyebrow">About</span>
+          <h2 data-i18n="about.title">About Marzieh</h2>
+          <p class="lead" data-i18n="about.lead">Marzieh works at the intersection of psychology, drama therapy, and mindfulness — walking alongside teens, adults, newcomers, and anyone in a season of change.</p>
+          <div class="content-slot">
+            <span class="tag" data-i18n="about.slot.tag">Content needed</span>
+            <p data-i18n="about.slot.body">This space is reserved for Marzieh's professional bio: education, registration/licensure status, years of practice, and her path into this work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section id="approach">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-i18n="approach.eyebrow">My Approach</span>
+        <h2 data-i18n="approach.title">Three practices, one path inward</h2>
+        <p class="lead" data-i18n="approach.lead">Psychology, drama therapy, and mindfulness meet as one integrative practice — each offering a different doorway to the same place: a steadier, more authentic self.</p>
+      </div>
+
+      <div class="approach-pillars">
+        <article class="pillar pillar--psych">
+          <h3 data-i18n="pillar1.title">Transformative Psychotherapy</h3>
+          <p data-i18n="pillar1.body">Talk-based, evidence-informed work that helps you understand patterns, process difficult experiences, and move toward lasting change.</p>
+        </article>
+        <article class="pillar pillar--drama">
+          <h3 data-i18n="pillar2.title">Drama Therapy</h3>
+          <p data-i18n="pillar2.body">Creative, embodied methods — role play, story, and movement — that open feelings words alone can't always reach.</p>
+        </article>
+        <article class="pillar pillar--mind">
+          <h3 data-i18n="pillar3.title">Mindfulness &amp; Meditation</h3>
+          <p data-i18n="pillar3.body">Guided practices that build present-moment awareness, calm the nervous system, and strengthen your relationship with yourself.</p>
+        </article>
+      </div>
+
+      <div class="approach-converge" aria-hidden="true">
+        <svg viewBox="0 0 300 70" preserveAspectRatio="xMidYMax meet">
+          <path d="M20,0 C20,45 150,45 150,70" style="stroke:var(--c-primary);stroke-width:2;fill:none;"/>
+          <path d="M150,0 L150,70" style="stroke:var(--c-cta-bg);stroke-width:2;fill:none;"/>
+          <path d="M280,0 C280,45 150,45 150,70" style="stroke:var(--c-sage-soft);stroke-width:2;fill:none;"/>
+        </svg>
+      </div>
+      <div class="approach-center">
+        <span class="approach-center__dot" aria-hidden="true"></span>
+        <span class="approach-center__label" data-i18n="approach.center">Inner Transformation</span>
+      </div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1);">
+    <path d="M0,20 C240,60 480,0 720,20 C960,40 1200,0 1440,20 L1440,60 L0,60 Z" style="fill:var(--c-surface-alt)"></path>
+  </svg>
+
+  <!-- ============ SERVICES ============ -->
+  <!-- Four services are confirmed directly from Marzieh's questionnaire (Q4 "Services" answers). -->
+  <section id="services" style="background:var(--c-surface-alt);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="services.eyebrow">What I Offer</span>
+        <h2 data-i18n="services.title">Services</h2>
+        <p class="lead" data-i18n="services.lead">Individual and group work, shaped around where you are right now.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card">
+          <span class="num">01</span>
+          <h3 data-i18n="svc1.title">Individual Sessions</h3>
+          <p data-i18n="svc1.body">One-on-one psychotherapy integrating talk therapy, mindfulness, and drama therapy techniques around your goals.</p>
+        </div>
+        <div class="svc-card">
+          <span class="num">02</span>
+          <h3 data-i18n="svc2.title">Drama Therapy</h3>
+          <p data-i18n="svc2.body">Creative and experiential sessions using dramatic technique for deeper self-exploration and emotional healing.</p>
+        </div>
+        <div class="svc-card">
+          <span class="num">03</span>
+          <h3 data-i18n="svc3.title">Mindfulness &amp; Meditation Coaching</h3>
+          <p data-i18n="svc3.body">Guided training in mindfulness and meditation practices for stress, anxiety, and everyday emotional balance.</p>
+        </div>
+        <div class="svc-card">
+          <span class="num">04</span>
+          <h3 data-i18n="svc4.title">Workshops &amp; Courses</h3>
+          <p data-i18n="svc4.body">Group programs on self-discovery and personal transformation — see current dates on the Workshops page.</p>
+        </div>
+      </div>
+      <!-- [NEEDS from Marzieh: fees, session length, virtual vs in-person] -->
+      <div class="content-slot services-note">
+        <span class="tag" data-i18n="services.note.tag">Content needed</span>
+        <p data-i18n="services.note">Fees, session length, and online/in-person availability will be confirmed here before launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <!-- [assumption: generic 4-step intake flow — confirm her real process] -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="how.eyebrow">Getting Started</span>
+        <h2 data-i18n="how.title">How It Works</h2>
+        <p class="lead" data-i18n="how.lead">A simple, low-pressure way to begin.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3 data-i18n="step1.title">Reach Out</h3>
+          <p data-i18n="step1.body">Send a message or request a free consultation — no commitment needed.</p>
+        </div>
+        <div class="step">
+          <h3 data-i18n="step2.title">Free Consultation</h3>
+          <p data-i18n="step2.body">A short call to talk about what brings you here and see if we're a good fit.</p>
+        </div>
+        <div class="step">
+          <h3 data-i18n="step3.title">First Session</h3>
+          <p data-i18n="step3.body">We'll explore your goals together and shape a path that fits — psychotherapy, mindfulness, drama therapy, or a blend.</p>
+        </div>
+        <div class="step">
+          <h3 data-i18n="step4.title">Ongoing Support</h3>
+          <p data-i18n="step4.body">Regular sessions at a pace that works for you, revisited and adjusted as you grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" style="background:var(--c-surface-alt);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="faq.eyebrow">Questions</span>
+        <h2 data-i18n="faq.title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary data-i18n="q1">What is the integrative approach you use?</summary>
+          <p data-i18n="a1">A blend of transformative psychotherapy, drama therapy, and mindfulness/meditation — chosen and combined around what helps you most.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="q2">Do you work with teens as well as adults?</summary>
+          <p data-i18n="a2">Yes — teens 13 and up, adults, and anyone navigating stress, life transitions, or the experience of immigration.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="q3">What happens in the free consultation?</summary>
+          <p data-i18n="a3">A short, no-pressure conversation about what you're looking for, so we can both see if we're a good fit before booking a full session.</p>
+        </details>
+        <!-- [NEEDS from Marzieh: language(s) + delivery mode of sessions] -->
+        <details class="faq-item">
+          <summary data-i18n="q4">Are sessions online, in person, or both — and in English or Persian?</summary>
+          <p data-i18n="a4">To be confirmed here before launch.</p>
+        </details>
+        <!-- [NEEDS from Marzieh: pricing + insurance] -->
+        <details class="faq-item">
+          <summary data-i18n="q5">What do sessions cost, and is insurance accepted?</summary>
+          <p data-i18n="a5">Pricing and insurance details will be added here before launch.</p>
+        </details>
+        <!-- [assumption: generic confidentiality line — replace with her college's official wording] -->
+        <details class="faq-item">
+          <summary data-i18n="q6">Is what I share confidential?</summary>
+          <p data-i18n="a6">Yes, within the standard limits of confidentiality set by professional and legal guidelines. The full policy will be posted here.</p>
+        </details>
+        <!-- Ties to brief's flagged concern C3: Canadian regulators often restrict client testimonials in advertising. -->
+        <details class="faq-item">
+          <summary data-i18n="q7">Do you share client testimonials?</summary>
+          <p data-i18n="a7">Not yet. We're first confirming with Marzieh's professional college whether testimonials are permitted in advertising, per Canadian guidelines.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="contact.eyebrow">Get in Touch</span>
+        <h2 data-i18n="contact.title">Contact &amp; Booking</h2>
+        <p class="lead" data-i18n="contact.lead">Send a message to request a session or a free consultation.</p>
+      </div>
+
+      <div class="contact-wrap">
+        <form class="booking-form" id="bookingForm">
+          <span class="form-badge">
+            <span aria-hidden="true">●</span>
+            <span data-i18n="contact.disclaimer">Prototype form — not yet connected. In the live site this will reach Marzieh directly.</span>
+          </span>
+
+          <div class="form-row two">
+            <div>
+              <label for="f-name" data-i18n="field.name">Full Name</label>
+              <input id="f-name" name="name" type="text" required>
+            </div>
+            <div>
+              <label for="f-email" data-i18n="field.email">Email</label>
+              <input id="f-email" name="email" type="email" required>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label for="f-phone" data-i18n="field.phone">Phone (optional)</label>
+              <input id="f-phone" name="phone" type="tel">
+            </div>
+            <div>
+              <label for="f-interest" data-i18n="field.interest">I'm interested in</label>
+              <select id="f-interest" name="interest">
+                <option value="individual" data-i18n="opt.individual">Individual Session</option>
+                <option value="drama" data-i18n="opt.drama">Drama Therapy</option>
+                <option value="mindfulness" data-i18n="opt.mindfulness">Mindfulness Coaching</option>
+                <option value="workshop" data-i18n="opt.workshop">A Workshop or Course</option>
+                <option value="consult" data-i18n="opt.consult">Free Consultation</option>
+                <option value="unsure" data-i18n="opt.unsure">Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="f-lang" data-i18n="field.language">Preferred session language</label>
+              <select id="f-lang" name="language">
+                <option value="english" data-i18n="opt.english">English</option>
+                <option value="persian" data-i18n="opt.persian">Persian</option>
+                <option value="either" data-i18n="opt.either">Either</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="f-message" data-i18n="field.message">Message</label>
+              <textarea id="f-message" name="message" data-i18n-placeholder="field.message.ph" placeholder="Tell me a little about what brings you here..."></textarea>
+            </div>
+          </div>
+
+          <button class="btn btn--cta btn--block" type="submit" data-i18n="contact.submit">Send Request (Prototype)</button>
+          <p class="form-note" data-i18n="contact.disclaimer2">This is a demo form for review — messages are not sent anywhere yet.</p>
+          <div class="form-success" id="formSuccess" role="status" data-i18n="contact.success">Thanks — this is a prototype, so nothing was actually sent. The real form will go live with the published site.</div>
+        </form>
+
+        <div class="contact-side">
+          <div class="contact-card">
+            <h4 style="margin-bottom:.5rem;" data-i18n="contact.direct">Prefer email? Reach Marzieh directly:</h4>
+            <a href="mailto:joyoflife.canada@gmail.com">joyoflife.canada@gmail.com</a>
+          </div>
+          <!-- [NEEDS from Marzieh: does she want a real scheduling system like JaneApp instead of this simple form? See brief Q2. -->
+          <div class="content-slot">
+            <span class="tag" data-i18n="contact.slot.tag">Decision needed</span>
+            <p data-i18n="contact.slot.body">Simple request form (shown here) vs. a real online scheduling system such as JaneApp — Marzieh's call, see the plan notes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#home" style="margin-bottom:.9rem;">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="var(--c-cta-bg)" opacity=".18"/>
+            <circle cx="32" cy="32" r="20" fill="none" stroke="var(--c-cta-bg)" stroke-width="2.5"/>
+            <circle cx="32" cy="32" r="11" fill="none" stroke="var(--c-rose-soft)" stroke-width="2.5"/>
+            <circle cx="32" cy="32" r="3.5" fill="var(--c-footer-ink)"/>
+          </svg>
+          <span class="brand-text">
+            <b data-i18n="nav.brand">Inner Transformation</b>
+            <span data-i18n="nav.brand.sub">Marzieh Shams</span>
+          </span>
+        </a>
+        <p data-i18n="footer.tagline">Integrating Psychology, Drama Therapy &amp; Mindfulness</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.nav.title">Explore</h4>
+        <ul class="foot-links">
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.legal.title">Practice</h4>
+        <ul class="foot-links">
+          <li><a href="mailto:joyoflife.canada@gmail.com">joyoflife.canada@gmail.com</a></li>
+          <li><a href="#" onclick="return false;" data-i18n="footer.privacy">Privacy Policy</a> <span style="opacity:.7;font-size:.82rem;" data-i18n="footer.privacy.note">(to be added before publish)</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Marzieh Shams · <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span class="proto-flag" data-i18n="footer.prototype">Draft prototype — internal review only, not the published site.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var I18N = {
+    en: {
+      "misc.skip":"Skip to content",
+      "banner.text":"Draft preview for review — not the published website yet.",
+      "nav.brand":"Inner Transformation",
+      "nav.brand.sub":"Marzieh Shams",
+      "nav.about":"About","nav.approach":"Approach","nav.services":"Services",
+      "nav.how":"How It Works","nav.faq":"FAQ","nav.contact":"Contact","nav.cta":"Book a Session",
+      "hero.eyebrow":"Psychotherapy · Drama Therapy · Mindfulness",
+      "hero.title":"Inner Transformation with Marzieh Shams",
+      "hero.subtitle":"An integrative approach to personal growth and healing — combining mindfulness, meditation, transformative psychotherapy, and drama therapy to support self-awareness, emotional well-being, and a deeper connection to your authentic self.",
+      "hero.cta.primary":"Book a Session",
+      "hero.cta.secondary":"Free Consultation",
+      "hero.note":"Serving teens (13+), adults, and anyone navigating stress, transition, or the experience of immigration.",
+      "about.eyebrow":"About","about.title":"About Marzieh",
+      "about.lead":"Marzieh works at the intersection of psychology, drama therapy, and mindfulness — walking alongside teens, adults, newcomers, and anyone in a season of change.",
+      "about.photo.tag":"Photo needed",
+      "about.photo.body":"Marzieh's photo for the Home and About sections.",
+      "about.slot.tag":"Content needed",
+      "about.slot.body":"This space is reserved for Marzieh's professional bio: education, registration/licensure status, years of practice, and her path into this work.",
+      "approach.eyebrow":"My Approach",
+      "approach.title":"Three practices, one path inward",
+      "approach.lead":"Psychology, drama therapy, and mindfulness meet as one integrative practice — each offering a different doorway to the same place: a steadier, more authentic self.",
+      "pillar1.title":"Transformative Psychotherapy",
+      "pillar1.body":"Talk-based, evidence-informed work that helps you understand patterns, process difficult experiences, and move toward lasting change.",
+      "pillar2.title":"Drama Therapy",
+      "pillar2.body":"Creative, embodied methods — role play, story, and movement — that open feelings words alone can't always reach.",
+      "pillar3.title":"Mindfulness & Meditation",
+      "pillar3.body":"Guided practices that build present-moment awareness, calm the nervous system, and strengthen your relationship with yourself.",
+      "approach.center":"Inner Transformation",
+      "services.eyebrow":"What I Offer","services.title":"Services",
+      "services.lead":"Individual and group work, shaped around where you are right now.",
+      "svc1.title":"Individual Sessions",
+      "svc1.body":"One-on-one psychotherapy integrating talk therapy, mindfulness, and drama therapy techniques around your goals.",
+      "svc2.title":"Drama Therapy",
+      "svc2.body":"Creative and experiential sessions using dramatic technique for deeper self-exploration and emotional healing.",
+      "svc3.title":"Mindfulness & Meditation Coaching",
+      "svc3.body":"Guided training in mindfulness and meditation practices for stress, anxiety, and everyday emotional balance.",
+      "svc4.title":"Workshops & Courses",
+      "svc4.body":"Group programs on self-discovery and personal transformation — see current dates on the Workshops page.",
+      "services.note.tag":"Content needed",
+      "services.note":"Fees, session length, and online/in-person availability will be confirmed here before launch.",
+      "how.eyebrow":"Getting Started","how.title":"How It Works",
+      "how.lead":"A simple, low-pressure way to begin.",
+      "step1.title":"Reach Out","step1.body":"Send a message or request a free consultation — no commitment needed.",
+      "step2.title":"Free Consultation","step2.body":"A short call to talk about what brings you here and see if we're a good fit.",
+      "step3.title":"First Session","step3.body":"We'll explore your goals together and shape a path that fits — psychotherapy, mindfulness, drama therapy, or a blend.",
+      "step4.title":"Ongoing Support","step4.body":"Regular sessions at a pace that works for you, revisited and adjusted as you grow.",
+      "faq.eyebrow":"Questions","faq.title":"Frequently Asked Questions",
+      "q1":"What is the integrative approach you use?",
+      "a1":"A blend of transformative psychotherapy, drama therapy, and mindfulness/meditation — chosen and combined around what helps you most.",
+      "q2":"Do you work with teens as well as adults?",
+      "a2":"Yes — teens 13 and up, adults, and anyone navigating stress, life transitions, or the experience of immigration.",
+      "q3":"What happens in the free consultation?",
+      "a3":"A short, no-pressure conversation about what you're looking for, so we can both see if we're a good fit before booking a full session.",
+      "q4":"Are sessions online, in person, or both — and in English or Persian?",
+      "a4":"To be confirmed here before launch.",
+      "q5":"What do sessions cost, and is insurance accepted?",
+      "a5":"Pricing and insurance details will be added here before launch.",
+      "q6":"Is what I share confidential?",
+      "a6":"Yes, within the standard limits of confidentiality set by professional and legal guidelines. The full policy will be posted here.",
+      "q7":"Do you share client testimonials?",
+      "a7":"Not yet. We're first confirming with Marzieh's professional college whether testimonials are permitted in advertising, per Canadian guidelines.",
+      "contact.eyebrow":"Get in Touch","contact.title":"Contact & Booking",
+      "contact.lead":"Send a message to request a session or a free consultation.",
+      "contact.disclaimer":"Prototype form — not yet connected. In the live site this will reach Marzieh directly.",
+      "contact.disclaimer2":"This is a demo form for review — messages are not sent anywhere yet.",
+      "contact.success":"Thanks — this is a prototype, so nothing was actually sent. The real form will go live with the published site.",
+      "contact.direct":"Prefer email? Reach Marzieh directly:",
+      "contact.slot.tag":"Decision needed",
+      "contact.slot.body":"Simple request form (shown here) vs. a real online scheduling system such as JaneApp — Marzieh's call, see the plan notes.",
+      "field.name":"Full Name","field.email":"Email","field.phone":"Phone (optional)",
+      "field.interest":"I'm interested in",
+      "opt.individual":"Individual Session","opt.drama":"Drama Therapy","opt.mindfulness":"Mindfulness Coaching",
+      "opt.workshop":"A Workshop or Course","opt.consult":"Free Consultation","opt.unsure":"Not sure yet",
+      "field.language":"Preferred session language",
+      "opt.english":"English","opt.persian":"Persian","opt.either":"Either",
+      "field.message":"Message","field.message.ph":"Tell me a little about what brings you here...",
+      "contact.submit":"Send Request (Prototype)",
+      "footer.tagline":"Integrating Psychology, Drama Therapy & Mindfulness",
+      "footer.nav.title":"Explore","footer.legal.title":"Practice",
+      "footer.privacy":"Privacy Policy","footer.privacy.note":"(to be added before publish)",
+      "footer.rights":"All rights reserved.",
+      "footer.prototype":"Draft prototype — internal review only, not the published site.",
+      "sound.label.unmuted":"Mute chime",
+      "sound.label.muted":"Unmute chime",
+      "meta.title":"Inner Transformation with Marzieh Shams"
+    },
+    fa: {
+      "misc.skip":"رفتن به محتوای اصلی",
+      "banner.text":"پیش‌نمایش برای بررسی — هنوز منتشر نشده است.",
+      "nav.brand":"تحول درونی",
+      "nav.brand.sub":"مرضیه شمس",
+      "nav.about":"درباره من","nav.approach":"رویکرد من","nav.services":"خدمات",
+      "nav.how":"روند کار","nav.faq":"پرسش‌های متداول","nav.contact":"تماس","nav.cta":"رزرو جلسه",
+      "hero.eyebrow":"روان‌درمانی · دراماتراپی · مایندفولنس",
+      "hero.title":"تحول درونی با مرضیه شمس",
+      "hero.subtitle":"رویکردی تلفیقی برای رشد فردی و التیام؛ ترکیبی از مایندفولنس، مدیتیشن، روان‌درمانی تحولی و دراماتراپی، برای همراهی شما در مسیر خودآگاهی، بهزیستی هیجانی و بازیابی پیوندی عمیق‌تر با خودِ اصیل‌تان.",
+      "hero.cta.primary":"رزرو جلسه",
+      "hero.cta.secondary":"مشاوره رایگان",
+      "hero.note":"برای نوجوانان (۱۳ سال به بالا)، بزرگسالان و هر کسی که با استرس، دوران گذار یا تجربه‌ی مهاجرت روبه‌روست.",
+      "about.eyebrow":"درباره","about.title":"درباره مرضیه",
+      "about.lead":"مرضیه در نقطه‌ی تلاقی روان‌شناسی، دراماتراپی و مایندفولنس فعالیت می‌کند؛ همراه نوجوانان، بزرگسالان، تازه‌واردان و هر کسی در دوران تغییر.",
+      "about.photo.tag":"عکس مورد نیاز",
+      "about.photo.body":"عکس مرضیه برای صفحه‌ی اصلی و بخش درباره من.",
+      "about.slot.tag":"متن مورد نیاز",
+      "about.slot.body":"این بخش برای بیوگرافی حرفه‌ای مرضیه رزرو شده است: تحصیلات، وضعیت مجوز/ثبت حرفه‌ای، سابقه‌ی کار و مسیری که او را به این حرفه رساند.",
+      "approach.eyebrow":"رویکرد من",
+      "approach.title":"سه رویکرد، یک مسیر به درون",
+      "approach.lead":"روان‌شناسی، دراماتراپی و مایندفولنس در یک رویکرد تلفیقی به هم می‌رسند؛ هر یک دری متفاوت به سوی یک مقصد: خودی پایدارتر و اصیل‌تر.",
+      "pillar1.title":"روان‌درمانی تحولی",
+      "pillar1.body":"کاری گفت‌وگومحور و مبتنی‌بر شواهد که به شما کمک می‌کند الگوها را بشناسید، تجربه‌های دشوار را پردازش کنید و به‌سوی تغییری پایدار حرکت کنید.",
+      "pillar2.title":"دراماتراپی",
+      "pillar2.body":"روش‌هایی خلاقانه و مبتنی‌بر بدن — ایفای نقش، قصه‌گویی و حرکت — که راهی برای کاوش احساساتی می‌گشایند که کلمات به‌تنهایی گاهی به آن‌ها نمی‌رسند.",
+      "pillar3.title":"مایندفولنس و مدیتیشن",
+      "pillar3.body":"تمرین‌هایی هدایت‌شده که آگاهی از لحظه‌ی حال را تقویت می‌کنند، سیستم عصبی را آرام می‌کنند و پیوند شما با خودتان را مستحکم‌تر می‌سازند.",
+      "approach.center":"تحول درونی",
+      "services.eyebrow":"آنچه ارائه می‌دهم","services.title":"خدمات",
+      "services.lead":"کار فردی و گروهی، متناسب با شرایط شما.",
+      "svc1.title":"جلسات فردی",
+      "svc1.body":"جلسات فردی روان‌درمانی با ترکیب گفت‌وگودرمانی، مایندفولنس و تکنیک‌های دراماتراپی، متناسب با اهداف شما.",
+      "svc2.title":"دراماتراپی",
+      "svc2.body":"جلسات خلاقانه و تجربه‌محور با استفاده از تکنیک‌های نمایشی برای خودکاوی عمیق‌تر و التیام هیجانی.",
+      "svc3.title":"آموزش مایندفولنس و مدیتیشن",
+      "svc3.body":"آموزش هدایت‌شده‌ی تمرین‌های مایندفولنس و مدیتیشن برای مدیریت استرس، اضطراب و تعادل هیجانی روزمره.",
+      "svc4.title":"کارگاه‌ها و دوره‌ها",
+      "svc4.body":"برنامه‌های گروهی خودشناسی و تحول فردی — تاریخ‌های جاری را در صفحه‌ی کارگاه‌ها ببینید.",
+      "services.note.tag":"متن مورد نیاز",
+      "services.note":"هزینه، مدت جلسات و امکان برگزاری آنلاین/حضوری پیش از انتشار در همین‌جا مشخص خواهد شد.",
+      "how.eyebrow":"شروع کار","how.title":"روند کار",
+      "how.lead":"راهی ساده و بدون فشار برای شروع.",
+      "step1.title":"پیام بده","step1.body":"پیام بفرستید یا درخواست مشاوره‌ی رایگان بدهید؛ بدون هیچ تعهدی.",
+      "step2.title":"مشاوره‌ی رایگان","step2.body":"یک تماس کوتاه برای گفت‌وگو درباره‌ی آنچه شما را به این‌جا رسانده و بررسی هم‌خوانی کار مشترک.",
+      "step3.title":"اولین جلسه","step3.body":"با هم اهداف شما را بررسی می‌کنیم و مسیری متناسب می‌سازیم؛ روان‌درمانی، مایندفولنس، دراماتراپی یا ترکیبی از آن‌ها.",
+      "step4.title":"همراهی ادامه‌دار","step4.body":"جلسات منظم با ریتمی متناسب با شما، که همراه با رشدتان بازبینی و تنظیم می‌شود.",
+      "faq.eyebrow":"پرسش‌ها","faq.title":"پرسش‌های متداول",
+      "q1":"رویکرد تلفیقی شما دقیقاً چیست؟",
+      "a1":"ترکیبی از روان‌درمانی تحولی، دراماتراپی و مایندفولنس/مدیتیشن؛ متناسب با آنچه بیشترین کمک را به شما می‌کند.",
+      "q2":"آیا با نوجوانان هم کار می‌کنید یا فقط بزرگسالان؟",
+      "a2":"بله؛ نوجوانان از ۱۳ سال به بالا، بزرگسالان و هر کسی که با استرس، دوران گذار یا تجربه‌ی مهاجرت روبه‌روست.",
+      "q3":"در مشاوره‌ی رایگان چه اتفاقی می‌افتد؟",
+      "a3":"گفت‌وگویی کوتاه و بدون فشار درباره‌ی نیاز شما، تا هر دو طرف پیش از رزرو جلسه‌ی کامل، هم‌خوانی کار مشترک را بسنجیم.",
+      "q4":"جلسات آنلاین است، حضوری، یا هر دو؟ و به چه زبانی؟",
+      "a4":"پیش از انتشار سایت در همین‌جا مشخص خواهد شد.",
+      "q5":"هزینه‌ی جلسات چقدر است و بیمه پذیرفته می‌شود؟",
+      "a5":"جزئیات هزینه و بیمه پیش از انتشار به این بخش اضافه می‌شود.",
+      "q6":"آیا آنچه در جلسات مطرح می‌کنم محرمانه می‌ماند؟",
+      "a6":"بله، در چارچوب حدود استاندارد محرمانگی طبق مقررات حرفه‌ای و قانونی. متن کامل این سیاست در همین صفحه منتشر خواهد شد.",
+      "q7":"آیا نظرات مراجعان را منتشر می‌کنید؟",
+      "a7":"هنوز خیر. ابتدا با نهاد حرفه‌ای مرضیه بررسی می‌کنیم که آیا انتشار نظرات مراجعان طبق مقررات کانادا مجاز است یا نه.",
+      "contact.eyebrow":"در تماس باشید","contact.title":"تماس و رزرو جلسه",
+      "contact.lead":"برای رزرو جلسه یا مشاوره‌ی رایگان پیام بفرستید.",
+      "contact.disclaimer":"فرم نمونه — هنوز متصل نیست. در نسخه‌ی نهایی، این پیام مستقیم به دست مرضیه می‌رسد.",
+      "contact.disclaimer2":"این یک فرم نمونه برای بررسی است — پیام‌ها فعلاً به هیچ‌جا ارسال نمی‌شوند.",
+      "contact.success":"ممنون — این یک نمونه‌ی اولیه است، پس چیزی ارسال نشد. فرم واقعی همراه با انتشار سایت فعال خواهد شد.",
+      "contact.direct":"ترجیح می‌دهید ایمیل بزنید؟ مستقیم با مرضیه در تماس باشید:",
+      "contact.slot.tag":"تصمیم مورد نیاز",
+      "contact.slot.body":"فرم ساده‌ی درخواست (همین‌جا) یا یک سیستم رزرو واقعی مانند JaneApp — تصمیم با مرضیه است.",
+      "field.name":"نام کامل","field.email":"ایمیل","field.phone":"شماره تماس (اختیاری)",
+      "field.interest":"علاقه‌مندم به",
+      "opt.individual":"جلسه‌ی فردی","opt.drama":"دراماتراپی","opt.mindfulness":"آموزش مایندفولنس",
+      "opt.workshop":"یک کارگاه یا دوره","opt.consult":"مشاوره‌ی رایگان","opt.unsure":"هنوز مطمئن نیستم",
+      "field.language":"زبان مورد نظر برای جلسه",
+      "opt.english":"انگلیسی","opt.persian":"فارسی","opt.either":"فرقی نمی‌کند",
+      "field.message":"پیام","field.message.ph":"کمی درباره‌ی آنچه شما را به این‌جا رسانده بنویسید...",
+      "contact.submit":"ارسال درخواست (نمونه)",
+      "footer.tagline":"تلفیق روان‌شناسی، دراماتراپی و مایندفولنس",
+      "footer.nav.title":"صفحات","footer.legal.title":"اطلاعات تماس",
+      "footer.privacy":"حریم خصوصی","footer.privacy.note":"(پیش از انتشار اضافه می‌شود)",
+      "footer.rights":"تمامی حقوق محفوظ است.",
+      "footer.prototype":"نمونه‌ی اولیه — فقط برای بررسی داخلی، نسخه‌ی منتشرشده نیست.",
+      "sound.label.unmuted":"قطع صدای زنگ",
+      "sound.label.muted":"فعال‌کردن صدای زنگ",
+      "meta.title":"تحول درونی با مرضیه شمس"
+    },
+    fr: {
+      "misc.skip":"Passer au contenu",
+      "banner.text":"Aperçu de travail pour révision — pas encore le site publié.",
+      "nav.brand":"Transformation intérieure",
+      "nav.brand.sub":"Marzieh Shams",
+      "nav.about":"À propos","nav.approach":"Mon approche","nav.services":"Services",
+      "nav.how":"Déroulement","nav.faq":"FAQ","nav.contact":"Contact","nav.cta":"Réserver une séance",
+      "hero.eyebrow":"Psychothérapie · Dramathérapie · Pleine conscience",
+      "hero.title":"Transformation intérieure avec Marzieh Shams",
+      "hero.subtitle":"Une approche intégrative de la croissance personnelle et de la guérison — alliant pleine conscience, méditation, psychothérapie transformative et dramathérapie pour soutenir votre conscience de soi, votre bien-être émotionnel et un lien plus profond avec votre moi authentique.",
+      "hero.cta.primary":"Réserver une séance",
+      "hero.cta.secondary":"Consultation gratuite",
+      "hero.note":"Pour les adolescents (13 ans et plus), les adultes, et toute personne traversant du stress, une transition de vie ou l'expérience de l'immigration.",
+      "about.eyebrow":"À propos","about.title":"À propos de Marzieh",
+      "about.lead":"Marzieh travaille au carrefour de la psychologie, de la dramathérapie et de la pleine conscience — aux côtés des adolescents, des adultes, des nouveaux arrivants et de toute personne en période de changement.",
+      "about.photo.tag":"Photo à venir",
+      "about.photo.body":"Photo de Marzieh pour l'accueil et la section À propos.",
+      "about.slot.tag":"Contenu à venir",
+      "about.slot.body":"Cet espace est réservé à la biographie professionnelle de Marzieh : formation, statut d'inscription/permis d'exercice, années de pratique, et son parcours vers ce travail.",
+      "approach.eyebrow":"Mon approche",
+      "approach.title":"Trois pratiques, un seul chemin intérieur",
+      "approach.lead":"La psychologie, la dramathérapie et la pleine conscience se rejoignent en une seule pratique intégrative — chacune offrant une porte différente vers le même lieu : un soi plus stable et plus authentique.",
+      "pillar1.title":"Psychothérapie transformative",
+      "pillar1.body":"Un travail basé sur la parole et fondé sur des données probantes, qui vous aide à comprendre vos schémas, à traiter des expériences difficiles et à avancer vers un changement durable.",
+      "pillar2.title":"Dramathérapie",
+      "pillar2.body":"Des méthodes créatives et incarnées — jeu de rôle, récit et mouvement — qui ouvrent des émotions que les mots seuls n'atteignent pas toujours.",
+      "pillar3.title":"Pleine conscience et méditation",
+      "pillar3.body":"Des pratiques guidées qui développent la conscience du moment présent, apaisent le système nerveux et renforcent votre relation avec vous-même.",
+      "approach.center":"Transformation intérieure",
+      "services.eyebrow":"Ce que j'offre","services.title":"Services",
+      "services.lead":"Un accompagnement individuel et de groupe, adapté à votre situation actuelle.",
+      "svc1.title":"Séances individuelles",
+      "svc1.body":"Psychothérapie individuelle intégrant thérapie par la parole, pleine conscience et techniques de dramathérapie, selon vos objectifs.",
+      "svc2.title":"Dramathérapie",
+      "svc2.body":"Des séances créatives et expérientielles utilisant des techniques théâtrales pour une exploration de soi plus profonde et une guérison émotionnelle.",
+      "svc3.title":"Accompagnement en pleine conscience et méditation",
+      "svc3.body":"Formation guidée aux pratiques de pleine conscience et de méditation pour le stress, l'anxiété et l'équilibre émotionnel au quotidien.",
+      "svc4.title":"Ateliers et cours",
+      "svc4.body":"Programmes de groupe sur la découverte de soi et la transformation personnelle — dates à venir sur la page Ateliers.",
+      "services.note.tag":"Contenu à venir",
+      "services.note":"Les tarifs, la durée des séances et la disponibilité en ligne/en personne seront confirmés ici avant le lancement.",
+      "how.eyebrow":"Pour commencer","how.title":"Déroulement",
+      "how.lead":"Une façon simple et sans pression de commencer.",
+      "step1.title":"Prendre contact","step1.body":"Envoyez un message ou demandez une consultation gratuite — sans aucun engagement.",
+      "step2.title":"Consultation gratuite","step2.body":"Un court appel pour discuter de ce qui vous amène ici et voir si nous formons un bon tandem.",
+      "step3.title":"Première séance","step3.body":"Nous explorerons vos objectifs ensemble et bâtirons un parcours adapté — psychothérapie, pleine conscience, dramathérapie, ou une combinaison des trois.",
+      "step4.title":"Accompagnement continu","step4.body":"Des séances régulières, à un rythme qui vous convient, revues et ajustées à mesure que vous évoluez.",
+      "faq.eyebrow":"Questions","faq.title":"Foire aux questions",
+      "q1":"Quelle est votre approche intégrative?",
+      "a1":"Un mélange de psychothérapie transformative, de dramathérapie et de pleine conscience/méditation — choisi et combiné selon ce qui vous aide le plus.",
+      "q2":"Travaillez-vous avec les adolescents en plus des adultes?",
+      "a2":"Oui — les adolescents de 13 ans et plus, les adultes, et toute personne traversant du stress, une transition de vie ou l'expérience de l'immigration.",
+      "q3":"Que se passe-t-il durant la consultation gratuite?",
+      "a3":"Une conversation courte et sans pression sur ce que vous recherchez, afin que nous puissions tous les deux voir si nous formons un bon tandem avant de réserver une séance complète.",
+      "q4":"Les séances sont-elles en ligne, en personne, ou les deux — et en anglais ou en persan?",
+      "a4":"À confirmer ici avant le lancement.",
+      "q5":"Quel est le coût des séances, et les assurances sont-elles acceptées?",
+      "a5":"Les détails sur les tarifs et les assurances seront ajoutés ici avant le lancement.",
+      "q6":"Ce que je partage est-il confidentiel?",
+      "a6":"Oui, dans les limites habituelles de la confidentialité fixées par les normes professionnelles et légales. La politique complète sera publiée ici.",
+      "q7":"Partagez-vous des témoignages de clients?",
+      "a7":"Pas encore. Nous confirmons d'abord auprès de l'ordre professionnel de Marzieh si les témoignages sont permis dans la publicité, selon les lignes directrices canadiennes.",
+      "contact.eyebrow":"Restons en contact","contact.title":"Contact et réservation",
+      "contact.lead":"Envoyez un message pour demander une séance ou une consultation gratuite.",
+      "contact.disclaimer":"Formulaire de prototype — pas encore connecté. Sur le site final, ce message parviendra directement à Marzieh.",
+      "contact.disclaimer2":"Ceci est un formulaire de démonstration pour révision — aucun message n'est envoyé pour l'instant.",
+      "contact.success":"Merci — ceci est un prototype, rien n'a donc été envoyé. Le vrai formulaire sera activé au lancement du site.",
+      "contact.direct":"Vous préférez le courriel? Contactez Marzieh directement :",
+      "contact.slot.tag":"Décision à prendre",
+      "contact.slot.body":"Formulaire de demande simple (ci-dessus) ou un véritable système de réservation en ligne comme JaneApp — au choix de Marzieh, voir les notes du plan.",
+      "field.name":"Nom complet","field.email":"Courriel","field.phone":"Téléphone (facultatif)",
+      "field.interest":"Je suis intéressé(e) par",
+      "opt.individual":"Séance individuelle","opt.drama":"Dramathérapie","opt.mindfulness":"Accompagnement en pleine conscience",
+      "opt.workshop":"Un atelier ou un cours","opt.consult":"Consultation gratuite","opt.unsure":"Pas encore certain(e)",
+      "field.language":"Langue de séance préférée",
+      "opt.english":"Anglais","opt.persian":"Persan","opt.either":"Peu importe",
+      "field.message":"Message","field.message.ph":"Parlez-moi un peu de ce qui vous amène ici...",
+      "contact.submit":"Envoyer la demande (prototype)",
+      "footer.tagline":"Intégrer psychologie, dramathérapie et pleine conscience",
+      "footer.nav.title":"Explorer","footer.legal.title":"Pratique",
+      "footer.privacy":"Politique de confidentialité","footer.privacy.note":"(à ajouter avant la publication)",
+      "footer.rights":"Tous droits réservés.",
+      "footer.prototype":"Prototype de travail — révision interne seulement, pas le site publié.",
+      "sound.label.unmuted":"Couper le carillon",
+      "sound.label.muted":"Réactiver le carillon",
+      "meta.title":"Transformation intérieure avec Marzieh Shams"
+    }
+  };
+
+  var currentLang = "en";
+
+  function applyLang(lang){
+    var dict = I18N[lang] || I18N.en;
+    currentLang = I18N[lang] ? lang : "en";
+    document.documentElement.setAttribute("lang", lang === "fa" ? "fa" : (lang === "fr" ? "fr" : "en"));
+    document.documentElement.setAttribute("dir", lang === "fa" ? "rtl" : "ltr");
+    document.body.setAttribute("data-lang", lang);
+    try{ localStorage.setItem("mp_lang", lang); }catch(e){}
+
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var key = el.getAttribute("data-i18n");
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+      var key = el.getAttribute("data-i18n-html");
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function(el){
+      var key = el.getAttribute("data-i18n-placeholder");
+      if (dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
+    });
+    document.querySelectorAll(".lang-btn").forEach(function(b){
+      b.classList.toggle("is-active", b.getAttribute("data-lang") === lang);
+    });
+    if (dict["meta.title"]) document.title = dict["meta.title"];
+    updateSoundLabel();
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){ applyLang(btn.getAttribute("data-lang")); });
+  });
+
+  var navToggle = document.getElementById("navToggle");
+  var primaryNav = document.getElementById("primaryNav");
+  if (navToggle && primaryNav){
+    navToggle.addEventListener("click", function(){
+      var open = primaryNav.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    primaryNav.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        primaryNav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  var form = document.getElementById("bookingForm");
+  var success = document.getElementById("formSuccess");
+  if (form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      success.classList.add("show");
+      success.setAttribute("tabindex", "-1");
+      success.focus();
+    });
+  }
+
+  var yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  var startLang = "en";
+  try{
+    var saved = localStorage.getItem("mp_lang");
+    if (saved && I18N[saved]) startLang = saved;
+  }catch(e){}
+  applyLang(startLang);
+
+  /* ---------- soft two-note opening chime ---------- */
+  /* Lazy WebAudio synth: no audio files, created on the first user gesture
+     (autoplay policy). A gentle, low, close-interval two-note motif —
+     nothing bright or alerting; suits a therapy practice's first impression.
+     Mute state persists in localStorage; default on, but it only ever
+     actually sounds once per visit, on that first tap/click/key. */
+  var SOUND_KEY = "mp_sound_muted";
+  var soundBtn = document.getElementById("soundToggle");
+  var muted = false;
+  try{ muted = localStorage.getItem(SOUND_KEY) === "1"; }catch(e){}
+  /* aria-pressed reflects the MUTE action's state: true = pressed = muted. */
+  if (soundBtn) soundBtn.setAttribute("aria-pressed", muted ? "true" : "false");
+
+  function updateSoundLabel(){
+    if (!soundBtn) return;
+    var dict = I18N[currentLang] || I18N.en;
+    var key = muted ? "sound.label.muted" : "sound.label.unmuted";
+    var label = dict[key] || I18N.en[key];
+    soundBtn.setAttribute("aria-label", label);
+    soundBtn.setAttribute("title", label);
+  }
+  updateSoundLabel(); /* applyLang() ran before soundBtn existed — set the initial label now */
+
+  var audioCtx = null;
+  var chimePlayed = false;
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function playChime(){
+    if (chimePlayed || muted) return;
+    chimePlayed = true;
+    try{
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return;
+      if (!audioCtx) audioCtx = new Ctx();
+      if (audioCtx.state === "suspended") audioCtx.resume();
+
+      var now = audioCtx.currentTime;
+      var master = audioCtx.createGain();
+      master.gain.setValueAtTime(0, now);
+      master.connect(audioCtx.destination);
+
+      /* two calm, close notes — a soft third apart (A3 -> C#4), like a
+         single unhurried breath. Reduced-motion visitors still get sound
+         (it isn't motion) but a touch shorter and quieter. */
+      var notes = [
+        { freq:220.00, start:0.00, dur: reduceMotion ? 1.6 : 2.2, gain:0.05 },
+        { freq:277.18, start: reduceMotion ? 0.55 : 0.85, dur: reduceMotion ? 1.7 : 2.6, gain:0.045 }
+      ];
+
+      notes.forEach(function(n){
+        var osc = audioCtx.createOscillator();
+        var gain = audioCtx.createGain();
+        var filt = audioCtx.createBiquadFilter();
+        filt.type = "lowpass";
+        filt.frequency.value = 1100;
+        osc.type = "sine";
+        osc.frequency.value = n.freq;
+
+        var t0 = now + n.start;
+        var peak = n.gain;
+        gain.gain.setValueAtTime(0, t0);
+        gain.gain.linearRampToValueAtTime(peak, t0 + 0.7);
+        gain.gain.linearRampToValueAtTime(peak * 0.6, t0 + n.dur * 0.55);
+        gain.gain.linearRampToValueAtTime(0, t0 + n.dur);
+
+        osc.connect(filt);
+        filt.connect(gain);
+        gain.connect(master);
+        osc.start(t0);
+        osc.stop(t0 + n.dur + 0.1);
+      });
+
+      master.gain.setValueAtTime(1, now);
+    }catch(e){ /* audio is a grace note, never a blocker */ }
+  }
+
+  function primeAudioOnFirstGesture(e){
+    /* If the visitor's very first tap/keypress IS the mute button, don't treat
+       it as the "enter" gesture that fires the chime — otherwise the chime
+       plays exactly while they're trying to silence it. Leave the listener
+       armed so the real first gesture (elsewhere) still primes the chime. */
+    if (e && e.target && e.target.closest && e.target.closest("#soundToggle")) return;
+    playChime();
+    window.removeEventListener("pointerdown", primeAudioOnFirstGesture);
+    window.removeEventListener("keydown", primeAudioOnFirstGesture);
+  }
+  window.addEventListener("pointerdown", primeAudioOnFirstGesture);
+  window.addEventListener("keydown", primeAudioOnFirstGesture);
+
+  if (soundBtn){
+    soundBtn.addEventListener("click", function(){
+      muted = !muted;
+      soundBtn.setAttribute("aria-pressed", muted ? "true" : "false");
+      try{ localStorage.setItem(SOUND_KEY, muted ? "1" : "0"); }catch(e){}
+      updateSoundLabel();
+      if (audioCtx && audioCtx.state === "suspended" && !muted) audioCtx.resume();
+    });
+  }
+})();
+</script>
+</body>
+</html>
