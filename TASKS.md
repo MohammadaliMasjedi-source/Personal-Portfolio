@@ -52,3 +52,10 @@ state. Smallest diff that ends the split-brain.
 **DoD:** manual scroll test over every section (top, middle, bottom of page): exactly one nav
 item highlighted at all times, in all 3 languages, no console errors. Test log in the PR body.
 **Don't:** restyle the nav, rename sections, or touch content. Bump the changed js file's `?v=N`.
+
+## Blocked
+
+- **T-PP-03 · Codex · 2026-07-23:** not claimed for implementation. Its DoD requires rendered
+  manual scrolling across every section in all three languages. W-C1's verify-yourself rule
+  forbids opening an implementation PR when correctness can only be confirmed in a browser.
+  Route this card to the fleet's browser-capable sweep.
