@@ -21,9 +21,9 @@
 
   /* hero role cycler lines, per language (read by main.js) */
   var ROLES = {
-    en: ["a Classical Guitarist, Teacher & Composer", "a Software Developer", "a Project Manager", "an Art & Culture Manager", "curious about Science"],
-    fa: ["نوازنده، مدرس و آهنگسازِ گیتار کلاسیکم", "توسعه‌دهندهٔ نرم‌افزارم", "مدیرِ پروژه‌ام", "مدیرِ فرهنگ و هنرم", "کنجکاوِ علم‌ام"],
-    de: ["Klassischer Gitarrist, Lehrer & Komponist", "Softwareentwickler", "Projektmanager", "Kunst- und Kulturmanager", "neugierig auf Wissenschaft"]
+    en: ["a Classical Guitarist, Teacher & Composer", "a Software Developer", "a Project Manager", "an Art & Culture Person", "curious about Science"],
+    fa: ["نوازنده، مدرس و آهنگسازِ گیتار کلاسیکم", "توسعه‌دهندهٔ نرم‌افزارم", "مدیرِ پروژه‌ام", "فرهنگی و هنری‌ام", "کنجکاوِ علم‌ام"],
+    de: ["Klassischer Gitarrist, Lehrer & Komponist", "Softwareentwickler", "Projektmanager", "Kunst- und Kulturmensch", "neugierig auf Wissenschaft"]
   };
 
   /* ---- translations (en is the HTML source, so only fa + de here) ---- */
@@ -41,7 +41,7 @@
       /* hero */
       "hero.eyebrow": "محمدعلی مسجدی — کلاوستال، آلمان",
       "hero.title": "یک ذهن، زندگی‌های بسیار.",
-      "hero.sub": "نوازنده، مدرس و آهنگسازِ گیتار کلاسیک، توسعه‌دهندهٔ نرم‌افزار، مدیرِ پروژه و مدیرِ فرهنگ و هنر — و خدمتگزارِ دو گربه. یک ذهن، زندگی‌های بسیار.",
+      "hero.sub": "نوازنده، مدرس و آهنگسازِ گیتار کلاسیک، توسعه‌دهندهٔ نرم‌افزار، مدیرِ پروژه و فردی فرهنگی و هنری — و خدمتگزارِ دو گربه. یک ذهن، زندگی‌های بسیار.",
       "hero.cta1": "جهان‌هایم را ببین", "hero.cta2": "تماس", "hero.scroll": "پایین",
       "hero.iam": "من",
       "hero.role1": "نوازنده، مدرس و آهنگسازِ گیتار کلاسیکم",
@@ -255,7 +255,7 @@
 
       "hero.eyebrow": "Mohammad Ali Masjedi — Clausthal, Deutschland",
       "hero.title": "Ein Geist, viele Leben.",
-      "hero.sub": "Klassischer Gitarrist, Lehrer und Komponist, Softwareentwickler, Projektmanager und Kunst- und Kulturmanager — und treuer Diener zweier Katzen. Ein Geist, viele Leben.",
+      "hero.sub": "Klassischer Gitarrist, Lehrer und Komponist, Softwareentwickler, Projektmanager und Kunst- und Kulturmensch — und treuer Diener zweier Katzen. Ein Geist, viele Leben.",
       "hero.cta1": "Meine Welten entdecken", "hero.cta2": "Kontakt", "hero.scroll": "Scrollen",
       "hero.iam": "Ich bin",
       "hero.role1": "Klassischer Gitarrist, Lehrer & Komponist",
