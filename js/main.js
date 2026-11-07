@@ -85,6 +85,7 @@
     window.addEventListener("mouseup", () => cursor.classList.remove("is-down"));
     document.addEventListener("mouseleave", () => cursor.style.opacity = "0");
     document.addEventListener("mouseenter", () => cursor.style.opacity = "1");
+    document.documentElement.classList.add("has-custom-cursor");
   }
 
   /* ---------------- Magnetic elements ---------------- */
@@ -193,6 +194,9 @@
     scan(); // above-the-fold, immediately
     window.addEventListener("scroll", scan, { passive: true });
     window.addEventListener("resize", scan, { passive: true });
+    // Only hide offscreen content after its reveal handlers are installed.
+    // If scripts are disabled or initialization fails, the page stays readable.
+    items.forEach((el) => el.classList.add("reveal-ready"));
     setTimeout(scan, 400);
   }
 
@@ -232,25 +236,6 @@
     }
     window.addEventListener("scroll", scan, { passive: true });
     scan();
-  }
-
-  /* ---------------- Active nav link ---------------- */
-  function initActiveNav() {
-    const links = $$(".nav__links a");
-    const map = {};
-    links.forEach((l) => { const id = l.getAttribute("href").slice(1); if (id) map[id] = l; });
-    const sections = Object.keys(map).map((id) => $("#" + id)).filter(Boolean);
-    if (!sections.length) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          links.forEach((l) => l.classList.remove("is-active"));
-          const a = map[entry.target.id];
-          if (a) a.classList.add("is-active");
-        }
-      });
-    }, { threshold: 0.5 });
-    sections.forEach((s) => io.observe(s));
   }
 
   /* ---------------- Decorative attention grid ---------------- */
@@ -399,11 +384,10 @@
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") hide(); });
   }
 
-  /* ---------------- Preloader → boot ---------------- */
+  /* ---------------- Progressive enhancement ---------------- */
   function boot() {
     initReveal();
     initCounters();
-    initActiveNav();
     initAttn();
     initField();
     initRoleCycle();
@@ -411,41 +395,10 @@
     initLightbox();
   }
 
-  function runPreloader() {
-    const pre = $("#preloader");
-    const count = $("#preCount");
-    const bar = $(".preloader__bar span");
-    if (!pre) { boot(); return; }
-
-    const finish = () => {
-      pre.classList.add("is-done");
-      document.body.style.overflow = "";
-      setTimeout(boot, 120);
-    };
-
-    if (prefersReduced) { if (count) count.textContent = "100"; if (bar) bar.style.width = "100%"; finish(); return; }
-
-    document.body.style.overflow = "hidden";
-    const dur = 1500; const start = performance.now();
-    let done = false;
-    function step(now) {
-      const p = Math.min((now - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 2);
-      const val = Math.round(eased * 100);
-      if (count) count.textContent = val;
-      if (bar) bar.style.width = val + "%";
-      if (p < 1) requestAnimationFrame(step);
-      else if (!done) { done = true; setTimeout(finish, 250); }
-    }
-    requestAnimationFrame(step);
-    // hard fallback
-    setTimeout(() => { if (!done) { done = true; finish(); } }, 4000);
-  }
-
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", runPreloader);
+    document.addEventListener("DOMContentLoaded", boot);
   } else {
-    runPreloader();
+    boot();
   }
 })();
 
@@ -562,3 +515,4 @@
     });
   });
 })();
+
