@@ -61,8 +61,8 @@ em { font-style: normal; }
 
 /* Hide native cursor on capable devices (re-enabled in media query) */
 @media (hover: hover) and (pointer: fine) {
-  body { cursor: none; }
-  a, button, [data-magnetic], [data-cursor] { cursor: none; }
+  html.has-custom-cursor body { cursor: none; }
+  html.has-custom-cursor :is(a, button, [data-magnetic], [data-cursor]) { cursor: none; }
 }
 
 /* ---------- Atmosphere: grain + background field ---------- */
@@ -156,8 +156,6 @@ main, .nav, .footer, .marquee { position: relative; z-index: 3; }
 .nav__links a::after { content: ""; position: absolute; left: 0; bottom: -5px; width: 0; height: 1px; background: var(--volt); transition: width .35s var(--ease); }
 .nav__links a:hover { color: var(--text); }
 .nav__links a:hover::after { width: 100%; }
-.nav__links a.is-active { color: var(--text); }
-.nav__links a.is-active::after { width: 100%; }
 .nav__cta { padding: 11px 20px; font-size: 14px; }
 .nav__burger { display: none; width: 44px; height: 44px; border: 1px solid var(--line-2); border-radius: 50%; background: transparent; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
 .nav__burger span { display: block; width: 18px; height: 1.5px; background: var(--text); transition: transform .35s var(--ease), opacity .25s; }
@@ -477,10 +475,12 @@ html[lang="fa"] .channel.is-soon::after { content: "به‌زودی"; letter-spa
 .footer__row--sub { margin-top: 24px; color: #80858f; font-size: 13px; } /* a11y: 5.5:1 on bg (--text-mute was 4.0:1, below WCAG AA) */
 
 /* ---------- Reveal animations ---------- */
-[data-reveal] { opacity: 0; transform: translateY(38px); transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+[data-reveal] { opacity: 1; transform: none; transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+[data-reveal].reveal-ready:not(.is-in) { opacity: 0; transform: translateY(38px); }
 [data-reveal].is-in { opacity: 1; transform: none; }
 [data-split] .word { display: inline-block; overflow: hidden; vertical-align: top; }
-[data-split] .word > span { display: inline-block; transform: translateY(110%); transition: transform .8s var(--ease-out); }
+[data-split] .word > span { display: inline-block; transform: none; transition: transform .8s var(--ease-out); }
+[data-split].reveal-ready:not(.is-in) .word > span { transform: translateY(110%); }
 [data-split].is-in .word > span { transform: translateY(0); }
 /* Re-apply gradient on the inner (transformed) spans, since background-clip:text
    on the parent <em> doesn't paint through transformed descendants. */
@@ -672,7 +672,7 @@ html[lang="fa"] .channel.is-soon::after { content: "به‌زودی"; letter-spa
 }
 .lang-btn:hover { color: var(--text); }
 .lang-btn.is-active { background: var(--volt); color: #06210a; }
-@media (hover: hover) and (pointer: fine) { .lang-btn { cursor: none; } }
+@media (hover: hover) and (pointer: fine) { html.has-custom-cursor .lang-btn { cursor: none; } }
 
 /* prose blocks in the new art-life sections */
 .sec-prose { max-width: 64ch; }
@@ -809,3 +809,4 @@ section[id], [id].section, .facet-sec[id] { scroll-margin-top: clamp(72px, 11vh,
 
 /* Don't let real photos be dragged out as ghost images. */
 img { -webkit-user-drag: none; user-select: none; }
+
