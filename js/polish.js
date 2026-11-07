@@ -17,15 +17,19 @@
 
   function update() {
     var line = window.innerHeight * 0.35;   // "current" once a section's top passes 35% down
-    var current = null, best = -Infinity;
+    var current = targets[0], best = -Infinity;
     for (var i = 0; i < targets.length; i++) {
       var top = targets[i].el.getBoundingClientRect().top;
       // the section you're in = the one whose top is above the line and closest to it
       // (order-independent: nav order need not match DOM order)
       if (top <= line && top > best) { best = top; current = targets[i]; }
     }
-    for (var j = 0; j < links.length; j++) links[j].classList.remove("is-current");
-    if (current) current.a.classList.add("is-current");
+    for (var j = 0; j < links.length; j++) {
+      links[j].classList.remove("is-active", "is-current");
+      links[j].removeAttribute("aria-current");
+    }
+    current.a.classList.add("is-current");
+    current.a.setAttribute("aria-current", "location");
   }
 
   // Direct (un-throttled) — the work is 5 rect reads, negligible per frame.
@@ -34,3 +38,4 @@
   document.addEventListener("DOMContentLoaded", update);
   update();
 })();
+
