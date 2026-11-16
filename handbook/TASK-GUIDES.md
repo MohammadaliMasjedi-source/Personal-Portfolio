@@ -1,6 +1,6 @@
 # TASK-GUIDES — do each open task yourself
 
-> One guide per real, still-open task from [`.mc/project.json`](../.mc/project.json).
+> One guide per real, still-open task from `.mc/project.json` (local-only, not in this repo).
 > Done phases (p1, p4-demo-bundle) aren't repeated here. These guides make every open task
 > doable by hand, step by step. Keep in sync with `project.json`.
 > Setup basics live in [`02-STACK-AND-SETUP.md`](./02-STACK-AND-SETUP.md); protocols in

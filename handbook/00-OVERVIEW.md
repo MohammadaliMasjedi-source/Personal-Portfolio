@@ -4,7 +4,7 @@
 > (local name; GitHub repo also called `Personal-Portfolio`). It points at the real files —
 > it does not duplicate them. For a plain-language explainer see
 > [`learning/PROJECT-EXPLAINED.md`](../learning/PROJECT-EXPLAINED.md).
-> Machine-readable truth = [`.mc/project.json`](../.mc/project.json). Human companion = [`PROJECT.md`](../PROJECT.md).
+> Machine-readable truth = `.mc/project.json` (local-only, not in this repo). Human companion = [`PROJECT.md`](../PROJECT.md).
 
 ---
 

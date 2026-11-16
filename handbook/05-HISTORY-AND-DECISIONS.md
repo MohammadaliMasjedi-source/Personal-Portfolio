@@ -1,6 +1,6 @@
 # 05 · History & Decisions (ADR-style)
 
-> Source of truth for decisions = the `decisions` array in [`.mc/project.json`](../.mc/project.json)
+> Source of truth for decisions = the `decisions` array in `.mc/project.json` (local-only, not in this repo)
 > and the Decisions table in [`PROJECT.md`](../PROJECT.md). This file mirrors them in ADR form
 > and adds the milestone timeline. When they disagree, `project.json` wins.
 

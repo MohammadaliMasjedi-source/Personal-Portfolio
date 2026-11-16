@@ -253,7 +253,7 @@
       "menu.daricheh": "Übersetzungen · Daricheh",
       "menu.loc": "Clausthal-Zellerfeld, DE",
 
-      "hero.eyebrow": "Mohammad Ali Masjedi — Clausthal, Deutschland",
+      "hero.eyebrow": "Mohammadali Masjedi — Clausthal, Deutschland",
       "hero.title": "Ein Geist, viele Leben.",
       "hero.sub": "Klassischer Gitarrist, Lehrer und Komponist, Softwareentwickler, Projektmanager und Kunst- und Kulturmensch — und treuer Diener zweier Katzen. Ein Geist, viele Leben.",
       "hero.cta1": "Meine Welten entdecken", "hero.cta2": "Kontakt", "hero.scroll": "Scrollen",
