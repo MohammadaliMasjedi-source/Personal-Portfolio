@@ -59,3 +59,10 @@ item highlighted at all times, in all 3 languages, no console errors. Test log i
   manual scrolling across every section in all three languages. W-C1's verify-yourself rule
   forbids opening an implementation PR when correctness can only be confirmed in a browser.
   Route this card to the fleet's browser-capable sweep.
+
+
+### T-PP-04 · Technical instructor workshop sample [phase: portfolio · size: M · status: CLAIMED]
+**Owner request:** 16 November 2026, prepare a practical GitHub teaching sample for a Technical Instructor application.
+**Scope:** add the standalone English-language teaching exercise under `teaching/technical-instructor-workshop/`, with a local browser/JSON/SQLite demo, instructor and learner guides, Postman collection and Git exercise. This is a new sample, not evidence of past client delivery. Keep all certificates, CVs, private research and employer code outside this public repository.
+**Claim:** draft PR titled `T-PP-04: Add a practical technical instructor workshop sample`.
+**DoD:** HTTP/SQL tests pass; browser search/create/conflict/report checks pass; candid validation limits and rehearsal requirement recorded. The existing site entry page, language system and deployment workflow are outside this task. Branch remains a review copy; owner reviews any future merge or site integration.

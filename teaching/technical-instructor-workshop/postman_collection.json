@@ -1,0 +1,263 @@
+{
+  "info": {
+    "name": "From browser to database \u2014 fictional training lab",
+    "description": "Local-only portfolio teaching exercise. Run the server first. Synthetic data only. Run requests in order.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "created_id",
+      "value": ""
+    },
+    {
+      "key": "demo_name",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "List workshops",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/workshops"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected HTTP status\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Three workshop records\", function () { pm.expect(pm.response.json().workshops).to.have.lengthOf(3); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Filter SQL workshops",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/workshops?q=SQL"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected HTTP status\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"SQL workshop has id 2\", function () { pm.expect(pm.response.json().workshops[0].id).to.eql(2); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Create demo enrolment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/enrolments",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"workshop_id\": 3,\n  \"learner_name\": \"{{demo_name}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set(\"demo_name\", \"Demo \" + pm.variables.replaceIn(\"{{$guid}}\"));"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected HTTP status\", function () {",
+              "  pm.response.to.have.status(201);",
+              "});",
+              "const created = pm.response.json();",
+              "pm.collectionVariables.set(\"created_id\", created.id);",
+              "pm.test(\"Location identifies created enrolment\", function () { pm.expect(pm.response.headers.get(\"Location\")).to.eql(\"/api/enrolments/\" + created.id); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Read created enrolment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/enrolments/{{created_id}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected HTTP status\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Reads the same fictional learner\", function () { pm.expect(pm.response.json().learner_name).to.eql(pm.collectionVariables.get(\"demo_name\")); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Duplicate created enrolment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/enrolments",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"workshop_id\": 3,\n  \"learner_name\": \"{{demo_name}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected HTTP status\", function () {",
+              "  pm.response.to.have.status(409);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Invalid workshop ID",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/enrolments",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"workshop_id\": \"3\",\n  \"learner_name\": \"{{demo_name}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected HTTP status\", function () {",
+              "  pm.response.to.have.status(400);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Unknown workshop",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/enrolments",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"workshop_id\": 999,\n  \"learner_name\": \"{{demo_name}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected HTTP status\", function () {",
+              "  pm.response.to.have.status(404);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Report includes every workshop",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/report"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Expected HTTP status\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Report preserves all workshop IDs\", function () { pm.expect(pm.response.json().report.map(r => r.id)).to.eql([1, 2, 3]); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
