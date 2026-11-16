@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From browser to database · Teaching lab</title><link rel="stylesheet" href="/style.css">
+<script src="/app.js" defer></script></head>
+<body><main>
+<header><span class="eyebrow">TECHNICAL TEACHING SAMPLE / NOVEMBER 2026</span>
+<h1>From browser<br>to database.</h1><p class="intro">One small app. Three layers you can explain, inspect and change.</p>
+<p class="notice">Local practice lab · fictional workshops and learners · no real customer data</p></header>
+<ol class="layers" aria-label="Application architecture"><li><b>01 · Browser</b><span>HTML, CSS and JavaScript</span></li><li><b>02 · API</b><span>HTTP requests and JSON</span></li><li><b>03 · Database</b><span>SQLite tables and relationships</span></li></ol>
+<section aria-labelledby="workshop-heading"><div class="section-title"><h2 id="workshop-heading">Explore the workshops</h2><span>GET /api/workshops</span></div>
+<label for="search">Filter by title</label><div class="search"><input id="search" type="search" placeholder="Try SQL" autocomplete="off"><button id="search-button">Search</button></div>
+<p id="status" role="status" aria-live="polite">Loading workshops…</p><div id="workshops" class="cards"></div></section>
+<section aria-labelledby="enrol-heading"><div class="section-title"><h2 id="enrol-heading">Try a JSON request</h2><span>POST /api/enrolments</span></div>
+<form id="enrol-form"><div><label for="workshop-id">Workshop</label><select id="workshop-id" required></select></div><div><label for="learner-name">Fictional learner name</label><input id="learner-name" value="Taylor Demo" maxlength="60" required></div><button type="submit">Create demo enrolment</button></form>
+<p class="hint">Submit twice with the same name and workshop. What changes in the HTTP status?</p><pre id="response" aria-live="polite">Your API response will appear here.</pre></section>
+<section aria-labelledby="report-heading"><div class="section-title"><h2 id="report-heading">Ask a data question</h2><span>GET /api/report</span></div>
+<p>How many enrolments does each workshop have, including workshops with none?</p><table><caption>Current demo enrolments</caption><thead><tr><th scope="col">Workshop</th><th scope="col">Enrolments</th></tr></thead><tbody id="report"></tbody></table>
+<details><summary>See the SQL behind this report</summary><pre>SELECT w.title, COUNT(e.id) AS enrolments
+FROM workshops w
+LEFT JOIN enrolments e ON e.workshop_id = w.id
+GROUP BY w.id, w.title
+ORDER BY w.id;</pre><p>Why COUNT(e.id), rather than COUNT(*)? Try the exercise in the learner guide.</p></details></section>
+<footer>Prepared as a portfolio teaching exercise for Mohammadali Masjedi. This sample is not evidence of a previously delivered client workshop.</footer>
+</main></body></html>
