@@ -61,6 +61,8 @@ the separate technical-instructor workshop draft PR #5 and is unaffected.
 **Do:** replace the unsupported “10+ research papers” count and associated unverified
 paper-portfolio wording with factual master’s-research-in-progress copy in EN/FA/DE;
 remove the unsupported “a year of testing into a decision in weeks” outcome claim;
+correct the contradictory 2017–2019 Art House dates/role to the owner-confirmed
+2014–2020 co-founder with Neda Aryana and CEO account in all three locales;
 keep the four-tile layout. Identify the current primary Sites portfolio/contact URL
 in the existing hero action and README, and align canonical/OG/JSON-LD site identity.
 Retain the GitHub Pages edition and existing image URLs. No automatic redirect.
