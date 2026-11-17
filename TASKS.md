@@ -53,6 +53,25 @@ state. Smallest diff that ends the split-brain.
 item highlighted at all times, in all 3 languages, no console errors. Test log in the PR body.
 **Don't:** restyle the nav, rename sections, or touch content. Bump the changed js file's `?v=N`.
 
+### T-PP-05 · Correct research claims and identify the primary portfolio [phase: content/seo · size: S · status: CLAIMED]
+**Claim:** Websites/Codex · 17 November 2026 · Draft PR #6: https://github.com/MohammadaliMasjedi-source/Personal-Portfolio/pull/6
+**Source:** Mo’s direct 17 November 2026 request to correct and consolidate his public
+presentation; bounded repair recorded by the Websites task. T-PP-04 is already used by
+the separate technical-instructor workshop draft PR #5 and is unaffected.
+**Do:** replace the unsupported “10+ research papers” count and associated unverified
+paper-portfolio wording with factual master’s-research-in-progress copy in EN/FA/DE;
+remove the unsupported “a year of testing into a decision in weeks” outcome claim;
+correct the contradictory 2017–2019 Art House dates/role to the owner-confirmed
+2014–2020 co-founder with Neda Aryana and CEO account in all three locales;
+keep the four-tile layout. Identify the current primary Sites portfolio/contact URL
+in the existing hero action and README, and align canonical/OG/JSON-LD site identity.
+Retain the GitHub Pages edition and existing image URLs. No automatic redirect.
+**DoD:** JSON-LD parses; canonical and OG agree; the primary Person ID is consistent;
+new visible strings exist in FA/DE; the unsupported count is absent; i18n cache version
+is incremented; local EN/FA/DE smoke check is recorded before owner merge.
+**Don’t:** add publication counts, change design/animation, copy private research results,
+touch the workshop or other projects, push main or self-merge.
+
 ## Blocked
 
 - **T-PP-03 · Codex · 2026-07-23:** not claimed for implementation. Its DoD requires rendered
