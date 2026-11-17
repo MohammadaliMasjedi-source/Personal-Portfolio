@@ -42,7 +42,7 @@
       "hero.eyebrow": "محمدعلی مسجدی — کلاوستال، آلمان",
       "hero.title": "یک ذهن، زندگی‌های بسیار.",
       "hero.sub": "نوازنده، مدرس و آهنگسازِ گیتار کلاسیک، توسعه‌دهندهٔ نرم‌افزار، مدیرِ پروژه و فردی فرهنگی و هنری — و خدمتگزارِ دو گربه. یک ذهن، زندگی‌های بسیار.",
-      "hero.cta1": "جهان‌هایم را ببین", "hero.cta2": "تماس", "hero.scroll": "پایین",
+      "hero.cta1": "جهان‌هایم را ببین", "hero.cta2": "سایت اصلی و تماس", "hero.scroll": "پایین",
       "hero.iam": "من",
       "hero.role1": "نوازنده، مدرس و آهنگسازِ گیتار کلاسیکم",
 
@@ -63,7 +63,7 @@
       "nav.research": "پژوهش", "menu.research": "پژوهش", "worlds.research.h": "پژوهش", "worlds.research.p": "هوشمندیِ باتری، پیش‌آگاهی و علمِ یادگیری.",
       "follow.kicker": "— همراهِ مسیر", "follow.title": "با من همراه شو", "follow.lead": "موسیقی، پژوهش و ساختن را همان‌طور که رخ می‌دهد به اشتراک می‌گذارم — بیشترش در یوتیوب. سابسکرایب کن و مسیر را دنبال کن.", "follow.sub": "سابسکرایب در یوتیوب",
       "support.kicker": "— حمایت از کار", "support.title": "اگر دوست داشتی، کمک کن", "support.lead": "موسیقی، پژوهش و ساختن بیشتر در وقت شخصی‌ام اتفاق می‌افتد. اگر برایت ارزشی دارد، یک کمک کوچک به ادامه‌اش کمک می‌کند — بدون هیچ فشاری.", "support.sahar": "بخشی از این حمایت صرف کارِ من روی <strong>سحر</strong> (<bdi>Sahar</bdi>) می‌شود — آموزش رایگان برای کودکان بازمانده از تحصیل. من یک نهاد خیریهٔ ثبت‌شده نیستم، پس این کمک، معافیت مالیاتی ندارد — فقط حمایت از وقتی است که برای ساختنش می‌گذارم.", "support.setup": "به‌زودی راه‌اندازی می‌شود",
-      "stat.lang": "زبان · فارسی · انگلیسی · آلمانی", "stat.lives": "زندگی، یک ذهن", "stat.arthouse": "ساختنِ خانهٔ هنر", "stat.arthouse.sfx": "+ سال", "stat.papers": "مقالهٔ پژوهشی",
+      "stat.lang": "زبان · فارسی · انگلیسی · آلمانی", "stat.lives": "زندگی، یک ذهن", "stat.arthouse": "ساختنِ خانهٔ هنر", "stat.arthouse.sfx": "+ سال", "stat.research.status": "در جریان", "stat.research": "پژوهش کارشناسی ارشد",
       "worlds.artist.h": "هنرمند", "worlds.artist.p": "آنجا که منطق کراواتش را شل می‌کند. میدانِ بازیِ تصویر.",
       "worlds.arthouse.h": "خانهٔ هنر شیراز", "worlds.arthouse.p": "خانه‌ای مستقل برای هنر در شیراز.",
       "worlds.music.h": "موسیقی و شعر", "worlds.music.p": "گیتار کلاسیک، آهنگسازی و شعرِ فارسی.",
@@ -124,20 +124,20 @@
       "val.p1": "در سراسرِ هنر و مهندسی، همان ارزش‌ها برقرارند: احترام به کرامتِ انسان، آزادیِ آفریدن و گفتن، و این باور که فرهنگ می‌تواند آنجا که سیاست دیوار می‌سازد، پل بسازد.",
 
       /* engineer + research + music caption */
-      "eng.lead": "از راهِ دور به پژوهش رسیدم — یک دهه کارِ نرم‌افزاری در نقشِ مهندس، تحلیل‌گرِ داده و مدیرِ پروژه به من آموخت که چگونه محصول را به سرانجام برسانم. اکنون به‌عنوان پژوهشگرِ کارشناسیِ ارشد در دانشگاهِ کلاوستال، به ترنسفورمرها می‌آموزم که عمرِ یک باتریِ لیتیوم‑یونی را تنها از نخستین چرخه‌هایش پیش‌بینی کنند — و یک سالِ آزمایش را به تصمیمی در چند هفته بدل کنند. پژوهشی را دوست دارم که از آزمایشگاه بیرون بیاید و به ابزار بدل شود.",
+      "eng.lead": "از راهِ دور به پژوهش رسیدم — یک دهه کارِ نرم‌افزاری در نقشِ مهندس، تحلیل‌گرِ داده و مدیرِ پروژه به من آموخت که چگونه محصول را به سرانجام برسانم. حالا در پژوهش کارشناسی ارشدم در دانشگاه فنی کلاوستال، از مدل‌های ترنسفورمر استفاده می‌کنم تا ببینم چرخه‌های ابتدایی یک باتری لیتیوم‌یونی چه اطلاعاتی دربارهٔ عمر بعدی آن می‌دهند. پژوهشی را دوست دارم که از آزمایشگاه بیرون بیاید و به ابزار بدل شود.",
 
-      "res.kicker": "پژوهش و مقالات",
+      "res.kicker": "پژوهش و پرسش‌ها",
       "res.title": "آموختنِ خواندنِ زمان به ماشین‌ها.",
-      "res.lead": "یک پایان‌نامهٔ کارشناسیِ ارشد و مجموعه‌ای کوچک از مقالات، همه گردِ یک پرسش: چه‌قدر زود می‌توان دریافت که یک سامانه چه خواهد شد؟ بیشترشان دربارهٔ پیش‌آگاهیِ باتری است؛ چند تایی به سویِ چگونگیِ یادگیریِ انسان می‌روند.",
+      "res.lead": "پژوهش کارشناسی ارشدم در دانشگاه فنی کلاوستال، پیش‌بینی عمر باتری از چرخه‌های ابتدایی را بررسی می‌کند. تدریس و نمونه‌های آموزشی هم راه دیگری برای پرسیدن از یادگیری و استفادهٔ انسان از فناوری‌اند.",
       "res.g1": "پایان‌نامهٔ ارشد · دانشگاهِ کلاوستال",
       "res.thesis.t": "پیش‌بینیِ عمرِ باتری از چرخه‌های نخستین",
       "res.thesis.d": "پایان‌نامهٔ ارشدم در دانشگاهِ کلاوستال، در دستِ انجام — پیش‌بینیِ عمرِ باقی‌ماندهٔ یک سلولِ لیتیوم‑یونی تنها از نخستین چرخه‌هایش. روش‌ها و نتایج پس از دفاع به اشتراک گذاشته می‌شوند.",
       "res.thesis.m": "پایان‌نامهٔ ارشد · عمرِ باقی‌ماندهٔ باتری · یادگیریِ ماشینِ سری‌زمانی",
       "res.g2": "پیش‌آگاهیِ باتری و سری‌زمانی",
-      "res.soon1": "چند مقاله در حوزهٔ پیش‌آگاهیِ باتری و سری‌زمانی در دستِ آماده‌سازی است. هر یک — با جزئیاتش — پس از انتشار اینجا خواهد آمد.",
+      "res.soon1": "روی پیش‌بینی عمر باتری با داده‌های چرخه‌های ابتدایی کار می‌کنم. روش‌ها، کد و نتایج را وقتی امکان انتشار عمومی‌شان فراهم شود، اینجا می‌گذارم.",
       "res.g3": "یادگیری و فهم",
-      "res.soon2": "کاری دربارهٔ چگونگیِ یادگیری و اندیشیدنِ انسان در کنارِ هوشِ مصنوعی نیز در دستِ آماده‌سازی است و پس از عمومی‌شدن خواهد آمد.",
-      "res.note": "کاری در حالِ پیشرفت — بیشترِ این پژوهش هنوز منتشر نشده است. جزئیات وقتی اینجا می‌آیند که هر مقاله عمومی شود.",
+      "res.soon2": "به یادگیری و فکر کردن انسان در کنار فناوری علاقه دارم و این پرسش‌ها را در تدریس و نمونه‌های کوچک آموزشی دنبال می‌کنم.",
+      "res.note": "پژوهش در جریان است. در مطالبی که منتشر می‌کنم، مشخص خواهد بود چه چیزی پرسش پژوهش است، چه چیزی نمونهٔ آزمایشی و چه چیزی نتیجهٔ نهایی.",
 
       "mus.cap": "زنده در کنسرت — رومانس، میلونگا و مِی برای گیتار کلاسیک · کلاوستال‑تسلرفلد، نوامبر ۲۰۲۳. هر عکس را برای بزرگ‌نمایی لمس کنید.",
 
@@ -256,7 +256,7 @@
       "hero.eyebrow": "Mohammad Ali Masjedi — Clausthal, Deutschland",
       "hero.title": "Ein Geist, viele Leben.",
       "hero.sub": "Klassischer Gitarrist, Lehrer und Komponist, Softwareentwickler, Projektmanager und Kunst- und Kulturmensch — und treuer Diener zweier Katzen. Ein Geist, viele Leben.",
-      "hero.cta1": "Meine Welten entdecken", "hero.cta2": "Kontakt", "hero.scroll": "Scrollen",
+      "hero.cta1": "Meine Welten entdecken", "hero.cta2": "Aktuelles Portfolio & Kontakt", "hero.scroll": "Scrollen",
       "hero.iam": "Ich bin",
       "hero.role1": "Klassischer Gitarrist, Lehrer & Komponist",
 
@@ -276,7 +276,7 @@
       "nav.research": "Forschung", "menu.research": "Forschung", "worlds.research.h": "Forschung", "worlds.research.p": "Batterie-Intelligenz, Prognostik & Lernwissenschaft.",
       "follow.kicker": "— Die Reise verfolgen", "follow.title": "Komm mit auf die Reise", "follow.lead": "Ich teile Musik, Forschung und das Machen, während es entsteht — das meiste auf YouTube. Abonniere und folge der Reise.", "follow.sub": "Auf YouTube abonnieren",
       "support.kicker": "— Die Arbeit unterstützen", "support.title": "Ein kleiner Beitrag, wenn du magst", "support.lead": "Musik, Forschung und Projekte entstehen meist in meiner Freizeit. Wenn dir das etwas bedeutet, hilft ein kleiner Beitrag, es am Laufen zu halten — ganz ohne Druck.", "support.sahar": "Ein Teil davon unterstützt meine Arbeit an Sahar — kostenlose Bildung für Kinder ohne Schulzugang. Ich bin keine eingetragene gemeinnützige Organisation, daher ist dies keine steuerlich absetzbare Spende — es unterstützt einfach die Zeit, die ich in den Aufbau stecke.", "support.setup": "bald verfügbar",
-      "stat.lang": "Sprachen · FA · EN · DE", "stat.lives": "Leben, ein Geist", "stat.arthouse": "Kunsthaus aufgebaut", "stat.arthouse.sfx": "+ Jahre", "stat.papers": "Forschungsarbeiten",
+      "stat.lang": "Sprachen · FA · EN · DE", "stat.lives": "Leben, ein Geist", "stat.arthouse": "Kunsthaus aufgebaut", "stat.arthouse.sfx": "+ Jahre", "stat.research.status": "Laufend", "stat.research": "Masterarbeit",
       "worlds.artist.h": "Künstler", "worlds.artist.p": "Wo die Logik die Krawatte lockert. Ein visueller Spielplatz.",
       "worlds.arthouse.h": "Shiraz Art House", "worlds.arthouse.p": "Ein unabhängiges Zuhause für die Kunst in Schiras.",
       "worlds.music.h": "Musik & Poesie", "worlds.music.p": "Klassische Gitarre, Komposition und persische Poesie.",
@@ -335,20 +335,20 @@
       "val.p1": "In Kunst wie Technik gelten dieselben Werte: Achtung der Menschenwürde, die Freiheit zu schaffen und zu sprechen, und der Glaube, dass Kultur Brücken baut, wo Politik Mauern errichtet.",
 
       /* engineer + research + music caption */
-      "eng.lead": "Ich kam auf Umwegen zur Forschung — ein Jahrzehnt Softwarearbeit als Ingenieur, Datenanalyst und Projektmanager lehrte mich, Dinge fertigzustellen. Heute bringe ich als Masterforscher an der TU Clausthal Transformern bei, die Lebensdauer einer Lithium-Ionen-Batterie allein aus ihren ersten Zyklen vorherzusagen — und so ein Jahr Tests in wenigen Wochen zur Entscheidung zu machen. Ich mag Forschung, die das Labor verlässt und zum Werkzeug wird.",
+      "eng.lead": "Ich kam auf Umwegen zur Forschung — ein Jahrzehnt Softwarearbeit als Ingenieur, Datenanalyst und Projektmanager lehrte mich, Dinge fertigzustellen. In meiner Masterarbeit an der TU Clausthal untersuche ich mit Transformer-Modellen, was frühe Zyklen einer Lithium-Ionen-Batterie über ihre spätere Lebensdauer verraten können. Ich mag Forschung, die das Labor verlässt und zum Werkzeug wird.",
 
-      "res.kicker": "Forschung & Arbeiten",
+      "res.kicker": "Forschung & Fragen",
       "res.title": "Maschinen lehren, die Zeit zu lesen.",
-      "res.lead": "Eine Masterarbeit und ein kleines Portfolio von Arbeiten, alle um eine Frage: Wie früh lässt sich erkennen, was ein System werden wird? Das meiste ist Batterie-Prognostik; einiges reicht hin zur Frage, wie Menschen lernen.",
+      "res.lead": "Meine Masterarbeit an der TU Clausthal untersucht die Vorhersage der Batterielebensdauer anhand früher Zyklendaten. Unterricht und Bildungsprototypen eröffnen mir einen weiteren Blick darauf, wie Menschen lernen und Technik nutzen.",
       "res.g1": "Masterarbeit · TU Clausthal",
       "res.thesis.t": "Frühzyklus-Vorhersage der Batterielebensdauer",
       "res.thesis.d": "Meine laufende Masterarbeit an der TU Clausthal — die Restlebensdauer einer Lithium-Ionen-Zelle allein aus ihren ersten Zyklen vorhersagen. Methoden und Ergebnisse folgen nach der Verteidigung.",
       "res.thesis.m": "M.Sc.-Arbeit · Batterie-Restlebensdauer · Zeitreihen-ML",
       "res.g2": "Batterie- & Zeitreihen-Prognostik",
-      "res.soon1": "Mehrere Arbeiten zur Batterie- und Zeitreihen-Prognostik sind in Vorbereitung. Jede erscheint hier — mit ihren Details —, sobald sie veröffentlicht ist.",
+      "res.soon1": "Ich arbeite an der Vorhersage der Batterielebensdauer anhand früher Zyklendaten. Methoden, Code und Ergebnisse werden verlinkt, sobald sie für die Veröffentlichung freigegeben sind.",
       "res.g3": "Lernen & Verstehen",
-      "res.soon2": "Auch eine Arbeit dazu, wie Menschen mit KI lernen und denken, ist in Vorbereitung und folgt, sobald sie öffentlich ist.",
-      "res.note": "Eine laufende Arbeit — das meiste davon ist noch unveröffentlicht. Details erscheinen hier, sobald jede Arbeit öffentlich ist.",
+      "res.soon2": "Mich interessiert, wie Menschen mit Technik lernen und denken. Diesen Fragen gehe ich im Unterricht und mit kleinen Bildungsprototypen nach.",
+      "res.note": "Die Forschung läuft. Öffentliche Materialien unterscheiden Forschungsfragen, Demonstrationen und zur Veröffentlichung freigegebene Ergebnisse.",
 
       "mus.cap": "Live im Konzert — Romance, Milonga & Mey für klassische Gitarre · Clausthal-Zellerfeld, November 2023. Tippe auf ein Foto zum Vergrößern.",
 
