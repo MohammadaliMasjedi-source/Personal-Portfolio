@@ -7,7 +7,13 @@ battery-intelligence builder, classical guitarist, and lifelong learner. A dark,
 motion-rich single-page site in **three languages (EN / FA / DE)** with **no build step** —
 it deploys straight to GitHub Pages.
 
-**Live:** https://mohammadalimasjedi-source.github.io/Personal-Portfolio/
+**Primary portfolio and contact:** https://mo-masjedi-launch-review.spicycrown34.chatgpt.site/
+
+**GitHub Pages edition:** https://mohammadalimasjedi-source.github.io/Personal-Portfolio/
+
+This repository retains the GitHub Pages edition. The primary portfolio above is the
+current destination for Mo’s introduction, writing and contact. This edition remains
+accessible; it does not automatically redirect visitors.
 
 ![Social-share card for the site](assets/img/og.png)
 
