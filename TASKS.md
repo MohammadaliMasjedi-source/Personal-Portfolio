@@ -53,7 +53,8 @@ state. Smallest diff that ends the split-brain.
 item highlighted at all times, in all 3 languages, no console errors. Test log in the PR body.
 **Don't:** restyle the nav, rename sections, or touch content. Bump the changed js file's `?v=N`.
 
-### T-PP-05 · Correct research claims and identify the primary portfolio [phase: content/seo · size: S · status: OPEN]
+### T-PP-05 · Correct research claims and identify the primary portfolio [phase: content/seo · size: S · status: CLAIMED]
+**Claim:** Websites/Codex · 17 November 2026 · Draft PR #6: https://github.com/MohammadaliMasjedi-source/Personal-Portfolio/pull/6
 **Source:** Mo’s direct 17 November 2026 request to correct and consolidate his public
 presentation; bounded repair recorded by the Websites task. T-PP-04 is already used by
 the separate technical-instructor workshop draft PR #5 and is unaffected.
