@@ -28,10 +28,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Collect only the public site files
+        # Internal notes (AGENTS.md, TASKS.md, docs/, handbook/ ...) stay in the
+        # repository but are not published on the website.
+        run: |
+          mkdir _site
+          cp -r index.html css js assets projects robots.txt sitemap.xml .nojekyll _site/
+          find _site -name '*.py' -delete
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
