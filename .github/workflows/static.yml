@@ -1,37 +1,72 @@
-# Deploy the static site to GitHub Pages.
-# After your first push, go to: Settings → Pages → Build and deployment →
-# Source: "GitHub Actions". That's it — every push to main redeploys.
 name: Deploy static site to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
+  pull_request:
+    paths:
+      - '.github/workflows/static.yml'
+      - 'index.html'
+      - 'css/**'
+      - 'js/**'
+      - 'assets/**'
+      - 'projects/**'
+      - 'robots.txt'
+      - 'sitemap.xml'
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Stage public site files
+        run: |
+          python3 - <<'PY'
+          import shutil
+          from pathlib import Path
+
+          site = Path('_site')
+          site.mkdir()
+          for filename in ('index.html', 'robots.txt', 'sitemap.xml', '.nojekyll'):
+              shutil.copyfile(filename, site / filename)
+
+          public_types = {'.css', '.js', '.html', '.svg', '.jpg', '.jpeg', '.png', '.webp', '.avif', '.gif', '.ico', '.woff', '.woff2', '.mp3', '.mp4', '.webm'}
+          for directory in ('css', 'js', 'assets', 'projects'):
+              for source in Path(directory).rglob('*'):
+                  if not source.is_file() or source.is_symlink() or source.suffix.lower() not in public_types:
+                      continue
+                  if any(part.startswith('.') for part in source.parts):
+                      continue
+                  target = site / source
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copyfile(source, target)
+          PY
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: '_site'
+          include-hidden-files: true
+
   deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
