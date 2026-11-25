@@ -1,0 +1,24 @@
+Validation record — 16 November 2026
+
+Environment: Windows, Python 3.12. Localhost only, synthetic data.
+
+PASS: python -m unittest discover -s tests -v
+12 test methods passed, covering asset serving, filtering, parameter binding,
+zero-enrolment counts, successful create/readback/report updates, conflicts,
+unknown IDs/routes, invalid fields/JSON/media type, body limits and file-path
+isolation. The initial Windows test run found open database connections during
+temporary-folder cleanup. Connection lifetime was fixed; the full suite passed.
+
+PASS: node --check web/app.js
+PASS: python query.py solutions/report.sql --db browser-check.sqlite3
+PASS: Chrome UI — SQL title filter, HTTP 201 create, report count update,
+HTTP 409 duplicate. Full-page screenshot retained outside the public sample.
+
+Postman collection: JSON structure and script syntax checked separately.
+The collection has NOT been imported into the Postman desktop app or executed
+in Newman in this environment. No such validation is claimed.
+
+Not established: candidate rehearsal, actual instructor-led delivery, learner
+outcomes, production deployment, broad browser/device compatibility, or prior
+professional SQL/REST/online-training experience. This new sample cannot prove
+those things. It was prepared with AI authoring support for candidate review.
