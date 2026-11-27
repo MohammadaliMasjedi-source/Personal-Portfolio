@@ -196,12 +196,12 @@
       "human.title": "زندگی، بیرون از ساعت.",
       "human.curios": "کنجکاوی‌ها",
       "chip.ai": "هوش مصنوعی", "chip.energy": "انرژی و باتری", "chip.paint": "نقاشی و ساختن",
-      "chip.sport": "تمرین و ورزش", "chip.poetry": "شعر و زبان", "chip.german": "آلمانی (<bdi>A1</bdi>، در حالِ پیشرفت)",
+      "chip.sport": "تمرین و ورزش", "chip.poetry": "شعر و زبان", "chip.german": "یادگیری آلمانی",
       "chip.km": "مدیریتِ دانش", "chip.coffee": "قهوه و گفت‌وگو",
-      "now.h": "اکنون · ژوئنِ ۲۰۲۶",
+      "now.h": "علاقه‌هایی که دنبال می‌کنم",
       "now.l1": "در حالِ پایان‌دادنِ پایان‌نامهٔ ارشدم در دانشگاهِ کلاوستال.",
       "now.l2": "ساختن و پرداختِ <bdi>CellSight</bdi>.",
-      "now.l3": "یادگیریِ آلمانی — در پیِ <bdi>A1</bdi> در این پاییز.",
+      "now.l3": "ادامهٔ یادگیریِ آلمانی.",
       "now.l4": "نقاشیِ بیشتر، نوشتنِ بیشتر، تمرینِ بیشتر.",
 
       /* daricheh — translations stub */
@@ -407,12 +407,12 @@
       "human.title": "Leben jenseits der Uhr.",
       "human.curios": "Neugierden",
       "chip.ai": "Künstliche Intelligenz", "chip.energy": "Energie & Batterien", "chip.paint": "Malen & Gestalten",
-      "chip.sport": "Training & Sport", "chip.poetry": "Poesie & Sprache", "chip.german": "Deutsch (A1, in Arbeit)",
+      "chip.sport": "Training & Sport", "chip.poetry": "Poesie & Sprache", "chip.german": "Deutsch lernen",
       "chip.km": "Wissensmanagement", "chip.coffee": "Kaffee & Gespräch",
-      "now.h": "Jetzt · Juni 2026",
+      "now.h": "Interessen, die mich begleiten",
       "now.l1": "Ich schließe meine M.Sc.-Arbeit an der TU Clausthal ab.",
       "now.l2": "Bauen & Verfeinern von CellSight.",
-      "now.l3": "Deutsch lernen — auf dem Weg zu A1 in diesem Herbst.",
+      "now.l3": "Weiter Deutsch lernen.",
       "now.l4": "Mehr malen, mehr schreiben, mehr trainieren.",
 
       /* daricheh — translations stub */
@@ -534,3 +534,4 @@
   if (document.readyState !== "loading") buildSwitch();
   else document.addEventListener("DOMContentLoaded", buildSwitch);
 })();
+
