@@ -15,6 +15,7 @@
     .filter(function (t) { return t.el; });
   if (!targets.length) return;
 
+  var marked = null;
   function update() {
     var line = window.innerHeight * 0.35;   // "current" once a section's top passes 35% down
     var current = targets[0], best = -Infinity;
@@ -24,12 +25,15 @@
       // (order-independent: nav order need not match DOM order)
       if (top <= line && top > best) { best = top; current = targets[i]; }
     }
-    for (var j = 0; j < links.length; j++) {
-      links[j].classList.remove("is-active", "is-current");
-      links[j].removeAttribute("aria-current");
+    // A scroll within one section must not repeatedly clear the accessible location.
+    if (current.a === marked) return;
+    if (marked) {
+      marked.classList.remove("is-current");
+      marked.removeAttribute("aria-current");
     }
-    current.a.classList.add("is-current");
-    current.a.setAttribute("aria-current", "location");
+    marked = current.a;
+    marked.classList.add("is-current");
+    marked.setAttribute("aria-current", "location");
   }
 
   // Direct (un-throttled) — the work is 5 rect reads, negligible per frame.

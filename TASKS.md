@@ -41,7 +41,7 @@ internal links/hreflang targets (typo-level, smallest diff). Report everything e
 and an explicit count of remaining issues that need an owner decision (0 is a valid count).
 **Don't:** add redirects, restructure pages, rename files, or touch external links.
 
-### T-PP-03 · Unify the two competing nav-highlight trackers [phase: seo · size: S · status: OPEN]
+### T-PP-03 · Unify the two competing nav-highlight trackers [phase: seo · size: S · status: CLAIMED — [PR #3](https://github.com/MohammadaliMasjedi-source/Personal-Portfolio/pull/3)]
 **Context:** audit W-A1 (2026-07-23): `js/main.js` maintains `is-active` via IntersectionObserver
 while `js/polish.js` independently maintains `is-current` with a different rule — two sections
 can be highlighted at once. Verify the overlap first; if reality differs from the audit claim,
@@ -53,9 +53,6 @@ state. Smallest diff that ends the split-brain.
 item highlighted at all times, in all 3 languages, no console errors. Test log in the PR body.
 **Don't:** restyle the nav, rename sections, or touch content. Bump the changed js file's `?v=N`.
 
-## Blocked
+## T-PP-03 · rendered verification
 
-- **T-PP-03 · Codex · 2026-07-23:** not claimed for implementation. Its DoD requires rendered
-  manual scrolling across every section in all three languages. W-C1's verify-yourself rule
-  forbids opening an implementation PR when correctness can only be confirmed in a browser.
-  Route this card to the fleet's browser-capable sweep.
+The earlier browser-launch blocker is resolved in [PR #3](https://github.com/MohammadaliMasjedi-source/Personal-Portfolio/pull/3). Run `python tests/navigation_browser.py` with Playwright and Chromium installed. On 27 November 2026 the test checked 480 rendered scroll positions across English, Persian (RTL) and German, at 1280 px with normal motion and 390 px with reduced motion. Each position had exactly one current primary link, the corresponding accessible location, and no legacy active marker. Scrolling within the same section caused no marker mutations. The mobile menu and Escape key, no-JavaScript section links and initially visible content passed. No JavaScript/console errors occurred in the tested settings. The test serves the site locally, without third-party fonts, scripts or media. Physical devices, other browser engines and the live deployment were not part of this check. Owner merge is pending.
